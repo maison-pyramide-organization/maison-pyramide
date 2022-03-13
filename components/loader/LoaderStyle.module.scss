@@ -1,0 +1,48 @@
+@import "../../styles/variables.module";
+
+.main{
+    position: fixed;
+    overflow: hidden;
+    width:100%;
+    height:100%;
+    z-index: 1000;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0e0e0e;
+    color:$primary-color-light;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.h1{
+    position: relative;
+    font-size: 72px;
+    line-height: 60px;
+    width:50%;
+    // height: 180px;
+    .logo{
+        // width:100%;
+        // height: 180px;
+
+    }
+}
+.titleLayer{
+    background-color: #0e0e0e;
+    // background-color: red;
+    width:100vw;
+    height:300px;
+    position: absolute;
+    bottom: 0;
+    top:0;
+}
+@media (min-width:200px) and (max-width:600px) {
+    .main{
+        h1{
+            font-size: 48px;
+            line-height: 48px;
+        }
+    }
+
+}

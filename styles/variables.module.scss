@@ -1,0 +1,28 @@
+$primary-color-dark: #131313;
+$primary-color-light: #FFFFFF;
+$secondary-color-light:#F4F3EF;
+
+$active-color:#CEE0A6;
+$second-active-color:#C66F2C;
+
+
+$bg-color-dark: #0e0e0e;
+$bg-color-secondary: #993334;
+$bg-color-light: #F4F3EF;
+
+$y-padding:56px;
+
+:export {
+  primaryColorDark: $primary-color-dark;
+  primaryColorLight: $primary-color-light;
+  secondaryColorLight: $secondary-color-light;
+
+  activeColor:$active-color;
+  secondActiveColor:$second-active-color;
+
+  bgColorDark:$bg-color-dark;
+  bgColorLight:$bg-color-light;
+
+  yPadding:$y-padding;
+
+}

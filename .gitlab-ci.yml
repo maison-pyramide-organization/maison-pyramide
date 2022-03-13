@@ -1,0 +1,50 @@
+stages:
+  - build
+  - deploy
+
+
+build:
+  image: node:14.17.1
+  stage: build
+  cache:
+    paths:
+      - node_modules/
+      - .next/cache/
+
+  before_script:
+    - npm install
+
+  script:
+    - node -v
+    - npm run build
+
+  artifacts:
+    paths:
+      - .next/
+  only:
+    - master
+
+  timeout: 20 minutes
+
+deploy:
+  stage: deploy
+  image: alpine:latest
+  dependencies:
+    - build
+
+  before_script:
+    - 'command -v ssh-agent >/dev/null || ( apk add --update openssh )'
+    - apk add --update rsync
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan $VM_IPADDRESS >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+
+  script:
+    - rsync --delete-after -va .next/ $SSH_USER@$VM_IPADDRESS:/var/www/html/maison-pyramide/.next
+    - ssh $SSH_USER@$VM_IPADDRESS "pm2 restart maison"
+
+  only:
+    - master

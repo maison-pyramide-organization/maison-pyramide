@@ -1,0 +1,60 @@
+{
+    "clientReferenceInformation": {
+      "code": "TC50171_3"
+    },
+    "orderInformation": {
+      "lineItems":[
+        {"unitPrice":10}
+      ],
+      "amountDetails": {
+        "authorizedAmount": "102.21",
+        "currency": "USD"
+      }
+    },
+    "merchantInformation": {
+      "merchantDescriptor": {
+        "name": "Sending Company Name",
+        "locality": "FC",
+        "country": "US",
+        "administrativeArea": "CA",
+        "postalCode": "94440"
+      }
+    },
+      "pointOfSaleInformation": {
+      "terminalId": "111111"
+    },
+    "recipientInformation": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "address1": "Paseo Padre Boulevard",
+      "locality": "Foster City",
+      "administrativeArea": "CA",
+      "country": "US",
+      "postalCode": "94400",
+      "phoneNumber": "6504320556"
+    },
+    "senderInformation": {
+      "referenceNumber": "1234567890",
+      "account": {
+        "fundsSource": "05"
+      },
+      "name": "Company Name",
+      "address1": "900 Metro Center Blvd.900",
+      "locality": "Foster City",
+      "administrativeArea": "CA",
+      "countryCode": "US"
+    },
+    "processingInformation": {
+      "businessApplicationId": "FD",
+      "networkRoutingOrder": "V8",
+      "commerceIndicator": "internet"
+    },
+    "paymentInformation": {
+      "card": {
+        "type": "001",
+        "number": "4111111111111111",
+        "expirationMonth": "12",
+        "expirationYear": "2025"
+      }
+    }
+  }

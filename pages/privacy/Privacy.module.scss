@@ -1,0 +1,54 @@
+@import "../../styles/variables.module";
+
+.main{
+    color:$primary-color-light;
+    padding:calc($y-padding + 64px) 0;
+    width:80%;
+    div{
+        margin-bottom: 72px;
+    }
+    h1{
+        font-size: 64px;
+        line-height: 70px;
+        margin-bottom: 32px;
+    }
+    h2{
+        margin-bottom: 32px;
+        font-size: 18px;
+        line-height: 25px;
+    }
+    p{
+        opacity: .8;
+        font-size: 20px;
+        line-height: 28px;
+    }
+    ul{
+        list-style:inside;
+        li{
+            margin-bottom: 8px;
+            opacity: .8;
+        }
+    }
+}
+@media(min-width:200px) and (max-width:600px){
+    .main{
+        width:100%;
+        h1{
+            font-size: 36px;
+            line-height: 39px;
+        }
+        h2{
+            font-size: 18px;
+        }
+        p{
+            font-size:16px;
+            line-height: 22px;
+        }
+        ul{
+            margin-top:24px!important;
+        }
+        li{
+            margin: 16px 0!important;
+        }
+    }
+}

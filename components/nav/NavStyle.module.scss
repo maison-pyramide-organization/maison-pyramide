@@ -1,0 +1,121 @@
+@import "../../styles/variables.module";
+.my_nav{
+    background-color: transparent;
+    z-index: 10;
+    transition: all 1s ease-in-out;
+    *{
+        font-weight: 400;
+        font-size: 14px;
+    }
+    .mobile_brand{
+        display: none;
+    }
+    .brand{
+        // line-height: 15px;
+        a{
+            color:$primary-color-light;
+            font-size:22px;
+            cursor: pointer;
+            line-height: 22px;
+            font-family: "Suisse Int'l bold";
+        }
+        a:hover{
+            color:#CEE0A6;
+        }
+    }
+    .link{
+        color:$primary-color-light!important;
+        cursor: pointer;
+    }
+    .link.active{
+        text-decoration: underline!important;
+    }
+    .link:hover{
+        color:#CEE0A6!important;
+        
+    }
+    button{
+        background-color: transparent!important;
+        color:#fff!important;
+        padding:0!important;
+        background-image:none;
+
+        span{
+            background-image:none!important;
+            width:24px;
+            height:2px;
+            background-color: #fff;
+            position: relative;
+            margin-top:0;
+            transition-duration:.5s ;
+        }
+        span:after{
+            content:'';
+            position: absolute;
+            width:24px;
+            height:2px;
+            background-color: #fff;
+            top:8px;
+            right:0;
+            transition-duration:.5s ;
+        }
+        span:before{
+            content:'';
+            position: absolute;
+            width:24px;
+            height:2px;
+            background-color: #fff;
+            bottom:8px;
+            right:0;
+            transition-duration:.5s ;
+        }
+    }
+    button:hover{
+        background-position: 0%;
+    }
+   
+}
+// for hide animation;
+.white_nav{
+    background-color: $bg-color-dark!important;
+    transition: all 1s ease-in-out;
+    opacity: .8;
+    .link{
+        color:$primary-color-light!important;
+    }
+    .brand a{
+        color:$primary-color-light!important;
+    }
+}
+.hidden_nav{
+    transform: translateY(-100px);
+    transition: all 1s ease-in-out;
+}
+.invisible{
+    opacity: 0;
+    transition: all 1s ease-in-out;
+
+}
+
+@media(min-width:200px) and (max-width:800px){
+    .my_nav{
+       button:focus{
+            outline: 0!important;
+            box-shadow: none;
+        }
+        .brand{
+            display: none;
+        }
+        .mobile_brand{
+            display: block;
+            text-align: center;
+            font-size: 20px;
+            color:$primary-color-light;
+            line-height: 17px;
+        }
+        .mobile_brand:hover{
+            color:$primary-color-light;
+        }
+    }
+    
+}

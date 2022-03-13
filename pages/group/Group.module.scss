@@ -1,0 +1,389 @@
+@import "../styles/variables.module";
+
+.header{
+    display: flex;
+    min-height: 80vh;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-image: url(../../public/imgs/groupbg.png);
+    background-size: cover;
+    background-position: center;
+    color:$primary-color-light;
+    h1{
+        font-family: "Suisse Int'l bold";
+        font-size: 64px;
+        font-weight: 400;
+        line-height: 70.4px;
+    }
+}
+.info{
+    color:$primary-color-light;
+    p.text{
+        font-size: 32px;
+        padding:104px;
+        text-align: center;
+        line-height: 44.8px;
+    }
+    ul{
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        padding-bottom: 64px;
+        p{
+            margin:2px;
+            font-size: 18px;
+            line-height: 21.6px;
+        }
+        span{
+            display:block;
+            opacity: .7;
+            font-size: 12px;
+            line-height: 14px;
+        }
+    }
+
+    .office{
+        padding:$y-padding 0px;
+        .office_network{
+            display: flex;
+            flex-wrap: wrap;
+            height: 100%;
+            align-content: center;
+            padding:0 24px;
+            h2{
+                font-size: 48px;
+                line-height: 52px;
+            }
+            p{
+                opacity: .8;
+                font-size: 20px;
+                line-height: 28px;
+            }
+        }
+        .office_network_text{
+            p{
+                font-size: 18px;
+                line-height: 25px;
+                padding:0 12px;
+            }
+        }
+    }
+    .leader{
+        padding:$y-padding 32px;
+        h2{
+            font-size: 48px;
+            line-height: 52.8px;
+        }
+        p{
+            opacity: .8;
+            font-size: 20px;
+            line-height: 28px;
+        }
+        .card{
+            margin-top:32px;
+            // background-color: red;
+            // .img{
+            //     padding: 24px!important;
+            //     padding-left: 0!important;
+            // }
+            h3{
+                margin-top:24px;
+                font-family: "GT Super Display";
+                font-size: 28px;
+                line-height: 31px;
+            }
+            p{
+                font-size: 18px;
+                line-height: 20px;
+            }
+            .desc{
+                font-size: 15px;
+                line-height: 25px;
+            }
+            .read_more{
+                text-decoration: underline;
+            }
+        }
+    }
+    .culture{
+        padding:$y-padding 0 $y-padding 32px;
+        h3{
+            font-size: 48px;
+            line-height: 53px;
+        }
+        h4{
+            font-size: 32px;
+            line-height: 45px;
+        }
+        p{
+            font-size: 20px;
+            line-height: 28px;
+        }
+        .slide{
+            display: flex;
+            height: 100%;
+            align-content: center;
+            flex-wrap: wrap;
+            p{
+                opacity: .8;
+                // padding-right: 64px;
+            }
+         
+        }
+        .slider_ctrls{
+            margin-right:32px;
+            .slider_ctrl{
+                float: right;
+                display: inline-flex;
+                width: 50px;
+                height:50px;
+                border-radius: 50%;
+                margin-right: 10px;
+                justify-content: center;
+                align-items: center;
+                border:1px solid #fff;
+                cursor: pointer;
+                .chev_right, .chev_left{
+                    border-style: solid;
+                    border-width: 2px 2px 0 0;
+                    content: '';
+                    display: inline-block;
+                    height: 12px;
+                    vertical-align: top;
+                    width: 12px;
+                    transform: rotate(45deg);
+                }
+                .chev_left{
+                    transform: rotate(220deg);
+                }
+            }
+
+        }
+        // .slide_img{
+        //     // padding:48px;
+        //     padding-top:0;
+        //     img{
+        //         max-height: 700px;
+        //     }
+        // }
+        // .slide_side_img{
+        //     img{
+        //         min-height: 600px!important;
+        //     }
+        // }
+    }
+    .press{
+        padding:$y-padding 32px;
+        h2{
+            font-size: 48px;
+            line-height: 52px;
+            margin-bottom: 16px;
+        }
+        p{
+            opacity: .8;
+            font-size: 20px;
+            line-height: 28px;
+        }
+        
+        .press_card{
+            margin-top: 24px;
+            position: relative;
+            overflow: hidden;
+            // background-color: red;
+            .img{
+                // padding-right: 16px;
+                position: relative;
+                h2{
+                    position: absolute;
+                    bottom: -16px;
+                    background: linear-gradient(transparent,rgba(0,0,0,.8));
+                    width: 100%;
+                    padding: 8px;
+                    padding-bottom: 16px;
+                    font-size: 22px;
+                    padding-top: 56px;     
+                       
+                  }
+            }
+            
+            img{
+                transition: all .5s;
+            }
+            span{
+                font-size: 14px;
+                display: block;
+                margin: 16px 0;
+              }
+           
+            p{
+                font-size: 15px;
+                padding-right: 72px;
+                line-height: 24px;
+            }
+          
+            h3{
+                font-family: "GT Super Display";
+                margin:16px 0;
+                transition: all 1s;
+                font-size: 22px;
+                line-height: 22px;
+            }
+            .card_tag{
+                position: absolute;
+                top:12px;
+                left:12px;
+                background-color: #F4F3EF;
+                opacity: .9;
+                border-radius: 20px;
+                font-size: 12px;
+                padding:4px 20px;
+                font-family: "Suisse Int'l bold";
+                color:$primary-color-dark;
+                text-align: center;
+            }
+        }
+        .press_card:hover img{
+            transform: scale(1.05);
+        }
+        .press_card:hover h3{
+            color:$active-color;
+        }
+    }
+
+}
+@media(min-width:600px) and (max-width:1200px){
+    .info{
+        .office{
+            .office_network{
+                height: auto;
+            }
+        }   
+    }
+}
+@media(min-width:200px) and (max-width:600px){
+    .header{
+        background-image: url(../../public/imgs/mobile/groupbgM.png);
+        text-align: center;
+        h1{
+            font-size: 38px;
+            line-height: 40px;
+            width: 336px;
+        }
+    }
+    .info{
+        p.text{
+            padding:64px 12px;
+            font-size: 22px;
+            line-height: 30.8px;
+        }
+        ul{
+            padding-bottom: 12px;
+        }
+        li{
+            width:100%;
+            margin-bottom: 48px;
+          
+            p{
+                font-size: 16px;
+                line-height: 19px;
+            }
+            span{
+                line-height: 24px;
+            }
+        }
+    }
+    
+    .office{
+        padding:12px!important;
+        .office_network{
+            padding:0!important;
+            h2{
+                font-size: 28px!important;
+                line-height: 31px!important;
+                margin-block: 12px 24px;
+            }
+            p{
+                font-size: 18px;
+                line-height: 25px;
+                padding:0!important ;
+            }
+        }
+        .office_network_img{
+            margin-bottom: 24px;
+        }
+    }
+    .leader{
+        padding:0px 0px!important ;
+        margin-top:48px;
+        h2{
+            font-size: 28px!important;
+            line-height: 31px!important;
+        }
+        p{
+            font-size: 18px;
+            line-height: 21px;
+        }
+        .card{
+            padding: 0 32px;
+            
+            h3{
+                font-size: 22px!important;
+                line-height: 24px!important;
+            }
+            p{
+                font-size: 16px!important;
+                line-height: 18px!important;
+            }
+        }
+    }
+    .culture{
+        margin-top:64px;
+        padding:12px!important;
+        h3{
+            font-size: 28px!important;
+            line-height: 30px!important;
+        }
+        p{
+            font-size: 18px!important;
+            line-height: 25px!important;
+        }
+        .slide{
+            p{
+                padding-right:0!important;
+            }
+        }
+        .slider_ctrls{
+            margin-right: 0!important;
+        }
+        .counter{
+            text-align: left!important;
+        }
+    }
+    .press{
+        padding:12px!important;
+        margin-bottom: 104px;
+        margin-top: 32px;
+        h2{
+            font-size: 28px!important;
+            line-height: 31px!important;
+            opacity: .9;
+        }
+        p{
+            font-size: 18px!important;
+            line-height: 25px!important;
+        }
+        .press_card{
+            h3{
+                font-size: 20px !important;
+                line-height: 20px !important;
+
+            }
+            p{
+                padding: 0!important;
+                font-size: 14px!important;
+                line-height: 22px !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,250 @@
+@import "../../styles/variables.module";
+
+.main{
+    color:$primary-color-light;
+    padding:calc($y-padding + 64px) 0;
+    display: flex;
+    align-content: center;
+
+    h1{
+        font-size: 64px;
+        line-height: 70.4px;
+    }
+    p{
+        padding:0 64px;
+        opacity: .8;
+        width:65vw; 
+        font-size: 20px;
+        line-height: 28px;
+        margin:34px auto 0 auto ;
+    }
+}
+
+.feat_projects{
+    color:$primary-color-light;
+    margin-bottom: calc($y-padding + 64px);
+    
+    h2{
+        margin-bottom: 56px;
+        font-size: 48px;
+        line-height: 52px;
+    }
+    .project_img{
+        padding:32px;
+        padding-bottom: 56px;
+        text-align: left;
+        cursor: pointer;
+        span{
+            margin-top:16px ;
+            display: inline-block;
+            font-size: 12px;
+            cursor: pointer;
+            line-height: 12px;
+        }
+        .img{
+            cursor: pointer;
+            // background-color: red;
+            // padding: 2px!important;
+            // max-height: 300px!important;
+            img{
+                max-height: 100%;
+            }
+
+        }
+        h3{
+            font-family: "GT Super Display";
+            margin:16px 0;
+            font-size: 36px;
+            cursor: pointer;
+            line-height: 36px;
+        }
+        p{
+            opacity: .8;
+            // width:420px;
+            padding-right: 24px;
+            font-size: 20px;
+            line-height: 28px;
+            cursor: pointer;
+        }
+    }
+  
+}
+
+.selected_clients{
+    color:$primary-color-light;
+    // min-height:70vh;
+    margin-top: 32px;
+    padding:80px 32px;
+    h2{
+        margin-bottom:54px;
+        font-size: 48px;
+        line-height: 38px;
+    }
+    .card{
+        margin-top:24px;
+        margin-bottom: 64px;
+        h3{
+            font-size: 24px;
+            margin:16px 0;
+            // height: 60px;
+        }
+        // h3:hover{
+        //     color:$active-color;
+        // }
+        .text{
+            // min-height:350px ;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        p{
+            opacity: .8;
+            font-size: 18px;
+            line-height: 25.2px;
+            margin-top: 0;
+            min-height: 132px;
+            // text-align: justify;
+        }
+        ul{
+            margin-top: 32px;
+            align-self: end;
+            li{
+                opacity: .7;
+                font-size: 16px;
+                // line-height: 16px;
+                margin:2.5px 0;
+            }
+        }
+    }
+}
+@media(min-width:600px) and (max-width:1200px){
+    .main{
+        p{
+           width:100%;
+        }
+    }
+}
+@media(min-width:200px) and (max-width:800px){
+    .main{
+        padding:calc($y-padding + 32px) 0;
+        h1{
+            font-size: 36px;
+            line-height: 39.6px;
+            margin-bottom: 24px;
+            padding: 32px 0 24px ;
+
+        }
+        p{
+            padding:0 24px;
+            width:100%;
+            font-size: 18px;
+            line-height: 25.2px;
+            margin-top:12px;
+        }
+    }
+    .feat_projects{
+        h2{
+            margin-bottom: 24px;
+            font-size: 28px;
+            line-height: 30.8px;
+            margin-bottom: 24px;
+        }
+        h3{
+            font-size: 24px!important;
+            line-height: 24px!important;
+        }
+        p{
+            font-size: 18px!important;
+            line-height: 25px!important;
+            margin-bottom: 32px;
+            padding: 0!important;
+        }
+        ul{
+            min-height: 82px;
+        }
+        .project_img{
+            padding: 12px!important;
+            padding-bottom: 12px;
+            p{
+                width: auto;
+            }
+        }
+    }
+    .second{
+        margin-top:64px;
+    }
+    .feat_projects{
+        margin-bottom: 24px!important;
+    }
+    .selected_clients{
+        padding:0 12px;
+        h2{
+            line-height: 30.8px;
+            font-size: 28px;
+            margin-bottom: 24px;
+        }
+        .selected_clients_container{
+            flex-direction: row;
+            overflow-x: scroll;
+            flex-wrap: nowrap;
+            scroll-snap-type: x mandatory;
+        }
+        
+        .btns{
+            display: flex!important;
+            margin-top: 24px;
+            justify-content: space-between;
+            .slider_ctrls{
+                margin-bottom: 24px;
+                .slider_ctrl{
+                    display: inline-flex;
+                    width: 40px;
+                    height:40px;
+                    border-radius: 50%;
+                    margin-left: 10px;
+                    justify-content: center;
+                    align-items: center;
+                    border:1.5px solid $primary-color-light;
+                    cursor: pointer;
+                    .chev_right, .chev_left{
+                        border-style: solid;
+                        border-width: 1.5px 1.5px 0 0;
+                        content: '';
+                        display: inline-block;
+                        height: 8px;
+                        vertical-align: top;
+                        width: 8px;
+                        transform: rotate(45deg);
+                    }
+                    .chev_left{
+                        transform: rotate(220deg);
+                    }
+                }
+                .slider_ctrl:nth-child(1){
+                    padding-left: 6px;
+                }
+                .slider_ctrl:nth-child(2){
+                    padding-right: 1px;
+                }
+    
+            }
+        }
+        .card{
+            min-width: 65vw;
+            scroll-snap-align: start;
+            h3{
+                min-height: 73px;
+                margin-bottom: 0;
+            }
+            p{
+                font-size: 16px;
+                line-height: 22.4px;
+                min-height: 110px!important;
+            }
+            li{
+                font-size: 14px!important;
+
+            }
+        }
+      
+    }
+}
