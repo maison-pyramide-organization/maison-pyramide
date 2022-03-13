@@ -21,7 +21,7 @@ import expImgMobile from '../../public/imgs/mobile/expertbgM.png';
 import expimgt from '../../public/imgs/expbg.png';
 import expimg from '../../public/imgs/exp11.jpg';
 import expimg2 from '../../public/imgs/exp22.jpg';
-import expimg3 from '../../public/imgs/lara.JPG';
+import expimg3 from '../../public/imgs/lara.jpg';
 import expimg4 from '../../public/imgs/exp44.jpeg';
 import expimg5 from '../../public/imgs/exp5.jpg';
 
