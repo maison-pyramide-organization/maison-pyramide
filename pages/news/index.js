@@ -35,7 +35,9 @@ function Items({ currentItems ,selectedTab }) {
   const router = useRouter();
 
   const handlePost = (link) =>{
-    router.push(link);
+    // router.push(link);
+    window.open(link, '_blank');
+
 
   }
 
@@ -217,11 +219,11 @@ export default function News() {
               <div className={newsStyle.tabs}>
                 <ul>
                   <li>VIEWING :</li>
-                  <li  onClick={() => handleSelectTab("ALL")}>ALL</li>
-                  <li  onClick={() => handleSelectTab("COMPANY FEATURE")}>COMPANY FEATURE</li>
+                  <li  onClick={() => handleSelectTab("ALL")} className={selectedTab == 'ALL'?newsStyle.selected:''}>ALL</li>
+                  <li  onClick={() => handleSelectTab("COMPANY FEATURE")} className={selectedTab == 'COMPANY FEATURE'?newsStyle.selected:''}>COMPANY FEATURE</li>
                   {/* <li  onClick={() => handleSelectTab("BLOG POST")}>BLOG POST</li> */}
-                  <li  onClick={() => handleSelectTab("PRESS RELEASE")}>PRESS RELEASE</li>
-                  <li  onClick={() => handleSelectTab("COMPANY UPDATE")}>COMPANY UPDATE</li>
+                  <li  onClick={() => handleSelectTab("PRESS RELEASE")} className={selectedTab == 'PRESS RELEASE'?newsStyle.selected:''}>PRESS RELEASE</li>
+                  <li  onClick={() => handleSelectTab("COMPANY UPDATE")} className={selectedTab == 'COMPANY UPDATE'?newsStyle.selected:''}>COMPANY UPDATE</li>
                   <li className={`${newsStyle.all_btn} mobile`} onClick={handleMenu}>
                     {selectedTab}
                     <TransitionGroup>

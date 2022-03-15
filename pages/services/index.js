@@ -380,7 +380,7 @@ function Services() {
                   <Accordion.Item eventKey="3"
                     onClick={() => handleClick(3, event.target)}
                   >
-                    <Accordion.Header>Consulting </Accordion.Header>
+                    <Accordion.Header>Strategy Consulting </Accordion.Header>
                     <Accordion.Body>
                     <div className={servicesStyles.acc_body}>
                         {/* <h3 className="disktop_only">

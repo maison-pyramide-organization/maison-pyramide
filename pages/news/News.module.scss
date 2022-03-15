@@ -268,13 +268,20 @@
       // li:nth-child(1){
       //     margin: 0 12px;
       // }
+      .selected{
+        color: $active-color;
+        text-decoration: underline;
+      }
     }
   }
   .posts {
     border-right: 1px solid rgba(255, 255, 255, 0.507);
     padding-right: 10px;
+    // background-color: red;
+    min-height: 180vh;
     ul{
       justify-content: center;
+      align-self: flex-end;
       li{
         margin:0 12px;
       }
@@ -317,6 +324,7 @@
     }
     .news_img:hover img{
       transform: scale(1.05);
+      cursor: pointer;
     }
     .news_text {
       h2 {
@@ -464,10 +472,11 @@
     }
     .posts {
       border-right: none;
+      min-height: auto;
     }
     .post {
       margin-bottom: 20px;
-      cursor: pointer;
+      cursor: pointer!important;
     }
 
     .news_text {

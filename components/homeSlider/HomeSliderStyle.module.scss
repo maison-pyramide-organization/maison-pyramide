@@ -3,7 +3,7 @@
 .featured{
     padding:calc($y-padding + 72px) 24px 0 24px;
     background-color: $bg-color-light;
-    min-height: 100vh;
+    // min-height: 80vh;
     overflow: hidden;
     // padding-bottom: 100px;
     .slider_row{
@@ -23,16 +23,17 @@
         font-weight: 400;
     }
     .text{
-        display: flex;
-        flex-wrap: wrap;
+        // display: flex;
+        // flex-wrap: wrap;
+        margin-top: 80px;
         height:100%;
-        align-content: center;
+        // align-content: center;
         // .clientname{
         //     font-size: 14px;
         // }
         h2{
             margin-bottom: 32px;
-            font-family: "GT Super Display";
+            // font-family: "GT Super Display";
         }
         ul{
             margin-bottom: 0;

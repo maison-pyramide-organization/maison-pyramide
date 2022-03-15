@@ -2,7 +2,7 @@
 
 .header{
     color:$primary-color-light;
-    padding:calc($y-padding + 64px) 56px;
+    padding:calc($y-padding + 64px) 56px 40px;
     h1{
         font-size: 64px;
         line-height: 70px;
@@ -26,6 +26,10 @@
             position: absolute;
             left:0px;
             bottom: 0;
+        }
+        .link a:hover{
+            color:$active-color;
+            cursor: pointer;
         }
     }
     ul{
@@ -92,6 +96,11 @@
             color:$primary-color-light;
             margin-bottom: 24px;
         }
+        input:-webkit-autofill{
+            -webkit-box-shadow: 0 0 0 1000px $bg-color-dark inset;
+            -webkit-text-fill-color: $bg-color-light !important;
+
+        }
         select option{
             // color: $primary-color-dark;
             padding: 12px;
@@ -102,14 +111,14 @@
             opacity: .8;
             font-size: 18px;
         }
-        input:focus{
+        input:focus , select:focus{
             outline: none;
         }
         .email_field{
             margin-top: 42px;
         }
         .msg_field{
-            margin-top: 50px;
+            // margin-top: 50px;
         }
         .loading{
             float: right;
@@ -141,7 +150,8 @@
         line-height: 28px;
     }
     a:hover{
-        color: $primary-color-light;
+        color: $primary-color-dark;
+        cursor: pointer;
     }
 }
 @media (min-width:801px) and (max-width:1279px) {

@@ -71,6 +71,7 @@ button a {
   line-height: 22.4px;
   padding: 0;
   color: #131313;
+  cursor: pointer;
 }
 button:hover {
   background-position: 100%;

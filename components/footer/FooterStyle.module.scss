@@ -81,7 +81,8 @@
                 vertical-align: top;
                 width: 8px;
 	            transform: rotate(45deg);
-                opacity:.7
+                opacity:.7;
+                cursor: pointer;
             }
             input{
                 width:100%;
@@ -125,6 +126,9 @@
             margin: 0 !important;
             a{
                 cursor: pointer;
+            }
+            a:hover{
+                color: $active-color;
             }
         }
     }

@@ -25,7 +25,7 @@ export default function Contact() {
     const [inputs, setInputs] = useState({subject:'interested in working together'});
     const [errors , setErrors] = useState({});
 
-    const [isLoading ,setIsLoading] = useState(false);
+    // const [isLoading ,setIsLoading] = useState(false);
     const [msgSent , setMsgSent] = useState(false);
 
     const handleChange = (event) => {
@@ -78,14 +78,13 @@ export default function Contact() {
 
     const handleSubmit = (event) =>{
         event.preventDefault();
-        setIsLoading(true);
+        // setIsLoading(true);
         ContactService.addContact(inputs).then(res =>{
             setMsgSent(true);
+            setInputs({subject:'interested in working together'});
         }).catch((err) => {
             // err.json()
             console.log('eh el error',err);
-        }).finally(() => {
-            setIsLoading(false);
         })
     }
   return (
@@ -154,7 +153,7 @@ export default function Contact() {
                             <div className="w-100">
                                 {
                                     msgSent && (
-                                        <h2 className="text-center">Your message has been sent to use successfully, Thank you!</h2>
+                                        <h2 className="text-center">Your message has been sent to us successfully, Thank you!</h2>
                                     )
                                 }
                             <Container fluid className={contactStyles.form_container}>
@@ -186,27 +185,20 @@ export default function Contact() {
                                 </div>
                                 </Col>
                                 <Col md={6}>
-                                    <div style={{marginTop:'12px'}}>
+                                    <div>
+                                    <label className="disktop_only" style={{color:'transparent'}}>Subject</label>
                                         <input placeholder="Company Name" name="company" value={inputs.company || ""} onChange={handleChange}></input>
                                     </div>
                                     <div className={contactStyles.msg_field}>
+                                    <label className="disktop_only" style={{color:'transparent'}}>Subject</label>
                                         <input required placeholder="Message" name="message" className={errors.message?'inpt-error':''}  value={inputs.message || ""} onChange={handleChange}></input>
                                         <p className={contactStyles.inpt_err}>{errors.message}</p>
                                     </div>
-                                        {isLoading?
-                                        (
-                                            <div className={contactStyles.loading}>
-                                            <BallTriangle  
-                                                heigth="50"
-                                                width="50"
-                                                color='#fff'
-                                                ariaLabel='loading'/>
-                                            </div>
-                                        ):
+                                       
                                         <button className={contactStyles.send_btn}>
                                         SEND
                                         </button>
-                                        }
+                                        
                                         
                                 </Col>
                             </Row>

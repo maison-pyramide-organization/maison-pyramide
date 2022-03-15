@@ -76,7 +76,7 @@ export default function Group() {
       <section className={groupStyles.info}>
       <ParallaxProvider>
         <ParallaxCache/>
-        <Parallax translateY={[isMobile?0:20, isMobile?0:-20]}>
+        <Parallax translateY={[isMobile?0:50, isMobile?0:-50]}>
         <Container>
           <p className={groupStyles.text}>
             An international platform supporting the pace of innovation and
@@ -110,7 +110,7 @@ export default function Group() {
         <Container fluid>
         <ParallaxProvider>
         <ParallaxCache/>
-        <Parallax translateY={[isMobile?0:10, isMobile?0:-5,'easeInQuint']}>
+        <Parallax translateY={[isMobile?0:30, isMobile?0:-30,'easeOutQuint']}>
           <div className={groupStyles.office}>
             <Row>
             <Col md={12} className={`${groupStyles.office_network_img} mobile`}>
@@ -150,7 +150,7 @@ export default function Group() {
 
         <ParallaxProvider>
         <ParallaxCache/>
-        <Parallax translateY={[isMobile?0:10, isMobile?0:-15,'easeInQuint']}>
+        <Parallax translateY={[isMobile?0:20, isMobile?0:-30,'easeOutQuint']}>
           <div className={groupStyles.leader}>
             <h2 className="text-center pb-3">Leadership Team</h2>
             <p className="text-center">
@@ -275,13 +275,17 @@ export default function Group() {
 
         <ParallaxProvider>
         <ParallaxCache/>
-        <Parallax translateY={[isMobile?0:10, isMobile?0:-15,'easeInQuint']}>
+        <Parallax translateY={[isMobile?0:30, isMobile?0:-40,'easeOutQuint']}>
           <GroupSlider/>
 
           </Parallax>
         </ParallaxProvider>
 
           <div className={groupStyles.press}>
+          <ParallaxProvider>
+        <ParallaxCache/>
+        <Parallax translateY={[isMobile?0:30, isMobile?0:-30,'easeOutQuint']}>
+
             <h2 className="text-center">
                 In the press
             </h2>
@@ -340,6 +344,8 @@ export default function Group() {
                     </div>
                 </Col>
             </Row>
+            </Parallax>
+        </ParallaxProvider>
           </div>
         </Container>
         

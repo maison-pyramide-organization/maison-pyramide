@@ -58,7 +58,8 @@ export default function Expertise() {
     }, []);
   };
 
-  const toggleExpandText = (i) => {
+  const toggleExpandText = (e,i) => {
+    e.stopPropagation();
     let isTextExpandArr = [...isTextExpand];
     isTextExpandArr[i] = !isTextExpandArr[i];
     setIsTextExpand(isTextExpandArr);
@@ -167,7 +168,7 @@ export default function Expertise() {
 
               </Col>
               <Col md={7}>
-              <Parallax translateY={[isMobile?0:50,isMobile?0: -10]} >
+              <Parallax translateY={[isMobile?0:60,isMobile?0: 0]} >
               <ParallaxCache />
                 <div className={expertiseStyles.text}>
                   <h3 className="disktop_only">{exp.attributes?.title}</h3>
@@ -176,9 +177,9 @@ export default function Expertise() {
                   </p>
                   <br />
                   <p>
-                    {!isTextExpand[0] && isMobile ? (
+                    {!isTextExpand[ind] && isMobile ? (
                       <p
-                        onClick={() => toggleExpandText(0)}
+                        onClick={(e) => toggleExpandText(e,ind)}
                         className={`${expertiseStyles.read_more} mt-4`}
                       >
                         READ MORE
@@ -186,7 +187,7 @@ export default function Expertise() {
                     ) : (
                       <>
                         <TransitionGroup>
-                          {!loadingFlag[0] && (
+                          {!loadingFlag[ind] && (
                             <CSSTransition
                               key={3}
                               timeout={500}
@@ -197,7 +198,7 @@ export default function Expertise() {
                                 {isMobile && (
 
                                 <p
-                                  onClick={() => toggleExpandText(0)}
+                                  onClick={(e) => toggleExpandText(e,ind)}
                                   className={`${expertiseStyles.read_more} mt-4`}
                                 >
                                   READ LESS
@@ -219,7 +220,7 @@ export default function Expertise() {
               ):
               <Row className={expertiseStyles.reverse_mobile_row} onClick={() => handleClick(exp.attributes.feature)}>
               <Col md={7}>
-              <Parallax translateY={[isMobile?0:50,isMobile?0: -20]} >
+              <Parallax translateY={[isMobile?0:60,isMobile?0: 0]} >
               <ParallaxCache />
               <div className={`${expertiseStyles.text} ${expertiseStyles.left_text}`}>
                   <h3 className="disktop_only">{exp.attributes.title}</h3>
@@ -228,9 +229,9 @@ export default function Expertise() {
                   </p>
                   <br />
                   <p>
-                    {!isTextExpand[0] && isMobile ? (
+                    {!isTextExpand[ind] && isMobile ? (
                       <p
-                        onClick={() => toggleExpandText(0)}
+                        onClick={(e) => toggleExpandText(e,ind)}
                         className={`${expertiseStyles.read_more} mt-4`}
                       >
                         READ MORE
@@ -238,7 +239,7 @@ export default function Expertise() {
                     ) : (
                       <>
                         <TransitionGroup>
-                          {!loadingFlag[0] && (
+                          {!loadingFlag[ind] && (
                             <CSSTransition
                               key={3}
                               timeout={500}
@@ -249,7 +250,7 @@ export default function Expertise() {
                                 {isMobile && (
   
                                 <p
-                                  onClick={() => toggleExpandText(0)}
+                                  onClick={(e) => toggleExpandText(e,ind)}
                                   className={`${expertiseStyles.read_more} mt-4`}
                                 >
                                   READ LESS
@@ -267,7 +268,7 @@ export default function Expertise() {
               </Col>
   
               <Col md={5}>
-              <Parallax translateY={[isMobile?0:50,isMobile?0: -70]} >
+              <Parallax translateY={[isMobile?0:10,isMobile?0: -10]} >
               <ParallaxCache />
                 <div className={expertiseStyles.exp_img}>
                   <h3 className="mobile">{exp.attributes?.title}</h3>

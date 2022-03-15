@@ -67,8 +67,13 @@
             cursor: pointer;
         }
     }
+    .project_img:hover h3{
+        color:$active-color
+    }
   
 }
+
+
 
 .selected_clients{
     color:$primary-color-light;

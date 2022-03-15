@@ -98,7 +98,7 @@ export default function Project() {
         
         <section className={projectStyles.project_info}>
         <ParallaxProvider>
-            <Parallax translateY={[0, isMobile?0:-30]}>
+            <Parallax translateY={[isMobile?0:0, isMobile?0:-40]}>
             <ParallaxCache/> 
             <div className={projectStyles.project_img} style={{backgroundImage:`url(${data?.image?.custom_data?.url})`}}>
                 <div className={projectStyles.breakingImgCont}>
@@ -109,7 +109,7 @@ export default function Project() {
             </Parallax>
         </ParallaxProvider>
         <ParallaxProvider>
-            <Parallax translateY={[0, isMobile?0:-50]}>
+            <Parallax translateY={[isMobile?0:20, isMobile?0:-80]}>
                 {/* <Parallax translateY={[10, -90,'easeOutQuint']}> */}
                 <ParallaxCache/> 
                 <div className={projectStyles.project_text}>
@@ -163,7 +163,7 @@ export default function Project() {
                     <Row style={{justifyContent:'space-around'}}>
                         <Col md={5} className="mb-4">
                         <ParallaxProvider>
-                        <Parallax translateY={[0, isMobile?0:-10]}>
+                        <Parallax translateY={[isMobile?0:10, isMobile?0:-10]}>
                             <ParallaxCache/> 
                             {
                                 data.challenge_images && (
@@ -175,7 +175,7 @@ export default function Project() {
                         </Col>
                         <Col md={5}>
                         <ParallaxProvider>
-                        <Parallax translateY={[0, isMobile?0:-10]}>
+                        <Parallax translateY={[isMobile?0:20, isMobile?0:-20]}>
                             <ParallaxCache/> 
                             {
                                 data.challenge_images && (
@@ -206,7 +206,7 @@ export default function Project() {
             </Container>
             <Container fluid>
             <ParallaxProvider>
-                        <Parallax translateY={[0, isMobile?0:-10]}>
+                        <Parallax translateY={[0, isMobile?0:-20]}>
                             <ParallaxCache/>
                 <div className={projectStyles.solution}>
                     <div className="disktop_only">
@@ -259,7 +259,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, sed ornare sed to
         
         <ParallaxProvider>
             <ParallaxCache/>
-            <Parallax translateY={[isMobile?0:-10, isMobile?0:-40,'easeOutQuint']}>
+            <Parallax translateY={[isMobile?0:-10, isMobile?0:-70,'easeOutQuint']}>
 
         <section className={projectStyles.project_slider}>
             {data?.slider_images && data?.slider_images.length && (
@@ -271,7 +271,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, sed ornare sed to
 
         <ParallaxProvider>
             <ParallaxCache/>
-            <Parallax translateY={[0, isMobile?0:-20,'easeOutQuint']}>
+            <Parallax translateY={[0, isMobile?0:-40,'easeOutQuint']}>
         <section className={projectStyles.project_results}>
             <Container>
                 <Row>

@@ -93,6 +93,9 @@ function ClientComponent() {
     }
 
     const handleExpertise = (n) => {
+        if(n == expertise){
+            return false;
+        }
         setIsHideText(true);
         setLoadingFlag(true);
         if (isMobile) {
@@ -105,11 +108,7 @@ function ClientComponent() {
             setRevealing(true);
         }, 200);
         setTimeout(() => {
-            setExpertise(n);
-            // setIsHideText(false);
-            // setRevealing(false);
-            // setLoadingFlag(false);
-            
+            setExpertise(n);            
         }, 1000);
     }
     useEffect(() => {

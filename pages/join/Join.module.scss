@@ -48,11 +48,15 @@
         }
         .accordion{
             div{
-                border:none;
+                border-bottom: 1px solid $primary-color-light;
+            }
+            div{
+                // border:none;
                 background-color: $bg-color-dark;
                 div{
                     padding:0;
                     position: relative;
+                    border:none;
                 }
                 .close{
                     position: absolute;
@@ -73,8 +77,9 @@
             h2{
                 border:none;
                 background-color: transparent!important;
-                border-bottom: 1px solid $primary-color-light;
-                margin-bottom: 16px;
+                // border-bottom: 1px solid $primary-color-light;
+
+                padding-bottom: 16px;
                 button{
                     background-color:transparent!important ;
                     font-family: "GT Super Display";
@@ -94,7 +99,7 @@
                     border-width: 1.82px 1.82px 0 0;
                     position: absolute;
                     right:0;
-                    top:6px;
+                    top:20px;
                     content: '';
                     display: inline-block;
                     height: 12px;
@@ -117,6 +122,10 @@
 
                 
             }
+            h3{
+                // border-bottom: 1px solid $primary-color-light;
+                // padding-bottom: 20px;
+            }
             .acc_body{
                 padding-top:8px;
                 header{
@@ -136,7 +145,7 @@
                         border-width: 1.82px 1.82px 0 0;
                         position: absolute;
                         right:6px;
-                        top:6px;
+                        top:15px;
                         display: inline-block;                   
                         content: '';
                         height: 12px;
