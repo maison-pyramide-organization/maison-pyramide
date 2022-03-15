@@ -73,7 +73,7 @@ button a {
   color: #131313;
   cursor: pointer;
 }
-button:hover {
+button:not(.footer-btn):hover {
   background-position: 100%;
   transition: all 1s ease;
   background-image: linear-gradient(20deg, transparent, transparent 50%, #cee0a6 0);
@@ -394,7 +394,18 @@ ul li:hover {
 .mobile {
   display: none !important;
 }
-
+.paginateStyle:hover a{
+  color: #CEE0A6;
+  text-decoration: underline;
+}
+.activePaginate a{
+  color: #CEE0A6;
+  text-decoration: underline!important;
+}
+.next a:hover , .previous a:hover{
+  color: #CEE0A6;
+  text-decoration: underline;
+}
 .inpt-error{
   border-bottom: 1px solid #E20000!important;
 }

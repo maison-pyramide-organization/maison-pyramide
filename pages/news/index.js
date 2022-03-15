@@ -129,8 +129,10 @@ function PaginatedItems({ itemsPerPage ,selectedTab}) {
       <ReactPaginate
         breakLabel="..."
         nextLabel="NEXT"
+        activeClassName="activePaginate"
         onPageChange={handlePageClick}
-        pageRangeDisplayed={5}
+        pageRangeDisplayed={3}
+        ClassName="paginateStyle"
         pageCount={pageCount}
         previousLabel="PREV"
         renderOnZeroPageCount={null}
