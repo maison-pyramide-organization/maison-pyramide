@@ -16,16 +16,16 @@ import clientStyles from './ClientStyles.module.scss';
 import clientImg from '../../public/imgs/clientimg.png'
 import clientImg2 from '../../public/imgs/client6.1.jpeg';
 import client1 from '../../public/imgs/client1.1.jpeg';
-import client2 from '../../public/imgs/client1.2.jpeg';
-import client3 from '../../public/imgs/client2.1.jpeg';
-import client4 from '../../public/imgs/client2.2.jpeg';
+import client2 from '../../public/imgs/client1.2.jpg';
+import client3 from '../../public/imgs/client2.1.jpg';
+import client4 from '../../public/imgs/client2.2.jpg';
 import client5 from '../../public/imgs/client3.1.jpeg';
 import client6 from '../../public/imgs/client3.2.jpeg';
-import client7 from '../../public/imgs/client4.1.jpeg';
-import client8 from '../../public/imgs/client4.2.jpeg';
+import client7 from '../../public/imgs/client4.1.jpg';
+import client8 from '../../public/imgs/client4.2.jpg';
 import client9 from '../../public/imgs/client5.1.jpeg';
 import client10 from '../../public/imgs/client5.2.jpeg';
-import client11 from '../../public/imgs/client6.2.jpeg';
+import client11 from '../../public/imgs/client6.2.png';
 import client12 from '../../public/imgs/client7.1.jpeg';
 import client13 from '../../public/imgs/client7.2.jpeg';
 
