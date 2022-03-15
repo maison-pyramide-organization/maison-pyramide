@@ -192,10 +192,13 @@
             overflow: hidden;
             // background-color: red;
             .img{
+                cursor: pointer!important;
                 // padding-right: 16px;
                 position: relative;
                 h2{
                     position: absolute;
+                    cursor: pointer!important;
+
                     bottom: -16px;
                     background: linear-gradient(transparent,rgba(0,0,0,.8));
                     width: 100%;
@@ -209,6 +212,8 @@
             
             img{
                 transition: all .5s;
+                cursor: pointer!important;
+
             }
             span{
                 font-size: 14px;

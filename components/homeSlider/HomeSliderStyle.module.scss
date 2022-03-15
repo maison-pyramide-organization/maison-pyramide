@@ -1,7 +1,7 @@
 @import "../../styles/variables.module";
 
 .featured{
-    padding:calc($y-padding + 72px) 24px 0 24px;
+    padding:calc($y-padding + 56px) 24px 0 24px;
     background-color: $bg-color-light;
     // min-height: 80vh;
     overflow: hidden;
@@ -25,7 +25,7 @@
     .text{
         // display: flex;
         // flex-wrap: wrap;
-        margin-top: 80px;
+        margin-top: 115px;
         height:100%;
         // align-content: center;
         // .clientname{
@@ -39,7 +39,7 @@
             margin-bottom: 0;
             li{
                 font-weight: 400;
-                // line-height: 16px;
+                font-size: 16px;
                 font-family: "Suisse Int'l bold";
             }
         }
@@ -47,14 +47,14 @@
             // font-family: "Suisse Int'l bold";
             font-weight: 300!important;
             margin: 8px 0;
-            font-size: 29px;
+            font-size: 27px;
         }
         p{
             color:#131313;
             font-weight: 400;
             width: 318px;
             margin:24px 0;
-            font-size: 12px;
+            font-size: 18px;
             line-height: 25px;
             
         }

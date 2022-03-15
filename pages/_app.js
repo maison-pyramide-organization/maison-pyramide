@@ -17,6 +17,13 @@ import FooterComponent from '../components/footer/footerComponent';
 const AnimatedCursor = dynamic(() => import('react-animated-cursor'), {
   ssr: false
 });
+const IsMobileComponent = dynamic(
+  () => {
+      return import("../components/isMobile/IsMobileComponent");
+  },
+  { ssr: false }
+);
+
 const ParallaxCache = dynamic(
   () => {
       return import("../components/parallaxCache/parallaxCache");
@@ -30,7 +37,14 @@ const ParallaxCache = dynamic(
 
 function MyApp({ Component, pageProps }) {
   const [isLoading,setIsLoading] = React.useState(true);
+  const [isMobile, setIsMobile] = React.useState(null);
   const router = useRouter();
+
+  const useHandleMobile = (value) => {
+    React.useEffect(() => {
+        setIsMobile(value)
+    }, [])
+}
   React.useEffect(()=>{
 
     ProjectService.getFeaturedProjects().then(res => {
@@ -54,7 +68,7 @@ function MyApp({ Component, pageProps }) {
         (
           <>
           <NavComponent/>
-
+          <IsMobileComponent handleMobile={useHandleMobile}/>
            <div className="total-mb">
             <AnimatePresence
               exitBeforeEnter
@@ -68,7 +82,7 @@ function MyApp({ Component, pageProps }) {
           <div className="parallax" style={{overflow:'hidden'}}>
           <ParallaxProvider>
               <ParallaxCache/>
-                <Parallax className={`parallax`} translateY={[-30, 50]}>
+                <Parallax className={`parallax`} translateY={[isMobile?0:-30, isMobile?0:50]}>
               <FooterComponent/>
               </Parallax>
             </ParallaxProvider>

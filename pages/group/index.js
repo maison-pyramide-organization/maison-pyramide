@@ -62,7 +62,9 @@ export default function Group() {
     setIsTextExpand(isTextExpandArr)
   }
   const handlePost = (link) => {
-    router.push(link);
+    // router.push(link);
+    window.open(link, '_blank');
+
   }
   return (
     <Layout>
