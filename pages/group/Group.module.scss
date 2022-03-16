@@ -197,8 +197,6 @@
                 position: relative;
                 h2{
                     position: absolute;
-                    cursor: pointer!important;
-
                     bottom: -16px;
                     background: linear-gradient(transparent,rgba(0,0,0,.8));
                     width: 100%;
@@ -206,7 +204,6 @@
                     padding-bottom: 16px;
                     font-size: 22px;
                     padding-top: 56px;     
-                       
                   }
             }
             
@@ -225,6 +222,7 @@
                 font-size: 15px;
                 padding-right: 72px;
                 line-height: 24px;
+                cursor: pointer;
             }
           
             h3{
@@ -233,6 +231,7 @@
                 transition: all 1s;
                 font-size: 22px;
                 line-height: 22px;
+                cursor: pointer;
             }
             .card_tag{
                 position: absolute;

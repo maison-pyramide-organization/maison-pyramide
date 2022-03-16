@@ -47,8 +47,9 @@ export default function Contact() {
     ]
 
     const handleChange = (event) => {
-        const name = event.target.name;
-        const value = event.target.value;
+        // console.log({event});
+        const name = event?.target?.name || 'subject';
+        const value = event.value || event?.target.value;
         
         if(name == 'name'){
             switch (name == 'name') {
@@ -201,8 +202,10 @@ export default function Contact() {
                                     <label className="disktop_only">Subject</label>
                                     <Select 
                                         options={selectOptions}
+                                        onChange={handleChange}
                                         className="contact-select"
                                         styles={customStyles}
+                                        name="subject"
                                         defaultValue={selectOptions[0]}
                                         theme={(theme) => ({
                                             ...theme,

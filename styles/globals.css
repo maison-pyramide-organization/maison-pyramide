@@ -413,6 +413,9 @@ ul li:hover {
 .css-319lph-ValueContainer{
   padding:0!important;
 }
+.css-9owoa0-indicatorSeparator{
+  display: none;
+}
 .contact-select *{
   
   box-shadow: none!important;

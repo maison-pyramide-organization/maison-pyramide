@@ -1,7 +1,7 @@
 @import "../../styles/variables.module";
 
 .expertise{
-    margin-top:-100px;
+    margin-top:-140px;
     margin-bottom:248px ;
     // background-color: $bg-color-dark;
     background:linear-gradient(#F4F3EF 50%,transparent 50%);
@@ -110,12 +110,12 @@
                 justify-content: center;
                 align-self: center;
                 height:100%;
-                align-items: center;
+                // align-items: center;
                 ul{
                     display: flex;
                     justify-content: space-around;
                     flex-wrap: wrap;
-                    margin-bottom: 12px;
+                    margin-bottom: 0px;
                     li{
                         display: inline-block;
                         font-size: 40px;

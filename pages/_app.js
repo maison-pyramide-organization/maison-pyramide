@@ -62,7 +62,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
     <Head>
-      <link rel="shortcut icon" href="/icon.png" />
+      <link rel="shortcut icon" href="/icon.ico" />
     </Head>
       { router.pathname != '/404'?
         (
