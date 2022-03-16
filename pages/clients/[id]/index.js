@@ -109,7 +109,7 @@ export default function Project() {
             </Parallax>
         </ParallaxProvider>
         <ParallaxProvider>
-            <Parallax translateY={[isMobile?0:20, isMobile?0:-80]}>
+            <Parallax translateY={[isMobile?0:10, isMobile?0:-40,'easeOutQuint']}>
                 {/* <Parallax translateY={[10, -90,'easeOutQuint']}> */}
                 <ParallaxCache/> 
                 <div className={projectStyles.project_text}>
@@ -158,7 +158,7 @@ export default function Project() {
         </ParallaxProvider>
             <Container className={projectStyles.images}>
             <ParallaxProvider>
-                        <Parallax translateY={[0, isMobile?0:-20]}>
+                        <Parallax translateY={[isMobile?0:10, isMobile?0:-30,'easeOutQuint']}>
                             <ParallaxCache/>
                     <Row style={{justifyContent:'space-around'}}>
                         <Col md={5} className="mb-4">

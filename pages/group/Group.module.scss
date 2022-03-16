@@ -71,6 +71,7 @@
     }
     .leader{
         padding:$y-padding 32px;
+        padding-bottom: 0;
         h2{
             font-size: 48px;
             line-height: 52.8px;
@@ -175,6 +176,7 @@
     }
     .press{
         padding:$y-padding 32px;
+        padding-bottom: 0;
         h2{
             font-size: 48px;
             line-height: 52px;
@@ -204,6 +206,7 @@
                     padding-bottom: 16px;
                     font-size: 22px;
                     padding-top: 56px;     
+                    cursor: pointer;
                   }
             }
             

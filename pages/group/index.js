@@ -152,7 +152,7 @@ export default function Group() {
 
         <ParallaxProvider>
         <ParallaxCache/>
-        <Parallax translateY={[isMobile?0:20, isMobile?0:-30,'easeOutQuint']}>
+        <Parallax translateY={[isMobile?0:30, isMobile?0:-30,'easeOutQuint']}>
           <div className={groupStyles.leader}>
             <h2 className="text-center pb-3">Leadership Team</h2>
             <p className="text-center">
@@ -167,24 +167,25 @@ export default function Group() {
                 <div className={groupStyles.card}>
                   <Image className={groupStyles.img} src={groupImg2} height={150} objectFit={"cover"} width={100} layout="responsive"></Image>
                   <h3>Giovanina Attieh</h3>
-                  <p>Co-Founder</p>
+                  <p>Co-Founder & Partner</p>
                   <p className={groupStyles.desc}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet nisi, diam condimentum neque. <br></br>
+                  15 years in the retail industry, with Vivienne Westwood in Milan and Al Ostoura as head buyer for luxury brands such as Chloe & Alexander McQueen. <br></br>
                     {isMobile && !isTextExpand[0] ?(
                       <p className={`${groupStyles.read_more} pt-3`} onClick={() => toggleExpandText(0)}>
                         READ MORE
 
                       </p>
                     ):
-                    <span>
-                      Dictum eget ultrices quis nulla sagittis pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet nisi, diam condimentum neque. Dictum eget ultrices quis nulla sagittis pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet nisi, diam condimentum neque. Dictum eget ultrices quis nulla sagittis pretium.
-                      <br></br>
-                      {isMobile && (
-                      <p className={`${groupStyles.read_more} pt-3`} onClick={() => toggleExpandText(0)}>
-                        READ LESS
-                      </p>
-                      )}
-                    </span>
+                    <></>
+                    // <span>
+                    //   Dictum eget ultrices quis nulla sagittis pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet nisi, diam condimentum neque. Dictum eget ultrices quis nulla sagittis pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet nisi, diam condimentum neque. Dictum eget ultrices quis nulla sagittis pretium.
+                    //   <br></br>
+                    //   {isMobile && (
+                    //   <p className={`${groupStyles.read_more} pt-3`} onClick={() => toggleExpandText(0)}>
+                    //     READ LESS
+                    //   </p>
+                    //   )}
+                    // </span>
                     }
                   </p>
                 </div>
@@ -193,16 +194,17 @@ export default function Group() {
                 <div className={groupStyles.card}>
                   <Image className={groupStyles.img} src={groupImg3} height={150} objectFit={"cover"} width={100} layout="responsive"></Image>
                   <h3>Maria Munoz</h3>
-                  <p>Co-Founder</p>
+                  <p>Co-Founder & Partner</p>
                   <p className={groupStyles.desc}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet nisi, diam condimentum neque. <br></br>
-                    {isMobile && !isTextExpand[1] ?(
+                  13 years in digital marketing, PR and Philanthropy, including as co-founder of Slickr, the first fashion social network in the region.<br></br>
+                    {/* {isMobile && !isTextExpand[1] ?(
                       <p className={`${groupStyles.read_more} pt-3`} onClick={() => toggleExpandText(1)}>
                         READ MORE
 
-                      </p>
-                    ):
-                    <span>
+                      </p> */}
+                    {/* ): */}
+                    <></>
+                    {/* <span>
                       Dictum eget ultrices quis nulla sagittis pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet nisi, diam condimentum neque. Dictum eget ultrices quis nulla sagittis pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet nisi, diam condimentum neque. Dictum eget ultrices quis nulla sagittis pretium.
                       
                       <br></br>
@@ -211,8 +213,8 @@ export default function Group() {
                         READ LESS
                       </p>
                       )}
-                    </span>
-                    }
+                    </span> */}
+                    
                   </p>
                 </div>
               </Col>
@@ -220,10 +222,10 @@ export default function Group() {
                 <div className={groupStyles.card}>
                   <Image className={groupStyles.img} src={groupImg4} height={150} objectFit={"cover"} width={100} layout="responsive"></Image>
                   <h3>Nathalie Mroue</h3>
-                  <p>Co-Founder</p>
+                  <p>Co-Founder & Partner</p>
                   <p className={groupStyles.desc}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet nisi, diam condimentum neque. <br></br>
-                    {isMobile && !isTextExpand[2] ?(
+                  12 years in international  marketing and communications, including Stella McCartney and Elie Saab London as Head of New Media & PR. <br></br>
+                    {/* {isMobile && !isTextExpand[2] ?(
                       <p className={`${groupStyles.read_more} pt-3`} onClick={() => toggleExpandText(2)}>
                         READ MORE
 
@@ -239,7 +241,7 @@ export default function Group() {
                       </p>
                       )}
                     </span>
-                    }
+                    } */}
                   </p>
                 </div>
               </Col>
@@ -247,10 +249,10 @@ export default function Group() {
                 <div className={groupStyles.card}>
                   <Image className={groupStyles.img} src={groupImg1} height={150} objectFit={"cover"} width={100} layout="responsive"></Image>
                   <h3>Yann Pavie</h3>
-                  <p>Partner & Chairman</p>
+                  <p>Executive Chairman & Partner </p>
                   <p className={groupStyles.desc}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet nisi, diam condimentum neque. <br></br>
-                    {isMobile && !isTextExpand[3] ?(
+                  25 years in the private equity and investment banking industry, including as Chief Operating Officer and Board Member of NBK Capital. Over $15 billion in private equity and investment banking transactions.  <br></br>
+                    {/* {isMobile && !isTextExpand[3] ?(
                       <p className={`${groupStyles.read_more} pt-3`} onClick={() => toggleExpandText(3)}>
                         READ MORE
 
@@ -266,7 +268,7 @@ export default function Group() {
                       </p>
                       )}
                     </span>
-                    }
+                    } */}
                   </p>
                 </div>
               </Col>
@@ -277,7 +279,7 @@ export default function Group() {
 
         <ParallaxProvider>
         <ParallaxCache/>
-        <Parallax translateY={[isMobile?0:30, isMobile?0:-40,'easeOutQuint']}>
+        <Parallax translateY={[isMobile?0:10, isMobile?0:-30,'easeOutQuint']}>
           <GroupSlider/>
 
           </Parallax>
@@ -286,7 +288,7 @@ export default function Group() {
           <div className={groupStyles.press}>
           <ParallaxProvider>
         <ParallaxCache/>
-        <Parallax translateY={[isMobile?0:30, isMobile?0:-40,'easeOutQuint']}>
+        <Parallax translateY={[isMobile?0:0, isMobile?0:-50]}>
 
             <h2 className="text-center">
                 In the press
