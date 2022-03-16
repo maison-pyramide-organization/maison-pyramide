@@ -288,7 +288,7 @@ export default function Group() {
           <div className={groupStyles.press}>
           <ParallaxProvider>
         <ParallaxCache/>
-        <Parallax translateY={[isMobile?0:0, isMobile?0:-50]}>
+        <Parallax translateY={[isMobile?0:20, isMobile?0:-50,'easeOutQuint']}>
 
             <h2 className="text-center">
                 In the press

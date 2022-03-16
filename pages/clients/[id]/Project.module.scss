@@ -116,7 +116,7 @@
         padding:$y-padding 24px;
         .sol_row{
             transform: translateY(-32px);
-            margin-bottom: 100px;
+            // margin-bottom: 100px;
         }
         .sol_row_img_cont{
             // background-color: red;
@@ -151,6 +151,7 @@
 }
 .project_slider{
     padding-bottom: calc($y-padding * 2) ;
+    margin-top: -100px;
 
 }
 .project_results{
