@@ -406,6 +406,19 @@ ul li:hover {
   color: #CEE0A6;
   text-decoration: underline;
 }
+.contact-select{
+  border-bottom: 1px solid rgba(255,255,255,.6);
+  margin-bottom: 24px;
+}
+.css-319lph-ValueContainer{
+  padding:0!important;
+}
+.contact-select *{
+  
+  box-shadow: none!important;
+  border:none!important;
+  
+}
 .inpt-error{
   border-bottom: 1px solid #E20000!important;
 }

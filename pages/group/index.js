@@ -78,7 +78,7 @@ export default function Group() {
       <section className={groupStyles.info}>
       <ParallaxProvider>
         <ParallaxCache/>
-        <Parallax translateY={[isMobile?0:50, isMobile?0:-50]}>
+        <Parallax translateY={[isMobile?0:20, isMobile?0:-30]}>
         <Container>
           <p className={groupStyles.text}>
             An international platform supporting the pace of innovation and
@@ -286,7 +286,7 @@ export default function Group() {
           <div className={groupStyles.press}>
           <ParallaxProvider>
         <ParallaxCache/>
-        <Parallax translateY={[isMobile?0:30, isMobile?0:-30,'easeOutQuint']}>
+        <Parallax translateY={[isMobile?0:30, isMobile?0:-40,'easeOutQuint']}>
 
             <h2 className="text-center">
                 In the press

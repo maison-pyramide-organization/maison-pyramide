@@ -3,9 +3,10 @@ import Image from "next/image";
 import Link from 'next/link';
 
 import { useState } from "react";
+import Select from 'react-select'
 import { Container, Row, Col } from "react-bootstrap";
-import { ParallaxProvider, Parallax } from "react-scroll-parallax";
-import { BallTriangle } from  'react-loader-spinner'
+import { ParallaxProvider } from "react-scroll-parallax";
+// import { BallTriangle } from  'react-loader-spinner'
 
 import Layout from "../../components/layout/Layout";
 import contactImg from "../../public/imgs/contact.png";
@@ -22,11 +23,28 @@ const ParallaxCache = dynamic(
   );
 
 export default function Contact() {
-    const [inputs, setInputs] = useState({subject:'interested in working together'});
+    const [inputs, setInputs] = useState({subject:'Work With Us'});
     const [errors , setErrors] = useState({});
 
     // const [isLoading ,setIsLoading] = useState(false);
     const [msgSent , setMsgSent] = useState(false);
+
+    const customStyles = {
+        option: (provided, state) => ({
+        //   ...provided,
+        //   borderBottom: '1px dotted pink',
+        //   color: state.isSelected ? 'red' : 'blue',
+          backgroundColor:'#0e0e0e',
+          padding: 10,
+          boxShadow:'none'
+        }),
+    }
+    const selectOptions = [
+        {value:'Work With Us',label:"Work With Us"},
+        {value:'General Enquiry',label:"General Enquiry"},
+        {value:'Press',label:"Press"},
+        {value:'Join The team',label:"Join The team"}
+    ]
 
     const handleChange = (event) => {
         const name = event.target.name;
@@ -81,7 +99,7 @@ export default function Contact() {
         // setIsLoading(true);
         ContactService.addContact(inputs).then(res =>{
             setMsgSent(true);
-            setInputs({subject:'interested in working together'});
+            setInputs({subject:'Work With Us'});
         }).catch((err) => {
             // err.json()
             console.log('eh el error',err);
@@ -97,7 +115,7 @@ export default function Contact() {
                     <div className={contactStyles.contact_info}>
 
                 <Row>
-                    <Col md={3}>
+                    {/* <Col md={3}>
                         <p>
                         <span>CONTACT@MAISONPYRAMIDE.COM</span>
                         <br/>
@@ -115,9 +133,28 @@ export default function Contact() {
                             </a>
                         </span>
                         </p>
-                    </Col>
-                    <Col md={9}>
+                    </Col> */}
+                    <Col md={12}>
                     <ul>
+                        <li>
+                        <p>
+                        <p>CONTACT@MAISONPYRAMIDE.COM</p>
+                        {/* <br/> */}
+                        <span className={contactStyles.link}>
+                            <a href="https://eshowroom.maisonpyramide.com">
+
+                            E SHOWROOM
+                            </a>
+                        </span>
+                        <br/>
+                        <span className={contactStyles.link}>
+                            <a href="https://www.instagram.com/maisonpyramide/">
+
+                            INSTAGRAM
+                            </a>
+                        </span>
+                        </p>
+                        </li>
                         <li>
                         <p>CAIRO</p>
                         <span>+20 106 0091742</span>
@@ -162,17 +199,41 @@ export default function Contact() {
                                 <Col md={6}>
                                 <div>
                                     <label className="disktop_only">Subject</label>
-                                    <select name="subject" onChange={handleChange}>
-                                        <option defaultValue value={"interested in working together"}>
-                                        Interested in working together
+                                    <Select 
+                                        options={selectOptions}
+                                        className="contact-select"
+                                        styles={customStyles}
+                                        defaultValue={selectOptions[0]}
+                                        theme={(theme) => ({
+                                            ...theme,
+                                            borderRadius: 0,
+                                            colors: {
+                                            ...theme.colors,
+                                            // border:'none',
+                                            neutral0:'#0e0e0e',
+                                            neutral20:'#F4F3EF',
+                                            neutral80:'#F4F3EF',
+                                            primary25: '#0e0e0e',
+                                            primary50: '#F4F3EF',
+                                            primary: '#F4F3EF',
+                                            },
+                                        })}   
+                                    />
+
+                                    {/* <select name="subject" onChange={handleChange}>
+                                        <option defaultValue value={"Work With Us"}>
+                                        Work With Us
                                         </option>
-                                        <option value={"general inquiry"}>
-                                            General Inquiry
+                                        <option value={"General Enquiry"}>
+                                        General Enquiry
                                         </option>
                                         <option value={"press"}>
                                             Press
                                         </option>
-                                    </select>
+                                        <option value={"Join The team"}>
+                                            Join The team
+                                        </option>
+                                    </select> */}
                                 </div>
                                 <div>
                                     <label className="disktop_only">Full Name</label>

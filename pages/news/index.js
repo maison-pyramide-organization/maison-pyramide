@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useRouter } from 'next/router';
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 import { Container, Row, Col } from "react-bootstrap";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
@@ -32,13 +32,10 @@ const monthNames = ["January", "February", "March", "April", "May", "June",
 ];
 
 function Items({ currentItems ,selectedTab }) {
-  const router = useRouter();
 
   const handlePost = (link) =>{
     // router.push(link);
     window.open(link, '_blank');
-
-
   }
 
   const formatDate = (value) => {
@@ -85,6 +82,8 @@ function PaginatedItems({ itemsPerPage ,selectedTab}) {
   // We start with an empty list of items.
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
+  const [forceBegin, setForceBeging] = useState(false);
+  const pageinationRef = useRef(null);
   // Here we use item offsets; we could also use page offsets
   // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
@@ -105,7 +104,11 @@ function PaginatedItems({ itemsPerPage ,selectedTab}) {
       setArticles(items.filter(item => item.attributes.tag == selectedTab));
     }
     else{
-      setArticles(items)
+      setArticles(items);
+    }
+    
+    if(items.length > 0){
+      handlePageClick({selected:0});
     }
   },[selectedTab,items]);
   
@@ -120,6 +123,9 @@ function PaginatedItems({ itemsPerPage ,selectedTab}) {
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % items.length;
     setItemOffset(newOffset);
+    setForceBeging(true);
+    // console.log(pageinationRef.current.state);
+    pageinationRef.current.state.selected = 0;
     window.scrollTo(800,800)
   };
 
@@ -127,12 +133,13 @@ function PaginatedItems({ itemsPerPage ,selectedTab}) {
     <>
       <Items currentItems={currentItems}  selectedTab={selectedTab}/>
       <ReactPaginate
+        ref={pageinationRef}
         breakLabel="..."
         nextLabel="NEXT"
         activeClassName="activePaginate"
         onPageChange={handlePageClick}
         pageRangeDisplayed={3}
-        ClassName="paginateStyle"
+        ClassName={`${"paginateStyle"}`}
         pageCount={pageCount}
         previousLabel="PREV"
         renderOnZeroPageCount={null}

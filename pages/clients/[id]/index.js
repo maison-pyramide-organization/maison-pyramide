@@ -163,7 +163,7 @@ export default function Project() {
                     <Row style={{justifyContent:'space-around'}}>
                         <Col md={5} className="mb-4">
                         <ParallaxProvider>
-                        <Parallax translateY={[isMobile?0:10, isMobile?0:-10]}>
+                        <Parallax translateY={[isMobile?0:20, isMobile?0:-20]}>
                             <ParallaxCache/> 
                             {
                                 data.challenge_images && (
@@ -192,7 +192,7 @@ export default function Project() {
         </section>
         <ParallaxProvider>
             <ParallaxCache/>
-            <Parallax translateY={[isMobile?0:10, isMobile?0:-10,'easeOutQuint']}>
+            <Parallax translateY={[isMobile?0:10, isMobile?0:-20,'easeOutQuint']}>
         <section className={projectStyles.challenge}>
             <Container>
             <h2>
@@ -206,7 +206,7 @@ export default function Project() {
             </Container>
             <Container fluid>
             <ParallaxProvider>
-                        <Parallax translateY={[0, isMobile?0:-20]}>
+                        <Parallax translateY={[0, isMobile?0:-20,'easeOutQuint']}>
                             <ParallaxCache/>
                 <div className={projectStyles.solution}>
                     <div className="disktop_only">
@@ -259,7 +259,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, sed ornare sed to
         
         <ParallaxProvider>
             <ParallaxCache/>
-            <Parallax translateY={[isMobile?0:-10, isMobile?0:-70,'easeOutQuint']}>
+            <Parallax translateY={[isMobile?0:-10, isMobile?0:-60,'easeOutQuint']}>
 
         <section className={projectStyles.project_slider}>
             {data?.slider_images && data?.slider_images.length && (
@@ -271,7 +271,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, sed ornare sed to
 
         <ParallaxProvider>
             <ParallaxCache/>
-            <Parallax translateY={[0, isMobile?0:-40,'easeOutQuint']}>
+            <Parallax translateY={[0, isMobile?0:-45,'easeOutQuint']}>
         <section className={projectStyles.project_results}>
             <Container>
                 <Row>
