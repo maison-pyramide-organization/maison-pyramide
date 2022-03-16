@@ -70,10 +70,6 @@ function Home() {
 
   return (
     <Layout>
-      <ParallaxProvider>
-
-        <ParallaxCache/>  
-      </ParallaxProvider>
     <IsMobileComponent handleMobile={useHandleMobile}/>
     <section className={homeStyles.main}>
       {isMobile != null && (
@@ -82,20 +78,6 @@ function Home() {
         <source src={isMobile?"/imgs/mobilevideo.mp4":"/imgs/videobg.mp4"}  type="video/mp4"/>
       </video>
       )}
-      {/* {isMobile? (
-        <video autoPlay muted loop id="myVideo" style={{width:'100%' , height:'100%'}}>
-          <source src={"/imgs/mobilevideo.mp4"}  type="video/mp4"/>
-        </video>
-
-      )
-      :(
-        <video autoPlay muted loop id="myVideo" style={{width:'100%' , height:'100%'}}>
-{          console.log('fe eh',isMobile)
-}          <source src={"/imgs/videobg.mp4"}  type="video/mp4"/>
-        </video>
-      )} */}
-      {/* <h1 className="text-center" style={{color:variables.primaryColorLight}}>GLOBAL GROWTH FOR <br className="disktop_only"/>
-          TREND-SETTING BRANDS</h1> */}
     </section>
 
     <ParallaxProvider>
