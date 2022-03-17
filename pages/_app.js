@@ -63,6 +63,7 @@ function MyApp({ Component, pageProps }) {
     <>
     <Head>
       <link rel="shortcut icon" href="/icon.svg" />
+      <link rel="apple-touch-icon" href="/icon.svg" />
     </Head>
       { router.pathname != '/404'?
         (

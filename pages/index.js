@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import dynamic from "next/dynamic";
-import Image from 'next/image'
+import Image from 'next/image';
+import Head from "next/head";
+
 
 import { useEffect, useState } from 'react';
 
@@ -70,6 +72,10 @@ function Home() {
 
   return (
     <Layout>
+      <Head>
+        <link rel="shortcut icon" href="/icon.svg" />
+        <link rel="apple-touch-icon" href="/icon.svg" />
+      </Head>
     <IsMobileComponent handleMobile={useHandleMobile}/>
     <section className={homeStyles.main}>
       {isMobile != null && (
