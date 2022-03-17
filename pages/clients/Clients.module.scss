@@ -22,7 +22,7 @@
 
 .feat_projects{
     color:$primary-color-light;
-    margin-bottom: calc($y-padding + 64px);
+    margin-bottom: calc($y-padding);
     
     h2{
         margin-bottom: 56px;
@@ -78,8 +78,9 @@
 .selected_clients{
     color:$primary-color-light;
     // min-height:70vh;
-    margin-top: 32px;
+    margin-top: 0px;
     padding:80px 32px;
+    padding-top: 0;
     h2{
         margin-bottom:54px;
         font-size: 48px;

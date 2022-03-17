@@ -32,6 +32,7 @@ section.services {
       display: flex;
       padding: 16px;
       justify-content: space-between;
+      // cursor: pointer;
       div {
         background-color: transparent;
         align-self: flex-end;
@@ -54,6 +55,7 @@ section.services {
         right:24px;
         margin-bottom: 24px;
         .arrow {
+          cursor: pointer;
           width: 40px;
           height: 40px;
           border-radius: 50%;
@@ -68,6 +70,7 @@ section.services {
             display: inline-block;
             transform: rotate(-45deg);
             padding: 4px;
+            cursor: pointer;
             // width: 2px;
             // height: 2px;
           }

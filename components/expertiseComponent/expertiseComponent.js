@@ -20,10 +20,10 @@ import expertStyles from './Expertise.module.scss';
 import expImgMobile from '../../public/imgs/mobile/expertbgM.png';
 import expimgt from '../../public/imgs/expbg.png';
 import expimg from '../../public/imgs/exp11.jpg';
-import expimg2 from '../../public/imgs/exp22.png';
-import expimg3 from '../../public/imgs/lara.jpg';
-import expimg4 from '../../public/imgs/exp44.png';
-import expimg5 from '../../public/imgs/exp5.jpg';
+import expimg2 from '../../public/imgs/exp22.jpg';
+import expimg3 from '../../public/imgs/exp33.jpg';
+import expimg4 from '../../public/imgs/exp44.jpg';
+import expimg5 from '../../public/imgs/exp55.jpg';
 
 import expmobileimg1 from '../../public/imgs/mobile-01.jpg';
 import expmobileimg2 from '../../public/imgs/mobile-02.jpg';

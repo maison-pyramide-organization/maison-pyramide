@@ -142,14 +142,14 @@ export default function Contact() {
                         <p>CONTACT@MAISONPYRAMIDE.COM</p>
                         {/* <br/> */}
                         <span className={contactStyles.link}>
-                            <a href="https://eshowroom.maisonpyramide.com">
+                            <a target={"_blank"} href="https://eshowroom.maisonpyramide.com">
 
                             E SHOWROOM
                             </a>
                         </span>
                         <br/>
                         <span className={contactStyles.link}>
-                            <a href="https://www.instagram.com/maisonpyramide/">
+                            <a target={"_blank"} href="https://www.instagram.com/maisonpyramide/">
 
                             INSTAGRAM
                             </a>
@@ -192,7 +192,7 @@ export default function Contact() {
                                
                             <Container fluid className={contactStyles.form_container}>
                             {
-                                !msgSent && (
+                                msgSent && (
                                     <h2 className={contactStyles.success_msg}>Your message has been sent to us successfully, Thank you!</h2>
                                 )
                             }

@@ -104,7 +104,7 @@ export default function Join() {
                             pellentesque.
                           </li>
                         </ul>
-                        <a href="mailto: hr@maisonpyramide.com">
+                        <a href="mailto: hr@maisonpyramide.com?subject=Test position">
                         <button>APPLY FOR THIS ROLE</button>
                         </a>
                       </div>
@@ -159,7 +159,7 @@ export default function Join() {
                             pellentesque.
                           </li>
                         </ul>
-                        <a href="mailto: hr@maisonpyramide.com">
+                        <a href="mailto: hr@maisonpyramide.com?subject=Test position">
                         <button>APPLY FOR THIS ROLE</button>
                         </a>
                       </div>
@@ -215,7 +215,7 @@ export default function Join() {
                             pellentesque.
                           </li>
                         </ul>
-                        <a href="mailto: hr@maisonpyramide.com">
+                        <a href="mailto: hr@maisonpyramide.com?subject=Test position">
                         <button>APPLY FOR THIS ROLE</button>
                         </a>
                       </div>

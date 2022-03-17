@@ -74,7 +74,7 @@ function Home() {
     <section className={homeStyles.main}>
       {isMobile != null && (
 
-      <video autoPlay playsInline muted loop id="myVideo" style={{width:'100%' , height:'100%'}}>
+      <video autoPlay playsInline muted loop id="myVideo" style={{width:'100%' , height:'100vh',objectFit:'cover'}}>
         <source src={isMobile?"/imgs/mobilevideo.mp4":"/imgs/videobg.mp4"}  type="video/mp4"/>
       </video>
       )}
@@ -184,7 +184,7 @@ function Home() {
 
 
         <ParallaxProvider>
-        <Parallax translateY={[isMobile?0:-30,isMobile?0: 30,'easeInQuint']}>
+        <Parallax translateY={[isMobile?0:0,isMobile?0: -40,'easeOutQuint']}>
         {/* <Parallax translateY={[10, -90,'easeOutQuint']}> */}
         <ParallaxCache/> 
         <ClientComponent/>

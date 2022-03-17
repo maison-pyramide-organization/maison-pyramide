@@ -131,7 +131,7 @@ export default function Expertise() {
               (ind % 2 == 0) ? (
               <Row key={ind} onClick={() => handleClick(exp.attributes.feature)}>
               <Col md={5}>
-              <Parallax translateY={[isMobile?0:10,isMobile?0: -10]} >
+              <Parallax translateY={[isMobile?0:10,isMobile?0: -1]} >
               <ParallaxCache />
                 <div className={expertiseStyles.exp_img}>
                   <h3 className="mobile">{exp.attributes.title}</h3>
@@ -212,9 +212,7 @@ export default function Expertise() {
                     )}
                   </p>
                 </div>
-
               </Parallax>
-
               </Col>
             </Row>
               ):
@@ -268,7 +266,7 @@ export default function Expertise() {
               </Col>
   
               <Col md={5}>
-              <Parallax translateY={[isMobile?0:10,isMobile?0: -10]} >
+              <Parallax translateY={[isMobile?0:10,isMobile?0: -1]} >
               <ParallaxCache />
                 <div className={expertiseStyles.exp_img}>
                   <h3 className="mobile">{exp.attributes?.title}</h3>

@@ -262,7 +262,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, sed ornare sed to
 
         <ParallaxProvider>
             <ParallaxCache/>
-            <Parallax translateY={[isMobile?0:20, isMobile?0:-20,'easeOutQuint']}>
+            <Parallax translateY={[isMobile?0:20, isMobile?0:-35,'easeOutQuint']}>
         <section className={projectStyles.project_results}>
             <Container>
                 <Row>
