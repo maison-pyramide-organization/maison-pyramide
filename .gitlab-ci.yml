@@ -16,7 +16,7 @@ build:
 
   script:
     - node -v
-    - npm run build
+    - npm run buildCi
 
   artifacts:
     paths:
