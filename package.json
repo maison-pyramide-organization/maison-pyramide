@@ -6,8 +6,7 @@
     "build": "next build",
     "buildCi": "CI=false && next build",
     "start": "next start -p 9172",
-    "lint": "next lint",
-    "basePath": "http://preview.bit68.com/maisonPyramide/"
+    "lint": "next lint"
   },
   "dependencies": {
     "bootstrap": "^5.1.3",
