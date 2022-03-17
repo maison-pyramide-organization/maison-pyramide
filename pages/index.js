@@ -73,8 +73,9 @@ function Home() {
   return (
     <Layout>
       <Head>
-        <link rel="shortcut icon" href="/icon.svg" />
-        <link rel="apple-touch-icon" href="/icon.svg" />
+        <link rel="icon" href="/icon.ico" />
+        <link rel="manifest" href="/manifest.json" />
+        {/* <link rel="apple-touch-icon" href="/imgs/icon.svg" /> */}
       </Head>
     <IsMobileComponent handleMobile={useHandleMobile}/>
     <section className={homeStyles.main}>
