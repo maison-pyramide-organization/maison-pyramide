@@ -142,14 +142,14 @@ export default function Contact() {
                         <p>CONTACT@MAISONPYRAMIDE.COM</p>
                         {/* <br/> */}
                         <span className={contactStyles.link}>
-                            <a target={"_blank"} href="https://eshowroom.maisonpyramide.com">
+                            <a target={"_blank"} rel="noreferrer" href="https://eshowroom.maisonpyramide.com">
 
                             E SHOWROOM
                             </a>
                         </span>
                         <br/>
                         <span className={contactStyles.link}>
-                            <a target={"_blank"} href="https://www.instagram.com/maisonpyramide/">
+                            <a target={"_blank"} rel="noreferrer" href="https://www.instagram.com/maisonpyramide/">
 
                             INSTAGRAM
                             </a>
@@ -215,6 +215,7 @@ export default function Contact() {
                                             ...theme.colors,
                                             // border:'none',
                                             neutral0:'#0e0e0e',
+                                            dangerLight:"red",
                                             neutral20:'#F4F3EF',
                                             neutral80:'#F4F3EF',
                                             primary25: '#0e0e0e',

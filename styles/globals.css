@@ -416,6 +416,14 @@ ul li:hover {
 .css-9owoa0-indicatorSeparator{
   display: none;
 }
+#react-select-2-listbox div:first-child div{
+  border-bottom: 1px solid rgba(255,255,255,.6)!important;
+  /* background-color: red; */
+}
+#react-select-2-listbox div:first-child div:hover{
+  background-color: #CEE0A6;
+  color: #0e0e0e;
+}
 .contact-select *{
   
   box-shadow: none!important;

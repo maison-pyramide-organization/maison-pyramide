@@ -1,0 +1,24 @@
+{
+    "short_name": "Maison Pyramide",
+    "name": "Maison Pyramide",
+    "description":"Maison Pyramide",
+    "icons": [
+      {
+        "src": "icon.svg",
+        "sizes": "64x64 32x32 24x24 16x16 512x512",
+        "type": "image/x-icon"
+      },
+      {
+        "src": "icon.svg",
+        "sizes": "144x144",
+        "type": "image/svg",
+        "purpose": "any"
+    }
+    ],
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff"
+  }
+  

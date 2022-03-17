@@ -142,10 +142,10 @@ export default function NavComponent() {
                 contact@maisonpyramide.com
               </p>
             </Link>
-            <Link href="https://eshowroom.maisonpyramide.com" target={"_blank"}>
+            <Link href="https://eshowroom.maisonpyramide.com" rel="noreferrer" target={"_blank"}>
                 <a onClick={()=>handleLinkClick(7)} className={`nav-link ${navStyle.link} ${navStyle.arrow} ${activeLink == 7 && navStyle.active}`}>E SHOWROOM</a>
             </Link>
-            <Link href="https://www.instagram.com/maisonpyramide/" target={"_blank"}>
+            <Link href="https://www.instagram.com/maisonpyramide/" rel="noreferrer" target={"_blank"}>
                 <a onClick={()=>handleLinkClick(8)} className={`nav-link ${navStyle.link} ${navStyle.arrow} ${activeLink == 8 && navStyle.active}`}>INSTAGRAM</a>
             </Link>
           </Nav>

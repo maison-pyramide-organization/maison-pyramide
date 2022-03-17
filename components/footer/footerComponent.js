@@ -190,13 +190,13 @@ export default function FooterComponent() {
             
 
             <div className={footerStyle.bottom}>
-            <p className='mobile'><a href="https://www.instagram.com/maisonpyramide/" target={"_blank"}>INSTAGRAM</a> | <a href="https://www.linkedin.com/company/maison-pyramide" target={"_blank"}>LINKEDIN</a> | <a target={"_blank"} href="https://eshowroom.maisonpyramide.com/">E-SHOWROOM</a></p>
+            <p className='mobile'><a href="https://www.instagram.com/maisonpyramide/" target={"_blank"} rel="noreferrer">INSTAGRAM</a> | <a rel="noreferrer" href="https://www.linkedin.com/company/maison-pyramide" target={"_blank"}>LINKEDIN</a> | <a rel="noreferrer" target={"_blank"} href="https://eshowroom.maisonpyramide.com/">E-SHOWROOM</a></p>
 
             <Link href="/privacy">
               <p className={footerStyle.link}>TERMS AND CONDITIONS. PRIVACY POLICY</p>
             </Link>
 
-              <p className='disktop_only'><a href="https://www.instagram.com/maisonpyramide/" target={"_blank"}>INSTAGRAM</a> | <a href="https://www.linkedin.com/company/maison-pyramide" target={"_blank"}>LINKEDIN</a> | <a target={"_blank"} href="https://eshowroom.maisonpyramide.com/">E-SHOWROOM</a></p>
+              <p className='disktop_only'><a href="https://www.instagram.com/maisonpyramide/" rel="noreferrer" target={"_blank"}>INSTAGRAM</a> | <a href="https://www.linkedin.com/company/maison-pyramide" rel="noreferrer" target={"_blank"}>LINKEDIN</a> | <a target={"_blank"} rel="noreferrer" href="https://eshowroom.maisonpyramide.com/">E-SHOWROOM</a></p>
 
               <p>2021 ALL RIGHTS RESERVED</p>
             </div>
