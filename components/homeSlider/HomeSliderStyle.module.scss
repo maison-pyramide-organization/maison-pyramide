@@ -38,7 +38,7 @@
         ul{
             margin-bottom: 0;
             li{
-                font-weight: 400;
+                font-weight: 700!important;
                 font-size: 16px;
                 font-family: "Suisse Int'l bold";
             }
@@ -48,13 +48,14 @@
             font-weight: 300!important;
             margin: 8px 0;
             font-size: 27px;
-            line-height: 45px;
+            line-height: 36px;
         }
         p{
             color:#131313;
             font-weight: 400;
             width: 318px;
-            margin:24px 0;
+            margin:10px 0;
+            // margin-top:10px;
             font-size: 18px;
             line-height: 25px;
             
