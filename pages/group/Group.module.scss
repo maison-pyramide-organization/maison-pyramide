@@ -44,7 +44,8 @@
     }
 
     .office{
-        padding:$y-padding 0px;
+        // padding:$y-padding 0px;
+        padding:0px;
         .office_network{
             display: flex;
             flex-wrap: wrap;
@@ -70,8 +71,9 @@
         }
     }
     .leader{
-        padding:$y-padding 32px;
-        padding-bottom: 0;
+        // padding:$y-padding 32px;
+        padding:0 32px;
+        // padding-bottom: 0;
         h2{
             font-size: 48px;
             line-height: 52.8px;

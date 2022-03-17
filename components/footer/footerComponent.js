@@ -193,7 +193,7 @@ export default function FooterComponent() {
             <p className='mobile'><a href="https://www.instagram.com/maisonpyramide/">INSTAGRAM</a> | <a href="https://www.linkedin.com/company/maison-pyramide">LINKEDIN</a> | <a href="https://eshowroom.maisonpyramide.com/">E-SHOWROOM</a></p>
 
             <Link href="/privacy">
-              <p>TERMS AND CONDITIONS. PRIVACY POLICY</p>
+              <p className={footerStyle.link}>TERMS AND CONDITIONS. PRIVACY POLICY</p>
             </Link>
 
               <p className='disktop_only'><a href="https://www.instagram.com/maisonpyramide/">INSTAGRAM</a> | <a href="https://www.linkedin.com/company/maison-pyramide">LINKEDIN</a> | <a href="https://eshowroom.maisonpyramide.com/">E-SHOWROOM</a></p>

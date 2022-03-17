@@ -12,12 +12,16 @@
     }
     .brand{
         // line-height: 15px;
+        cursor: pointer;
         a{
             color:$primary-color-light;
             font-size:22px;
             cursor: pointer;
             line-height: 22px;
             font-family: "Suisse Int'l bold";
+            img{
+                cursor: pointer;
+            }
         }
         a:hover{
             color:#CEE0A6;
