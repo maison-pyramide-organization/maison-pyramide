@@ -189,12 +189,13 @@ export default function Contact() {
 
                         <form className={contactStyles.msg_form} onSubmit={handleSubmit}>
                             <div className="w-100">
-                                {
-                                    msgSent && (
-                                        <h2 className="text-center">Your message has been sent to us successfully, Thank you!</h2>
-                                    )
-                                }
+                               
                             <Container fluid className={contactStyles.form_container}>
+                            {
+                                !msgSent && (
+                                    <h2 className={contactStyles.success_msg}>Your message has been sent to us successfully, Thank you!</h2>
+                                )
+                            }
                             <h2>Send us a message</h2>
                             <Row>
                                 <Col md={6}>

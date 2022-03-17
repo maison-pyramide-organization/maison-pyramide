@@ -336,6 +336,9 @@
         line-height: 22px;
         cursor: pointer;
       }
+      h2:hover{
+        color:$active-color;
+    }
       span{
         font-size: 14px;
         display: block;
@@ -371,6 +374,9 @@
       line-height: 22px;
       cursor: pointer;
     }
+    h2:hover{
+      color:$active-color;
+  }
     p {
       opacity: 0.8;
       font-size: 15px;

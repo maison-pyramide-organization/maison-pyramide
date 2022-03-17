@@ -28,7 +28,7 @@
                 font-family: "GT Super Display";
                 margin: 0 auto;
                 margin-top: 48px;
-                margin-bottom: 64px;
+                margin-bottom: 24px;
                 min-height:250px ;
                 line-height: 46.8px;
                 font-weight: 400;
@@ -40,6 +40,7 @@
             }
             .tabs{
                 margin:24px auto;
+                margin-top: 80px;
                 ul{
                     list-style: none;
                     // width: 700px;
@@ -63,6 +64,9 @@
                         padding-left:16px;
                     }
                 }
+            }
+            .btns{
+                margin-top: 60px;
             }
           
         }
@@ -220,6 +224,7 @@
                 }
               
             }
+           
           
         }
     }
