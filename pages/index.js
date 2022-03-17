@@ -73,7 +73,7 @@ function Home() {
   return (
     <Layout>
       <Head>
-        <link rel="icon" href="/icon.ico" />
+        <link rel="icon" href="/favicon.ico" />
         <link rel="manifest" href="/manifest.json" />
         {/* <link rel="apple-touch-icon" href="/imgs/icon.svg" /> */}
       </Head>
