@@ -227,11 +227,20 @@ function Services() {
                             <p>{selectedImg?.tag1}</p>
                             <p>{selectedImg?.tag2}</p>
                           </div>
-                            <div className={servicesStyles.arrow_conatiner}>
+                          {selectedImg.id > 10 && (
+                          <div className={servicesStyles.arrow_conatiner}>
+                            <Link href={`/clients/${selectedImg.id}`}>
                               <span className={servicesStyles.arrow}>
                                 <div></div>
                               </span>
-                            </div>
+                            </Link>
+                          </div>
+                          )}
+                            {/* <div className={servicesStyles.arrow_conatiner}>
+                              <span className={servicesStyles.arrow}>
+                                <div></div>
+                              </span>
+                            </div> */}
                           </div>
                         </div>
                         <ul>
@@ -279,11 +288,15 @@ function Services() {
                             <p>{selectedImg?.tag1}</p>
                             <p>{selectedImg?.tag2}</p>
                           </div>
-                            <div className={servicesStyles.arrow_conatiner}>
+                          {selectedImg.id > 10 && (
+                          <div className={servicesStyles.arrow_conatiner}>
+                            <Link href={`/clients/${selectedImg.id}`}>
                               <span className={servicesStyles.arrow}>
                                 <div></div>
                               </span>
-                            </div>
+                            </Link>
+                          </div>
+                          )}
                           </div>
                         </div>
                         <ul>
@@ -358,11 +371,15 @@ function Services() {
                             <p>{selectedImg?.tag1}</p>
                             <p>{selectedImg?.tag2}</p>
                           </div>
-                            <div className={servicesStyles.arrow_conatiner}>
+                          {selectedImg.id > 10 && (
+                          <div className={servicesStyles.arrow_conatiner}>
+                            <Link href={`/clients/${selectedImg.id}`}>
                               <span className={servicesStyles.arrow}>
                                 <div></div>
                               </span>
-                            </div>
+                            </Link>
+                          </div>
+                          )}
                           </div>
                         </div>
                         <ul>
@@ -409,11 +426,15 @@ function Services() {
                             <p>{selectedImg?.tag1}</p>
                             <p>{selectedImg?.tag2}</p>
                           </div>
-                            <div className={servicesStyles.arrow_conatiner}>
+                          {selectedImg.id > 10 && (
+                          <div className={servicesStyles.arrow_conatiner}>
+                            <Link href={`/clients/${selectedImg.id}`}>
                               <span className={servicesStyles.arrow}>
                                 <div></div>
                               </span>
-                            </div>
+                            </Link>
+                          </div>
+                          )}
                           </div>
                         </div>
                         <ul>
@@ -459,11 +480,15 @@ function Services() {
                             <p>{selectedImg?.tag1}</p>
                             <p>{selectedImg?.tag2}</p>
                           </div>
-                            <div className={servicesStyles.arrow_conatiner}>
+                          {selectedImg.id > 10 && (
+                          <div className={servicesStyles.arrow_conatiner}>
+                            <Link href={`/clients/${selectedImg.id}`}>
                               <span className={servicesStyles.arrow}>
                                 <div></div>
                               </span>
-                            </div>
+                            </Link>
+                          </div>
+                          )}
                           </div>
                         </div>
                         <ul>
@@ -510,11 +535,15 @@ function Services() {
                             <p>{selectedImg?.tag1}</p>
                             <p>{selectedImg?.tag2}</p>
                           </div>
-                            <div className={servicesStyles.arrow_conatiner}>
+                          {selectedImg.id > 10 && (
+                          <div className={servicesStyles.arrow_conatiner}>
+                            <Link href={`/clients/${selectedImg.id}`}>
                               <span className={servicesStyles.arrow}>
                                 <div></div>
                               </span>
-                            </div>
+                            </Link>
+                          </div>
+                          )}
                           </div>
                         </div>
                         <ul>

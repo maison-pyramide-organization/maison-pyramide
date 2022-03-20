@@ -78,7 +78,7 @@ export default function Group() {
       <section className={groupStyles.info}>
       <ParallaxProvider>
         <ParallaxCache/>
-        <Parallax translateY={[isMobile?0:20, isMobile?0:-30]}>
+        <Parallax translateY={[isMobile?10:20, isMobile?-10:-30]}>
         <Container>
           <p className={groupStyles.text}>
             An international platform supporting the pace of innovation and
@@ -112,7 +112,7 @@ export default function Group() {
         <Container fluid>
         <ParallaxProvider>
         <ParallaxCache/>
-        <Parallax translateY={[isMobile?0:30, isMobile?0:-30,'easeOutQuint']}>
+        <Parallax translateY={[isMobile?10:30, isMobile?-10:-30,'easeOutQuint']}>
           <div className={groupStyles.office}>
             <Row>
             <Col md={12} className={`${groupStyles.office_network_img} mobile`}>
@@ -152,7 +152,7 @@ export default function Group() {
 
         <ParallaxProvider>
         <ParallaxCache/>
-        <Parallax translateY={[isMobile?0:30, isMobile?0:-30,'easeOutQuint']}>
+        <Parallax translateY={[isMobile?10:30, isMobile?-10:-30,'easeOutQuint']}>
           <div className={groupStyles.leader}>
             <h2 className="text-center pb-3">Leadership Team</h2>
             <p className="text-center">
@@ -278,7 +278,7 @@ export default function Group() {
 
         <ParallaxProvider>
         <ParallaxCache/>
-        <Parallax translateY={[isMobile?0:10, isMobile?0:-30,'easeOutQuint']}>
+        <Parallax translateY={[isMobile?-10:10, isMobile?-10:-30,'easeOutQuint']}>
           <GroupSlider/>
 
           </Parallax>
@@ -287,7 +287,7 @@ export default function Group() {
           <div className={groupStyles.press}>
           <ParallaxProvider>
         <ParallaxCache/>
-        <Parallax translateY={[isMobile?0:20, isMobile?0:-50,'easeOutQuint']}>
+        <Parallax translateY={[isMobile?10:20, isMobile?-10:-50,'easeOutQuint']}>
 
             <h2 className="text-center">
                 In the press

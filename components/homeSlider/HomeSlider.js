@@ -109,14 +109,7 @@ export default function HomeCarousel() {
 
     return (
         _items && _items.length && (
-            <Container fluid className={sliderStyle.featured}>  
-            {_items.map(item => {
-                return(
-                    <>
-                        <link rel="preload" as="image" href={item?.attributes.image?.custom_data?.url}></link>
-                    </>
-                )
-            })}              
+            <Container fluid className={sliderStyle.featured}>            
                 <TransitionGroup>
                     {(!slideAnimationState && !backSlideAnimationState) && (
                         <CSSTransition key={2} timeout={1000} classNames={"item"}>
@@ -171,8 +164,15 @@ export default function HomeCarousel() {
 
                         </Col>
                         <Col md={5}>
+                        {_items.map(item => {
+                            return(
+                                <>
+                                    <link rel="preload" as="image" href={item?.attributes.image?.custom_data?.url}></link>
+                                </>
+                            )
+                        })}    
                             <div className={`${sliderStyle.current_img} ${(showMiddleAnimation && typeSlide == 'next') ? sliderStyle.currentToBack : (showMiddleAnimation && typeSlide == 'prev') ? sliderStyle.currentToNext : ''}`}>
-                                <Image layout="responsive" objectFit="cover" src={_items[activeIdx]?.attributes?.image?.custom_data?.url} width={100} height={125} alt="girl"></Image>
+                                <Image layout="responsive" unoptimized={true} loading="eager" objectFit="cover" src={_items[activeIdx]?.attributes?.image?.custom_data?.url} width={100} height={125} alt="girl"></Image>
                             </div>
 
                         </Col>
@@ -186,10 +186,10 @@ export default function HomeCarousel() {
                                     <div className={`${sliderStyle.next_img} ${(showMiddleAnimation && typeSlide == 'next') ? sliderStyle.nextToCurrent : (showMiddleAnimation && typeSlide == 'prev') ? sliderStyle.nextToDisappear : ''}`} >
                                         {_items[activeIdx + 1] && _items[activeIdx + 1].attributes?.image?.custom_data?.url ? (
                                             // <Image src={_items[activeIdx + 1].img} alt="girl"></Image>
-                                            <Image layout="responsive" objectFit="cover" src={_items[activeIdx + 1]?.attributes?.image?.custom_data?.url} width={100} height={125} alt="girl"></Image>
+                                            <Image layout="responsive" unoptimized={true} loading="eager" objectFit="cover" src={_items[activeIdx + 1]?.attributes?.image?.custom_data?.url} width={100} height={125} alt="girl"></Image>
                                         ) :
                                             (
-                                                <Image layout="responsive" objectFit="cover" src={_items[0]?.attributes?.image?.custom_data?.url} width={100} height={125} alt="girl"></Image>
+                                                <Image layout="responsive" unoptimized={true} loading="eager" objectFit="cover" src={_items[0]?.attributes?.image?.custom_data?.url} width={100} height={125} alt="girl"></Image>
                                             )
                                         }
                                     </div>

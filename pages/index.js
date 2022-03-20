@@ -87,7 +87,7 @@ function Home() {
     </section>
 
     <ParallaxProvider>
-    <Parallax translateY={[isMobile?0:15,isMobile?0: -40]} style={{backgroundColor:'#0e0e0e'}}>
+    <Parallax translateY={[isMobile?10:15,isMobile?-10: -40]} style={{backgroundColor:'#0e0e0e'}}>
     <ParallaxCache/>  
     <section className={homeStyles.info_txt}>
 
@@ -169,7 +169,7 @@ function Home() {
           <>
             <ParallaxProvider>
             <ParallaxCache/>
-            <Parallax className='parallax-smooth' translateY={[isMobile?0:20,isMobile?0: -30,'easeOutQuint']}>
+            <Parallax translateY={[isMobile?10:20,isMobile?-10: -30,isMobile?'easeOutQuint':'easeOutQuint']}>
             <HomeSliderCarousel/>
 
             </Parallax>
@@ -190,7 +190,7 @@ function Home() {
 
 
         <ParallaxProvider>
-        <Parallax translateY={[isMobile?0:-30,isMobile?0: 30,'easeInQuint']}>
+        <Parallax translateY={[isMobile?10:-30,isMobile?-10: 30,isMobile?'easeInQuint':'easeInQuint']}>
         {/* <Parallax translateY={[10, -90,'easeOutQuint']}> */}
         <ParallaxCache/> 
         <ClientComponent/>

@@ -4,12 +4,12 @@
     "description":"Maison Pyramide",
     "icons": [
       {
-        "src": "icon.svg",
+        "src": "favicon.ico",
         "sizes": "64x64 32x32 24x24 16x16 512x512",
         "type": "image/x-icon"
       },
       {
-        "src": "icon.svg",
+        "src": "favicon.ico",
         "sizes": "144x144",
         "type": "image/svg",
         "purpose": "any"

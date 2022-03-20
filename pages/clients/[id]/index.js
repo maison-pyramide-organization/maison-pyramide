@@ -4,17 +4,17 @@ import { useRouter } from "next/router";
 
 import { useState , useEffect} from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { ParallaxProvider ,Parallax, ParallaxBanner, BannerLayer} from "react-scroll-parallax";
+import { ParallaxProvider ,Parallax} from "react-scroll-parallax";
 
 import Layout from "../../../components/layout/Layout";
-import projectBanner from "../../../public/imgs/projectviewimg.png";
-import mobileBanner from "../../../public/imgs/mobile/orangegirlmobile.png";
-import projectimg1 from '../../../public/imgs/projectview1.png';
-import projectimg1mobile from '../../../public/imgs/mobile/twogirlsmobile.png';
-import projectimg2 from '../../../public/imgs/projectview2.png';
-import projectimg3 from '../../../public/imgs/projectview3.png';
-import projectimg4 from '../../../public/imgs/projectview4.png';
-import projectResults from '../../../public/imgs/projectresults.png';
+// import projectBanner from "../../../public/imgs/projectviewimg.png";
+// import mobileBanner from "../../../public/imgs/mobile/orangegirlmobile.png";
+// import projectimg1 from '../../../public/imgs/projectview1.png';
+// import projectimg1mobile from '../../../public/imgs/mobile/twogirlsmobile.png';
+// import projectimg2 from '../../../public/imgs/projectview2.png';
+// import projectimg3 from '../../../public/imgs/projectview3.png';
+// import projectimg4 from '../../../public/imgs/projectview4.png';
+// import projectResults from '../../../public/imgs/projectresults.png';
 
 import projectStyles from "./Project.module.scss";
 import FeatureService from "../../api/services/FeatureService";
@@ -98,7 +98,7 @@ export default function Project() {
         
         <section className={projectStyles.project_info}>
         <ParallaxProvider>
-            <Parallax translateY={[isMobile?0:0, isMobile?0:-20]}>
+            <Parallax translateY={[isMobile?0:0, isMobile?-20:-20]}>
             <ParallaxCache/> 
             {isMobile?(
                 <>
@@ -137,7 +137,7 @@ export default function Project() {
             </Parallax>
         </ParallaxProvider>
         <ParallaxProvider>
-            <Parallax translateY={[isMobile?0:20, isMobile?0:-20,'easeOutQuint']}>
+            <Parallax translateY={[isMobile?20:20, isMobile?-20:-20,'easeOutQuint']}>
                 {/* <Parallax translateY={[10, -90,'easeOutQuint']}> */}
                 <ParallaxCache/> 
                 <div className={projectStyles.project_text}>
@@ -186,7 +186,7 @@ export default function Project() {
         </ParallaxProvider>
             <Container className={projectStyles.images}>
             <ParallaxProvider>
-                        <Parallax translateY={[isMobile?0:20, isMobile?0:-20,'easeOutQuint']}>
+                        <Parallax translateY={[isMobile?20:20, isMobile?-20:-20,'easeOutQuint']}>
                             <ParallaxCache/>
                     <Row style={{justifyContent:'space-around'}}>
                         <Col md={5} className="mb-4">
@@ -211,7 +211,7 @@ export default function Project() {
         </section>
         <ParallaxProvider>
             <ParallaxCache/>
-            <Parallax translateY={[isMobile?0:20, isMobile?0:-20,'easeOutQuint']}>
+            <Parallax translateY={[isMobile?20:20, isMobile?-20:-20,'easeOutQuint']}>
         <section className={projectStyles.challenge}>
             <Container>
             <h2>
@@ -278,7 +278,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, sed ornare sed to
         
         <ParallaxProvider>
             <ParallaxCache/>
-            <Parallax translateY={[isMobile?0:20, isMobile?0:-40,'easeOutQuint']}>
+            <Parallax translateY={[isMobile?20:20, isMobile?-40:-40,'easeOutQuint']}>
 
         <section className={projectStyles.project_slider}>
             {data?.slider_images && data?.slider_images.length && (
@@ -290,7 +290,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, sed ornare sed to
 
         <ParallaxProvider>
             <ParallaxCache/>
-            <Parallax translateY={[isMobile?0:20, isMobile?0:-35,'easeOutQuint']}>
+            <Parallax translateY={[isMobile?20:20, isMobile?-20:-35,'easeOutQuint']}>
         <section className={projectStyles.project_results}>
             <Container>
                 <Row>
