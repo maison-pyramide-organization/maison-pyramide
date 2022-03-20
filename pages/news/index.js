@@ -82,7 +82,7 @@ function PaginatedItems({ itemsPerPage ,selectedTab}) {
   // We start with an empty list of items.
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
-  const [forceBegin, setForceBeging] = useState(false);
+  const [forceBegin, setForceBegin] = useState(false);
   const pageinationRef = useRef(null);
   // Here we use item offsets; we could also use page offsets
   // following the API or data you're working with.
@@ -123,11 +123,17 @@ function PaginatedItems({ itemsPerPage ,selectedTab}) {
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % items.length;
     setItemOffset(newOffset);
-    setForceBeging(true);
+    setForceBegin(true);
     // console.log(pageinationRef.current.state);
     pageinationRef.current.state.selected = 0;
-    window.scrollTo(800,800)
+    if(forceBegin){
+      window.scrollTo(800,800);
+    }
   };
+
+  // useEffect(()=>{
+  //   window.scrollTo(800,800);
+  // },[currentItems])
 
   return (
     <>

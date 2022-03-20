@@ -2,7 +2,7 @@
 
 .client{
     // min-height:90vh;
-    padding:24px 0;
+    padding:64px 0 24px 0;
     color:$primary-color-light;
     background-color: $bg-color-dark;
     // clip-path: polygon(0 0, 100% 0, 100% 96%, 78% 83%, 0 100%);
@@ -40,7 +40,7 @@
             }
             .tabs{
                 margin:24px auto;
-                margin-top: 80px;
+                margin-top: 180px;
                 ul{
                     list-style: none;
                     // width: 700px;

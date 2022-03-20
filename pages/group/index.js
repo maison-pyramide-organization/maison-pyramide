@@ -170,23 +170,22 @@ export default function Group() {
                   <p>Co-Founder & Partner</p>
                   <p className={groupStyles.desc}>
                   15 years in the retail industry, with Vivienne Westwood in Milan and Al Ostoura as head buyer for luxury brands such as Chloe & Alexander McQueen. <br></br>
-                    {isMobile && !isTextExpand[0] ?(
+                    {/* {isMobile && !isTextExpand[0] ?(
                       <p className={`${groupStyles.read_more} pt-3`} onClick={() => toggleExpandText(0)}>
                         READ MORE
 
                       </p>
                     ):
-                    <></>
-                    // <span>
-                    //   Dictum eget ultrices quis nulla sagittis pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet nisi, diam condimentum neque. Dictum eget ultrices quis nulla sagittis pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet nisi, diam condimentum neque. Dictum eget ultrices quis nulla sagittis pretium.
-                    //   <br></br>
-                    //   {isMobile && (
-                    //   <p className={`${groupStyles.read_more} pt-3`} onClick={() => toggleExpandText(0)}>
-                    //     READ LESS
-                    //   </p>
-                    //   )}
-                    // </span>
-                    }
+                    <span>
+                      Dictum eget ultrices quis nulla sagittis pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet nisi, diam condimentum neque. Dictum eget ultrices quis nulla sagittis pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet nisi, diam condimentum neque. Dictum eget ultrices quis nulla sagittis pretium.
+                      <br></br>
+                      {isMobile && (
+                      <p className={`${groupStyles.read_more} pt-3`} onClick={() => toggleExpandText(0)}>
+                        READ LESS
+                      </p>
+                      )}
+                    </span>
+                    } */}
                   </p>
                 </div>
               </Col>

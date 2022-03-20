@@ -87,6 +87,9 @@
                 opacity:.7;
                 cursor: pointer;
             }
+            button:hover .chev_right{
+                border-color: $active-color;
+            }
             input{
                 width:100%;
                 border:none;

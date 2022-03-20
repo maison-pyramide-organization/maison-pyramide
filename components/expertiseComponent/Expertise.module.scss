@@ -4,11 +4,12 @@
     margin-top:-140px;
     margin-bottom:248px ;
     // background-color: $bg-color-dark;
+    max-height: 100vh;
     background:linear-gradient(#F4F3EF 50%,transparent 50%);
      .expBgWrap{
         // height: 100vh;
         // min-height: 740px;
-        min-height: 100vh;
+        // min-height: 100vh;
         width: 100vw;
         position: relative;
         color:$primary-color-light;

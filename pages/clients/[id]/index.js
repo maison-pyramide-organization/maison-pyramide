@@ -87,10 +87,10 @@ export default function Project() {
          <ParallaxProvider>
         <ParallaxCache/>
         <header className={projectStyles.header} style={{backgroundColor:data.background_color?`rgba(${data.background_color.red},${data.background_color.green},${data.background_color.blue},${data.background_color.alpha})`:''}}>
-            <h1>
+            <h1 style={{color:data.font_color?`rgba(${data.font_color.red},${data.font_color.green},${data.font_color.blue},${data.font_color.alpha})`:''}}>
             {data.header_title}
             </h1>
-            <p>
+            <p style={{color:data.font_color?`rgba(${data.font_color.red},${data.font_color.green},${data.font_color.blue},${data.font_color.alpha})`:''}}>
             {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non enim velit massa <br className="disktop_only"/> venenatis. Eget quis quisque nunc tellus consequat egestas non. */}
             {data.header_description}
             </p>
@@ -100,12 +100,40 @@ export default function Project() {
         <ParallaxProvider>
             <Parallax translateY={[isMobile?0:0, isMobile?0:-20]}>
             <ParallaxCache/> 
-            <div className={projectStyles.project_img} style={{backgroundImage:`url(${data?.image?.custom_data?.url})`}}>
-                <div className={projectStyles.breakingImgCont}>
-                    <GlassEffectComponent handleScroll={handleScroll}/>
-                    <div className={`${projectStyles.glass} ${isBreak?projectStyles.glass1:projectStyles.glass2}`} style={{backgroundImage:`url(${data?.image?.custom_data?.url})`}}></div>
-                </div>
-            </div>
+            {isMobile?(
+                <>
+                    {data?.mobile_image?.custom_data?.url ? (//mobile image
+                        <div className={projectStyles.project_img} style={{backgroundImage:`url(${data?.mobile_image?.custom_data?.url})`}}>
+                            <div className={projectStyles.breakingImgCont}>
+                                <GlassEffectComponent handleScroll={handleScroll}/>
+                                <div className={`${projectStyles.glass} ${isBreak?projectStyles.glass1:projectStyles.glass2}`} style={{backgroundImage:`url(${data?.mobile_image?.custom_data?.url})`}}></div>
+                            </div>
+                        </div>
+                    ):
+                    (//mobile video
+                        <video autoPlay playsInline muted loop style={{width:'100%' , height:'100%',objectFit:'cover'}}>
+                            <source src={data?.mobile_video?.custom_data?.url} type="video/mp4"/>
+                        </video>
+                    )}
+                </>
+            ):(//desktop
+                <>
+                  {data?.image?.custom_data?.url ? (//image
+                        <div className={projectStyles.project_img} style={{backgroundImage:`url(${data?.image?.custom_data?.url})`}}>
+                            <div className={projectStyles.breakingImgCont}>
+                                <GlassEffectComponent handleScroll={handleScroll}/>
+                                <div className={`${projectStyles.glass} ${isBreak?projectStyles.glass1:projectStyles.glass2}`} style={{backgroundImage:`url(${data?.image?.custom_data?.url})`}}></div>
+                            </div>
+                        </div>
+                    ):
+                    (//video
+                    <video autoPlay playsInline muted loop style={{width:'100%' , height:'100%',objectFit:'cover'}}>
+                        <source src={data?.video?.custom_data?.url} type="video/mp4"/>
+                    </video>
+                    )}
+                </>
+            )}
+          
             </Parallax>
         </ParallaxProvider>
         <ParallaxProvider>

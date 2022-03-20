@@ -409,12 +409,16 @@ ul li:hover {
 .contact-select{
   border-bottom: 1px solid rgba(255,255,255,.6);
   margin-bottom: 24px;
+  margin-top: 10px;
 }
 .css-319lph-ValueContainer{
   padding:0!important;
 }
 .css-9owoa0-indicatorSeparator{
   display: none;
+}
+#react-select-2-listbox{
+  border:1px solid red;
 }
 #react-select-2-listbox div:first-child div{
   border-bottom: 1px solid rgba(255,255,255,.6)!important;

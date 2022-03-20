@@ -10,9 +10,6 @@ import {
 } from "react-transition-group";
 
 import sliderStyle from './HomeSliderStyle.module.scss';
-import projectImg from '../../public/imgs/projectimg.png';
-import sliderNext from '../../public/imgs/slidernext.png';
-import sliderImg from "../../public/imgs/sliderimg.png";
 import ProjectService from "../../pages/api/services/ProjectService";
 
 
@@ -27,31 +24,6 @@ export default function HomeCarousel() {
     const [typeSlide, setTypeSlide] = React.useState(null);
     const [showMiddleAnimation, setShowMiddleAnimation] = React.useState(false);
     const [textAnimation, setTextAnimation] = React.useState(false);
-    // const [_items , setItems] = React.useState([
-    //     {
-    //         id: 0,
-    //         name: "Project Name",
-    //         tags: ["CONSULTING", "PR & MARKETING", "EVENT / CONCEPT DEVELOPMENT", "SALES & DISTRIBUTUIN"],
-    //         desc: "Lorem ipsum dolor sit amet, consect adipiscing elit. Aliquam ut eget curabitur nam lobortis egestas massa. Ultrices at feugiat elementum nulla eleifend ac. Lorem ipsum dolor sit amet, consect adipiscing elit.",
-    //         img: projectImg
-    //     },
-    //     {
-    //         id: 1,
-    //         name: "Project Name 2",
-    //         tags: ["CONSULTING", "PR & MARKETING", "EVENT / CONCEPT DEVELOPMENT", "SALES & DISTRIBUTUIN"],
-    //         desc: "Lorem ipsum dolor sit amet, consect adipiscing elit. Aliquam ut eget curabitur nam lobortis egestas massa. Ultrices at feugiat elementum nulla eleifend ac. Lorem ipsum dolor sit amet, consect adipiscing elit.",
-    //         // img:sliderNext
-    //         img: sliderImg
-    //     },
-    //     {
-    //         id: 2,
-    //         name: "Project Name 3",
-    //         tags: ["CONSULTING", "PR & MARKETING", "EVENT / CONCEPT DEVELOPMENT", "SALES & DISTRIBUTUIN"],
-    //         desc: "Lorem ipsum dolor sit amet, consect adipiscing elit. Aliquam ut eget curabitur nam lobortis egestas massa. Ultrices at feugiat elementum nulla eleifend ac. Lorem ipsum dolor sit amet, consect adipiscing elit.",
-    //         // img:sliderNext
-    //         img: sliderImg
-    //     },
-    // ]);
     const [_items, setItems] = React.useState([]);
 
 
@@ -63,6 +35,9 @@ export default function HomeCarousel() {
         ProjectService.getFeaturedProjects().then(res => {
             console.log('hmm', res);
             setItems(res.data);
+            // res.data.map(item => {
+            // console.log('sss',item.attributes.image.custom_data.url);
+            // })
         }).catch(err => {
             console.log(err);
         })
@@ -134,8 +109,14 @@ export default function HomeCarousel() {
 
     return (
         _items && _items.length && (
-            <Container fluid className={sliderStyle.featured}>
-                
+            <Container fluid className={sliderStyle.featured}>  
+            {_items.map(item => {
+                return(
+                    <>
+                        <link rel="preload" as="image" href={item?.attributes.image?.custom_data?.url}></link>
+                    </>
+                )
+            })}              
                 <TransitionGroup>
                     {(!slideAnimationState && !backSlideAnimationState) && (
                         <CSSTransition key={2} timeout={1000} classNames={"item"}>
@@ -156,7 +137,6 @@ export default function HomeCarousel() {
                                             <p className={`${sliderStyle.clientname} mb-0`}>{_items[activeIdx]?.attributes?.client_name}</p>
                                             <h2 className={`${sliderStyle.title}`}>{_items[activeIdx]?.attributes?.title}</h2>
                                             {_items[activeIdx]?.attributes?.tags && (
-
                                                 <ul>
                                                     {JSON.parse(_items[activeIdx]?.attributes?.tags).map((item, key) => {
                                                         return (

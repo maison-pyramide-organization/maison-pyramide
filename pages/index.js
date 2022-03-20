@@ -72,11 +72,10 @@ function Home() {
 
   return (
     <Layout>
-      <Head>
+      {/* <Head>
         <link rel="manifest" href="/manifest.json" />
-        <link rel="icon" href="/icon.svg" />
-        {/* <link rel="apple-touch-icon" href="/imgs/icon.svg" /> */}
-      </Head>
+      <link rel="icon" href="/favicon.ico" />
+      </Head> */}
     <IsMobileComponent handleMobile={useHandleMobile}/>
     <section className={homeStyles.main}>
       {isMobile != null && (
@@ -191,7 +190,7 @@ function Home() {
 
 
         <ParallaxProvider>
-        <Parallax translateY={[isMobile?0:0,isMobile?0: -40,'easeOutQuint']}>
+        <Parallax translateY={[isMobile?0:-30,isMobile?0: 30,'easeInQuint']}>
         {/* <Parallax translateY={[10, -90,'easeOutQuint']}> */}
         <ParallaxCache/> 
         <ClientComponent/>
