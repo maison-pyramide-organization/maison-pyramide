@@ -152,7 +152,7 @@ export default function Group() {
 
         <ParallaxProvider>
         <ParallaxCache/>
-        <Parallax translateY={[isMobile?10:30, isMobile?-10:-30,'easeOutQuint']}>
+        <Parallax translateY={[isMobile?2:30, isMobile?-5:-30,'easeOutQuint']}>
           <div className={groupStyles.leader}>
             <h2 className="text-center pb-3">Leadership Team</h2>
             <p className="text-center">
@@ -278,7 +278,7 @@ export default function Group() {
 
         <ParallaxProvider>
         <ParallaxCache/>
-        <Parallax translateY={[isMobile?-10:10, isMobile?-10:-30,'easeOutQuint']}>
+        <Parallax translateY={[isMobile?-15:10, isMobile?-10:-30,'easeOutQuint']}>
           <GroupSlider/>
 
           </Parallax>

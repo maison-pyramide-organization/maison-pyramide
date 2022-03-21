@@ -197,7 +197,7 @@
         
         .btns{
             display: flex!important;
-            margin-top: 24px;
+            // margin-top: 24px;
             justify-content: space-between;
             .slider_ctrls{
                 margin-bottom: 24px;
@@ -237,6 +237,7 @@
         .card{
             min-width: 65vw;
             scroll-snap-align: start;
+            margin-bottom: 16px;
             h3{
                 min-height: 73px;
                 margin-bottom: 0;
