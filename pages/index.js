@@ -190,7 +190,7 @@ function Home() {
 
 
         <ParallaxProvider>
-        <Parallax translateY={[isMobile?10:-30,isMobile?-10: 30,isMobile?'easeInQuint':'easeInQuint']}>
+        <Parallax translateY={[isMobile?0:-30,isMobile?-10: 30,isMobile?'easeInQuint':'easeInQuint']}>
         {/* <Parallax translateY={[10, -90,'easeOutQuint']}> */}
         <ParallaxCache/> 
         <ClientComponent/>

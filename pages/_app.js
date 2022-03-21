@@ -53,7 +53,7 @@ function MyApp({ Component, pageProps }) {
       }).finally(() => {
         setTimeout(() => {
           setIsLoading(false);
-        }, 1500);
+        }, 1000);
       })
     
   },[])
