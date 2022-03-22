@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from 'next/link';
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Select from 'react-select'
 import { Container, Row, Col } from "react-bootstrap";
 import { ParallaxProvider } from "react-scroll-parallax";
@@ -94,10 +94,25 @@ export default function Contact() {
 
         setInputs(values => ({...values, [name]: value}));
     }    
+    useEffect(() => {
+        switch (inputs.subject){
+            case 'Work With Us':
+                setInputs(values => ({...values, 'rec_email': 'maisonpyramide0@test.com1'}));
+                break;
+            case 'General Enquiry':
+                setInputs(values => ({...values, 'rec_email': 'maisonpyramide0@test.com2'}));
+                break;
+            case 'Press':
+                setInputs(values => ({...values, 'rec_email': 'maisonpyramide0@test.com3'}));
+                break;
+            case 'Join The team':
+                setInputs(values => ({...values, 'rec_email': 'maisonpyramide0@test.com4'}));
+                break;
+        }
+    },[inputs.subject])
 
     const handleSubmit = (event) =>{
         event.preventDefault();
-        // setIsLoading(true);
         ContactService.addContact(inputs).then(res =>{
             setMsgSent(true);
             setInputs({subject:'Work With Us'});
@@ -163,6 +178,11 @@ export default function Contact() {
                         </li>
                         <li>
                         <p>DUBAI</p>
+                        <span>+20 106 0091742</span>
+                        <span>contact@maisonpyramide.com</span>
+                        </li>
+                        <li>
+                        <p>LEBANON</p>
                         <span>+20 106 0091742</span>
                         <span>contact@maisonpyramide.com</span>
                         </li>

@@ -65,6 +65,11 @@ export default function FooterComponent() {
                     <p className={footerStyle.tel}>+20 106 0091742</p>
                     <p className={footerStyle.email}>contact@maisonpyramide.com</p>
                   </div>
+                  <div className={footerStyle.location}>
+                    <span className={footerStyle.title}>LEBANON</span>
+                    <p className={footerStyle.tel}>+20 106 0091742</p>
+                    <p className={footerStyle.email}>contact@maisonpyramide.com</p>
+                  </div>
                   {/* <div className={footerStyle.location}>
                     <span className={footerStyle.title}>LONDON</span>
                     <p className={footerStyle.tel}>+20 106 0091742</p>
@@ -131,6 +136,18 @@ export default function FooterComponent() {
                       <Accordion.Item eventKey="1">
                         <Accordion.Header>
                         DUBAI
+                        </Accordion.Header>
+                        <Accordion.Body>
+                            <div className={footerStyle.acc_body}>
+                                <p className={footerStyle.tel}>+20 106 0091742</p>
+                                <p className={footerStyle.email}>contact@maisonpyramide.com</p>
+                            </div>
+                        </Accordion.Body>
+                      </Accordion.Item>
+
+                      <Accordion.Item eventKey="1">
+                        <Accordion.Header>
+                        LEBANON
                         </Accordion.Header>
                         <Accordion.Body>
                             <div className={footerStyle.acc_body}>

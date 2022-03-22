@@ -99,6 +99,11 @@ export default function Group() {
               <span>+20 106 0091742</span>
               <span>contact@maisonpyramide.com</span>
             </li>
+            <li className="text-center">
+              <p>LEBANON</p>
+              <span>+20 106 0091742</span>
+              <span>contact@maisonpyramide.com</span>
+            </li>
             {/* <li className="text-center">
               <p>LONDON</p>
               <span>+20 106 0091742</span>
