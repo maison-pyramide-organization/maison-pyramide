@@ -97,16 +97,16 @@ export default function Contact() {
     useEffect(() => {
         switch (inputs.subject){
             case 'Work With Us':
-                setInputs(values => ({...values, 'rec_email': 'maisonpyramide0@test.com1'}));
+                setInputs(values => ({...values, 'rec_email': 'maria@maisonpyramide.com'}));
                 break;
             case 'General Enquiry':
-                setInputs(values => ({...values, 'rec_email': 'maisonpyramide0@test.com2'}));
+                setInputs(values => ({...values, 'rec_email': 'contact@maisonpyramide.com'}));
                 break;
             case 'Press':
-                setInputs(values => ({...values, 'rec_email': 'maisonpyramide0@test.com3'}));
+                setInputs(values => ({...values, 'rec_email': 'PR@maisonpyramide.com'}));
                 break;
             case 'Join The team':
-                setInputs(values => ({...values, 'rec_email': 'maisonpyramide0@test.com4'}));
+                setInputs(values => ({...values, 'rec_email': 'hr@maisonpyramide.com'}));
                 break;
         }
     },[inputs.subject])
@@ -172,19 +172,20 @@ export default function Contact() {
                         </p>
                         </li>
                         <li>
+                         <p>DUBAI</p>
+                        <span>+20 106 0091742</span>
+                        <span>dubai@maisonpyramide.com</span>
+                        </li>
+                        <li>
                         <p>CAIRO</p>
                         <span>+20 106 0091742</span>
-                        <span>contact@maisonpyramide.com</span>
+                        <span>cairo@maisonpyramide.com</span>
                         </li>
                         <li>
-                        <p>DUBAI</p>
+                       
+                        <p>BEIRUT</p>
                         <span>+20 106 0091742</span>
-                        <span>contact@maisonpyramide.com</span>
-                        </li>
-                        <li>
-                        <p>LEBANON</p>
-                        <span>+20 106 0091742</span>
-                        <span>contact@maisonpyramide.com</span>
+                        <span>beirut@maisonpyramide.com</span>
                         </li>
                         {/* <li>
                         <p>LONDON</p>

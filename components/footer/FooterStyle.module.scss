@@ -182,6 +182,9 @@
         // z-index: 10;
         min-height: 870px;
         padding-block: 16px;
+        .poly{
+            clip-path: polygon(82% 23%, 0% 100%, 108% 100%);
+        }
         .touch{
             text-align: start;
             padding: 16px 0;

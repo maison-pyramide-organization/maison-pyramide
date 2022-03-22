@@ -56,12 +56,12 @@ export default function FooterComponent() {
               <Col md={4} sm={6}>
                 <div className={footerStyle.locations}>
                   <div className={footerStyle.location}>
-                    <span className={`${footerStyle.title}`}>CAIRO</span>
+                    <span className={footerStyle.title}>DUBAI</span>
                     <p className={footerStyle.tel}>+20 106 0091742</p>
                     <p className={footerStyle.email}>contact@maisonpyramide.com</p>
                   </div>
                   <div className={footerStyle.location}>
-                    <span className={footerStyle.title}>DUBAI</span>
+                    <span className={`${footerStyle.title}`}>CAIRO</span>
                     <p className={footerStyle.tel}>+20 106 0091742</p>
                     <p className={footerStyle.email}>contact@maisonpyramide.com</p>
                   </div>
@@ -123,36 +123,37 @@ export default function FooterComponent() {
                     <Accordion className={footerStyle.accordion}>
                       <Accordion.Item eventKey="0">
                         <Accordion.Header>
-                            CAIRO
-                        </Accordion.Header>
-                        <Accordion.Body>
-                            <div className={footerStyle.acc_body}>
-                                <p className={footerStyle.tel}>+20 106 0091742</p>
-                                <p className={footerStyle.email}>contact@maisonpyramide.com</p>
-                            </div>
-                        </Accordion.Body>
-                      </Accordion.Item>
-
-                      <Accordion.Item eventKey="1">
-                        <Accordion.Header>
                         DUBAI
                         </Accordion.Header>
                         <Accordion.Body>
                             <div className={footerStyle.acc_body}>
                                 <p className={footerStyle.tel}>+20 106 0091742</p>
-                                <p className={footerStyle.email}>contact@maisonpyramide.com</p>
+                                <p className={footerStyle.email}>dubai@maisonpyramide.com</p>
+                            </div>
+                        </Accordion.Body>
+
+                      </Accordion.Item>
+
+                      <Accordion.Item eventKey="1">
+                      <Accordion.Header>
+                            CAIRO
+                        </Accordion.Header>
+                        <Accordion.Body>
+                            <div className={footerStyle.acc_body}>
+                                <p className={footerStyle.tel}>+20 106 0091742</p>
+                                <p className={footerStyle.email}>cairo@maisonpyramide.com</p>
                             </div>
                         </Accordion.Body>
                       </Accordion.Item>
 
                       <Accordion.Item eventKey="1">
                         <Accordion.Header>
-                        LEBANON
+                        BEIRUT
                         </Accordion.Header>
                         <Accordion.Body>
                             <div className={footerStyle.acc_body}>
                                 <p className={footerStyle.tel}>+20 106 0091742</p>
-                                <p className={footerStyle.email}>contact@maisonpyramide.com</p>
+                                <p className={footerStyle.email}>beirut@maisonpyramide.com</p>
                             </div>
                         </Accordion.Body>
                       </Accordion.Item>

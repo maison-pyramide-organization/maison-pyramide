@@ -137,7 +137,7 @@ export default function NavComponent() {
             <Link href="/join" >
                 <a onClick={()=>handleLinkClick(6)} className={`nav-link ${navStyle.link} ${activeLink == 6 && navStyle.active}`}>WANT TO CHECK OUT OUR<br/> OPEN JOB POSITIONS?</a>
             </Link>
-            <Link href="/join" >
+            <Link href="/contact" >
               <p>
                 contact@maisonpyramide.com
               </p>

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from 'next/link';
 
-import React, { useEffect } from 'react';
+import React, { useEffect , useState} from 'react';
 import { Row , Col, Container} from 'react-bootstrap';
 import {
     TransitionGroup,
@@ -29,8 +29,16 @@ import group12 from '../../public/imgs/group1.JPG';
 
 
 const _items = [
+    // {
+    //     id:0,
+    //     sections:[
+    //         {id:0,"title":"Culture","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec."},
+    //         {id:1,"title":"Values and Giving","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam. \n \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec. Pellentesque quam adipiscing faucibus laoreet faucibus scelerisque."}
+    //     ],
+    //     img:group1
+    // },
     {
-        id:0,
+        id:1,
         sections:[
             {id:0,"title":"Culture","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec."},
             {id:1,"title":"Values and Giving","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam. \n \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec. Pellentesque quam adipiscing faucibus laoreet faucibus scelerisque."}
@@ -38,7 +46,7 @@ const _items = [
         img:group1
     },
     {
-        id:1,
+        id:2,
         sections:[
             {id:0,"title":"Culture","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec."},
             {id:1,"title":"Values and Giving","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam.\n \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec. Pellentesque quam adipiscing faucibus laoreet faucibus scelerisque."}
@@ -46,7 +54,7 @@ const _items = [
         img:group2
     },
     {
-        id:2,
+        id:3,
         sections:[
             {id:0,"title":"Culture","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec."},
             {id:1,"title":"Values and Giving","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam.\n \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec. Pellentesque quam adipiscing faucibus laoreet faucibus scelerisque."}
@@ -54,7 +62,7 @@ const _items = [
         img:group3
     },
     {
-        id:3,
+        id:4,
         sections:[
             {id:0,"title":"Culture","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec."},
             {id:1,"title":"Values and Giving","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam.\n \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec. Pellentesque quam adipiscing faucibus laoreet faucibus scelerisque."}
@@ -62,7 +70,7 @@ const _items = [
         img:group4
     },
     {
-        id:4,
+        id:5,
         sections:[
             {id:0,"title":"Culture","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec."},
             {id:1,"title":"Values and Giving","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam.\n \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec. Pellentesque quam adipiscing faucibus laoreet faucibus scelerisque."}
@@ -70,7 +78,7 @@ const _items = [
         img:group5
     },
     {
-        id:5,
+        id:6,
         sections:[
             {id:0,"title":"Culture","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec."},
             {id:1,"title":"Values and Giving","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam.\n \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec. Pellentesque quam adipiscing faucibus laoreet faucibus scelerisque."}
@@ -78,7 +86,7 @@ const _items = [
         img:group6
     },
     {
-        id:6,
+        id:7,
         sections:[
             {id:0,"title":"Culture","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec."},
             {id:1,"title":"Values and Giving","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam.\n \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec. Pellentesque quam adipiscing faucibus laoreet faucibus scelerisque."}
@@ -86,7 +94,7 @@ const _items = [
         img:group7
     },
     {
-        id:7,
+        id:8,
         sections:[
             {id:0,"title":"Culture","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec."},
             {id:1,"title":"Values and Giving","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam.\n \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec. Pellentesque quam adipiscing faucibus laoreet faucibus scelerisque."}
@@ -94,7 +102,7 @@ const _items = [
         img:group8
     },
     {
-        id:8,
+        id:9,
         sections:[
             {id:0,"title":"Culture","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec."},
             {id:1,"title":"Values and Giving","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam.\n \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec. Pellentesque quam adipiscing faucibus laoreet faucibus scelerisque."}
@@ -102,7 +110,7 @@ const _items = [
         img:group9
     },
     {
-        id:9,
+        id:10,
         sections:[
             {id:0,"title":"Culture","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec."},
             {id:1,"title":"Values and Giving","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam.\n \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec. Pellentesque quam adipiscing faucibus laoreet faucibus scelerisque."}
@@ -110,7 +118,7 @@ const _items = [
         img:group10
     },
     {
-        id:10,
+        id:11,
         sections:[
             {id:0,"title":"Culture","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec."},
             {id:1,"title":"Values and Giving","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam.\n \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec. Pellentesque quam adipiscing faucibus laoreet faucibus scelerisque."}
@@ -118,7 +126,7 @@ const _items = [
         img:group11
     },
     {
-        id:11,
+        id:12,
         sections:[
             {id:0,"title":"Culture","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec."},
             {id:1,"title":"Values and Giving","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam.\n \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec. Pellentesque quam adipiscing faucibus laoreet faucibus scelerisque."}
@@ -133,52 +141,81 @@ export default function HomeCarousel () {
     const [backSlideAnimationState, setBackSlideAnimationState] = React.useState(false);
     const [isNext , setIsNext] = React.useState(null);
 
-    const prevClick = () => {
-        setBackSlideAnimationState(true);
+    const [current, setCurrent] = useState(1);
+    const [currentScroll, setCurrentScroll] = useState(0);
+
+    // const prevClick = () => {
+    //     setBackSlideAnimationState(true);
         
-        setTimeout(() => {
-            if(_items[activeIdx - 1]){
-                setActiveIdx(prev => prev - 1);
-            }
-            else{
-                setActiveIdx(_items.length -1);
-            }
-            setIsNext(false);
-            setBackSlideAnimationState(false);
-        }, 1000);
-        setTimeout(() => {
-            setIsNext(null);
-        }, 2000);
+    //     setTimeout(() => {
+    //         if(_items[activeIdx - 1]){
+    //             setActiveIdx(prev => prev - 1);
+    //         }
+    //         else{
+    //             setActiveIdx(_items.length -1);
+    //         }
+    //         setIsNext(false);
+    //         setBackSlideAnimationState(false);
+    //     }, 1000);
+    //     setTimeout(() => {
+    //         setIsNext(null);
+    //     }, 2000);
         
-    };
+    // };
+
+    // const nextClick = () => {
+        
+    //     setSlideAnimationState(true);
+    //     setTimeout(() => {
+    //         if(_items[activeIdx + 1]){
+    //             setActiveIdx(prev => prev + 1);
+    //         }
+    //         else{
+    //             setActiveIdx(0)
+    //         }
+    //         setIsNext(true)
+    //         setSlideAnimationState(false);
+    //     }, 1000);
+
+    //     setTimeout(() => {
+    //         setIsNext(null)
+    //     }, 1300);
+    // };
 
     const nextClick = () => {
-        
-        setSlideAnimationState(true);
-        setTimeout(() => {
-            if(_items[activeIdx + 1]){
-                setActiveIdx(prev => prev + 1);
-            }
-            else{
-                setActiveIdx(0)
-            }
-            setIsNext(true)
-            setSlideAnimationState(false);
-        }, 1000);
-
-        setTimeout(() => {
-            setIsNext(null)
-        }, 1300);
-    };
+        if (current < _items.length ) {
+            // let tabs = document.getElementById('group-slider');
+            // // tabs.scroll({ left: currentScroll + 600, behavior: 'smooth' });
+            // let imgEle = document.getElementById(`img${current}`).getBoundingClientRect().left
+            // tabs.scroll({ left: imgEle, behavior: 'smooth' });
+            // console.log('??',imgEle);
+            // tabs.scrollIntoView(`img${current - 1}`)
+            // setCurrentScroll(prev => prev + 600);
+            setCurrent(prev => prev + 1);
+        }
+    }
+    const prevClick = () => {
+        if (current > 1) {
+            // let tabs = document.getElementById('group-slider');
+            // tabs.scroll({ left: currentScroll - 600, behavior: 'smooth' });
+            // let imgEle = document.getElementById(`img${current}`).getBoundingClientRect().left
+            // tabs.scroll({ left: imgEle, behavior: 'smooth' });
+            // setCurrentScroll(prev => prev - 600);
+            setCurrent(prev => prev - 1);
+        }
+    }
 
     useEffect(() => {
+        let tabs = document.getElementById('group-slider');
+        let imgEle = document.getElementById(`img${current}`).getBoundingClientRect();
 
-    },[activeIdx])
+        tabs.scroll({ left: current == 1? current :(current -1 )* imgEle.width, behavior: 'smooth' });
+    },[current])
 
     return (
         <div className={sliderStyle.culture}>
             <Row className={sliderStyle.imgs_row}>
-            <link rel="preload" as="image" href={group1.src}></link>
+            {/* <link rel="preload" as="image" href={group1.src}></link>
             <link rel="preload" as="image" href={group2.src}></link>
             <link rel="preload" as="image" href={group3.src}></link>
             <link rel="preload" as="image" href={group4.src}></link>
@@ -189,7 +226,7 @@ export default function HomeCarousel () {
             <link rel="preload" as="image" href={group9.src}></link>
             <link rel="preload" as="image" href={group10.src}></link>
             <link rel="preload" as="image" href={group11.src}></link>
-            <link rel="preload" as="image" href={group12.src}></link>
+            <link rel="preload" as="image" href={group12.src}></link> */}
               <Col md={5}>
                     <div className={sliderStyle.slide}>
                         {_items[activeIdx].sections.map((section,key) => {
@@ -205,37 +242,68 @@ export default function HomeCarousel () {
                         })}
                     </div>               
               </Col>
-              <Col md={5} sm={8} xs={8} className={sliderStyle.slide_img}>
-                {/* <TransitionGroup>
-                {!slideAnimationState && (
-                    <CSSTransition key={3} timeout={2500} classNames={"item"}> */}
-                        <div className={`${sliderStyle.slide_img_cont} ${slideAnimationState?sliderStyle.fade:backSlideAnimationState?sliderStyle.currToNext:''} ${isNext == false?sliderStyle.show:''}`}>
-                            <Image unoptimized={true} priority={true} loading="eager" width={80} height={100} src={_items[activeIdx].img} className={sliderStyle.imgg} objectFit="cover" layout="responsive"></Image>
-                        </div>
-                    {/* </CSSTransition>
-                )}
-                </TransitionGroup> */}
+              <Col md={7}>
+              <section >
+                      <div className={sliderStyle.mobile_images} id="group-slider">
+                          {_items.map((item) => {
+                              return (
+                                  <div className={sliderStyle.image} id={`img${item.id}`}>
+                                     <img src={item.img.src}/>
+                                     <h2>{item.id}</h2>
+                                  </div>
+                              )
+                          })}
+                      </div>
+                  </section>
+                  </Col>
+              {/* <Col md={5} sm={8} xs={8} className={`${sliderStyle.slide_img} disktop_only`}>
+               
+                <div className={`${sliderStyle.slide_img_cont} ${slideAnimationState?sliderStyle.fade:backSlideAnimationState?sliderStyle.currToNext:''} ${isNext == false?sliderStyle.show:''}`}>
+                    <Image unoptimized={true} priority={true} loading="eager" width={80} height={100} src={_items[activeIdx].img} className={sliderStyle.imgg} objectFit="cover" layout="responsive"></Image>
+                </div>
 
               </Col>
-              <Col md={5} sm={8} xs={4} className={sliderStyle.slide_side_img}>
-              {/* <TransitionGroup>
-                {!slideAnimationState && (
-                    <CSSTransition key={3} timeout={3500} classNames={"item"}> */}
-                        <div className={` ${sliderStyle.slide_side_img_cont}  ${slideAnimationState?sliderStyle.nextToCurr:backSlideAnimationState?sliderStyle.fade:''} ${isNext?sliderStyle.slideLeft:''}`}>
-                        {_items[activeIdx + 1] &&  _items[activeIdx + 1].img?(
-                            <Image unoptimized={true} width={80} height={100} src={_items[activeIdx + 1].img} className={sliderStyle.img} objectFit="cover" alt="girl" layout="responsive"></Image>
-                        ):
-                        (
-                            <Image unoptimized={true} width={80} height={100} src={_items[0].img} alt="girl" className={sliderStyle.img} objectFit="cover" layout="responsive"></Image>
-                        )
-                        }
-                        </div>
-                    {/* </CSSTransition>
-                )}
-                </TransitionGroup> */}
-              </Col>
+              <Col md={5} sm={8} xs={4} className={`${sliderStyle.slide_side_img} disktop_only`}>
+                <div className={` ${sliderStyle.slide_side_img_cont}  ${slideAnimationState?sliderStyle.nextToCurr:backSlideAnimationState?sliderStyle.fade:''} ${isNext?sliderStyle.slideLeft:''}`}>
+                {_items[activeIdx + 1] &&  _items[activeIdx + 1].img?(
+                    <Image unoptimized={true} width={80} height={100} src={_items[activeIdx + 1].img} className={sliderStyle.img} objectFit="cover" alt="girl" layout="responsive"></Image>
+                ):
+                (
+                    <Image unoptimized={true} width={80} height={100} src={_items[0].img} alt="girl" className={sliderStyle.img} objectFit="cover" layout="responsive"></Image>
+                )
+                }
+                </div>
+              </Col> */}
+
+              {/* <Col sm={7} className={`mobile`}>
+                  <section>
+                      <div className={sliderStyle.mobile_images} id="slider">
+                          {_items.map((item) => {
+                              return (
+                                  <div className={sliderStyle.image}>
+                                     <img src={item.img.src}/>
+                                  </div>
+                              )
+                          })}
+                      </div>
+                  </section>
+              </Col> */}
             </Row>
-            <div className={sliderStyle.slider_ctrls}>
+            {/* <div className={`${sliderStyle.slider_ctrls} disktop_only`}>
+              <div
+                className={`${sliderStyle.slider_ctrl} ${sliderStyle.slider_ctrl_right}`}
+                onClick={nextClick}
+              >
+                <span className={sliderStyle.chev_right}></span>
+              </div>
+              <div
+                className={`${sliderStyle.slider_ctrl} ${sliderStyle.slider_ctrl_left}`}
+                onClick={prevClick}
+              >
+                <span className={sliderStyle.chev_left}></span>
+              </div>
+            </div> */}
+            <div className={`${sliderStyle.slider_ctrls}`}>
               <div
                 className={`${sliderStyle.slider_ctrl} ${sliderStyle.slider_ctrl_right}`}
                 onClick={nextClick}
@@ -249,7 +317,9 @@ export default function HomeCarousel () {
                 <span className={sliderStyle.chev_left}></span>
               </div>
             </div>
-            <p className={`text-center mt-3 ${sliderStyle.counter}`}>{activeIdx < 9?'0':''}{activeIdx + 1} / {_items.length < 9?'0':''}{_items.length}</p>
+            
+            {/* <p className={`text-center disktop_only mt-3 ${sliderStyle.counter}`}>{activeIdx < 9?'0':''}{activeIdx + 1} / {_items.length < 9?'0':''}{_items.length}</p> */}
+            <p className={`text-center mt-3 ${sliderStyle.counter}`}>{current < 9?'0':''}{current} / {_items.length < 9?'0':''}{_items.length}</p>
             <div className="clearfix"></div>
           </div>
        

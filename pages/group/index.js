@@ -90,19 +90,19 @@ export default function Group() {
           </p>
           <ul>
             <li className="text-center">
-              <p>CAIRO</p>
-              <span>+20 106 0091742</span>
-              <span>contact@maisonpyramide.com</span>
-            </li>
-            <li className="text-center">
               <p>DUBAI</p>
               <span>+20 106 0091742</span>
-              <span>contact@maisonpyramide.com</span>
+              <span>dubai@maisonpyramide.com</span>
             </li>
             <li className="text-center">
-              <p>LEBANON</p>
+              <p>CAIRO</p>
               <span>+20 106 0091742</span>
-              <span>contact@maisonpyramide.com</span>
+              <span>cairo@maisonpyramide.com</span>
+            </li>
+            <li className="text-center">
+              <p>BEIRUT</p>
+              <span>+20 106 0091742</span>
+              <span>beirut@maisonpyramide.com</span>
             </li>
             {/* <li className="text-center">
               <p>LONDON</p>
@@ -289,10 +289,10 @@ export default function Group() {
           </Parallax>
         </ParallaxProvider>
 
-          <div className={groupStyles.press}>
           <ParallaxProvider>
         <ParallaxCache/>
         <Parallax translateY={[isMobile?10:20, isMobile?-10:-50,'easeOutQuint']}>
+          <div className={groupStyles.press}>
 
             <h2 className="text-center">
                 In the press
@@ -352,9 +352,9 @@ export default function Group() {
                     </div>
                 </Col>
             </Row>
+          </div>
             </Parallax>
         </ParallaxProvider>
-          </div>
         </Container>
         
       </section>

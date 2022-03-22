@@ -417,9 +417,6 @@ ul li:hover {
 .css-9owoa0-indicatorSeparator{
   display: none;
 }
-#react-select-2-listbox{
-  border:1px solid red;
-}
 #react-select-2-listbox div:first-child div{
   border-bottom: 1px solid rgba(255,255,255,.6)!important;
   /* background-color: red; */
@@ -436,6 +433,12 @@ ul li:hover {
 }
 .inpt-error{
   border-bottom: 1px solid #E20000!important;
+}
+#group-slider::-webkit-scrollbar{
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+  height: 0;
+
 }
 @media (min-width: 2000px) and (max-width: 3000px) {
   body {
@@ -520,11 +523,12 @@ ul li:hover {
   button {
     height: 40px !important;
   }
-  #tabs::-webkit-scrollbar ,#selected-clients::-webkit-scrollbar {
+  #tabs::-webkit-scrollbar ,#selected-clients::-webkit-scrollbar #group-slider::-webkit-scrollbar{
     width: 0; /* Remove scrollbar space */
     background: transparent; /* Optional: just make scrollbar invisible */
     height: 0;
   }
+ 
   .parallax-smooth{
   transition: all .15s ease-in-out ;
   }
