@@ -247,7 +247,7 @@ export default function HomeCarousel () {
                       <div className={sliderStyle.mobile_images} id="group-slider">
                           {_items.map((item) => {
                               return (
-                                  <div className={sliderStyle.image} id={`img${item.id}`}>
+                                  <div className={sliderStyle.image} key={item.id} id={`img${item.id}`}>
                                      <img src={item.img.src}/>
                                      <h2>{item.id}</h2>
                                   </div>
