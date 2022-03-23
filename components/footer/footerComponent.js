@@ -146,7 +146,7 @@ export default function FooterComponent() {
                         </Accordion.Body>
                       </Accordion.Item>
 
-                      <Accordion.Item eventKey="1">
+                      <Accordion.Item eventKey="2">
                         <Accordion.Header>
                         BEIRUT
                         </Accordion.Header>
