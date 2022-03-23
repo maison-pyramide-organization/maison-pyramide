@@ -84,7 +84,7 @@ function MyApp({ Component, pageProps }) {
           <div className="parallax" style={{overflow:'hidden'}}>
           <ParallaxProvider>
               <ParallaxCache/>
-                <Parallax className={`parallax`} translateY={[isMobile?0:-30, isMobile?0:50]}>
+                <Parallax className={`parallax`} translateY={[isMobile?-10:-30, isMobile?10:50]}>
               <FooterComponent/>
               </Parallax>
             </ParallaxProvider>
