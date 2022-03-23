@@ -137,13 +137,11 @@ export default function NavComponent() {
             <Link href="/join" >
                 <a onClick={()=>handleLinkClick(6)} className={`nav-link ${navStyle.link} ${activeLink == 6 && navStyle.active}`}>WANT TO CHECK OUT OUR<br/> OPEN JOB POSITIONS?</a>
             </Link>
-            <Link href="/contact" onClick={()=>handleLinkClick(null)}>
-              <p>
-                contact@maisonpyramide.com
-              </p>
+            <Link href="/contact">
+              <a onClick={()=>handleLinkClick(5)} className={`nav-link ${navStyle.link} ${activeLink == 6 && navStyle.active}`}>contact@maisonpyramide.com</a>
             </Link>
-            <Link href="https://eshowroom.maisonpyramide.com" rel="noreferrer" target={"_blank"}>
-                <a onClick={()=>handleLinkClick(7)} className={`nav-link ${navStyle.link} ${navStyle.arrow} ${activeLink == 7 && navStyle.active}`}>E SHOWROOM</a>
+            <Link onClick={()=>handleLinkClick(null)} href="https://eshowroom.maisonpyramide.com" rel="noreferrer" target={"_blank"}>
+                <a className={`nav-link ${navStyle.link} ${navStyle.arrow} ${activeLink == 7 && navStyle.active}`}>E SHOWROOM</a>
             </Link>
             <Link href="https://www.instagram.com/maisonpyramide/" rel="noreferrer" target={"_blank"}>
                 <a onClick={()=>handleLinkClick(8)} className={`nav-link ${navStyle.link} ${navStyle.arrow} ${activeLink == 8 && navStyle.active}`}>INSTAGRAM</a>
