@@ -236,7 +236,7 @@ export default function Project() {
                     </div>
                     <div className="mobile w-75">
                     {data.solution_images && (
-                            <Image src={data.solution_images[0]?.custom_data?.url} width={100} height={50} objectFit={"cover"} layout="responsive"></Image>    
+                            <Image src={data.solution_images[0]?.custom_data?.url} width={80} height={115} objectFit={"cover"} layout="responsive"></Image>    
                         )}
                     </div>
                     <Container>
