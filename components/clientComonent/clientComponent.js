@@ -130,9 +130,9 @@ function ClientComponent() {
                           <div className={`${clientStyles.mobile_names} mobile`}>
                             <Row>
                               <Col sm={6} xs={6}>
-                                <span>Name surname</span>
+                                <span>{clientList[client]?.client_name}</span>
                                 <br className='disktop_only'/>
-                                <span>Title,<br/> Company</span>
+                                <span>{clientList[client]?.owner_title}</span>
                               </Col>
                               <Col sm={6} xs={6}>
                                 <div className={clientStyles.mobile_img}>

@@ -57,17 +57,19 @@ export default function FooterComponent() {
                 <div className={footerStyle.locations}>
                   <div className={footerStyle.location}>
                     <span className={footerStyle.title}>DUBAI</span>
-                    <p className={footerStyle.tel}>+20 106 0091742</p>
+                    <p className={footerStyle.tel}>Unit B201, Building 7, 
+Dubai design district.</p>
                     <p className={footerStyle.email}>contact@maisonpyramide.com</p>
                   </div>
                   <div className={footerStyle.location}>
                     <span className={`${footerStyle.title}`}>CAIRO</span>
-                    <p className={footerStyle.tel}>+20 106 0091742</p>
+                    <p className={footerStyle.tel}>9 el Gabalaya street, Zamalek.</p>
                     <p className={footerStyle.email}>contact@maisonpyramide.com</p>
                   </div>
                   <div className={footerStyle.location}>
                     <span className={footerStyle.title}>LEBANON</span>
-                    <p className={footerStyle.tel}>+20 106 0091742</p>
+                    <p className={footerStyle.tel}>Ras Beirut, Kantari district, Michel Chiha street, 
+Kantari building, Beirut, Lebanon</p>
                     <p className={footerStyle.email}>contact@maisonpyramide.com</p>
                   </div>
                   {/* <div className={footerStyle.location}>
@@ -127,7 +129,8 @@ export default function FooterComponent() {
                         </Accordion.Header>
                         <Accordion.Body>
                             <div className={footerStyle.acc_body}>
-                                <p className={footerStyle.tel}>+20 106 0091742</p>
+                                <p className={footerStyle.tel}>Unit B201, Building 7, 
+Dubai design district.</p>
                                 <p className={footerStyle.email}>dubai@maisonpyramide.com</p>
                             </div>
                         </Accordion.Body>
@@ -140,7 +143,7 @@ export default function FooterComponent() {
                         </Accordion.Header>
                         <Accordion.Body>
                             <div className={footerStyle.acc_body}>
-                                <p className={footerStyle.tel}>+20 106 0091742</p>
+                                <p className={footerStyle.tel}>9 el Gabalaya street, Zamalek.</p>
                                 <p className={footerStyle.email}>cairo@maisonpyramide.com</p>
                             </div>
                         </Accordion.Body>
@@ -152,7 +155,8 @@ export default function FooterComponent() {
                         </Accordion.Header>
                         <Accordion.Body>
                             <div className={footerStyle.acc_body}>
-                                <p className={footerStyle.tel}>+20 106 0091742</p>
+                                <p className={footerStyle.tel}>Ras Beirut, Kantari district, Michel Chiha street, 
+Kantari building, Beirut, Lebanon</p>
                                 <p className={footerStyle.email}>beirut@maisonpyramide.com</p>
                             </div>
                         </Accordion.Body>

@@ -91,17 +91,19 @@ export default function Group() {
           <ul>
             <li className="text-center">
               <p>DUBAI</p>
-              <span>+20 106 0091742</span>
+              <span>Unit B201, Building 7, 
+Dubai design district.</span>
               <span>dubai@maisonpyramide.com</span>
             </li>
             <li className="text-center">
               <p>CAIRO</p>
-              <span>+20 106 0091742</span>
+              <span>9 el Gabalaya street, Zamalek.</span>
               <span>cairo@maisonpyramide.com</span>
             </li>
             <li className="text-center">
               <p>BEIRUT</p>
-              <span>+20 106 0091742</span>
+              <span>Ras Beirut, Kantari district, Michel Chiha street, <br/>
+Kantari building, Beirut, Lebanon</span>
               <span>beirut@maisonpyramide.com</span>
             </li>
             {/* <li className="text-center">
@@ -157,7 +159,7 @@ export default function Group() {
 
         <ParallaxProvider>
         <ParallaxCache/>
-        <Parallax translateY={[isMobile?2:30, isMobile?-5:-30,'easeOutQuint']}>
+        <Parallax translateY={[isMobile?2:10, isMobile?-5:-30,'easeOutQuint']}>
           <div className={groupStyles.leader}>
             <h2 className="text-center pb-3">Leadership Team</h2>
             <p className="text-center">
