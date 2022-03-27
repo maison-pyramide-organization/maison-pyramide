@@ -14,6 +14,7 @@ import Layout from "../components/layout/Layout";
 import ClientComponent from '../components/clientComonent/clientComponent';
 import ExpertiseComponent from '../components/expertiseComponent/expertiseComponent';
 
+import videoText from '../public/imgs/landingtext.png';
 // import bgVideo from '../public/imgs/video.mp4';
 
 
@@ -72,18 +73,19 @@ function Home() {
 
   return (
     <Layout>
-      {/* <Head>
-        <link rel="manifest" href="/manifest.json" />
-      <link rel="icon" href="/favicon.ico" />
-      </Head> */}
     <IsMobileComponent handleMobile={useHandleMobile}/>
     <section className={homeStyles.main}>
       {isMobile != null && (
 
       <video autoPlay playsInline muted loop id="myVideo" style={{width:'100%' , height:'100vh',objectFit:'cover'}}>
-        <source src={isMobile?"/imgs/mobilevideo.mp4":"/imgs/videobg.mp4"}  type="video/mp4"/>
+        <source src={isMobile?"/imgs/videobgmobile.mp4":"/imgs/videobg.mp4"}  type="video/mp4"/>
       </video>
       )}
+      <div className={`${homeStyles.video_text} mobile`}>
+        <Image
+          src={videoText}
+        />
+      </div>
     </section>
 
     <ParallaxProvider>

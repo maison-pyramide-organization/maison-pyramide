@@ -67,7 +67,7 @@ Dubai design district.</p>
                     <p className={footerStyle.email}>contact@maisonpyramide.com</p>
                   </div>
                   <div className={footerStyle.location}>
-                    <span className={footerStyle.title}>LEBANON</span>
+                    <span className={footerStyle.title}>BEIRUT</span>
                     <p className={footerStyle.tel}>Ras Beirut, Kantari district, Michel Chiha street, 
 Kantari building, Beirut, Lebanon</p>
                     <p className={footerStyle.email}>contact@maisonpyramide.com</p>

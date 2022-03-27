@@ -153,11 +153,17 @@ section.featured{
 @media(min-width:200px) and (max-width:800px){
     section.main{
         // background-image: url(../public/imgs/mobile/homebgM.png);
+        position: relative;
         h1{
             font-size:36px;
             line-height:39.6px;
             font-weight: 400;
             padding:0 12px;
+        }
+        .video_text{
+            position: absolute;
+            bottom:0px;
+            left:10px;
         }
     }
     section.info_txt{

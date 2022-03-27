@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     background-repeat: no-repeat;
-    background-image: url(../../public/imgs/groupbg.png);
+    background-image: url(../../public/imgs/groupdesktop.png);
     background-size: cover;
     background-position: center;
     color:$primary-color-light;
@@ -275,7 +275,7 @@
 }
 @media(min-width:200px) and (max-width:600px){
     .header{
-        background-image: url(../../public/imgs/mobile/groupbgM.png);
+        background-image: url(../../public/imgs/mobile/groupmobile.png);
         text-align: center;
         h1{
             font-size: 38px;
