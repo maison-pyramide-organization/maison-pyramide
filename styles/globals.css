@@ -406,6 +406,7 @@ ul li:hover {
   color: #CEE0A6;
   text-decoration: underline;
 }
+/* contact select style */
 .contact-select{
   border-bottom: 1px solid rgba(255,255,255,.6);
   margin-bottom: 24px;
@@ -417,9 +418,12 @@ ul li:hover {
 .css-9owoa0-indicatorSeparator{
   display: none;
 }
+/* first option */
+#react-select-2-listbox div:first-child div:first-child{
+  display: none;
+}
 #react-select-2-listbox div:first-child div{
   border-bottom: 1px solid rgba(255,255,255,.6)!important;
-  /* background-color: red; */
 }
 #react-select-2-listbox div:first-child div:hover{
   background-color: #CEE0A6;

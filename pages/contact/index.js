@@ -23,7 +23,7 @@ const ParallaxCache = dynamic(
   );
 
 export default function Contact() {
-    const [inputs, setInputs] = useState({subject:'Work With Us'});
+    const [inputs, setInputs] = useState({subject:'null'});
     const [errors , setErrors] = useState({});
 
     // const [isLoading ,setIsLoading] = useState(false);
@@ -40,6 +40,7 @@ export default function Contact() {
         }),
     }
     const selectOptions = [
+        {value:'null',label:"Select Subject"},
         {value:'Work With Us',label:"Work With Us"},
         {value:'General Enquiry',label:"General Enquiry"},
         {value:'Press',label:"Press"},
@@ -96,6 +97,9 @@ export default function Contact() {
     }    
     useEffect(() => {
         switch (inputs.subject){
+            case 'null':
+                setInputs(values => ({...values, 'rec_email': 'maria@maisonpyramide.com'}));
+                break;
             case 'Work With Us':
                 setInputs(values => ({...values, 'rec_email': 'maria@maisonpyramide.com'}));
                 break;
@@ -115,7 +119,7 @@ export default function Contact() {
         event.preventDefault();
         ContactService.addContact(inputs).then(res =>{
             setMsgSent(true);
-            setInputs({subject:'Work With Us'});
+            setInputs({subject:'null'});
         }).catch((err) => {
             // err.json()
             console.log('eh el error',err);
