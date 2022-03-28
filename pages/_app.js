@@ -63,7 +63,7 @@ function MyApp({ Component, pageProps }) {
     <>
     <Head>
       <link rel="manifest" href="/manifest.json" />
-      <link rel="icon" href="https://gazef.s3.us-west-2.amazonaws.com/maison/videobgmobile.mp4" />
+      <link rel="icon" href="https://gazef.s3.us-west-2.amazonaws.com/maison/favicon.ico" />
       <title>Maison Pyramide</title>
       <meta name="description" content="Maison Pyramide"/>
       {/* <link rel="apple-touch-icon" href="/imgs/icon.svg" /> */}
