@@ -78,7 +78,8 @@ function Home() {
       {isMobile != null && (
 
       <video autoPlay playsInline muted loop id="myVideo" style={{width:'100%' , height:'100vh',objectFit:'cover'}}>
-        <source src={isMobile?"/imgs/videobgmobile.mp4":"/imgs/videobg.mp4"}  type="video/mp4"/>
+        {/* <source src={isMobile?"/imgs/videobgmobile.mp4":"/imgs/videobg.mp4"} /> */}
+        <source src={isMobile?"/imgs/videobg.mp4":"/imgs/videobgmobile.mp4"} />
       </video>
       )}
       <div className={`${homeStyles.video_text} mobile`}>
