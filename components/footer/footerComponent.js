@@ -59,18 +59,18 @@ export default function FooterComponent() {
                     <span className={footerStyle.title}>DUBAI</span>
                     <p className={footerStyle.tel}>Unit B201, Building 7, 
 Dubai design district.</p>
-                    <p className={footerStyle.email}>contact@maisonpyramide.com</p>
+                    <p className={footerStyle.email}>dubai@maisonpyramide.com</p>
                   </div>
                   <div className={footerStyle.location}>
                     <span className={`${footerStyle.title}`}>CAIRO</span>
                     <p className={footerStyle.tel}>9 el Gabalaya street, Zamalek.</p>
-                    <p className={footerStyle.email}>contact@maisonpyramide.com</p>
+                    <p className={footerStyle.email}>cairo@maisonpyramide.com</p>
                   </div>
                   <div className={footerStyle.location}>
                     <span className={footerStyle.title}>BEIRUT</span>
                     <p className={footerStyle.tel}>Ras Beirut, Kantari district, Michel Chiha street, 
 Kantari building, Beirut, Lebanon</p>
-                    <p className={footerStyle.email}>contact@maisonpyramide.com</p>
+                    <p className={footerStyle.email}>beirut@maisonpyramide.com</p>
                   </div>
                   {/* <div className={footerStyle.location}>
                     <span className={footerStyle.title}>LONDON</span>

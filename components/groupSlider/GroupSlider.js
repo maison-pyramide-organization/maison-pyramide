@@ -249,6 +249,10 @@ export default function HomeCarousel () {
                               return (
                                   <div className={sliderStyle.image} key={item.id} id={`img${item.id}`}>
                                      <img src={item.img.src}/>
+                                     {/* <div className={sliderStyle.text}>
+                                         <h3>title</h3>
+                                         <p>text</p>
+                                     </div> */}
                                   </div>
                               )
                           })}

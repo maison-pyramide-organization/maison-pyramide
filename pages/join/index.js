@@ -1,15 +1,33 @@
 import Image from "next/image";
 
+import { useEffect, useState } from "react";
+
 import { Container, Row, Col, Accordion } from "react-bootstrap";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
 
 import Layout from "../../components/layout/Layout";
 import joinImg from "../../public/imgs/joinimg.png";
+import JobService from "../api/services/JobService";
 import joinStyles from "./Join.module.scss";
 
 export default function Join() {
+  const [unfilledPositions , setUnfilledPositions] = useState([]);
+  const [filledPositions , setFilledPositions] = useState([]);
 
-
+  useEffect(() => {
+    JobService.getUnfilledPositions().then((res) => {
+      setUnfilledPositions(res.data);
+      console.log(res.data);
+    }).catch(err => {
+      console.log(err);
+    })
+    JobService.getFilledPositions().then((res) => {
+      setFilledPositions(res.data);
+      console.log(res.data);
+    }).catch(err => {
+      console.log(err);
+    })
+  },[]);
 
   function CustomToggle({ children, eventKey }) {
     const decoratedOnClick = useAccordionButton(eventKey, () =>{
@@ -55,62 +73,41 @@ export default function Join() {
                 <h4>OPEN POSITIONS</h4>
 
                 <Accordion className={joinStyles.accordion}>
-                  <Accordion.Item eventKey="0">
-                    <Accordion.Header>Job Position Title</Accordion.Header>
-                    <Accordion.Body>
-                      <div className={joinStyles.acc_body}>
-                          <CustomToggle eventKey="0">
-                            <h3>
-                              Job Position Title
-                            </h3>
-                          </CustomToggle>
-                        <p>
-                          Lorem ipsum dolor sit amet, consect adipiscing elit.
-                          Nunc, sed ornare sed tortor consectetur suspendisse
-                          commodo, posuere tortor. Morbi aliquam.
-                          <br />
-                          <br />
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Nunc, sed ornare sed tortor consectetur
-                          suspendisse commodo, posuere tortor. Morbi aliquam, et
-                          mattis integer. Rhoncus eget gravida vel amet blandit
-                          enim velit donec. Pellentesque quam adipiscing
-                          faucibus laoreet faucibus scelerisque.{" "}
-                        </p>
-                        <label>REQUIREMENTS</label>
-                        <ul>
-                          <li>
-                            Ac fames orci vitae nunc, lobortis montes,
-                            pellentesque arcu enim.
-                          </li>
-                          <li>
-                            Ornare accumsan sit egestas luctus tortor quam
-                            scelerisque at.
-                          </li>
-                          <li>
-                            Tellus eu, sit non tempus in libero volutpat et
-                            pellentesque.
-                          </li>
-                          <li>
-                            Ac fames orci vitae nunc, lobortis montes,
-                            pellentesque arcu enim.
-                          </li>
-                          <li>
-                            Ornare accumsan sit egestas luctus tortor quam
-                            scelerisque at.
-                          </li>
-                          <li>
-                            Tellus eu, sit non tempus in libero volutpat et
-                            pellentesque.
-                          </li>
-                        </ul>
-                        <a href="mailto: hr@maisonpyramide.com?subject=Test position">
-                        <button>APPLY FOR THIS ROLE</button>
-                        </a>
-                      </div>
-                    </Accordion.Body>
-                  </Accordion.Item>
-                  <Accordion.Item eventKey="1">
+                  {unfilledPositions.map((item ,key) => {
+                    return (
+                      <Accordion.Item eventKey={key} key={key}>
+                      <Accordion.Header>{item?.attributes?.title}</Accordion.Header>
+                      <Accordion.Body>
+                        <div className={joinStyles.acc_body}>
+                            <CustomToggle eventKey={key}>
+                              <h3>
+                               {item?.attributes?.title}
+                              </h3>
+                            </CustomToggle>
+                          <p>
+                           {item?.attributes?.description}
+                          </p>
+                          <label>REQUIREMENTS</label>
+                          <ul>
+                            {JSON.parse(item?.attributes?.requirements).map((req,key)=>{
+                              return (
+                              <li key={key}>
+                               {req}
+                              </li>
+                              )
+
+                            })}
+                          </ul>
+                          <a href={`mailto: hr@maisonpyramide.com?subject=${item?.attributes?.title}`}>
+                          <button>APPLY FOR THIS ROLE</button>
+                          </a>
+                        </div>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                    )
+                  })}
+                
+                  {/* <Accordion.Item eventKey="1">
                     <Accordion.Header>Job Position Title</Accordion.Header>
                     <Accordion.Body>
                       <div className={joinStyles.acc_body}>
@@ -220,22 +217,24 @@ export default function Join() {
                         </a>
                       </div>
                     </Accordion.Body>
-                  </Accordion.Item>
+                  </Accordion.Item> */}
                 </Accordion>
-                <section className={joinStyles.filled}>
-                    <h4>RECENTLY FILLED POSITIONS</h4>
+                {filledPositions[0] && (
+                  <section className={joinStyles.filled}>
+                      <h4>RECENTLY FILLED POSITIONS</h4>
 
-                    <div className={joinStyles.position}>
-                        <span>FILLED</span>
-                        <h2>Job Position Title</h2>
-                    </div>
+                      {filledPositions.map((item,key) => {
+                        return(
+                        <div key={key} className={joinStyles.position}>
+                            <span>FILLED</span>
+                            <h2>{item?.attributes.title}</h2>
+                        </div>
+                        )
+                      })}
 
-                    <div className={joinStyles.position}>
-                        <span>FILLED</span>
-                        <h2>Job Position Title</h2>
-                    </div>
 
-                </section>
+                  </section>
+                )}
               </Col>
             </Row>
           </div>

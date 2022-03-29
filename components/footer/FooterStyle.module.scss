@@ -51,6 +51,9 @@
             font-size:12px ;
             // line-height: 14px;
         }
+        .email{
+            font-weight: 900!important;
+        }
     }
     p.tel{
         margin:0;
@@ -267,6 +270,9 @@
                     line-height: 14px;
                     p{
                         margin:6px 0 ;
+                    }
+                    .email{
+                        font-weight: 700;
                     }
                 }
                
