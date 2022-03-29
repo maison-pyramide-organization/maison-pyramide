@@ -99,7 +99,7 @@
                     border-width: 1.82px 1.82px 0 0;
                     position: absolute;
                     right:0;
-                    top:20px;
+                    top:32px;
                     content: '';
                     display: inline-block;
                     height: 12px;
@@ -139,6 +139,7 @@
                         margin-bottom: 24px;
                         font-size:36px;
                         line-height: 36px;
+                        cursor: pointer;
                     }
                     span{
                         border-style: solid;
@@ -245,12 +246,15 @@
                         font-size:24px;
                         line-height: 24px;
     
-                    }      
+                    }    
+                    button::after{
+                        top:15px;
+                    }  
                 }
                 .acc_body{
                     padding-top:8px;
                     h3{
-                        font-size:24px;
+                        font-size:24px!important;
                         line-height: 24px;
                     }
                     p{
