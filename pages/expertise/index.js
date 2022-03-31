@@ -176,9 +176,9 @@ Lifestyle, Retail, and Fashion.
               <ParallaxCache />
                 <div className={expertiseStyles.text}>
                   <h3 className="disktop_only">{exp.attributes?.title}</h3>
-                  <p>
+                  <pre>
                     {exp.attributes?.description}
-                  </p>
+                  </pre>
                   <br />
                   <p>
                     {!isTextExpand[ind] && isMobile ? (
@@ -197,7 +197,7 @@ Lifestyle, Retail, and Fashion.
                               timeout={500}
                               classNames={"readMore"}
                             >
-                              <p>
+                              <pre>
                                 {exp.attributes?.sub_description}
                                 {isMobile && (
 
@@ -208,7 +208,7 @@ Lifestyle, Retail, and Fashion.
                                   READ LESS
                                 </p>
                                 )}
-                              </p>
+                              </pre>
                             </CSSTransition>
                           )}
                         </TransitionGroup>
