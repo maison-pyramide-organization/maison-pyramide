@@ -81,12 +81,14 @@ export default function Group() {
         <Parallax translateY={[isMobile?10:20, isMobile?-10:-30]}>
         <Container>
           <p className={groupStyles.text}>
-            An international platform supporting the pace of innovation and
-            growth of young emerging and established entities looking to scale
-            every vertical of their business. The platform has a global network
-            of trend-setting corporations, media and influencers, made up of
-            young entrepreneurs, opinion leaders and innovators with acumulative
-            audience of 500 million and reach of over 1 billion.
+          Tap into an audience of 500 million and reach of over 1 billion.
+Our innovative platform offers strategic thinking - and visionary
+creativity. we help prestigious names in media, public affairs,
+lifestyle, retail, and fashion build brand resonance by connecting
+with the world of today.
+Our global network includes trend-setting corporations, media,
+and influencers, young entrepreneurs, opinion leaders, and
+talented creators.
           </p>
           <ul>
             <li className="text-center">
@@ -131,9 +133,13 @@ Kantari building, Beirut, Lebanon</span>
                     Office <br className="disktop_only" /> Network
                   </h2>
                   <p>
-                    Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc,
-                    sed ornare sed tortor consectetur suspendisse commodo,
-                    posuere tortor.
+                  Maison Pyramide has built a well-respected brand name
+ongst global players and millennial consumers. We're
+renowned for our particular expertise with brands, business, and
+consumers in EMEA.
+<br/><br/>
+Our deep connections with millennial culture help new and
+established brands find relevance in today's world.
                   </p>
                 </div>
               </Col>
@@ -143,12 +149,14 @@ Kantari building, Beirut, Lebanon</span>
               <Col md={4}>
                 <div className={`${groupStyles.office_network} ${groupStyles.office_network_text}`}>
                   <p>
-                  Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec. 
-                  <br/>
-                  <br/>
-                  {!isMobile && (
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec. Pellentesque quam adipiscing faucibus laoreet faucibus scelerisque.'
-                  )}
+                  Since 2016, our Cairo office has strengthened the EMEA and
+global presence of major and rising brands. We opened our
+second office in Lebanon in 2019 and launched our Dubai
+headquarters in 2021.
+<br/><br/>
+In addition to offices across EMEA, we have impressive seasonal
+Sales& PR Showrooms in global fashion capitals,
+complemented by our digital EShowroom.<br/>
                   </p>
                 </div>
               </Col>
@@ -163,10 +171,14 @@ Kantari building, Beirut, Lebanon</span>
           <div className={groupStyles.leader}>
             <h2 className="text-center pb-3">Leadership Team</h2>
             <p className="text-center">
-              Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed
-              ornare sed tortor
-              <br className="disktop_only" /> consectetur suspendisse commodo, posuere tortor. Morbi
-              aliquam, et mattis integer.
+            We are independently owned, with deep expertise across retail,
+finance, and international marcoms. Specialisms include: luxury
+brands, designer fashion, new media, and investment and fund
+management. 
+<br/>
+<br/>
+We strive to deliver unique results through an inimitable approach
+that is built on our genuine interests and demonstrable expertise.
             </p>
 
             <Row>
@@ -300,8 +312,10 @@ Kantari building, Beirut, Lebanon</span>
                 In the press
             </h2>
             <p className="text-center">
-            Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed <br className="disktop_only"/> ornare sed tortor consectetur suspendisse commodo, posuere tortor. 
-            </p>
+            Discover why everyone's talking about our
+            <br/>
+innovative projects, our team of experts, and our
+mission to elevate inspiring brands.            </p>
             <Row>
                 <Col md={4} onClick={() => handlePost('https://coveteur.com/2018/10/16/maison-pyramide-founders-talk-business-new-designers/')}>
                     <div className={groupStyles.press_card}>

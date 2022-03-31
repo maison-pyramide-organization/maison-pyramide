@@ -102,8 +102,12 @@ function Home() {
           <Col md={7}>
           <div className={homeStyles.text}>
           <p>
-          Maison Pyramide Group is an international platform supporting the pace of innovation and growth of young emerging and established entities looking to speak the millennial language and grow internationally.
-          </p>
+          Maison Pyramide Group is fuelling the next
+generation of consumer brands, by
+connecting them with millennial audiences.
+Our innovative platform drives international
+growth through strategic - and profoundly
+inspirational - solutions.</p>
           <Link href="/group">
           <button>
             <a>

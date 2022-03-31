@@ -111,10 +111,14 @@ export default function Expertise() {
                   SOLUTIONS FOR YOUR BUSINESS <br /> TO STRIVE ON A GLOBAL LEVEL
                 </h1>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. A
-                  consectetur eget tincidunt cursus praesent. Proin duis risus
-                  tortor ipsum ipsum mauris. Ridiculus quisque cursus quisque
-                  nisl elementum elementum.
+                We elevate fashion, lifestyle, luxury, and media brands by
+blending intelligent strategy with highly creative
+execution.
+Our deep connections with millennial culture help
+businesses find relevance in today's world.
+<br/>
+Our five main areas of expertise: Media, Public Affairs,
+Lifestyle, Retail, and Fashion.
                 </p>
               </div>
             </Col>

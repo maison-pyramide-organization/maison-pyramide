@@ -82,6 +82,8 @@
             opacity: .8;
             font-size: 20px;
             line-height: 28px;
+            width: clamp(300px , 80% , 700px);
+            margin: auto;
         }
         .card{
             margin-top:32px;

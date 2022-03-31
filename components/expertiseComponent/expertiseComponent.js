@@ -58,28 +58,28 @@ function ClientComponent() {
     const [expertiseText, setExpertiseText] = useState();
     const [expContent, setExpContent] = useState([
         {
-            description: 'Lorem ipsum dolor sit amet, consect adipiscing elit. Aliquam ut eget curabitur nam lobortis egestas massa. Ultrices at feugiat elementum nulla eleifend ac. Lorem ipsum dolor sit amet, consect adipiscing elit.',
+            description: "we help gobal and MENA-based companies identify opportunities to thrive - and to grow. Our expertise extends across a range of industry verticals, in the worlds of fashion, media, retail, lifestyle, and public affairs.",
             img: expimg,
             mobileImg: expmobileimg4
         },
         {
-            description: 'Lorem ipsum dolor sit amet, consect adipiscing elit. Aliquam ut eget curabitur nam lobortis egestas massa. Ultrices at feugiat elementum nulla eleifend ac. Lorem ipsum dolor sit amet, consect adipiscing elit.',
+            description: "we help gobal and MENA-based companies identify opportunities to thrive - and to grow. Our expertise extends across a range of industry verticals, in the worlds of fashion, media, retail, lifestyle, and public affairs.",
             img: expimg2,
             mobileImg: expmobileimg2
 
         },
         {
-            description: 'Lorem ipsum dolor sit amet, consect adipiscing elit. Aliquam ut eget curabitur nam lobortis egestas massa. Ultrices at feugiat elementum nulla eleifend ac. Lorem ipsum dolor sit amet, consect adipiscing elit.',
+            description: "we help gobal and MENA-based companies identify opportunities to thrive - and to grow. Our expertise extends across a range of industry verticals, in the worlds of fashion, media, retail, lifestyle, and public affairs.",
             img: expimg3,
             mobileImg: expmobileimg3
         },
         {
-            description: 'Lorem ipsum dolor sit amet, consect adipiscing elit. Aliquam ut eget curabitur nam lobortis egestas massa. Ultrices at feugiat elementum nulla eleifend ac. Lorem ipsum dolor sit amet, consect adipiscing elit.',
+            description: "we help gobal and MENA-based companies identify opportunities to thrive - and to grow. Our expertise extends across a range of industry verticals, in the worlds of fashion, media, retail, lifestyle, and public affairs.",
             img: expimg5,
             mobileImg: expmobileimg1
         },
         {
-            description: 'Lorem ipsum dolor sit amet, consect adipiscing elit. elementum nulla. Lorem ipsum dolor sit amet, consect adipiscing elit.',
+            description: "we heip gobal and MENA-based companies identify opportunities to thrive - and to grow. Our expertise extends across a range of industry verticals, in the worlds of fashion, media, retail, lifestyle, and public affairs.",
             img: expimg4,
             mobileImg: expmobileimg5
         }

@@ -187,10 +187,14 @@ function Services() {
             <Col md={6}>
               <div>
                 <p className={servicesStyles.text}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. A
-                  consectetur eget tincidunt cursus praesent. Proin duis risus
-                  tortor ipsum ipsum mauris. Ridiculus quisque cursus quisque
-                  nisl elementum elementum.{" "}
+                We offer outside-the-box solutions to boost
+brand reputation, reach and sales. We speak
+the millennial tongue and know the
+consumer. We have the confidence, the
+connections and the creativity - to make
+things happen.
+Explore our full range of brand-building
+services:
                 </p>
                 <Accordion className={servicesStyles.accordion}>
                   <Accordion.Item
@@ -513,12 +517,14 @@ function Services() {
                           Talent Booking & Management
                         </h3> */}
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. A consectetur eget tincidunt cursus praesent.
-                          Proin duis risus tortor ipsum ipsum mauris. Ridiculus
-                          quisque cursus quisque nisl elementum elementum.
-                          Cursus enim quis aliquam urna ac ultricies tristique
-                          sociis fames.
+                        We offer outside-the-box solutions to boost
+brand reputation, reach and sales. We speak
+the millennial tongue and know the
+consumer. We have the confidence, the
+connections and the creativity - to make
+things happen.
+Explore our full range of brand-building
+services:
                         </p>
                         <div className={`${servicesStyles.img_section} mobile`}>
                           <Image

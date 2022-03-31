@@ -113,12 +113,15 @@ export default function Clients() {
                 <Container>
 
                     <h1 className="text-center">
-                        WE EXISTS AS AN ENGINE TO FUEL
-                        A GENERATION OF RISING TALENT
+                    We have built a renowned and respected
+                    
+                    name amongst leading brands.
                     </h1>
                     <p className="text-center">
-                        Lorem ipsum dolor sit amet, consect adipiscing elit. Hendrerit sed cursus mattis id sed viverra. Nibh nulla consequat lorem turpis. Sit morbi sed tempus, amet, mattis. Sagittis velit lectus in eget nec sagittis adipiscing porta. Aliquet commodo, velit feugiat egestas.
-                    </p>
+                    Our clients range from leading multinationals
+and heritage brands to the hottest emerging
+brands, across media, Iifestyle, fashion, and
+retail                    </p>
                 </Container>
             </header>
             <section className={clientsStyles.feat_projects}>

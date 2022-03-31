@@ -304,7 +304,7 @@ Kantari building, Beirut, Lebanon</span>
         </section>
         <section className={contactStyles.join}>
             <h3 className="mb-4">
-            Interested in joing <br className="mobile"/> the team?
+            Interested in joining <br className="mobile"/> the team?
             </h3>
             <p>
             Take a look at our current open positions

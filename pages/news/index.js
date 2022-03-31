@@ -203,10 +203,11 @@ export default function News() {
             </h1>
             <div>
               <p>
-                Lorem ipsum dolor sit amet, consect adipiscing
-                elit. Nunc, sed ornare sed
-                tortor consectetur suspendisse
-                commodo, posuere tortor.
+              Learn about our latest events, product and brand
+launches, pop-ups, and artistic collaborations.
+And learn more about our mission to discover and
+elevate worthy brands in lifestyle, fashion, and
+luxury.
               </p>
             </div>
           </div>
