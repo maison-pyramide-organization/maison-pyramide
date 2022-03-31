@@ -115,7 +115,7 @@ export default function Expertise() {
 blending intelligent strategy with highly creative
 execution.
 Our deep connections with millennial culture help
-businesses find relevance in today's world.
+businesses find relevance in today&apos;s world.
 <br/>
 Our five main areas of expertise: Media, Public Affairs,
 Lifestyle, Retail, and Fashion.

@@ -134,12 +134,12 @@ Kantari building, Beirut, Lebanon</span>
                   </h2>
                   <p>
                   Maison Pyramide has built a well-respected brand name
-ongst global players and millennial consumers. We're
+ongst global players and millennial consumers. We&apos;re
 renowned for our particular expertise with brands, business, and
 consumers in EMEA.
 <br/><br/>
 Our deep connections with millennial culture help new and
-established brands find relevance in today's world.
+established brands find relevance in today&apos;s world.
                   </p>
                 </div>
               </Col>
@@ -312,7 +312,7 @@ that is built on our genuine interests and demonstrable expertise.
                 In the press
             </h2>
             <p className="text-center">
-            Discover why everyone's talking about our
+            Discover why everyone&apos;s talking about our
             <br/>
 innovative projects, our team of experts, and our
 mission to elevate inspiring brands.            </p>
