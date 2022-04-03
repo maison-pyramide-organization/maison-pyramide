@@ -68,9 +68,7 @@ export default function Group() {
   }
   return (
     <Layout>
-      {/* <ParallaxProvider>
-        <ParallaxCache/>
-      </ParallaxProvider> */}
+      
       <IsMobileComponent handleMobile={useHandleMobile}/>
       <ParallaxProvider>
       <header className={groupStyles.header}>
@@ -78,8 +76,8 @@ export default function Group() {
       </header>
       <section className={groupStyles.info}>
       {/* <ParallaxProvider> */}
-        <ParallaxCache/>
         <Parallax translateY={[isMobile?10:20, isMobile?-10:-30]}>
+        <ParallaxCache/>
         <Container>
           <p className={groupStyles.text}>
           Tap into an audience of 500 million and reach of over 1 billion.
@@ -123,7 +121,8 @@ Kantari building, Beirut, Lebanon</span>
         <Container fluid>
         {/* <ParallaxProvider> */}
         {/* <ParallaxCache/> */}
-        <Parallax translateY={[isMobile?10:30, isMobile?-10:-30,'easeOutQuint']}>
+        <Parallax translateY={[isMobile?10:30, isMobile?-10:-30]}>
+          <ParallaxCache/>
           <div className={groupStyles.office}>
             <Row>
             <Col md={12} className={`${groupStyles.office_network_img} mobile`}>
@@ -169,7 +168,8 @@ complemented by our digital EShowroom.<br/>
 
         {/* <ParallaxProvider>
         <ParallaxCache/> */}
-        <Parallax translateY={[isMobile?2:10, isMobile?-5:-30,'easeOutQuint']}>
+        <Parallax translateY={[isMobile?2:10, isMobile?-5:-30]}>
+        <ParallaxCache/>
           <div className={groupStyles.leader}>
             <h2 className="text-center pb-3">Leadership Team</h2>
             <p className="text-center">
@@ -231,17 +231,19 @@ that is built on our genuine interests and demonstrable expertise.
           </Parallax>
         {/* </ParallaxProvider> */}
 
-        {/* <ParallaxProvider> */}
-        {/* <ParallaxCache/> */}
-        <Parallax translateY={[isMobile?-15:10, isMobile?-10:-30,'easeOutQuint']}>
+        <ParallaxProvider>
+        <ParallaxCache/>
+        <Parallax translateY={[isMobile?-15:10, isMobile?-10:-30]}>
           <GroupSlider/>
 
           </Parallax>
-        {/* </ParallaxProvider> */}
+        </ParallaxProvider>
 
-          {/* <ParallaxProvider>
-        <ParallaxCache/> */}
-        <Parallax translateY={[isMobile?10:20, isMobile?-10:-50,'easeOutQuint']}>
+          <ParallaxProvider>
+        <ParallaxCache/>
+        <Parallax translateY={[isMobile?10:20, isMobile?-10:-50]}>
+        <ParallaxCache/>
+
           <div className={groupStyles.press}>
 
             <h2 className="text-center">
@@ -306,7 +308,7 @@ mission to elevate inspiring brands.            </p>
             </Row>
           </div>
             </Parallax>
-        {/* </ParallaxProvider> */}
+        </ParallaxProvider>
         </Container>
         
       </section>

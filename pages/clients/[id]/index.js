@@ -223,9 +223,9 @@ export default function Project() {
             <Parallax translateY={[isMobile?20:20, isMobile?-20:-20,'easeOutQuint']}>
         <section className={projectStyles.challenge}>
             <Container>
-            <h2>
+            {/* <h2>
                 The Challenge
-            </h2>
+            </h2> */}
             <p>
                 {data.challenge_description}
             </p>
@@ -250,7 +250,7 @@ export default function Project() {
                     </div>
                     <Container>
                         <Row className={projectStyles.sol_row}>
-                            <Col md={5} className={`${projectStyles.sol_row_img}`}>
+                            <Col md={5} className={`${projectStyles.sol_row_img} text-center`}>
                             
                             {data.solution_images && (
                                 <Image className={projectStyles.sol_row_img_cont} src={data.solution_images[1]?.custom_data?.url} objectFit={"cover"} width={300} height={500}></Image>                            
@@ -258,7 +258,7 @@ export default function Project() {
                             </Col>
                             <Col md={7}>
                                 <div className={projectStyles.sol_text}>
-                                <h3>Our Solution</h3>
+                                {/* <h3>Our Solution</h3> */}
                                 <pre>
                                 {/* Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam.
                                 <br className="mobile"/>
@@ -307,7 +307,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, sed ornare sed to
                         <div className={projectStyles.content}>
 
                             <div className={projectStyles.text}>
-                            <h3>The Results</h3>
+                            {/* <h3>The Results</h3> */}
                             <pre>
                                 {data.results_description}
                             </pre>
