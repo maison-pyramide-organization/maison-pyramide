@@ -4,5 +4,8 @@ export const Clients = {
         url: `https://site-api.datocms.com/items?filter[type]=1799211&order_by=number_ASC`,
         method: 'GET',
      },
-  
+     getHomeClients:{
+        url: `https://site-api.datocms.com/items?filter[type]=1872130&order_by=number_ASC`,
+        method: 'GET',
+     }
 }

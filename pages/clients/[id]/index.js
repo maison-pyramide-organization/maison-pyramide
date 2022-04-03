@@ -82,6 +82,17 @@ export default function Project() {
   return (
     <Layout>
         <IsMobileComponent handleMobile={useHandleMobile}/>
+        {isMobile? (
+                <>
+                    <link rel="preload" as="video" type="video/mp4" href={data?.mobile_video?.custom_data?.url}></link>
+                </>
+                ):
+                (
+                <>
+                    <link rel="preload" as="video" type="video/mp4" href={data?.video?.custom_data?.url}></link>
+                </>
+
+            )}
         {data && (
 
          <ParallaxProvider>

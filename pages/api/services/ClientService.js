@@ -7,4 +7,9 @@ export default class ClientService {
             method: Clients.getClients.method,
         });
     }
+    static getHomeClients() {
+        return Network.fetch(Clients.getHomeClients.url, {
+            method: Clients.getHomeClients.method,
+        });
+    }
 }

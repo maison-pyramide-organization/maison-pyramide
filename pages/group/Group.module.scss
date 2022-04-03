@@ -41,6 +41,9 @@
             font-size: 16px;
             line-height: 18px;
         }
+        span:last-child{
+            font-weight: 900!important;
+        }
     }
 
     .office{
@@ -82,7 +85,7 @@
             opacity: .8;
             font-size: 20px;
             line-height: 28px;
-            width: clamp(300px , 80% , 700px);
+            // width: clamp(300px , 80% , 700px);
             margin: auto;
         }
         .card{
@@ -377,7 +380,7 @@
     .press{
         padding:12px!important;
         margin-bottom: 104px;
-        margin-top: 32px;
+        // margin-top: 32px;
         h2{
             font-size: 28px!important;
             line-height: 31px!important;

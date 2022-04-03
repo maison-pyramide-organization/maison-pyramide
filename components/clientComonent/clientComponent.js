@@ -28,6 +28,7 @@ import client10 from '../../public/imgs/client5.2.jpeg';
 import client11 from '../../public/imgs/client6.2.png';
 import client12 from '../../public/imgs/client7.1.jpeg';
 import client13 from '../../public/imgs/client7.2.jpeg';
+import ClientService from '../../pages/api/services/ClientService';
 
 const ParallaxCache = dynamic(
   () => {
@@ -52,6 +53,7 @@ function ClientComponent() {
     ])
 
   useEffect(async () => {
+    // getClients();
     await Promise.all(
       [client1.src,client2.src, client3.src, client4.src, client7.src,client8.src, client11.src, client12.src, client13.src,clientImg2.src].map((card) => {
         return new Promise((resolve, reject) => {
@@ -65,6 +67,13 @@ function ClientComponent() {
       })
     );
   }, []);
+
+    const getClients = () => {
+      ClientService.getHomeClients().then(res => {
+        console.log("data",res.data);
+        setClientList(res.data);
+      })
+    }
 
 
     const handleLeftClick = () => {

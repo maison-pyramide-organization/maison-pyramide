@@ -86,6 +86,7 @@ Our innovative platform offers strategic thinking - and visionary
 creativity. we help prestigious names in media, public affairs,
 lifestyle, retail, and fashion build brand resonance by connecting
 with the world of today.
+<br/><br/>
 Our global network includes trend-setting corporations, media,
 and influencers, young entrepreneurs, opinion leaders, and
 talented creators.

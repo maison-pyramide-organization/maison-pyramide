@@ -205,6 +205,7 @@ export default function News() {
               <p>
               Learn about our latest events, product and brand
 launches, pop-ups, and artistic collaborations.
+<br/> <br/>
 And learn more about our mission to discover and
 elevate worthy brands in lifestyle, fashion, and
 luxury.
