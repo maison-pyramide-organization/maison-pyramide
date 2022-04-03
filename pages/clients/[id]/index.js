@@ -82,7 +82,7 @@ export default function Project() {
   return (
     <Layout>
         <IsMobileComponent handleMobile={useHandleMobile}/>
-        {isMobile? (
+        {/* {isMobile? (
                 <>
                     <link rel="preload" as="video" type="video/mp4" href={data?.mobile_video?.custom_data?.url}></link>
                 </>
@@ -92,7 +92,7 @@ export default function Project() {
                     <link rel="preload" as="video" type="video/mp4" href={data?.video?.custom_data?.url}></link>
                 </>
 
-            )}
+            )} */}
         {data && (
 
          <ParallaxProvider>
@@ -122,8 +122,7 @@ export default function Project() {
                         </div>
                     ):
                     (//mobile video
-                        <video autoPlay playsInline muted loop style={{width:'100%' , height:'100%',objectFit:'cover'}}>
-                            <source src={data?.mobile_video?.custom_data?.url} type="video/mp4"/>
+                        <video autoPlay playsInline muted loop style={{width:'100%' , height:'100%',objectFit:'cover'}} src={data?.mobile_video?.custom_data?.url}>
                         </video>
                     )}
                 </>
@@ -138,12 +137,11 @@ export default function Project() {
                         </div>
                     ):
                     (//video
-                    <video autoPlay playsInline muted loop style={{width:'100%' , height:'100%',objectFit:'cover'}}>
-                        <source src={data?.video?.custom_data?.url} type="video/mp4"/>
+                    <video autoPlay playsInline muted loop style={{width:'100%' , height:'100%',objectFit:'cover'}} src={data?.video?.custom_data?.url}>
                     </video>
                     )}
                 </>
-            )}
+            )} 
           
             </Parallax>
         </ParallaxProvider>
