@@ -129,7 +129,7 @@ Lifestyle, Retail, and Fashion.
 
       <section className={expertiseStyles.main_area}>
         <Container>
-          <h2 className="text-center">Our five main areas expertise</h2>
+          <h2 className="text-center">Our five main areas of expertise</h2>
           {_expertise.map((exp , ind) => {
             return(
 
