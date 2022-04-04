@@ -58,7 +58,7 @@ function ClientComponent() {
     const [expertiseText, setExpertiseText] = useState();
     const [expContent, setExpContent] = useState([
         {
-            description: "We help gobal and MENA-based companies identify opportunities to thrive - and to grow.\n \n Our expertise extends across a range of industry verticals, in the worlds of fashion, media, retail, lifestyle, and public affairs.",
+            description: "We help gobal and MENA-based companies identify opportunities to thrive - and to grow. Our expertise extends across a range of industry verticals, in the worlds of fashion, media, retail, lifestyle, and public affairs.",
             img: expimg,
             mobileImg: expmobileimg4
         },
