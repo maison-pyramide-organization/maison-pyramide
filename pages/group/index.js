@@ -8,7 +8,7 @@ import { ParallaxProvider ,Parallax} from "react-scroll-parallax";
 
 import Layout from "../../components/layout/Layout";
 import groupImg from "../../public/imgs/office.jpg";
-import groupImg1 from "../../public/imgs/bw.png";
+import groupImg1 from "../../public/imgs/jann.jpg";
 import groupImg2 from "../../public/imgs/giovanina.png";
 import groupImg3 from "../../public/imgs/maria.png";
 import groupImg4 from "../../public/imgs/nat.png";
@@ -121,7 +121,7 @@ Kantari building, Beirut, Lebanon</span>
         <Container fluid>
         {/* <ParallaxProvider> */}
         {/* <ParallaxCache/> */}
-        <Parallax translateY={[isMobile?10:30, isMobile?-10:-30]}>
+        <Parallax translateY={[isMobile?10:30, isMobile?-10:-30,'easeOutQuint']}>
           <ParallaxCache/>
           <div className={groupStyles.office}>
             <Row>
@@ -233,7 +233,7 @@ that is built on our genuine interests and demonstrable expertise.
 
         <ParallaxProvider>
         <ParallaxCache/>
-        <Parallax translateY={[isMobile?-15:10, isMobile?-10:-30]}>
+        <Parallax translateY={[isMobile?-5:10, isMobile?-10:-30]}>
           <GroupSlider/>
 
           </Parallax>
@@ -241,7 +241,7 @@ that is built on our genuine interests and demonstrable expertise.
 
           <ParallaxProvider>
         <ParallaxCache/>
-        <Parallax translateY={[isMobile?10:20, isMobile?-10:-50]}>
+        <Parallax translateY={[isMobile?5:20, isMobile?-10:-50]}>
         <ParallaxCache/>
 
           <div className={groupStyles.press}>

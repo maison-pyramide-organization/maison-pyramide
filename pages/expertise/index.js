@@ -114,10 +114,10 @@ export default function Expertise() {
                 We elevate fashion, lifestyle, luxury, and media brands by
 blending intelligent strategy with highly creative
 execution.
-<br/><br/>
+{/* <br/><br/> */}
 Our deep connections with millennial culture help
 businesses find relevance in today&apos;s world.
-<br/><br/>
+{/* <br/><br/> */}
 Our five main areas of expertise: Media, Public Affairs,
 Lifestyle, Retail, and Fashion.
                 </p>

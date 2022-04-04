@@ -193,7 +193,7 @@ the millennial tongue and know the
 consumer. We have the confidence, the
 connections and the creativity - to make
 things happen.
-<br/><br/>
+<br/>
 Explore our full range of brand-building
 services:
                 </p>
