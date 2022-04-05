@@ -95,9 +95,9 @@ function Services() {
       <ParallaxProvider>
         <ParallaxCache />
       </ParallaxProvider>
-      {services.map((serv) => {
+      {services.map((serv,key) => {
         return(
-          <link rel="preload" as="image" href={serv?.attributes?.image?.custom_data?.url}></link>
+          <link key={key} rel="preload" as="image" href={serv?.attributes?.image?.custom_data?.url}></link>
         )
       })}
 
