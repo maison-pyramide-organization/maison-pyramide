@@ -168,7 +168,7 @@ complemented by our digital EShowroom.<br/>
 
         {/* <ParallaxProvider>
         <ParallaxCache/> */}
-        <Parallax translateY={[isMobile?2:10, isMobile?-5:-30]}>
+        <Parallax translateY={[isMobile?-1:10, isMobile?-7:-30]}>
         <ParallaxCache/>
           <div className={groupStyles.leader}>
             <h2 className="text-center pb-3">Leadership Team</h2>
@@ -233,7 +233,7 @@ that is built on our genuine interests and demonstrable expertise.
 
         <ParallaxProvider>
         <ParallaxCache/>
-        <Parallax translateY={[isMobile?-5:10, isMobile?-10:-30]}>
+        <Parallax translateY={[isMobile?-11:10, isMobile?-15:-30]}>
           <GroupSlider/>
 
           </Parallax>
@@ -241,7 +241,7 @@ that is built on our genuine interests and demonstrable expertise.
 
           <ParallaxProvider>
         <ParallaxCache/>
-        <Parallax translateY={[isMobile?0:20, isMobile?-15:-50]}>
+        <Parallax translateY={[isMobile?-5:20, isMobile?-10:-50]}>
         <ParallaxCache/>
 
           <div className={groupStyles.press}>

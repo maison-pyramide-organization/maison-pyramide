@@ -40,57 +40,6 @@ function Services() {
       // tag2: "FEATURED IMAGE",
       // id: 1,
     },
-    
-    // {
-    //   img: service2,
-    //   clientName: "SRMG",
-    //   tag1: "HA HUB x THREADS STYLING",
-    //   tag2: "FEATURED IMAGE",
-    //   id: 2,
-    // },
-    // {
-    //   img: service3,
-    //   clientName: "NATHALIE FANJ",
-    //   tag1: "ALULA X VOGUE ARABIA PRODUCTION",
-    //   tag2: "FEATURED IMAGE",
-    //   id: 3,
-    // },
-    // {
-    //   img: service4,
-    //   clientName: "ARCHIPEL",
-    //   tag1: "IMAGE & COMMUNICATION RELAUNCH",
-    //   tag2: "FEATURED PROJECT",
-    //   id: 110636839,
-    // },
-    // {
-    //   img: service5,
-    //   clientName: "EMAAR MISR",
-    //   tag1: "ELIE SAAB X EMAAR",
-    //   tag2: "FEATURED PROJECT",
-    //   id: 111327422,
-    // },
-    // // no image provided, so used as dublicate as the previous one
-    // {
-    //   img: service6,
-    //   clientName: "L’ATELIER NAWBAR",
-    //   tag1: "PRODUCT DEVELOPMENT & WHOLESALE LAUNCH",
-    //   tag2: "FEATURED PROJECT",
-    //   id: 111327549,
-    // },
-    // {
-    //   img: service7,
-    //   clientName: "SRMG",
-    //   tag1: "HIA HUB X VALENTINO",
-    //   tag2: "FEATURED IMAGE ",
-    //   id: 7,
-    // },
-    // {
-    //   img: service7,
-    //   clientName: "SRMG",
-    //   tag1: "HIA HUB X VALENTINO",
-    //   tag2: "FEATURED IMAGE",
-    //   id: 0,
-    // },
   ];
 
   const [services , setServices] = useState([]);
@@ -146,6 +95,11 @@ function Services() {
       <ParallaxProvider>
         <ParallaxCache />
       </ParallaxProvider>
+      {services.map((serv) => {
+        return(
+          <link rel="preload" as="image" href={serv?.attributes?.image?.custom_data?.url}></link>
+        )
+      })}
 
       <section className={servicesStyles.services}>
       {/* <link rel="preload" as="image" href={service1.src}></link>
@@ -155,9 +109,7 @@ function Services() {
       <link rel="preload" as="image" href={service5.src}></link>
       <link rel="preload" as="image" href={service6.src}></link>
       <link rel="preload" as="image" href={service7.src}></link> */}
-      {services.map((serv) => {
-          <link rel="preload" as="image" href={serv?.attributes?.image?.custom_data?.url}></link>
-      })}
+      
         <Container fluid>
           <h1 className="text-center">
             We’re a one-stop solution <br />
@@ -213,6 +165,7 @@ the millennial tongue and know the
 consumer. We have the confidence, the
 connections and the creativity - to make
 things happen.
+<br/>
 <br/>
 Explore our full range of brand-building
 services:
