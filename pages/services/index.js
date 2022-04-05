@@ -223,7 +223,7 @@ services:
 
                     <Accordion.Item
                       eventKey={i}
-                      key={key}
+                      key={i}
                       onClick={() => handleClick(i, event.target)}
                     >
                       <Accordion.Header>{item?.attributes?.title}</Accordion.Header>
@@ -265,7 +265,7 @@ services:
                             </div>
                           </div>
                           <ul>
-                            {JSON.parse(item?.attributes?.service_item).map(serv => {
+                            {JSON.parse(item?.attributes?.service_item).map((serv,key) => {
                               return(
                                 <li key={key}>{serv}</li>
                               )
