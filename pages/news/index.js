@@ -101,7 +101,7 @@ function PaginatedItems({ itemsPerPage ,selectedTab}) {
   
   useEffect(() => {
     if(selectedTab != 'ALL'){
-      setArticles(items.filter(item => item.attributes.tag == selectedTab));
+      setArticles(items.filter(item => item.attributes.tag.trim() == selectedTab));
     }
     else{
       setArticles(items);
