@@ -75,12 +75,12 @@ function ClientComponent() {
         },
         {
             description: "We help gobal and MENA-based companies identify opportunities to thrive - and to grow. Our expertise extends across a range of industry verticals, in the worlds of fashion, media, retail, lifestyle, and public affairs.",
-            img: expimg5,
+            img: expimg4,
             mobileImg: expmobileimg1
         },
         {
             description: "We heip gobal and MENA-based companies identify opportunities to thrive - and to grow. Our expertise extends across a range of industry verticals, in the worlds of fashion, media, retail, lifestyle, and public affairs.",
-            img: expimg4,
+            img: expimg5,
             mobileImg: expmobileimg5
         }
     ]);

@@ -141,7 +141,7 @@ export default function HomeCarousel() {
                                                 </ul>
                                             )}
                                             <p className='disktop_only'>
-                                                {_items[activeIdx]?.attributes?.description}
+                                                {_items[activeIdx]?.attributes?.home_description}
                                             </p>
                                             <div style={{ width: '100%' }}>
                                                 {_items[activeIdx].attributes?.features && (
