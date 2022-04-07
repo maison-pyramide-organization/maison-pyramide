@@ -127,7 +127,7 @@ function PaginatedItems({ itemsPerPage ,selectedTab}) {
     // console.log(pageinationRef.current.state);
     pageinationRef.current.state.selected = 0;
     if(forceBegin){
-      window.scrollTo(800,800);
+      window.scrollTo(800,550);
     }
   };
 

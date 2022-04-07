@@ -178,19 +178,19 @@ export default function Contact() {
                         <li>
                          <p>DUBAI</p>
                         <span>Unit B201, Building 7, 
-Dubai design district.</span>
+Dubai design district,</span>
                         <span>dubai@maisonpyramide.com</span>
                         </li>
                         <li>
                         <p>CAIRO</p>
-                        <span>9 el Gabalaya street, Zamalek.</span>
+                        <span>9 el Gabalaya street, Zamalek,</span>
                         <span>cairo@maisonpyramide.com</span>
                         </li>
                         <li>
                        
                         <p>BEIRUT</p>
                         <span>Ras Beirut, Kantari district, Michel Chiha street, <br/>
-Kantari building, Beirut, Lebanon</span>
+Kantari building, Beirut, Lebanon,</span>
                         <span>beirut@maisonpyramide.com</span>
                         </li>
                         {/* <li>

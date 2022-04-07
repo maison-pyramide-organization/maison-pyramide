@@ -48,10 +48,7 @@ export default function Join() {
         <Container fluid>
           <h1 className="text-center">JOIN THE TEAM</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. A
-            consectetur eget tincidunt cursus praesent. Proin duis risus tortor
-            ipsum ipsum mauris. Ridiculus quisque cursus quisque nisl elementum
-            elementum.
+          We are constantly looking for innovative and driven talents to join our family.
           </p>
         </Container>
       </header>

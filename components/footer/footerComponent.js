@@ -58,18 +58,18 @@ export default function FooterComponent() {
                   <div className={footerStyle.location}>
                     <span className={footerStyle.title}>DUBAI</span>
                     <p className={footerStyle.tel}>Unit B201, Building 7, 
-Dubai design district.</p>
+Dubai design district,</p>
                     <p className={footerStyle.email}>dubai@maisonpyramide.com</p>
                   </div>
                   <div className={footerStyle.location}>
                     <span className={`${footerStyle.title}`}>CAIRO</span>
-                    <p className={footerStyle.tel}>9 el Gabalaya street, Zamalek.</p>
+                    <p className={footerStyle.tel}>9 el Gabalaya street, Zamalek,</p>
                     <p className={footerStyle.email}>cairo@maisonpyramide.com</p>
                   </div>
                   <div className={footerStyle.location}>
                     <span className={footerStyle.title}>BEIRUT</span>
                     <p className={footerStyle.tel}>Ras Beirut, Kantari district, Michel Chiha street, 
-Kantari building, Beirut, Lebanon</p>
+Kantari building, Beirut, Lebanon,</p>
                     <p className={footerStyle.email}>beirut@maisonpyramide.com</p>
                   </div>
                   {/* <div className={footerStyle.location}>
@@ -131,7 +131,7 @@ Kantari building, Beirut, Lebanon</p>
                         <Accordion.Body>
                             <div className={footerStyle.acc_body}>
                                 <p className={footerStyle.tel}>Unit B201, Building 7, 
-Dubai design district.</p>
+Dubai design district,</p>
                                 <p className={footerStyle.email}>dubai@maisonpyramide.com</p>
                             </div>
                         </Accordion.Body>
@@ -144,7 +144,7 @@ Dubai design district.</p>
                         </Accordion.Header>
                         <Accordion.Body>
                             <div className={footerStyle.acc_body}>
-                                <p className={footerStyle.tel}>9 el Gabalaya street, Zamalek.</p>
+                                <p className={footerStyle.tel}>9 el Gabalaya street, Zamalek,</p>
                                 <p className={footerStyle.email}>cairo@maisonpyramide.com</p>
                             </div>
                         </Accordion.Body>
@@ -157,7 +157,7 @@ Dubai design district.</p>
                         <Accordion.Body>
                             <div className={footerStyle.acc_body}>
                                 <p className={footerStyle.tel}>Ras Beirut, Kantari district, Michel Chiha street, 
-Kantari building, Beirut, Lebanon</p>
+Kantari building, Beirut, Lebanon,</p>
                                 <p className={footerStyle.email}>beirut@maisonpyramide.com</p>
                             </div>
                         </Accordion.Body>
@@ -215,9 +215,9 @@ Kantari building, Beirut, Lebanon</p>
             <div className={footerStyle.bottom}>
             <p className='mobile'><a href="https://www.instagram.com/maisonpyramide/" target={"_blank"} rel="noreferrer">INSTAGRAM</a> | <a rel="noreferrer" href="https://www.linkedin.com/company/maison-pyramide" target={"_blank"}>LINKEDIN</a> | <a rel="noreferrer" target={"_blank"} href="https://eshowroom.maisonpyramide.com/">E-SHOWROOM</a></p>
 
-            <Link href="/privacy">
-              <p className={footerStyle.link}>TERMS AND CONDITIONS. PRIVACY POLICY</p>
-            </Link>
+            {/* <Link href="/privacy"> */}
+              <p className={footerStyle.link}>TERMS AND CONDITIONS - PRIVACY POLICY</p>
+            {/* </Link> */}
 
               <p className='disktop_only'><a href="https://www.instagram.com/maisonpyramide/" rel="noreferrer" target={"_blank"}>INSTAGRAM</a> | <a href="https://www.linkedin.com/company/maison-pyramide" rel="noreferrer" target={"_blank"}>LINKEDIN</a> | <a target={"_blank"} rel="noreferrer" href="https://eshowroom.maisonpyramide.com/">E-SHOWROOM</a></p>
 
