@@ -240,7 +240,7 @@ that is built on our genuine interests and demonstrable expertise.
 
           <ParallaxProvider>
         <ParallaxCache/>
-        <Parallax translateY={[isMobile?-5:20, isMobile?-10:-50]}>
+        <Parallax translateY={[isMobile?-5:0, isMobile?-10:-50]}>
         <ParallaxCache/>
 
           <div className={groupStyles.press}>

@@ -87,9 +87,7 @@ Dubai design district.</p>
 {/* <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"> */}
 
 <div id="mc_embed_signup">
-{/* <form action="https://maisonpyramide.us15.list-manage.com/subscribe/post?u=c63c326f60b5a465903f3bf0c&amp;id=f4792e5b8d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank"> */}
-{/* <form action="https://maisonpyramide.us15.list-manage.com/subscribe/post?u=c63c326f60b5a465903f3bf0c&amp;id=52a1742a54" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank"> */}
-<form action="https://maisonpyramide.us15.list-manage.com/subscribe/post?u=c63c326f60b5a465903f3bf0c&amp;id=52a1742a54" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+<form action="https://maisonpyramide.us14.list-manage.com/subscribe/post?u=9e473ed39a27b1b3f8a27575f&amp;id=5d4ae596a6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
     <div id="mc_embed_signup_scroll">
     <div className={footerStyle.inpt_wrapper}>
       <button type="submit" value="Subscribe" className='footer-btn' name="subscribe" id="mc-embedded-subscribe">
