@@ -69,7 +69,7 @@ Dubai design district.</p>
                   <div className={footerStyle.location}>
                     <span className={footerStyle.title}>BEIRUT</span>
                     <p className={footerStyle.tel}>Ras Beirut, Kantari district, Michel Chiha street, 
-Kantari building, Lebanon.</p>
+Kantari building.</p>
                     <p className={footerStyle.email}>beirut@maisonpyramide.com</p>
                   </div>
                   {/* <div className={footerStyle.location}>
@@ -157,7 +157,7 @@ Dubai design district.</p>
                         <Accordion.Body>
                             <div className={footerStyle.acc_body}>
                                 <p className={footerStyle.tel}>Ras Beirut, Kantari district, Michel Chiha street, 
-Kantari building, Lebanon.</p>
+Kantari building.</p>
                                 <p className={footerStyle.email}>beirut@maisonpyramide.com</p>
                             </div>
                         </Accordion.Body>

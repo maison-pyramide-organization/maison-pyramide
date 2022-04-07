@@ -190,7 +190,7 @@ Dubai design district.</span>
                        
                         <p>BEIRUT</p>
                         <span>Ras Beirut, Kantari district, Michel Chiha street, <br/>
-Kantari building, Lebanon.</span>
+Kantari building.</span>
                         <span>beirut@maisonpyramide.com</span>
                         </li>
                         {/* <li>
