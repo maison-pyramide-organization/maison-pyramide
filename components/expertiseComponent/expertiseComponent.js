@@ -19,17 +19,17 @@ import expertStyles from './Expertise.module.scss';
 
 import expImgMobile from '../../public/imgs/mobile/expertbgM.png';
 import expimgt from '../../public/imgs/expbg.png';
-import expimg from '../../public/imgs/exp11.jpg';
-import expimg2 from '../../public/imgs/exp22.jpg';
-import expimg3 from '../../public/imgs/exp33.jpg';
-import expimg4 from '../../public/imgs/exp44.jpg';
-import expimg5 from '../../public/imgs/exp55.jpg';
+import expimg from '../../public/imgs/Untitled-4-04.png';
+import expimg2 from '../../public/imgs/Untitled-4-03.png';
+import expimg3 from '../../public/imgs/Untitled-4-02.png';
+import expimg4 from '../../public/imgs/Untitled-4-05.png';
+import expimg5 from '../../public/imgs/Untitled-4-01.png';
 
-import expmobileimg1 from '../../public/imgs/mobile-01.jpg';
-import expmobileimg2 from '../../public/imgs/mobile-02.jpg';
-import expmobileimg3 from '../../public/imgs/mobile-03.jpg';
-import expmobileimg4 from '../../public/imgs/mobile-04.jpg';
-import expmobileimg5 from '../../public/imgs/mobile-05.jpg';
+import expmobileimg1 from '../../public/imgs/mob-exp-10.png';
+import expmobileimg2 from '../../public/imgs/mob-exp-09.png';
+import expmobileimg3 from '../../public/imgs/mob-exp-08.png';
+import expmobileimg4 from '../../public/imgs/mob-exp-07.png';
+import expmobileimg5 from '../../public/imgs/mob-exp-06.png';
 
 const IsMobileComponent = dynamic(
     () => {

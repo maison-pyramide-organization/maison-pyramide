@@ -215,12 +215,11 @@ Dubai design district.</p>
 
             {/* <Link href="/privacy"> */}
               {/* <p className={footerStyle.link}>TERMS AND CONDITIONS - PRIVACY POLICY</p> */}
-              <p className={footerStyle.link}></p>
             {/* </Link> */}
 
-              <p className='disktop_only'><a href="https://www.instagram.com/maisonpyramide/" rel="noreferrer" target={"_blank"}>INSTAGRAM</a> | <a href="https://www.linkedin.com/company/maison-pyramide" rel="noreferrer" target={"_blank"}>LINKEDIN</a> | <a target={"_blank"} rel="noreferrer" href="https://eshowroom.maisonpyramide.com/">E-SHOWROOM</a></p>
-
               <p>2022 ALL RIGHTS RESERVED</p>
+              <p className={`${footerStyle.social} disktop_only`}><a href="https://www.instagram.com/maisonpyramide/" rel="noreferrer" target={"_blank"}>INSTAGRAM</a> | <a href="https://www.linkedin.com/company/maison-pyramide" rel="noreferrer" target={"_blank"}>LINKEDIN</a> | <a target={"_blank"} rel="noreferrer" href="https://eshowroom.maisonpyramide.com/">E-SHOWROOM</a></p>
+
             </div>
             </div>
       </Container>

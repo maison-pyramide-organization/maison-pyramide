@@ -43,7 +43,7 @@ const _items = [
             {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
             {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
         ],
-        img:group1
+        img:group11
     },
     {
         id:2,
@@ -123,7 +123,8 @@ const _items = [
             {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
             {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
         ],
-        img:group11
+        // img:group11
+        img:group1
     },
     {
         id:12,
@@ -143,64 +144,13 @@ export default function HomeCarousel () {
 
     const [current, setCurrent] = useState(1);
     const [currentScroll, setCurrentScroll] = useState(0);
-
-    // const prevClick = () => {
-    //     setBackSlideAnimationState(true);
-        
-    //     setTimeout(() => {
-    //         if(_items[activeIdx - 1]){
-    //             setActiveIdx(prev => prev - 1);
-    //         }
-    //         else{
-    //             setActiveIdx(_items.length -1);
-    //         }
-    //         setIsNext(false);
-    //         setBackSlideAnimationState(false);
-    //     }, 1000);
-    //     setTimeout(() => {
-    //         setIsNext(null);
-    //     }, 2000);
-        
-    // };
-
-    // const nextClick = () => {
-        
-    //     setSlideAnimationState(true);
-    //     setTimeout(() => {
-    //         if(_items[activeIdx + 1]){
-    //             setActiveIdx(prev => prev + 1);
-    //         }
-    //         else{
-    //             setActiveIdx(0)
-    //         }
-    //         setIsNext(true)
-    //         setSlideAnimationState(false);
-    //     }, 1000);
-
-    //     setTimeout(() => {
-    //         setIsNext(null)
-    //     }, 1300);
-    // };
-
     const nextClick = () => {
         if (current < _items.length ) {
-            // let tabs = document.getElementById('group-slider');
-            // // tabs.scroll({ left: currentScroll + 600, behavior: 'smooth' });
-            // let imgEle = document.getElementById(`img${current}`).getBoundingClientRect().left
-            // tabs.scroll({ left: imgEle, behavior: 'smooth' });
-            // console.log('??',imgEle);
-            // tabs.scrollIntoView(`img${current - 1}`)
-            // setCurrentScroll(prev => prev + 600);
             setCurrent(prev => prev + 1);
         }
     }
     const prevClick = () => {
         if (current > 1) {
-            // let tabs = document.getElementById('group-slider');
-            // tabs.scroll({ left: currentScroll - 600, behavior: 'smooth' });
-            // let imgEle = document.getElementById(`img${current}`).getBoundingClientRect().left
-            // tabs.scroll({ left: imgEle, behavior: 'smooth' });
-            // setCurrentScroll(prev => prev - 600);
             setCurrent(prev => prev - 1);
         }
     }

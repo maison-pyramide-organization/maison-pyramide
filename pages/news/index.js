@@ -9,7 +9,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import ReactPaginate from 'react-paginate';
 
 import Layout from "../../components/layout/Layout";
-import newsImg from "../../public/imgs/newsimg.png";
+// import newsImg from "../../public/imgs/news replacement.jpeg";
 import newsImg1 from "../../public/imgs/nails.png";
 import newsImg2 from "../../public/imgs/mic.png";
 import newsImg3 from "../../public/imgs/newsshelves.png";

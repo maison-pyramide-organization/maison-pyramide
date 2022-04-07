@@ -125,7 +125,7 @@
     .bottom{
         display: flex;
         font-size: 12px;
-        width: 100%;
+        width: 60%;
         justify-content: space-between;
         // align-self: flex-end;
         padding-right: 2.5vw;
@@ -140,6 +140,7 @@
                 color: $active-color;
             }
         }
+        
     }
     .poly{
         position: absolute;
@@ -300,6 +301,7 @@
         flex-wrap: wrap;
         text-align: center;
         margin-top: 72px!important;
+        width: 100%;
         p{
             width:100%;
             padding:4px;

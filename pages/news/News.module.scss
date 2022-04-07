@@ -210,10 +210,11 @@
 .main {
   padding: $y-padding 32px;
   .img {
-    background-image: url(../../public/imgs/gif.gif);
+    background-image: url(../../public/imgs/news11.png);
     min-height: 75vh;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: 10% 10%;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-end;
