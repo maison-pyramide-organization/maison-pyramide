@@ -56,8 +56,6 @@ export default function Project() {
     useEffect(() => {
         FeatureService.getFeature(id).then(res => {
             setData(res.data.attributes);
-            console.log(res.data.attributes);
-            console.log(res.data.attributes.services);
         }).catch(err => {
             console.log(err);
         })

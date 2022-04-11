@@ -93,14 +93,13 @@ export default function Clients() {
 
     useEffect(() => {
         ProjectService.getFeaturedProjects().then((res) => {
-            console.log({res});
+            // console.log({res});
             setFeaturedProjects(res.data);
         }).catch(err => {
             console.log('err?',err);
         })
         ClientService.getClients().then(res => {
             setSelectedClients(res.data);
-            console.log('weca',res.data);
         })
     },[])
     return (

@@ -70,7 +70,7 @@ function ClientComponent() {
 
     const getClients = () => {
       ClientService.getHomeClients().then(res => {
-        console.log("data",res.data);
+        // console.log("data",res.data);
         setClientList(res.data);
       })
     }
@@ -81,7 +81,7 @@ function ClientComponent() {
         // tabs.scroll({left:-100,behavior:'smooth'});
         // setCurrentScroll(prev => prev -100);
         // handleClient(prev => prev -1 || 4);
-        console.log({client});
+        // console.log({client});
         if(client > 0){
           handleClient(prev => prev - 1);
         }

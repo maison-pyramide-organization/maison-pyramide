@@ -8,6 +8,10 @@ export const Articles = {
     getSideArticles :{
         url: `https://site-api.datocms.com/items?filter[fields][is_side][eq]=true&filter[type]=1831736&order_by=number_ASC`,
         method: 'GET',
+    },
+    getArticle :{
+        url:(id) => `https://site-api.datocms.com/items/${id}`,
+        method: 'GET',
     }
   
 }

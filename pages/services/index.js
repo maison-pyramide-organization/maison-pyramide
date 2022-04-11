@@ -73,7 +73,6 @@ function Services() {
 
   const getServices = () => {
     ServiceService.getServices().then(res => {
-      console.log({res});
       setServices(res.data);
     })
   }

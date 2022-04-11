@@ -17,13 +17,13 @@ export default function Join() {
   useEffect(() => {
     JobService.getUnfilledPositions().then((res) => {
       setUnfilledPositions(res.data);
-      console.log(res.data);
+      // console.log(res.data);
     }).catch(err => {
       console.log(err);
     })
     JobService.getFilledPositions().then((res) => {
       setFilledPositions(res.data);
-      console.log(res.data);
+      // console.log(res.data);
     }).catch(err => {
       console.log(err);
     })

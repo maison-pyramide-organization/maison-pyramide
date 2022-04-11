@@ -3,7 +3,6 @@ import { Network } from "../Network";
 
 export default class ProjectService {
     static addContact(data) {
-      console.log('???',data);
         return Network.fetch(contactUs.addContact.url, {
             method: contactUs.addContact.method,
             body:JSON.stringify({

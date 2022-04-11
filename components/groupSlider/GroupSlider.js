@@ -28,115 +28,115 @@ import group12 from '../../public/imgs/group1.JPG';
 
 
 
-const _items = [
-    // {
-    //     id:0,
-    //     sections:[
-    //         {id:0,"title":"Culture","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec."},
-    //         {id:1,"title":"Values and Giving","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam. \n \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec. Pellentesque quam adipiscing faucibus laoreet faucibus scelerisque."}
-    //     ],
-    //     img:group1
-    // },
-    {
-        id:1,
-        sections:[
-            {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
-            {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
-        ],
-        img:group11
-    },
-    {
-        id:2,
-        sections:[
-            {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
-            {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
-        ],
-        img:group2
-    },
-    {
-        id:3,
-        sections:[
-            {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
-            {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
-        ],
-        img:group3
-    },
-    {
-        id:4,
-        sections:[
-            {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
-            {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
-        ],
-        img:group4
-    },
-    {
-        id:5,
-        sections:[
-            {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
-            {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
-        ],
-        img:group5
-    },
-    {
-        id:6,
-        sections:[
-            {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
-            {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
-        ],
-        img:group6
-    },
-    {
-        id:7,
-        sections:[
-            {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
-            {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
-        ],
-        img:group7
-    },
-    {
-        id:8,
-        sections:[
-            {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
-            {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
-        ],
-        img:group8
-    },
-    {
-        id:9,
-        sections:[
-            {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
-            {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
-        ],
-        img:group9
-    },
-    {
-        id:10,
-        sections:[
-            {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
-            {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
-        ],
-        img:group10
-    },
-    {
-        id:11,
-        sections:[
-            {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
-            {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
-        ],
-        // img:group11
-        img:group1
-    },
-    {
-        id:12,
-        sections:[
-            {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
-            {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events.\n \n We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
-        ],
-        img:group12
-    },
-];
+// const [_items] = [
+//     // {
+//     //     id:0,
+//     //     sections:[
+//     //         {id:0,"title":"Culture","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec."},
+//     //         {id:1,"title":"Values and Giving","desc":"Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam. \n \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec. Pellentesque quam adipiscing faucibus laoreet faucibus scelerisque."}
+//     //     ],
+//     //     img:group1
+//     // },
+//     {
+//         id:1,
+//         sections:[
+//             {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
+//             {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
+//         ],
+//         img:group11
+//     },
+//     {
+//         id:2,
+//         sections:[
+//             {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
+//             {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
+//         ],
+//         img:group2
+//     },
+//     {
+//         id:3,
+//         sections:[
+//             {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
+//             {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
+//         ],
+//         img:group3
+//     },
+//     {
+//         id:4,
+//         sections:[
+//             {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
+//             {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
+//         ],
+//         img:group4
+//     },
+//     {
+//         id:5,
+//         sections:[
+//             {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
+//             {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
+//         ],
+//         img:group5
+//     },
+//     {
+//         id:6,
+//         sections:[
+//             {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
+//             {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
+//         ],
+//         img:group6
+//     },
+//     {
+//         id:7,
+//         sections:[
+//             {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
+//             {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
+//         ],
+//         img:group7
+//     },
+//     {
+//         id:8,
+//         sections:[
+//             {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
+//             {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
+//         ],
+//         img:group8
+//     },
+//     {
+//         id:9,
+//         sections:[
+//             {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
+//             {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
+//         ],
+//         img:group9
+//     },
+//     {
+//         id:10,
+//         sections:[
+//             {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
+//             {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
+//         ],
+//         img:group10
+//     },
+//     {
+//         id:11,
+//         sections:[
+//             {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
+//             {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
+//         ],
+//         // img:group11
+//         img:group1
+//     },
+//     {
+//         id:12,
+//         sections:[
+//             {id:0,"title":"Culture","desc":"Founded by three creative and ambitious women who are mothers above all, Maison Pyramide fosters a nurturing culture where creativity thrives. Our business succeeds because of positive collaboration, inspiring loyalty from our teams and clients alike We passionately support forward-thinking clients, and we understand what purposeful brands mean for today's consumers."},
+//             {id:1,"title":"Values and Giving","desc":"We value individuality - and unity. Each person's unique input is important, but collaboration is how we accomplish more, and make things bigger, better, extraordinary We carefully curate promising new ethical, purpose-led, and sustainable brands. We amplify their reach at international showrooms and events.\n \n We also support several philanthropic projects directly, often by donating proceeds from sales at events and pop-ups. One such cause is Elisa Sednaoui Foundation's 'Funtasia', which provides learning opportunities for children in local communities in Italy and Egypt."}
+//         ],
+//         img:group12
+//     },
+// ];
 
-export default function HomeCarousel () {
+export default function HomeCarousel (props) {
     const [activeIdx, setActiveIdx] = React.useState(0);
     const [slideAnimationState, setSlideAnimationState] = React.useState(false);
     const [backSlideAnimationState, setBackSlideAnimationState] = React.useState(false);
@@ -145,7 +145,7 @@ export default function HomeCarousel () {
     const [current, setCurrent] = useState(1);
     const [currentScroll, setCurrentScroll] = useState(0);
     const nextClick = () => {
-        if (current < _items.length ) {
+        if (current < props.images?.length ) {
             setCurrent(prev => prev + 1);
         }
     }
@@ -179,7 +179,7 @@ export default function HomeCarousel () {
             <link rel="preload" as="image" href={group12.src}></link> */}
               <Col md={5}>
                     <div className={sliderStyle.slide}>
-                        {_items[activeIdx].sections.map((section,key) => {
+                        {/* {_items[activeIdx].sections.map((section,key) => {
                             return (
                                 <div key={key} className={sliderStyle.text}>
                                     <h3 className={`mb-3 ${sliderStyle.title}`}>{section.title}</h3>
@@ -189,16 +189,30 @@ export default function HomeCarousel () {
                                 
                                 </div>
                             )
-                        })}
+                        })} */}
+                        <div className={sliderStyle.text}>
+                                    <h3 className={`mb-3 ${sliderStyle.title}`}>Culture</h3>
+                                    <pre>
+                                    {props.cultureText}
+                                    </pre>
+                                
+                            </div>
+                        <div className={sliderStyle.text}>
+                                    <h3 className={`mb-3 ${sliderStyle.title}`}>Values and Giving</h3>
+                                    <pre>
+                                    {props.valuesText}
+                                    </pre>
+                                
+                            </div>
                     </div>               
               </Col>
               <Col md={7}>
               <section >
                       <div className={sliderStyle.mobile_images} id="group-slider">
-                          {_items.map((item) => {
+                          {props.images?.map((item,ind) => {
                               return (
-                                  <div className={sliderStyle.image} key={item.id} id={`img${item.id}`}>
-                                     <img src={item.img.src}/>
+                                  <div className={sliderStyle.image} key={ind} id={`img${ind + 1}`}>
+                                     <img src={item.custom_data?.url}/>
                                      {/* <div className={sliderStyle.text}>
                                          <h3>title</h3>
                                          <p>text</p>
@@ -272,7 +286,7 @@ export default function HomeCarousel () {
             </div>
             
             {/* <p className={`text-center disktop_only mt-3 ${sliderStyle.counter}`}>{activeIdx < 9?'0':''}{activeIdx + 1} / {_items.length < 9?'0':''}{_items.length}</p> */}
-            <p className={`text-center mt-3 ${sliderStyle.counter}`}>{current < 9?'0':''}{current} / {_items.length < 9?'0':''}{_items.length}</p>
+            <p className={`text-center mt-3 ${sliderStyle.counter}`}>{current < 9?'0':''}{current} / {props?.images?.length < 9?'0':''}{props?.images?.length}</p>
             <div className="clearfix"></div>
           </div>
        

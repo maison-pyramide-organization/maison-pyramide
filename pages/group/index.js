@@ -20,6 +20,8 @@ import pressImg3 from "../../public/imgs/WWD.jpeg";
 
 
 import groupStyles from "./Group.module.scss";
+import GroupServices from "../api/services/GroupService";
+import ArticleService from "../api/services/ArticlesService";
 const GroupSlider = dynamic(
   () => {
     return import("../../components/groupSlider/GroupSlider");
@@ -41,6 +43,8 @@ const ParallaxCache = dynamic(
 
 export default function Group() {
   const [isMobile, setIsMobile] = useState(null);
+  const [data ,setData] = useState({});
+  const [articles , setArticles] = useState([]);
   const router = useRouter();
 
   const useHandleMobile = (value) =>{
@@ -66,252 +70,280 @@ export default function Group() {
     window.open(link, '_blank');
 
   }
+  useEffect(() => {
+    GroupServices.getGroup().then(res=> {
+      console.log(res.data[0].attributes);
+      setData(res.data[0].attributes);
+      
+    })
+  },[])
+  useEffect(() => {
+    if(data?.press){
+
+      // console.log(data.press);
+      data.press.forEach(item =>{
+        ArticleService.getArticle(item).then(res => {
+          setArticles(prev => [...prev,res.data])
+        })
+      })
+    }
+  },[data]);
+
+  const formatDate = (value) => {
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
+    let date = new Date(value)
+    let month = monthNames[date.getMonth()];
+    let year = date.getFullYear();
+    return `${month} ${year}`;
+  }
   return (
     <Layout>
       
       <IsMobileComponent handleMobile={useHandleMobile}/>
-      <ParallaxProvider>
-      <header className={groupStyles.header}>
-        <h1>MAISON PYRAMIDE GROUP</h1>
-      </header>
-      <section className={groupStyles.info}>
-      {/* <ParallaxProvider> */}
-        <Parallax translateY={[isMobile?10:20, isMobile?-10:-30]}>
-        <ParallaxCache/>
-        <Container>
-          <p className={groupStyles.text}>
-          Tap into an audience of 500 million and reach of over 1 billion.
-Our innovative platform offers strategic thinking - and visionary
-creativity. we help prestigious names in media, public affairs,
-lifestyle, retail, and fashion build brand resonance by connecting
-with the world of today.
-<br/><br/>
-Our global network includes trend-setting corporations, media,
-and influencers, young entrepreneurs, opinion leaders, and
-talented creators.
-          </p>
-          <ul>
-            <li className="text-center">
-              <p>DUBAI</p>
-              <span>Unit B201, Building 7, 
-Dubai design district.</span>
-              <span>dubai@maisonpyramide.com</span>
-            </li>
-            <li className="text-center">
-              <p>CAIRO</p>
-              <span>9 el Gabalaya street, Zamalek.</span>
-              <span>cairo@maisonpyramide.com</span>
-            </li>
-            <li className="text-center">
-              <p>BEIRUT</p>
-              <span>Ras Beirut, Kantari district, Michel Chiha street.</span>
-              <span>beirut@maisonpyramide.com</span>
-            </li>
-            {/* <li className="text-center">
-              <p>LONDON</p>
-              <span>+20 106 0091742</span>
-              <span>contact@maisonpyramide.com</span>
-            </li> */}
-          </ul>
-        </Container>
-        </Parallax>
-        {/* </ParallaxProvider> */}
-
-        <Container fluid>
-        {/* <ParallaxProvider> */}
-        {/* <ParallaxCache/> */}
-        <Parallax translateY={[isMobile?10:30, isMobile?-10:-30,'easeOutQuint']}>
-          <ParallaxCache/>
-          <div className={groupStyles.office}>
-            <Row>
-            <Col md={12} className={`${groupStyles.office_network_img} mobile`}>
-                <Image src={groupImg}></Image>
-              </Col>
-              <Col md={4}>
-                <div className={groupStyles.office_network}>
-                  <h2>
-                    Office <br className="disktop_only" /> Network
-                  </h2>
-                  <p>
-                  Maison Pyramide has built a well-respected brand name
-ongst global players and millennial consumers. We&apos;re
-renowned for our particular expertise with brands, business, and
-consumers in EMEA.
-<br/><br/>
-Our deep connections with millennial culture help new and
-established brands find relevance in today&apos;s world.
-                  </p>
-                </div>
-              </Col>
-              <Col md={4} className={`disktop_only`}>
-                <Image src={groupImg}></Image>
-              </Col>
-              <Col md={4}>
-                <div className={`${groupStyles.office_network} ${groupStyles.office_network_text}`}>
-                  <p>
-                  Since 2016, our Cairo office has strengthened the EMEA and
-global presence of major and rising brands. We opened our
-second office in Lebanon in 2019 and launched our Dubai
-headquarters in 2021.
-<br/><br/>
-In addition to offices across EMEA, we have impressive seasonal
-Sales& PR Showrooms in global fashion capitals,
-complemented by our digital EShowroom.<br/>
-                  </p>
-                </div>
-              </Col>
-            </Row>
-          </div>
-          </Parallax>
-        {/* </ParallaxProvider> */}
-
-        {/* <ParallaxProvider>
-        <ParallaxCache/> */}
-        <Parallax translateY={[isMobile?-1:10, isMobile?-7:-30]}>
-        <ParallaxCache/>
-          <div className={groupStyles.leader}>
-            <h2 className="text-center pb-3">Leadership Team</h2>
-            <p className="text-center">
-            We are independently owned, with deep expertise across retail,
-finance, and international marcoms. Specialisms include: luxury
-brands, designer fashion, new media, and investment and fund
-management. 
-<br/>
-<br/>
-We strive to deliver unique results through an inimitable approach
-that is built on our genuine interests and demonstrable expertise.
-            </p>
-
-            <Row>
-              <Col md={3}>
-                <div className={groupStyles.card}>
-                  <Image className={groupStyles.img} src={groupImg2} height={150} objectFit={"cover"} width={100} layout="responsive"></Image>
-                  <h3>Giovanina Attieh</h3>
-                  <p>Co-Founder & Partner</p>
-                  <p className={groupStyles.desc}>
-                  15 years in the retail industry, with Vivienne Westwood in Milan and Al Ostoura as head buyer for luxury brands such as Chloe & Alexander McQueen. <br></br>
-                  </p>
-                </div>
-              </Col>
-              <Col md={3}>
-                <div className={groupStyles.card}>
-                  <Image className={groupStyles.img} src={groupImg3} height={150} objectFit={"cover"} width={100} layout="responsive"></Image>
-                  <h3>Maria Munoz</h3>
-                  <p>Co-Founder & Partner</p>
-                  <p className={groupStyles.desc}>
-                  13 years in digital marketing, PR and Philanthropy, including as co-founder of Slickr, the first fashion social network in the region.<br></br>
-                    
-                  </p>
-                </div>
-              </Col>
-              <Col md={3}>
-                <div className={groupStyles.card}>
-                  <Image className={groupStyles.img} src={groupImg4} height={150} objectFit={"cover"} width={100} layout="responsive"></Image>
-                  <h3>Nathalie Mroue</h3>
-                  <p>Co-Founder & Partner</p>
-                  <p className={groupStyles.desc}>
-                  12 years in international  marketing and communications, including Stella McCartney and Elie Saab London as Head of New Media & PR. <br></br>
-                  </p>
-                </div>
-              </Col>
-              <Col md={3}>
-                <div className={groupStyles.card}>
-                  <Image className={groupStyles.img} src={groupImg1} height={150} objectFit={"cover"} width={100} layout="responsive"></Image>
-                  <h3>Yann Pavie</h3>
-                  <p>Executive Chairman & Partner </p>
-                  <p className={groupStyles.desc}>
-                  25 years in the private equity and investment banking industry, including as Chief Operating Officer and Board Member of NBK Capital. Over $15 billion in private equity and investment banking transactions.  <br></br>
-                  
-                  </p>
-                </div>
-              </Col>
-            </Row>
-          </div>
-          </Parallax>
-        {/* </ParallaxProvider> */}
+      {data && (
 
         <ParallaxProvider>
-        <ParallaxCache/>
-        <Parallax translateY={[isMobile?-11:10, isMobile?-15:-30]}>
-          <GroupSlider/>
-
+        <header className={groupStyles.header} style={{backgroundImage:`url(${isMobile?data?.mobile_main_image?.custom_data?.url:data?.main_image?.custom_data?.url})`}}>
+          <h1>{data?.title}</h1>
+        </header>
+        <section className={groupStyles.info}>
+        {/* <ParallaxProvider> */}
+          <Parallax translateY={[isMobile?10:20, isMobile?-10:-30]}>
+          <ParallaxCache/>
+          <Container>
+            <p className={groupStyles.text}>
+            {data?.description}
+            </p>
+            <ul>
+              <li className="text-center">
+                <p>DUBAI</p>
+                <span>Unit B201, Building 7, 
+  Dubai design district.</span>
+                <span>dubai@maisonpyramide.com</span>
+              </li>
+              <li className="text-center">
+                <p>CAIRO</p>
+                <span>9 el Gabalaya street, Zamalek.</span>
+                <span>cairo@maisonpyramide.com</span>
+              </li>
+              <li className="text-center">
+                <p>BEIRUT</p>
+                <span>Ras Beirut, Kantari district, Michel Chiha street.</span>
+                <span>beirut@maisonpyramide.com</span>
+              </li>
+              {/* <li className="text-center">
+                <p>LONDON</p>
+                <span>+20 106 0091742</span>
+                <span>contact@maisonpyramide.com</span>
+              </li> */}
+            </ul>
+          </Container>
           </Parallax>
-        </ParallaxProvider>
+          {/* </ParallaxProvider> */}
+
+          <Container fluid>
+          {/* <ParallaxProvider> */}
+          {/* <ParallaxCache/> */}
+          <Parallax translateY={[isMobile?10:30, isMobile?-10:-30,'easeOutQuint']}>
+            <ParallaxCache/>
+            <div className={groupStyles.office}>
+              <Row>
+              <Col md={12} className={`${groupStyles.office_network_img} mobile`}>
+                {data?.office_mobile_image?.custom_data && (
+                  <Image src={data?.office_mobile_image?.custom_data?.url} width={70} height={100}></Image>
+                )}
+                </Col>
+                <Col md={4}>
+                  <div className={groupStyles.office_network}>
+                    <h2>
+                      Office <br className="disktop_only" /> Network
+                    </h2>
+                    <p>
+                  {data?.office_text1}
+                    </p>
+                  </div>
+                </Col>
+                <Col md={4} className={`disktop_only`}>
+                  {data?.office_image &&(
+                    <Image src={data?.office_image?.custom_data?.url} width={70} height={100}></Image>
+                  )}
+                </Col>
+                <Col md={4}>
+                  <div className={`${groupStyles.office_network} ${groupStyles.office_network_text}`}>
+                    <p>
+                    {data?.office_text2}
+                    </p>
+                  </div>
+                </Col>
+              </Row>
+            </div>
+            </Parallax>
+          {/* </ParallaxProvider> */}
+
+          {/* <ParallaxProvider>
+          <ParallaxCache/> */}
+          <Parallax translateY={[isMobile?-1:10, isMobile?-7:-30]}>
+          <ParallaxCache/>
+            <div className={groupStyles.leader}>
+              <h2 className="text-center pb-3">Leadership Team</h2>
+              <p className="text-center">
+              {data?.leader_text}
+              </p>
+
+              <Row>
+                <Col md={3}>
+                  <div className={groupStyles.card}>
+                    {data.leader1_image?.custom_data?.url && (
+                      <Image className={groupStyles.img} src={data?.leader1_image?.custom_data?.url} height={150} objectFit={"cover"} width={100} layout="responsive"></Image>
+                    )}
+                    <h3>Giovanina Attieh</h3>
+                    {/* <p>Co-Founder & Partner</p> */}
+                    <p className={groupStyles.desc}>
+                    {data?.leader1text}                      
+                    </p>
+                  </div>
+                </Col>
+                <Col md={3}>
+                  <div className={groupStyles.card}>
+                  {data.leader2_image?.custom_data?.url && (
+                      <Image className={groupStyles.img} src={data?.leader2_image?.custom_data?.url} height={150} objectFit={"cover"} width={100} layout="responsive"></Image>
+                    )}
+                    <h3>Maria Munoz</h3>
+                    {/* <p>Co-Founder & Partner</p> */}
+                    <p className={groupStyles.desc}>
+                      {data?.leader2_text}                      
+                    </p>
+                  </div>
+                </Col>
+                <Col md={3}>
+                  <div className={groupStyles.card}>
+                  {data.leader3_image?.custom_data?.url && (
+                      <Image className={groupStyles.img} src={data?.leader3_image?.custom_data?.url} height={150} objectFit={"cover"} width={100} layout="responsive"></Image>
+                    )}
+                    <h3>Nathalie Mroue</h3>
+                    {/* <p>Co-Founder & Partner</p> */}
+                    <p className={groupStyles.desc}>
+                    {data?.leader3_text}                      
+                    </p>
+                  </div>
+                </Col>
+                <Col md={3}>
+                  <div className={groupStyles.card}>
+                  {data.leader4_image?.custom_data?.url && (
+                      <Image className={groupStyles.img} src={data?.leader4_image?.custom_data?.url} height={150} objectFit={"cover"} width={100} layout="responsive"></Image>
+                    )}
+                    <h3>Yann Pavie</h3>
+                    {/* <p>Executive Chairman & Partner </p> */}
+                    <p className={groupStyles.desc}>
+                    {data?.leader4_text}                      
+                    
+                    </p>
+                  </div>
+                </Col>
+              </Row>
+            </div>
+            </Parallax>
+          {/* </ParallaxProvider> */}
 
           <ParallaxProvider>
-        <ParallaxCache/>
-        <Parallax translateY={[isMobile?-5:0, isMobile?-10:-50]}>
-        <ParallaxCache/>
+          <ParallaxCache/>
+          <Parallax translateY={[isMobile?-11:10, isMobile?-15:-30]}>
+            {data?.slider && 
+            (
+              <GroupSlider cultureText={data?.culture_text} valuesText={data?.values_text} images={data?.slider}/>
+            )}
 
-          <div className={groupStyles.press}>
-
-            <h2 className="text-center">
-                In the press
-            </h2>
-            <p className="text-center">
-            Discover why everyone&apos;s talking about our
-            <br/>
-innovative projects, our team of experts, and our
-mission to elevate inspiring brands.            </p>
-            <Row>
-                <Col md={4} onClick={() => handlePost('https://coveteur.com/2018/10/16/maison-pyramide-founders-talk-business-new-designers/')}>
-                    <div className={groupStyles.press_card}>
-                    <div className={groupStyles.img}>
-                      <Image src={pressImg} height={70} objectFit={"cover"} width={100} layout="responsive"></Image>
-                    <h2>COVETEUR</h2>
-                    </div>
-                    <h3>
-                    Maison Pyramide Is Discovering The Best New Designers So You Don’t Have To 
-                    </h3>
-                    <span>OCTOBER 2018</span>
-
-                    <p>
-                    A successful business needs a strong foundation. Coveteur focuses on Maison Pyramide&apos;s history and the women behind it.
-                    </p>
-                    <div className={groupStyles.card_tag}>COMPANY FEATURE</div>
-                    </div>
-                </Col>
-                <Col md={4} onClick={() => handlePost('https://en.vogue.me/fashion/the-three-women-behind-maison-pyramide-arab-talent/')}>
-                    <div className={groupStyles.press_card}>
-                    <div className={groupStyles.img}>
-                      <Image src={pressImg2} height={70} objectFit={"cover"} width={100} layout="responsive"></Image>
-                      <h2>VOGUE ARABIA</h2>
-                    </div>
-                    <h3>
-                    Meet the Three Women Driving Regional Brands to Make a Global Stamp 
-                    </h3>
-                    <span>JAN 2019</span>
-
-                    <p>
-                    A deep-dive into the experiences and complementing skills of each Maison Pyramide founder and their expectations for the company.
-                    </p>
-                    <div className={groupStyles.card_tag}>COMPANY FEATURE</div>
-                    </div>
-                </Col>
-                <Col md={4} onClick={() => handlePost('https://wwd.com/fashion-news/designer-luxury/maison-pyramide-champions-middle-eastern-talent-at-harvey-nichols-1203141057/')}>
-                    <div className={groupStyles.press_card}>
-                    <div className={groupStyles.img}>
-                      <Image src={pressImg3} height={70} objectFit={"cover"} width={100} layout="responsive"></Image>
-                      <h2>WWD</h2>
-                    </div>
-                    <h3>
-                    Maison Pyramide Champions Middle Eastern Talent at Harvey Nichols&apos; London flagship
-                    </h3>
-                    {/* <span>OCTOBER 23</span> */}
-                    <p>
-                    The leading regional sales showroom is bringing some of its up-and-coming brand partners to the London market, with a pop-up at Harvey Nichols&apos; London flagship.
-                    </p>
-                    <div className={groupStyles.card_tag}>COMPANY FEATURE</div>
-                    </div>
-                </Col>
-            </Row>
-          </div>
             </Parallax>
+          </ParallaxProvider>
+
+            <ParallaxProvider>
+          <ParallaxCache/>
+          <Parallax translateY={[isMobile?-5:0, isMobile?-10:-50]}>
+          <ParallaxCache/>
+
+            <div className={groupStyles.press}>
+
+              <h2 className="text-center">
+                  In the press
+              </h2>
+              <p className="text-center">
+              Discover why everyone&apos;s talking about our
+              <br/>
+  innovative projects, our team of experts, and our
+  mission to elevate inspiring brands.            </p>
+              <Row>
+                {articles[0] && articles?.map((item,key)=>{
+                  return(
+                  <Col md={4} key={key} onClick={() => handlePost(item?.attributes?.link)}>
+                      <div className={groupStyles.press_card}>
+                      <div className={groupStyles.img}>
+                        {
+                          item.attributes.image?.custom_data?.url && (
+
+                              <Image src={item.attributes?.image?.custom_data?.url} layout="responsive" unoptimized={true} loading="eager" height={70} objectFit={"cover"} width={100}></Image> 
+                          )
+                        }
+                        {/* <Image src={pressImg} layout="fill" unoptimized={true} loading="eager" height={70} objectFit={"cover"} width={100}></Image> */}
+                      <h2>{item.attributes?.title}</h2>
+                      </div>
+                      <h3>
+                     {item.attributes?.sub_title}
+                      </h3>
+                      <span>{formatDate(item.attributes?.date)}</span>
+
+                      <p>
+                        {item.attributes?.description}
+                      </p>
+                      <div className={groupStyles.card_tag}>{item.attributes?.tag}</div>
+                      </div>
+                  </Col>
+                  )
+                })}
+                  {/* <Col md={4} onClick={() => handlePost('https://en.vogue.me/fashion/the-three-women-behind-maison-pyramide-arab-talent/')}>
+                      <div className={groupStyles.press_card}>
+                      <div className={groupStyles.img}>
+                        <Image src={pressImg2} height={70} objectFit={"cover"} width={100} layout="responsive"></Image>
+                        <h2>VOGUE ARABIA</h2>
+                      </div>
+                      <h3>
+                      Meet the Three Women Driving Regional Brands to Make a Global Stamp 
+                      </h3>
+                      <span>JAN 2019</span>
+
+                      <p>
+                      A deep-dive into the experiences and complementing skills of each Maison Pyramide founder and their expectations for the company.
+                      </p>
+                      <div className={groupStyles.card_tag}>COMPANY FEATURE</div>
+                      </div>
+                  </Col>
+                  <Col md={4} onClick={() => handlePost('https://wwd.com/fashion-news/designer-luxury/maison-pyramide-champions-middle-eastern-talent-at-harvey-nichols-1203141057/')}>
+                      <div className={groupStyles.press_card}>
+                      <div className={groupStyles.img}>
+                        <Image src={pressImg3} height={70} objectFit={"cover"} width={100} layout="responsive"></Image>
+                        <h2>WWD</h2>
+                      </div>
+                      <h3>
+                      Maison Pyramide Champions Middle Eastern Talent at Harvey Nichols&apos; London flagship
+                      </h3>
+                   
+                      <p>
+                      The leading regional sales showroom is bringing some of its up-and-coming brand partners to the London market, with a pop-up at Harvey Nichols&apos; London flagship.
+                      </p>
+                      <div className={groupStyles.card_tag}>COMPANY FEATURE</div>
+                      </div>
+                  </Col> */}
+              </Row>
+            </div>
+              </Parallax>
+          </ParallaxProvider>
+          </Container>
+          
+        </section>
         </ParallaxProvider>
-        </Container>
-        
-      </section>
-      </ParallaxProvider>
+      )}
 
     </Layout>
   );

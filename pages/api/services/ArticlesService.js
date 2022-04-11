@@ -12,4 +12,9 @@ export default class ArticleService {
             method: Articles.getSideArticles.method,
         });
     }
+    static getArticle(id){
+        return Network.fetch(Articles.getArticle.url(id), {
+            method: Articles.getArticle.method,
+        });
+    }
 }

@@ -78,7 +78,6 @@ export default function Expertise() {
 
   useEffect(() => {
     ExpertiseService.getExpertise().then((res) => {
-      console.log({res});
       setExpertise(res.data);
     }).catch(err => {
       console.log(err);
