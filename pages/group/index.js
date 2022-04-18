@@ -168,7 +168,7 @@ export default function Group() {
                 </Col>
                 <Col md={4} className={`disktop_only`}>
                   {data?.office_image &&(
-                    <Image src={data?.office_image?.custom_data?.url} width={70} height={100}></Image>
+                    <Image src={data?.office_image?.custom_data?.url} width={70} height={100} layout="responsive"></Image>
                   )}
                 </Col>
                 <Col md={4}>
