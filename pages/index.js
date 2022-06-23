@@ -82,13 +82,13 @@ function Home() {
         <source src={isMobile?"https://gazef.s3.us-west-2.amazonaws.com/maison/videobgmobile.mp4":"/imgs/videobg.mp4"} />
       </video>
       )}
-      {!isMobile && (
+      {/* {!isMobile && (
         <div className={`${homeStyles.video_text} mobile`}>
           <Image
             src={videoText}
           />
         </div>
-      )}
+      )} */}
     </section>
 
     <ParallaxProvider>
