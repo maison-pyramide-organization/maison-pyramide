@@ -2,27 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { Container, Row, Col, Accordion } from "react-bootstrap";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { motion } from 'framer-motion'
 
 import ServiceService from "../api/services/ServiceService";
 
-import Layout from "../../components/layout/Layout";
-import serviceImg from "../../public/imgs/servicesImg.png";
-import womanInSuit from "../../public/imgs/womaninsuit.png";
-
 import servicesStyles from "./Services.module.scss";
 import service1 from "../../public/imgs/service1.1.jpeg";
-import service2 from "../../public/imgs/service2.1.jpeg";
-import service3 from "../../public/imgs/service3.1.jpeg";
-import service4 from "../../public/imgs/service4.jpg";
-import service5 from "../../public/imgs/service5.1.jpeg";
-import service6 from "../../public/imgs/service6.1.jpeg";
-import service7 from "../../public/imgs/service7.1.jpeg";
 
 const ParallaxCache = dynamic(
   () => {
@@ -35,21 +26,42 @@ function Services() {
   const imgs = [
     {
       img: service1,
-      // clientName: "MDLBEAST",
-      // tag1: "SOUNDSTORM 2019",
-      // tag2: "FEATURED IMAGE",
-      // id: 1,
     },
   ];
 
   const [services , setServices] = useState([]);
   const [selectedImg, setSelectedImg] = useState(imgs[0]);
   const [loadingFlag, setLoadingFlag] = useState(false);
+  const [mainText,setMainText] = useState();
+
+  const headerVariants = {
+    hidden: { opacity: 0, y: "80%" ,scale:1.05},
+    enter: { opacity: 1, y: 0 ,scale:1}
+  }
+  const textVariants = {
+    hidden: { opacity: 0, x: 15 },
+    enter: { opacity: 1, x: 0 }
+  }
 
 
   useEffect(() => {
-    getServices()
+    getServices();
+    let text = "We offer outside-the-box solutions to boost brand reputation, reach and sales. We speak the millennial tongue and know the consumer. We have the confidence, the connections and the creativity - to make things happen."
+    let textArr = text?.split(" ");
+    textArr?.map((word,i)=>{
+      textArr[i] =  <motion.span
+      initial="hidden"
+      animate="enter"
+      exit="exit"
+      variants={textVariants}
+      transition={{ duration: 1,delay:i*.02, ease: "easeInOut",type: 'linear' }}
+       >
+        {word+' '}
+        </motion.span>
+    })
+    setMainText(textArr)
   },[])
+
 
   const handleClick = (e, target) => {
     setSelectedImg(services[e]?.attributes);
@@ -62,8 +74,6 @@ function Services() {
       }, 100);
     }
     setLoadingFlag(true);
-
-   
   };
   useEffect(() => {
     setTimeout(() => {
@@ -90,7 +100,7 @@ function Services() {
   }
 
   return (
-    <Layout>
+    <section>
       <ParallaxProvider>
         <ParallaxCache />
       </ParallaxProvider>
@@ -101,19 +111,23 @@ function Services() {
       })}
 
       <section className={servicesStyles.services}>
-      {/* <link rel="preload" as="image" href={service1.src}></link>
-      <link rel="preload" as="image" href={service2.src}></link>
-      <link rel="preload" as="image" href={service3.src}></link>
-      <link rel="preload" as="image" href={service4.src}></link>
-      <link rel="preload" as="image" href={service5.src}></link>
-      <link rel="preload" as="image" href={service6.src}></link>
-      <link rel="preload" as="image" href={service7.src}></link> */}
-      
         <Container fluid>
-          <h1 className="text-center">
-            We’re a one-stop solution <br />
-            platform for rising talent.
-          </h1>
+          <header className="text-center">
+            <div>
+              <motion.h1
+              initial="hidden"
+              animate="enter"
+              exit="exit"
+              variants={headerVariants}
+              transition={{ duration: 1.2, ease: "easeInOut",type: 'linear' }}
+                >
+              
+                  We’re a one-stop solution <br />
+                  platform for rising talent.
+              </motion.h1>
+
+            </div>
+          </header>
           <Row>
             <Col md={5} className="disktop_only">
               <div className={servicesStyles.img_section}>
@@ -158,15 +172,10 @@ function Services() {
             <Col md={6}>
               <div>
                 <p className={servicesStyles.text}>
-                We offer outside-the-box solutions to boost
-brand reputation, reach and sales. We speak
-the millennial tongue and know the
-consumer. We have the confidence, the
-connections and the creativity - to make
-things happen.
-<br/>
-<br/>
-Explore our full range of brand-building
+                  {mainText}
+                </p>
+                <p>
+                Explore our full range of brand-building
 services:
                 </p>
                 <Accordion className={servicesStyles.accordion}>
@@ -181,9 +190,6 @@ services:
                       <Accordion.Header>{item?.attributes?.title}</Accordion.Header>
                       <Accordion.Body>
                         <div className={servicesStyles.acc_body}>
-                          {/* <h3 className="disktop_only">
-                            Talent Booking & Management
-                          </h3> */}
                           <p>
                            {item?.attributes?.description}
                           </p>
@@ -225,7 +231,6 @@ services:
                           </ul>
                         </div>
 
-                        {/* <CustomToggle eventKey="0" /> */}
                       </Accordion.Body>
                     </Accordion.Item>
                     )
@@ -237,7 +242,7 @@ services:
           </Row>
         </Container>
       </section>
-    </Layout>
+    </section>
   );
 }
 export default Services;

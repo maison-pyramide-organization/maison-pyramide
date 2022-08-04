@@ -29,6 +29,7 @@ import cardImg9 from '../../public/imgs/monot.png';
 import cardImg10 from '../../public/imgs/greenbag.png';
 import cardImg11 from '../../public/imgs/twobacks.png';
 
+import { motion } from 'framer-motion';
 
 import variables from '../../styles/variables.module.scss';
 import ClientService from "../../pages/api/services/ClientService";
@@ -52,10 +53,8 @@ export default function Clients() {
     const [current, setCurrent] = useState(0);
     const [currentScroll, setCurrentScroll] = useState(0);
     const [isMobile , setIsMobile] = useState(null);
-    const [_selectedClients, setSelectedClients] = useState([
-    ])
+    const [_selectedClients, setSelectedClients] = useState([])
     const [ _featuredProjects,setFeaturedProjects] = useState([]);
-
 
     const useHandleMobile = (value) =>{
         useEffect(() => {
@@ -93,7 +92,6 @@ export default function Clients() {
 
     useEffect(() => {
         ProjectService.getFeaturedProjects().then((res) => {
-            // console.log({res});
             setFeaturedProjects(res.data);
         }).catch(err => {
             console.log('err?',err);
@@ -136,8 +134,16 @@ retail                    </p>
                                         return (
 
                                             (ind % 2 == 0) && (
+                                                
                                                 <div key={ind} className={`${clientsStyles.project_img}`} onClick={() => { handleClick(project.attributes?.features) }}>
-                                                    <Image src={project.attributes.image.custom_data.url} className={clientsStyles.img} layout={"responsive"} width={500} height={660} objectFit={"cover"}></Image>
+                                                    <motion.div
+                                                     initial={{opacity:0,y:30}}
+                                                     whileInView={{ opacity: 1,y:0 }}
+                                                     viewport={{ once: true }}
+                                                     transition={{ duration: 1, ease: "easeInOut",type: 'linear' }}
+                                                    >
+                                                        <Image src={project.attributes.image.custom_data.url} className={clientsStyles.img} layout={"responsive"} width={500} height={660} objectFit={"cover"}></Image>
+                                                    </motion.div>
                                                     <br />
                                                     <span>
                                                         {project.attributes.client_name}
@@ -152,35 +158,6 @@ retail                    </p>
                                             )
                                         )
                                     })}
-
-
-                                    {/* <div className={`${clientsStyles.project_img}`}>
-                                <Image src={clientImg3} layout="responsive"></Image>
-                                <br/>
-                                <span>
-                                FEATURED PROJECTS
-                                </span>
-                                <h3>
-                                Robert Wun
-                                </h3>
-                                <p>
-                                Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor.
-                                </p>
-                            </div>
-
-                            <div className={`${clientsStyles.project_img}`}>
-                                <Image src={clientImg5} layout="responsive"></Image>
-                                <br/>
-                                <span>
-                                FEATURED PROJECTS
-                                </span>
-                                <h3>
-                                Robert Wun
-                                </h3>
-                                <p>
-                                Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor.
-                                </p>
-                            </div> */}
                                 </Parallax>
                             </Col>
 
@@ -192,7 +169,14 @@ retail                    </p>
 
                                             (ind % 2 != 0) && (
                                                 <div key={ind} className={`${clientsStyles.project_img}`} onClick={() => { handleClick(project.attributes.features) }}>
-                                                    <Image src={project.attributes.image.custom_data.url} className={clientsStyles.img} layout={"responsive"} width={500} height={660} objectFit={"cover"}></Image>
+                                                    <motion.div
+                                                     initial={{opacity:0,rotateZ:3,x:30}}
+                                                     whileInView={{ opacity: 1 ,rotateZ:0,x:0}}
+                                                     viewport={{ once: true }}
+                                                     transition={{ duration: 1, ease: "easeInOut",type: 'linear' }}
+                                                    >
+                                                        <Image src={project.attributes.image.custom_data.url} className={clientsStyles.img} layout={"responsive"} width={500} height={660} objectFit={"cover"}></Image>
+                                                    </motion.div>
                                                     <br />
                                                     <span>
                                                         {project.attributes.client_name}
@@ -225,9 +209,16 @@ retail                    </p>
                                 return (
                                     <Col md={3} xs={10} key={ind}>
                                         <div className={clientsStyles.card}>
-                                            <div className={clientsStyles.img}>
-                                                <Image layout='responsive' src={client?.attributes?.image?.custom_data?.url} width={100} objectFit={"cover"} height={70}></Image>
-                                            </div>
+                                                <motion.div
+                                                    initial={{opacity:0,scaleX:.9}}
+                                                    whileInView={{ opacity: 1,scaleX:1 }}
+                                                    viewport={{ once: true }}
+                                                    transition={{ duration: 1,delay:.5, ease: "easeInOut",type: 'linear' }}
+                                                >
+                                                <div className={clientsStyles.img}>
+                                                    <Image layout='responsive' src={client?.attributes?.image?.custom_data?.url} width={100} objectFit={"cover"} height={70}></Image>
+                                                </div>
+                                                </motion.div>
                                             <div className={clientsStyles.text}>
                                                 <h3>
                                                     {client?.attributes?.title}

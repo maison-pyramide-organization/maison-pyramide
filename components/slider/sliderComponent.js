@@ -2,9 +2,6 @@ import Image from "next/image";
 import React from 'react';
 
 import sliderStyle from './SliderStyle.module.scss';
-import sliderImg1 from '../../public/imgs/projectslider1.png';
-
-import variables from '../../styles/variables.module.scss'
 
 
 
@@ -15,37 +12,38 @@ const sleep = (ms = 0) => {
     return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
-const createItem = (position, idx,_items) => {
+const createItem = (position, idx,_items,isTranitioning) => {
     var slideWidth = 33;
     if(typeof window !== "undefined"){
         window.innerWidth > 700? slideWidth = 33: slideWidth = 83;
     }
-
+    console.log("dcdscdsc",isTranitioning,idx)
     const item = {
         styles: {
-            transform: `translateX(${position * slideWidth}vw)`,
+            // opacity:(position == 0 || position == _items.length -1)&& isTranitioning?0:.5,//first
+            opacity:.5,//first
+            transform: `translateX(${position * slideWidth}vw) scale(.9)`,
         },
         image: _items[idx].custom_data?.url,
     };
 
     switch (position) {
         case length - 1:
-        case length + 1:
-            item.styles = {...item.styles};
-            break;
-        case length:
+            case length + 1:
+                // middle image
+                item.styles = {...item.styles,opacity:1,transform: `translateX(${position * slideWidth}vw) scale(1)`};
+                break;
+                case length:
             break;
         default:
-            item.styles = {...item.styles, opacity: 1};
             break;
     }
-
     return item;
 };
 
-const CarouselSlideItem = ({pos, idx, activeIdx,items}) => {
-    const item = createItem(pos, idx ,items);
-    // console.log('ma haza=?',item);
+const CarouselSlideItem = ({pos, idx, activeIdx,items,isTranitioning}) => {
+    const item = createItem(pos, idx ,items,isTranitioning);
+    // style={{opacity:isTranitioning?0:1}}
     return (
         <li className={sliderStyle.carousel__slide_item} style={item.styles}>
             <div className={sliderStyle.carousel__slide_item_img_link}>
@@ -57,44 +55,7 @@ const CarouselSlideItem = ({pos, idx, activeIdx,items}) => {
 
 
 export default function Carousel ({images}) {
-    // console.log('tessttt',images);
-    // const _items = [
-    //     {
-    //         player: {
-    //             title: '',
-    //             desc: '',
-    //             image: sliderImg1,
-    //         },
-    //     },
-    //     {
-    //         player: {
-    //             title: '',
-    //             desc: '',
-    //             image: sliderImg1,
-    //         },
-    //     },
-    //     {
-    //         player: {
-    //             title: '',
-    //             desc: '',
-    //             image: sliderImg1,
-    //         },
-    //     },
-    //     {
-    //         player: {
-    //             title: '',
-    //             desc: '',
-    //             image: sliderImg1,
-    //         },
-    //     },
-    //     {
-    //         player: {
-    //             title: '',
-    //             desc: '',
-    //             image: sliderImg1,
-    //         },
-    //     },
-    // ];
+   
     const _items = images;
     const length = _items.length;
     const keys = Array.from(Array(_items.length).keys());
@@ -124,10 +85,10 @@ export default function Carousel ({images}) {
         }
     };
 
-    const handleDotClick = (idx) => {
-        if (idx < activeIdx) prevClick(activeIdx - idx);
-        if (idx > activeIdx) nextClick(idx - activeIdx);
-    };
+    // const handleDotClick = (idx) => {
+    //     if (idx < activeIdx) prevClick(activeIdx - idx);
+    //     if (idx > activeIdx) nextClick(idx - activeIdx);
+    // };
 
     React.useEffect(() => {
         if (isTicking) sleep(300).then(() => setIsTicking(false));
@@ -149,6 +110,7 @@ export default function Carousel ({images}) {
                                 pos={pos}
                                 activeIdx={activeIdx}
                                 items={_items}
+                                isTranitioning={isTicking}
                             />
                         ))}
                     </ul>
