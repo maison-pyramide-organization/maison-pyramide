@@ -23,10 +23,36 @@ build:
       - .next/
   only:
     - master
+    - staging
 
-  timeout: 20 minutes
+  timeout: 10 minutes
 
-deploy:
+deploy-staging:
+  stage: deploy
+  image: alpine:latest
+  dependencies:
+    - build
+
+  before_script:
+    - 'command -v ssh-agent >/dev/null || ( apk add --update openssh )'
+    - apk add --update rsync
+    - eval $(ssh-agent -s)
+    - echo "$STAGING_SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan $STAGING_VM_IPADDRESS >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+
+  script:
+    - rsync --delete-after -va .next/ $STAGING_SSH_USER@$STAGING_VM_IPADDRESS:/var/www/html/maison-pyramide-staging/.next
+    - ssh $STAGING_SSH_USER@$STAGING_VM_IPADDRESS "/bin/bash -s " < ./deploy/deploy-staging.sh
+
+  only:
+    - staging
+
+  timeout: 10 minutes
+
+deploy-production:
   stage: deploy
   image: alpine:latest
   dependencies:
@@ -48,3 +74,5 @@ deploy:
 
   only:
     - master
+
+  timeout: 10 minutes
