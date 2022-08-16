@@ -55,12 +55,40 @@ export default function Clients() {
     const [isMobile , setIsMobile] = useState(null);
     const [_selectedClients, setSelectedClients] = useState([])
     const [ _featuredProjects,setFeaturedProjects] = useState([]);
+    const [mainText,setMainText] = useState();
+
+
+    const headerVariants = {
+        hidden: { opacity: 0, y: "50%" ,scale:1.05},
+        enter: { opacity: 1, y: 0 ,scale:1}
+      }
+      const textVariants = {
+        hidden: { opacity: 0, x: 15 },
+        enter: { opacity: 1, x: 0 }
+      }
 
     const useHandleMobile = (value) =>{
         useEffect(() => {
             setIsMobile(value)
         },[])
-      }
+    }
+
+    useEffect(() => {
+        let text = "Our clients range from leading multinationals and heritage brands to the hottest emerging brands, across media, Iifestyle, fashion, and retail."
+        let textArr = text?.split(" ");
+        textArr?.map((word,i)=>{
+          textArr[i] =  <motion.span
+          initial="hidden"
+          animate="enter"
+          exit="exit"
+          variants={textVariants}
+          transition={{ duration: 1,delay:i*.1, ease: "easeInOut",type: 'linear' }}
+           >
+            {word+' '}
+            </motion.span>
+        })
+        setMainText(textArr)
+    },[])
 
     const handleClick = (id) => {
         console.log({id});
@@ -101,24 +129,30 @@ export default function Clients() {
         })
     },[])
     return (
-        <Layout>
+        // <Layout>
+        <>
             <IsMobileComponent handleMobile={useHandleMobile}/>
             <ParallaxProvider>
                 <ParallaxCache />
             </ParallaxProvider>
             <header className={clientsStyles.main}>
                 <Container>
-
-                    <h1 className="text-center">
+                <motion.h1
+                    initial="hidden"
+                    animate="enter"
+                    exit="exit"
+                    variants={headerVariants}
+                    className="text-center"
+                    transition={{ duration: 1, ease: "easeInOut",type: 'linear' }}
+                >
                     We have built a renowned and respected
                     
                     name amongst leading brands.
-                    </h1>
+              </motion.h1>
+                  
                     <p className="text-center">
-                    Our clients range from leading multinationals
-and heritage brands to the hottest emerging
-brands, across media, Iifestyle, fashion, and
-retail                    </p>
+                    {mainText}
+                    </p>
                 </Container>
             </header>
             <section className={clientsStyles.feat_projects}>
@@ -137,8 +171,8 @@ retail                    </p>
                                                 
                                                 <div key={ind} className={`${clientsStyles.project_img}`} onClick={() => { handleClick(project.attributes?.features) }}>
                                                     <motion.div
-                                                     initial={{opacity:0,y:30}}
-                                                     whileInView={{ opacity: 1,y:0 }}
+                                                     initial={{opacity:0,rotateZ:5,x:50}}
+                                                     whileInView={{ opacity: 1 ,rotateZ:0,x:0}}
                                                      viewport={{ once: true }}
                                                      transition={{ duration: 1, ease: "easeInOut",type: 'linear' }}
                                                     >
@@ -172,7 +206,7 @@ retail                    </p>
                                                     <motion.div
                                                      initial={{opacity:0,rotateZ:3,x:30}}
                                                      whileInView={{ opacity: 1 ,rotateZ:0,x:0}}
-                                                     viewport={{ once: true }}
+                                                    //  viewport={{ once: true }}
                                                      transition={{ duration: 1, ease: "easeInOut",type: 'linear' }}
                                                     >
                                                         <Image src={project.attributes.image.custom_data.url} className={clientsStyles.img} layout={"responsive"} width={500} height={660} objectFit={"cover"}></Image>
@@ -209,16 +243,19 @@ retail                    </p>
                                 return (
                                     <Col md={3} xs={10} key={ind}>
                                         <div className={clientsStyles.card}>
-                                                <motion.div
-                                                    initial={{opacity:0,scaleX:.9}}
-                                                    whileInView={{ opacity: 1,scaleX:1 }}
-                                                    viewport={{ once: true }}
-                                                    transition={{ duration: 1,delay:.5, ease: "easeInOut",type: 'linear' }}
-                                                >
                                                 <div className={clientsStyles.img}>
+                                                <motion.div
+                                                    // initial={{opacity:0,scaleX:.9}}
+                                                    // whileInView={{ opacity: 1,scaleX:1 }}
+                                                    initial={{borderRightWidth:80,borderLeftWidth:80}}
+                                                    whileInView={{borderRightWidth:0 ,borderLeftWidth:0}}
+                                                    viewport={{ once: true }}
+                                                    transition={{ duration: 1,delay:.2, ease: "easeInOut",type: 'linear' }}
+                                                    className={clientsStyles.imgLayer}
+                                                >
+                                                </motion.div>
                                                     <Image layout='responsive' src={client?.attributes?.image?.custom_data?.url} width={100} objectFit={"cover"} height={70}></Image>
                                                 </div>
-                                                </motion.div>
                                             <div className={clientsStyles.text}>
                                                 <h3>
                                                     {client?.attributes?.title}
@@ -257,7 +294,7 @@ retail                    </p>
 
                 </Container>
             </section>
-
-        </Layout>
+        {/* </Layout> */}
+        </>
     )
 }
