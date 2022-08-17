@@ -7,15 +7,9 @@ import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 import { Container, Row, Col } from "react-bootstrap";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import ReactPaginate from 'react-paginate';
+import { motion } from 'framer-motion';
 
 import Layout from "../../components/layout/Layout";
-// import newsImg from "../../public/imgs/news replacement.jpeg";
-import newsImg1 from "../../public/imgs/nails.png";
-import newsImg2 from "../../public/imgs/mic.png";
-import newsImg3 from "../../public/imgs/newsshelves.png";
-import newsImg4 from "../../public/imgs/newstwowomen.png";
-import newsImg5 from "../../public/imgs/newsmics.png";
-import newsImg6 from "../../public/imgs/newsgirls.png";
 
 import ArticleService from "../api/services/ArticlesService";
 import newsStyle from "./News.module.scss";
@@ -30,6 +24,15 @@ const ParallaxCache = dynamic(
 const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
+
+const headerVariants = {
+  hidden: { opacity: 0, y: "10%" ,scale:1.05},
+  enter: { opacity: 1, y: 0 ,scale:1}
+}
+const textVariants = {
+  hidden: { opacity: 0, x: 15 },
+  enter: { opacity: 1, x: 0 }
+}
 
 function Items({ currentItems ,selectedTab }) {
 
@@ -49,8 +52,6 @@ function Items({ currentItems ,selectedTab }) {
     <>
       {currentItems &&
         currentItems.map((item, key) => (
-          // (!selectedTab || selectedTab == 'ALL' || item.flag == selectedTab) &&
-          // (
           <Col md={6} key={key}>
             <div className={newsStyle.post} onClick={() => handlePost(item?.attributes?.link)}>
               <div className={newsStyle.news_img}>
@@ -70,7 +71,6 @@ function Items({ currentItems ,selectedTab }) {
             </div>
           </Col>
 
-          // )
 
         ))}
     </>
@@ -131,9 +131,6 @@ function PaginatedItems({ itemsPerPage ,selectedTab}) {
     }
   };
 
-  // useEffect(()=>{
-  //   window.scrollTo(800,800);
-  // },[currentItems])
 
   return (
     <>
@@ -192,23 +189,42 @@ export default function News() {
     setSelectedTab(name);
     handleFilter();
   };
+
+  const animatedText = (text) => {
+    let textArr = text?.split(" ");
+    textArr?.map((word,i)=>{
+      textArr[i] =  <motion.span
+      initial="hidden"
+      whileInView="enter"
+      exit="exit"
+      variants={textVariants}
+      transition={{ duration: 1,delay: i*.1, ease: "easeInOut",type: 'linear' }}
+       >
+        {word+' '}
+        </motion.span>
+    })
+    return textArr;
+  }
+
   return (
-    <Layout>
+    <>
       <header className={newsStyle.header}>
         <Container>
           <div className={newsStyle.text}>
-            <h1>
+            <motion.h1
+              initial="hidden"
+              animate="enter"
+              exit="exit"
+              variants={headerVariants}
+              transition={{ duration: 1.2, ease: "easeInOut",type: 'linear' }}
+            >
               KEEP UP WITH <br className="mobile" />
               OUR LATEST <br className="mobile" /> NEWS
-            </h1>
+            </motion.h1>
             <div>
               <p>
-              Learn about our latest events, product and brand
-launches, pop-ups, and artistic collaborations.
-<br/> <br/>
-And learn more about our mission to discover and
-elevate worthy brands in lifestyle, fashion, and
-luxury.
+
+              {animatedText("Learn about our latest events, product and brand launches, pop-ups, and artistic collaborations. And learn more about our mission to discover and elevate worthy brands in lifestyle, fashion, and luxury.")}
               </p>
             </div>
           </div>
@@ -369,14 +385,6 @@ luxury.
       <ParallaxProvider>
         <ParallaxCache />
       </ParallaxProvider>
-      {/* <ParallaxProvider>
-        <ParallaxCache/>
-
-        <Parallax className={`parallax-class`} y={[-30, 30]} tagOuter="figure">
-
-        <FooterComponent/>
-        </Parallax>
-        </ParallaxProvider> */}
-    </Layout>
+    </>
   );
 }

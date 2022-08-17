@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import Select from 'react-select'
 import { Container, Row, Col } from "react-bootstrap";
 import { ParallaxProvider } from "react-scroll-parallax";
-// import { BallTriangle } from  'react-loader-spinner'
+import { motion } from 'framer-motion';
 
 import Layout from "../../components/layout/Layout";
 import contactImg from "../../public/imgs/contact.png";
@@ -28,12 +28,17 @@ export default function Contact() {
 
     // const [isLoading ,setIsLoading] = useState(false);
     const [msgSent , setMsgSent] = useState(false);
+    const headerVariants = {
+        hidden: { opacity: 0, y: "10%" ,scale:1.05},
+        enter: { opacity: 1, y: 0 ,scale:1}
+      }
+      const textVariants = {
+        hidden: { opacity: 0, x: 15 },
+        enter: { opacity: 1, x: 0 }
+      }
 
     const customStyles = {
         option: (provided, state) => ({
-        //   ...provided,
-        //   borderBottom: '1px dotted pink',
-        //   color: state.isSelected ? 'red' : 'blue',
           backgroundColor:'#0e0e0e',
           padding: 10,
           boxShadow:'none'
@@ -48,7 +53,6 @@ export default function Contact() {
     ]
 
     const handleChange = (event) => {
-        // console.log({event});
         const name = event?.target?.name || 'subject';
         const value = event.value || event?.target.value;
         
@@ -126,12 +130,19 @@ export default function Contact() {
         })
     }
   return (
-    <Layout>
+    <>
         <header className={contactStyles.header}>
             <Container fluid>
-                <h1 className="text-center">
+                <motion.h1 
+                    className="text-center"
+                    initial="hidden"
+                    animate="enter"
+                    exit="exit"
+                    variants={headerVariants}
+                    transition={{ duration: 1.2, ease: "easeInOut",type: 'linear' }}      
+                >
                     LET&apos;S GET CHATTING
-                </h1>
+                </motion.h1>
                     <div className={contactStyles.contact_info}>
 
                 <Row>
@@ -318,6 +329,6 @@ Dubai design district.</span>
         <ParallaxProvider>
         <ParallaxCache/>
         </ParallaxProvider>
-    </Layout>
+    </>
   );
 }

@@ -5,19 +5,9 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
 import { ParallaxProvider ,Parallax} from "react-scroll-parallax";
+import { motion } from 'framer-motion';
 
 import Layout from "../../components/layout/Layout";
-import groupImg from "../../public/imgs/office.jpg";
-import groupImg1 from "../../public/imgs/jann.jpg";
-import groupImg2 from "../../public/imgs/giovanina.png";
-import groupImg3 from "../../public/imgs/maria.png";
-import groupImg4 from "../../public/imgs/nat.png";
-import sliderImg from "../../public/imgs/sliderimg.png";
-import sliderImg2 from "../../public/imgs/sliderimg2.png";
-import pressImg from "../../public/imgs/Coveteur.png";
-import pressImg2 from "../../public/imgs/Vogue.jpeg";
-import pressImg3 from "../../public/imgs/WWD.jpeg";
-
 
 import groupStyles from "./Group.module.scss";
 import GroupServices from "../api/services/GroupService";
@@ -59,6 +49,17 @@ export default function Group() {
     false
   ]);
 
+  
+  const headerVariants = {
+    hidden: { opacity: 0, y: "10%" ,scale:1.05},
+    enter: { opacity: 1, y: 0 ,scale:1}
+  }
+  const textVariants = {
+    hidden: { opacity: 0, x: 15 },
+    enter: { opacity: 1, x: 0 }
+  }
+
+
   const toggleExpandText = (i) => {
     let isTextExpandArr = [...isTextExpand];
     isTextExpandArr[i] = !isTextExpandArr[i];
@@ -89,6 +90,23 @@ export default function Group() {
     }
   },[data]);
 
+
+  const animatedText = (text) => {
+    let textArr = text?.split(" ");
+    textArr?.map((word,i)=>{
+      textArr[i] =  <motion.span
+      initial="hidden"
+      whileInView="enter"
+      exit="exit"
+      variants={textVariants}
+      transition={{ duration: 1,delay: i*.01, ease: "easeInOut",type: 'linear' }}
+       >
+        {word+' '}
+        </motion.span>
+    })
+    return textArr;
+  }
+
   const formatDate = (value) => {
     const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
@@ -100,14 +118,20 @@ export default function Group() {
     return `${month} ${year}`;
   }
   return (
-    <Layout>
+    <>
       
       <IsMobileComponent handleMobile={useHandleMobile}/>
       {data && (
 
         <ParallaxProvider>
         <header className={groupStyles.header} style={{backgroundImage:`url(${isMobile?data?.mobile_main_image?.custom_data?.url:data?.main_image?.custom_data?.url})`}}>
-          <h1>{data?.title}</h1>
+          <motion.h1
+            initial="hidden"
+            animate="enter"
+            exit="exit"
+            variants={headerVariants}
+            transition={{ duration: 1.2, ease: "easeInOut",type: 'linear' }}
+          >{data?.title}</motion.h1>
         </header>
         <section className={groupStyles.info}>
         {/* <ParallaxProvider> */}
@@ -115,7 +139,7 @@ export default function Group() {
           <ParallaxCache/>
           <Container>
             <p className={groupStyles.text}>
-            {data?.description}
+            {animatedText(data?.description)}
             </p>
             <ul>
               <li className="text-center">
@@ -158,11 +182,17 @@ export default function Group() {
                 </Col>
                 <Col md={4}>
                   <div className={groupStyles.office_network}>
-                    <h2>
+                    <motion.h2
+                      initial="hidden"
+                      animate="enter"
+                      exit="exit"
+                      variants={headerVariants}
+                      transition={{ duration: 1.2, ease: "easeInOut",type: 'linear' }}
+                    >
                       Office <br className="disktop_only" /> Network
-                    </h2>
+                    </motion.h2>
                     <p>
-                  {data?.office_text1}
+                  {animatedText(data?.office_text1)}
                     </p>
                   </div>
                 </Col>
@@ -174,7 +204,7 @@ export default function Group() {
                 <Col md={4}>
                   <div className={`${groupStyles.office_network} ${groupStyles.office_network_text}`}>
                     <p>
-                    {data?.office_text2}
+                    {animatedText(data?.office_text2)}
                     </p>
                   </div>
                 </Col>
@@ -188,9 +218,15 @@ export default function Group() {
           <Parallax translateY={[isMobile?-1:10, isMobile?-7:-30]}>
           <ParallaxCache/>
             <div className={groupStyles.leader}>
-              <h2 className="text-center pb-3">Leadership Team</h2>
+              <motion.h2 className="text-center pb-3"
+                initial="hidden"
+                animate="enter"
+                exit="exit"
+                variants={headerVariants}
+                transition={{ duration: 1.2, ease: "easeInOut",type: 'linear' }}
+              >Leadership Team</motion.h2>
               <p className="text-center">
-              {data?.leader_text}
+              {animatedText(data?.leader_text)}
               </p>
 
               <Row>
@@ -266,14 +302,18 @@ export default function Group() {
 
             <div className={groupStyles.press}>
 
-              <h2 className="text-center">
+              <motion.h2 
+                className="text-center"
+                initial="hidden"
+                animate="enter"
+                exit="exit"
+                variants={headerVariants}
+                transition={{ duration: 1.2, ease: "easeInOut",type: 'linear' }}
+              >
                   In the press
-              </h2>
+              </motion.h2>
               <p className="text-center">
-              Discover why everyone&apos;s talking about our
-              <br/>
-  innovative projects, our team of experts, and our
-  mission to elevate inspiring brands.            </p>
+                {animatedText("Discover why everyone's talking about our innovative projects, our team of experts, and our mission to elevate inspiring brands.")}</p>
               <Row>
                 {articles[0] && articles?.map((item,key)=>{
                   return(
@@ -282,11 +322,19 @@ export default function Group() {
                       <div className={groupStyles.img}>
                         {
                           item.attributes.image?.custom_data?.url && (
-
-                              <Image src={item.attributes?.image?.custom_data?.url} layout="responsive" unoptimized={true} loading="eager" height={70} objectFit={"cover"} width={100}></Image> 
+                            <>
+                            <motion.div
+                              initial={{borderRightWidth:80,borderLeftWidth:80}}
+                              whileInView={{borderRightWidth:0 ,borderLeftWidth:0}}
+                              viewport={{ once: true }}
+                              transition={{ duration: 1,delay:.2, ease: "easeInOut",type: 'linear' }}
+                              className={groupStyles.imgLayer}
+                              >
+                            </motion.div>
+                            <Image src={item.attributes?.image?.custom_data?.url} layout="responsive" unoptimized={true} loading="eager" height={70} objectFit={"cover"} width={100}></Image> 
+                            </>
                           )
                         }
-                        {/* <Image src={pressImg} layout="fill" unoptimized={true} loading="eager" height={70} objectFit={"cover"} width={100}></Image> */}
                       <h2>{item.attributes?.title}</h2>
                       </div>
                       <h3>
@@ -302,39 +350,6 @@ export default function Group() {
                   </Col>
                   )
                 })}
-                  {/* <Col md={4} onClick={() => handlePost('https://en.vogue.me/fashion/the-three-women-behind-maison-pyramide-arab-talent/')}>
-                      <div className={groupStyles.press_card}>
-                      <div className={groupStyles.img}>
-                        <Image src={pressImg2} height={70} objectFit={"cover"} width={100} layout="responsive"></Image>
-                        <h2>VOGUE ARABIA</h2>
-                      </div>
-                      <h3>
-                      Meet the Three Women Driving Regional Brands to Make a Global Stamp 
-                      </h3>
-                      <span>JAN 2019</span>
-
-                      <p>
-                      A deep-dive into the experiences and complementing skills of each Maison Pyramide founder and their expectations for the company.
-                      </p>
-                      <div className={groupStyles.card_tag}>COMPANY FEATURE</div>
-                      </div>
-                  </Col>
-                  <Col md={4} onClick={() => handlePost('https://wwd.com/fashion-news/designer-luxury/maison-pyramide-champions-middle-eastern-talent-at-harvey-nichols-1203141057/')}>
-                      <div className={groupStyles.press_card}>
-                      <div className={groupStyles.img}>
-                        <Image src={pressImg3} height={70} objectFit={"cover"} width={100} layout="responsive"></Image>
-                        <h2>WWD</h2>
-                      </div>
-                      <h3>
-                      Maison Pyramide Champions Middle Eastern Talent at Harvey Nichols&apos; London flagship
-                      </h3>
-                   
-                      <p>
-                      The leading regional sales showroom is bringing some of its up-and-coming brand partners to the London market, with a pop-up at Harvey Nichols&apos; London flagship.
-                      </p>
-                      <div className={groupStyles.card_tag}>COMPANY FEATURE</div>
-                      </div>
-                  </Col> */}
               </Row>
             </div>
               </Parallax>
@@ -345,6 +360,6 @@ export default function Group() {
         </ParallaxProvider>
       )}
 
-    </Layout>
+    </>
   );
 }

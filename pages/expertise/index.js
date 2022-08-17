@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ParallaxProvider , Parallax } from "react-scroll-parallax";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { motion } from 'framer-motion'
 
 import Layout from "../../components/layout/Layout";
 import expImg from "../../public/imgs/Group 156184.png";
@@ -50,7 +51,15 @@ export default function Expertise() {
     false,
   ]);
   const [_expertise , setExpertise] = useState([]);
-  // const expertiseText = useState(router.query.section);
+
+  const headerVariants = {
+    hidden: { opacity: 0, y: "10%" ,scale:1.05},
+    enter: { opacity: 1, y: 0 ,scale:1}
+  }
+  const textVariants = {
+    hidden: { opacity: 0, x: 15 },
+    enter: { opacity: 1, x: 0 }
+  }
 
   const useHandleMobile = (value) => {
     useEffect(() => {
@@ -83,6 +92,22 @@ export default function Expertise() {
       console.log(err);
     })
   },[]);
+
+  const animatedText = (text) => {
+    let textArr = text?.split(" ");
+    textArr?.map((word,i)=>{
+      textArr[i] =  <motion.span
+      initial="hidden"
+      whileInView="enter"
+      exit="exit"
+      variants={textVariants}
+      transition={{ duration: 1,delay: i*.01, ease: "easeInOut",type: 'linear' }}
+       >
+        {word+' '}
+        </motion.span>
+    })
+    return textArr;
+  }
   const handleClick = (id) => {
     if(id){
         router.push(`/clients/${id}`)
@@ -90,7 +115,7 @@ export default function Expertise() {
 }
 
   return (
-    <Layout>
+    <>
       <ParallaxProvider>
       <IsMobileComponent handleMobile={useHandleMobile} />
       <section className={expertiseStyles.main}>
@@ -105,20 +130,20 @@ export default function Expertise() {
             </Col>
             <Col md={6}>
               <div className={expertiseStyles.title}>
-                <h1>
+
+
+                <motion.h1
+                  initial="hidden"
+                  animate="enter"
+                  exit="exit"
+                  variants={headerVariants}
+                  transition={{ duration: 1.2, ease: "easeInOut",type: 'linear' }}
+                >
                   INNOVATIVE <br />
                   SOLUTIONS FOR YOUR BUSINESS <br /> TO STRIVE ON A GLOBAL LEVEL
-                </h1>
+              </motion.h1>
                 <p>
-                We elevate fashion, lifestyle, luxury, and media brands by
-blending intelligent strategy with highly creative
-execution.
-{/* <br/><br/> */}
-Our deep connections with millennial culture help
-businesses find relevance in today&apos;s world.
-{/* <br/><br/> */}
-Our five main areas of expertise: Media, Public Affairs,
-Lifestyle, Retail, and Fashion.
+                  {animatedText("We elevate fashion, lifestyle, luxury, and media brands by blending intelligent strategy with highly creative execution. Our deep connections with millennial culture help businesses find relevance in today's world. Our five main areas of expertise: Media, Public Affairs, Lifestyle, Retail, and Fashion.")}
                 </p>
               </div>
             </Col>
@@ -128,7 +153,17 @@ Lifestyle, Retail, and Fashion.
 
       <section className={expertiseStyles.main_area}>
         <Container>
-          <h2 className="text-center">Our five main areas of expertise</h2>
+          
+          <motion.h2
+              initial="hidden"
+              whileInView="enter"
+              exit="exit"
+              variants={headerVariants}
+              transition={{ duration: 1.2, ease: "easeInOut",type: 'linear' }}
+              className="text-center"
+              >
+            Our five main areas of expertise
+            </motion.h2>
           {_expertise.map((exp , ind) => {
             return(
 
@@ -151,14 +186,7 @@ Lifestyle, Retail, and Fashion.
                       )
                       }
                       <p>{exp.attributes?.name}</p>
-                      {/* {exp.attributes?.featured ? (
-                      <span>Featured Project</span>
-                      ):
-                      exp.attributes?.featured_image && (
-                        <h4>FEATURED IMAGE</h4>
-                      )
-                      } */}
-                     {/* <br /> */}
+                      
                       <span>{exp.attributes?.tag}</span>
                     </div>
                     {exp.attributes?.feature && ( 
@@ -175,9 +203,16 @@ Lifestyle, Retail, and Fashion.
               <Parallax translateY={[isMobile?0:60,isMobile?0: 0]} >
               <ParallaxCache />
                 <div className={expertiseStyles.text}>
-                  <h3 className="disktop_only">{exp.attributes?.title}</h3>
+                  <motion.h3 
+                    className="disktop_only"
+                    initial="hidden"
+                    whileInView="enter"
+                    exit="exit"
+                    variants={headerVariants}
+                    transition={{ duration: 1.2,delay:.5, ease: "easeInOut",type: 'linear' }}
+                  >{exp.attributes?.title}</motion.h3>
                   <pre>
-                    {exp.attributes?.description}
+                    {animatedText(exp.attributes?.description)}
                   </pre>
                   <br />
                   <p>
@@ -198,7 +233,7 @@ Lifestyle, Retail, and Fashion.
                               classNames={"readMore"}
                             >
                               <pre>
-                                {exp.attributes?.sub_description}
+                                {animatedText(exp.attributes?.sub_description)}
                                 {isMobile && (
 
                                 <p
@@ -225,9 +260,16 @@ Lifestyle, Retail, and Fashion.
               <Parallax translateY={[isMobile?0:60,isMobile?0: 0]} >
               <ParallaxCache />
               <div className={`${expertiseStyles.text} ${expertiseStyles.left_text}`}>
-                  <h3 className="disktop_only">{exp.attributes.title}</h3>
+                  <motion.h3 
+                    className="disktop_only"
+                    initial="hidden"
+                    whileInView="enter"
+                    exit="exit"
+                    variants={headerVariants}
+                    transition={{ duration: 1.2,delay:.5, ease: "easeInOut",type: 'linear' }}
+                  >{exp.attributes.title}</motion.h3>
                   <p>
-                  {exp.attributes?.description}
+                  {animatedText(exp.attributes?.description)}
                   </p>
                   <br />
                   <p>
@@ -248,7 +290,7 @@ Lifestyle, Retail, and Fashion.
                               classNames={"readMore"}
                             >
                               <p>
-                              {exp.attributes?.sub_description}
+                              {animatedText(exp.attributes?.sub_description)}
                                 {isMobile && (
   
                                 <p
@@ -301,6 +343,6 @@ Lifestyle, Retail, and Fashion.
         </Container>
       </section>
       </ParallaxProvider>
-    </Layout>
+    </>
   );
 }

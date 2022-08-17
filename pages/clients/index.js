@@ -7,31 +7,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { Parallax } from 'react-scroll-parallax';
 
-
-import Layout from "../../components/layout/Layout";
-import clientImg from '../../public/imgs/Bani Beast.png';
-import clientImg2 from '../../public/imgs/mmp.png';
-import clientImg3 from '../../public/imgs/tgirls.png';
-import clientImg4 from '../../public/imgs/necklace.png';
-import clientImg5 from '../../public/imgs/chair.png';
-import clientImg6 from '../../public/imgs/greenshoe.png';
-
-import cardImg from '../../public/imgs/blackdressgirl.png';
-import cardImg1 from '../../public/imgs/reddressgirl.png';
-import cardImg2 from '../../public/imgs/blackjacket.png';
-import cardImg3 from '../../public/imgs/beige.png';
-import cardImg4 from '../../public/imgs/arwa.png';
-import cardImg5 from '../../public/imgs/blackbag.png';
-import cardImg6 from '../../public/imgs/sorya.png';
-import cardImg7 from '../../public/imgs/greyshirt.png';
-import cardImg8 from '../../public/imgs/yellowshirt.png';
-import cardImg9 from '../../public/imgs/monot.png';
-import cardImg10 from '../../public/imgs/greenbag.png';
-import cardImg11 from '../../public/imgs/twobacks.png';
-
 import { motion } from 'framer-motion';
 
-import variables from '../../styles/variables.module.scss';
 import ClientService from "../../pages/api/services/ClientService";
 import clientsStyles from './Clients.module.scss';
 import ProjectService from "../api/services/ProjectService";
@@ -59,7 +36,7 @@ export default function Clients() {
 
 
     const headerVariants = {
-        hidden: { opacity: 0, y: "50%" ,scale:1.05},
+        hidden: { opacity: 0, y: "30%" ,scale:1.05},
         enter: { opacity: 1, y: 0 ,scale:1}
       }
       const textVariants = {

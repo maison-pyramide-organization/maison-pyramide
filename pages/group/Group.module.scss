@@ -95,11 +95,7 @@
         }
         .card{
             margin-top:32px;
-            // background-color: red;
-            // .img{
-            //     padding: 24px!important;
-            //     padding-left: 0!important;
-            // }
+            
             h3{
                 margin-top:24px;
                 font-family: "GT Super Display";
@@ -220,12 +216,23 @@
                     font-size: 22px;
                     padding-top: 56px;     
                     cursor: pointer;
-                  }
-                  h2:hover{
-                      color:$active-color;
-                  }
+                }
+                h2:hover{
+                    color:$active-color;
+                }
+                .imgLayer{
+                    position: absolute;
+                    top:0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    padding:20px;
+                    border-right: 70px #0e0e0e solid;
+                    border-left: 70px #0e0e0e solid;
+                    z-index: 100; 
+                }
+                
             }
-            
             img{
                 transition: all .5s;
                 cursor: pointer!important;
