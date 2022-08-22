@@ -54,7 +54,7 @@ function Services() {
       animate="enter"
       exit="exit"
       variants={textVariants}
-      transition={{ duration: 1,delay:i*.08, ease: "easeInOut",type: 'linear' }}
+      transition={{ duration: 1,delay:i*.02, ease: "easeInOut",type: 'linear' }}
        >
         {word+' '}
         </motion.span>
