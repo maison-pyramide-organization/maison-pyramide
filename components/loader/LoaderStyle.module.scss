@@ -20,7 +20,7 @@
     position: relative;
     font-size: 72px;
     line-height: 60px;
-    width:50%;
+    width:80%;
     // height: 180px;
     .logo{
         // width:100%;
@@ -36,6 +36,10 @@
     position: absolute;
     bottom: 0;
     top:0;
+}
+.letter{
+    margin:0 10px;
+    display: inline-block;
 }
 @media (min-width:200px) and (max-width:600px) {
     .main{
