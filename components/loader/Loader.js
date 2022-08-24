@@ -56,7 +56,7 @@ const LoaderComponent = ({ isLoading }) => {
           <CSSTransition key={2} timeout={500} classNames={"item"}>
 
           <div className={loaderStyle.main}>
-            <h1 className={loaderStyle.h1}>
+            <h1 className={loaderStyle.h1} style={{marginLeft:"20px"}}>
               {letters.map((letter,ind)=>(
                 <AnimatePresence key={ind}>
                     { !hideLetters && (
@@ -75,7 +75,7 @@ const LoaderComponent = ({ isLoading }) => {
                       }}
                       transition={{ duration: 1, ease: "easeInOut",type: 'linear' }}
                     >
-                      <Image width={40} height={40} src={letter}/>
+                      <Image src={letter}/>
                     </motion.div>
                     )}
                     </AnimatePresence>
@@ -100,7 +100,7 @@ const LoaderComponent = ({ isLoading }) => {
                       }}
                       transition={{ duration: 1, ease: "easeInOut",type: 'linear' }}
                     >
-                      <Image width={40} height={40} src={letter}/>
+                      <Image  src={letter}/>
                     </motion.div>
                     )}
                     </AnimatePresence>

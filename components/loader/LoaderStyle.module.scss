@@ -22,7 +22,6 @@
     font-size: 72px;
     line-height: 60px;
     width:80%;
-    min-height: 100px;
     overflow: hidden;
     // height: 180px;
     .logo{
@@ -42,13 +41,24 @@
 }
 .letter{
     display: inline-block;
+    width: 40px;
+    height: 40px;
 }
+
 @media (min-width:200px) and (max-width:600px) {
     .main{
         h1{
             font-size: 48px;
             line-height: 48px;
+            height: 50px;
         }
+    }
+    .titleLayer{
+        height: 100px;
+    }
+    .letter{
+        width: 20px;
+        height: 20px;
     }
 
 }

@@ -51,8 +51,10 @@ function Services() {
     textArr?.map((word,i)=>{
       textArr[i] =  <motion.span
       initial="hidden"
-      animate="enter"
+      // animate="enter"
       exit="exit"
+      whileInView={"enter"}
+      viewport={{ once: true }}
       variants={textVariants}
       transition={{ duration: 1,delay:i*.02, ease: "easeInOut",type: 'linear' }}
        >
