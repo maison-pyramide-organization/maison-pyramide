@@ -42,10 +42,10 @@ const LoaderComponent = ({ isLoading }) => {
   if (!isLoading) {
     setTimeout(() => {
       setHideWhole(true);
-    }, 100000);
+    }, 1000);
     setTimeout(() => {
       setHideLetters(true)
-    }, 50000);
+    }, 500);
   }
 
   return (
@@ -53,7 +53,7 @@ const LoaderComponent = ({ isLoading }) => {
       <TransitionGroup>
        
         {!hideWhole && (
-          <CSSTransition key={2} timeout={50000} classNames={"item"}>
+          <CSSTransition key={2} timeout={500} classNames={"item"}>
 
           <div className={loaderStyle.main}>
             <h1 className={loaderStyle.h1} style={{marginLeft:"20px"}}>
