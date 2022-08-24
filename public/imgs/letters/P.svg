@@ -1,3 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="97.641" height="127.5" viewBox="0 0 97.641 127.5">
-  <path id="P" d="M1172.07,600.85H1134V557.5h38.07c13.84,0,25.14,6.74,25.14,21.68s-11.29,21.68-25.14,21.68m1.46-59.2h-56.28v127.5h16.76V616.7h39.53c22.22,0,41.35-13.66,41.35-37.52s-18.03-37.52-41.35-37.52" transform="translate(-1117.25 -541.66)" fill="#fff"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="148" height="129" viewBox="0 0 148 129">
+  <g id="p" transform="translate(19994 -13073)">
+    <path id="P-2" data-name="P" d="M1172.07,600.85H1134V557.5h38.07c13.84,0,25.14,6.74,25.14,21.68s-11.29,21.68-25.14,21.68m1.46-59.2h-56.28v127.5h16.76V616.7h39.53c22.22,0,41.35-13.66,41.35-37.52s-18.03-37.52-41.35-37.52" transform="translate(-21086.25 12532.34)" fill="#fff"/>
+    <rect id="Rectangle_868" data-name="Rectangle 868" width="148" height="129" transform="translate(-19994 13073)" fill="none"/>
+  </g>
 </svg>

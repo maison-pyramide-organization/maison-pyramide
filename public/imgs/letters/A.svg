@@ -1,3 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="130.061" height="127.5" viewBox="0 0 130.061 127.5">
-  <path id="A" d="M1523.9,554.95l27.14,66.48h-54.46Zm-11.66-13.3-53.37,127.5h18.4l13.3-32.42h66.67l13.11,32.42h18.58l-53.37-127.5h-23.31Z" transform="translate(-1458.869 -541.65)" fill="#fff"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="148" height="129" viewBox="0 0 148 129">
+  <g id="A" transform="translate(19889 -12687)">
+    <path id="A-2" data-name="A" d="M1471.07,462.59l-27.14-66.48-27.32,66.48Zm-38.8-79.78h23.31l53.37,127.5h-18.58l-13.11-32.42h-66.67l-13.3,32.42h-18.4l53.37-127.5Z" transform="translate(-21258.891 12305.19)" fill="#fff"/>
+    <rect id="Rectangle_859" data-name="Rectangle 859" width="148" height="129" transform="translate(-19889 12687)" fill="none"/>
+  </g>
 </svg>

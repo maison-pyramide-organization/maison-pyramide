@@ -37,7 +37,8 @@ const LoaderComponent = ({ isLoading }) => {
   const [hideWhole, setHideWhole] = React.useState(false);
   const [hideLetters,setHideLetters] = React.useState(false);
 
-  const letters = [m,a,i,s,o,n,p,y,r,a,m,i,d,e];
+  const letters = [m,a,i,s,o,n];
+  const pyramide = [p,y,r,a,m,i,d,e] 
   if (!isLoading) {
     setTimeout(() => {
       setHideWhole(true);
@@ -54,20 +55,52 @@ const LoaderComponent = ({ isLoading }) => {
         {!hideWhole && (
           <CSSTransition key={2} timeout={500} classNames={"item"}>
 
-<div className={loaderStyle.main}>
+          <div className={loaderStyle.main}>
             <h1 className={loaderStyle.h1}>
-              {letters.map((letter,i)=>(
-                <AnimatePresence>
+              {letters.map((letter,ind)=>(
+                <AnimatePresence key={ind}>
                     { !hideLetters && (
                     <motion.div className={loaderStyle.letter}
                       initial="hidden"
                       animate="enter"
                       exit="exit"
-                      variants={i%2 == 0?variantsTop:variantsBot}
-                      style={{marginRight:letter == n?'30px':0}}
+                      variants={ind%2 == 0?variantsTop:variantsBot}
+                      style={{
+                        marginRight:letter == n?'40px':
+                        letter == m?'15px':
+                        letter == i?'0px':'10px',
+
+                        marginLeft:letter == m?'15px':
+                        letter == i? '0':'10px'
+                      }}
                       transition={{ duration: 1, ease: "easeInOut",type: 'linear' }}
                     >
-                      <Image width={30} height={30} src={letter}/>
+                      <Image width={40} height={40} src={letter}/>
+                    </motion.div>
+                    )}
+                    </AnimatePresence>
+              ))}
+            </h1>
+            <h1 className={loaderStyle.h1}>
+            {pyramide.map((letter,ind)=>(
+                <AnimatePresence key={ind}>
+                    {!hideLetters && (
+                    <motion.div className={loaderStyle.letter}
+                      initial="hidden"
+                      animate="enter"
+                      exit="exit"
+                      variants={ind%2 == 0?variantsTop:variantsBot}
+                      style={{
+                        marginRight:letter == n?'40px':
+                        letter == m?'15px':
+                        letter == i?'0px':'10px',
+
+                        marginLeft:letter == m?'15px':
+                        letter == i? '0':'10px'
+                      }}
+                      transition={{ duration: 1, ease: "easeInOut",type: 'linear' }}
+                    >
+                      <Image width={40} height={40} src={letter}/>
                     </motion.div>
                     )}
                     </AnimatePresence>
