@@ -74,14 +74,13 @@ function MyApp({ Component, pageProps }) {
           <NavComponent/>
           <IsMobileComponent handleMobile={useHandleMobile}/>
            <div className="total-mb">
-            <AnimatePresence
-              exitBeforeEnter
-              initial={false}
-              onExitComplete={() => window.scrollTo(0, 0)}
-            >
-            <Component {...pageProps}/>
-            </AnimatePresence>
-
+              <AnimatePresence
+                exitBeforeEnter
+                initial={false}
+                onExitComplete={() => window.scrollTo(0, 0)}
+              >
+                <Component {...pageProps}/>
+              </AnimatePresence>
             </div>
           <div className="parallax" style={{overflow:'hidden'}}>
           <ParallaxProvider>

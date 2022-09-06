@@ -7,7 +7,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { Parallax } from 'react-scroll-parallax';
 
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import ClientService from "../../pages/api/services/ClientService";
 import clientsStyles from './Clients.module.scss';
@@ -56,8 +56,8 @@ export default function Clients() {
         textArr?.map((word,i)=>{
           textArr[i] =  <motion.span
           initial="hidden"
-          animate="enter"
-          exit="exit"
+          whileInView={"enter"}
+        //   viewport={{ once: true }}
           variants={textVariants}
           transition={{ duration: 1,delay:i*.1, ease: "easeInOut",type: 'linear' }}
            >
@@ -95,6 +95,15 @@ export default function Clients() {
     }
 
 
+    const PreloadImages = () => {
+
+        return(
+          _selectedClients.map(item => (
+            <link rel="preload" as="image" href={item?.attributes?.image?.custom_data?.url}></link>
+          ))
+        )
+      }
+
     useEffect(() => {
         ProjectService.getFeaturedProjects().then((res) => {
             setFeaturedProjects(res.data);
@@ -114,21 +123,26 @@ export default function Clients() {
             </ParallaxProvider>
             <header className={clientsStyles.main}>
                 <Container>
-                <motion.h1
-                    initial="hidden"
-                    animate="enter"
-                    exit="exit"
-                    variants={headerVariants}
-                    className="text-center"
-                    transition={{ duration: 1, ease: "easeInOut",type: 'linear' }}
-                >
-                    We have built a renowned and respected
-                    
-                    name amongst leading brands.
-              </motion.h1>
+                    <AnimatePresence>
+                        <motion.h1
+                            initial="hidden"
+                            // animate="enter"
+                            whileInView={"enter"}
+                            // viewport={{ once: true }}
+                            variants={headerVariants}
+                            className="text-center"
+                            transition={{ duration: 1, ease: "easeInOut",type: 'linear' }}
+                        >
+                            We have built a renowned and respected
+                            
+                            name amongst leading brands.
+                        </motion.h1>
+                    </AnimatePresence>
                   
                     <p className="text-center">
-                    {mainText}
+                        <AnimatePresence>
+                            {mainText}
+                        </AnimatePresence>
                     </p>
                 </Container>
             </header>
@@ -150,7 +164,7 @@ export default function Clients() {
                                                     <motion.div
                                                      initial={{opacity:0,rotateZ:5,x:50}}
                                                      whileInView={{ opacity: 1 ,rotateZ:0,x:0}}
-                                                     viewport={{ once: true }}
+                                                    //  viewport={{ once: true }}
                                                      transition={{ duration: 1, ease: "easeInOut",type: 'linear' }}
                                                     >
                                                         <Image src={project.attributes.image.custom_data.url} className={clientsStyles.img} layout={"responsive"} width={500} height={660} objectFit={"cover"}></Image>
@@ -215,6 +229,7 @@ export default function Clients() {
                         Selected clients
                     </h2>
                     <div>
+                        <PreloadImages/>
                         <Row id="slider" className={clientsStyles.selected_clients_container}>
                             {_selectedClients.map((client,ind) => {
                                 return (
@@ -222,8 +237,6 @@ export default function Clients() {
                                         <div className={clientsStyles.card}>
                                                 <div className={clientsStyles.img}>
                                                 <motion.div
-                                                    // initial={{opacity:0,scaleX:.9}}
-                                                    // whileInView={{ opacity: 1,scaleX:1 }}
                                                     initial={{borderRightWidth:80,borderLeftWidth:80}}
                                                     whileInView={{borderRightWidth:0 ,borderLeftWidth:0}}
                                                     viewport={{ once: true }}
@@ -231,7 +244,7 @@ export default function Clients() {
                                                     className={clientsStyles.imgLayer}
                                                 >
                                                 </motion.div>
-                                                    <Image layout='responsive' src={client?.attributes?.image?.custom_data?.url} width={100} objectFit={"cover"} height={70}></Image>
+                                                    <Image layout='responsive' unoptimized={true} loading="eager" src={client?.attributes?.image?.custom_data?.url} width={100} objectFit={"cover"} height={70}></Image>
                                                 </div>
                                             <div className={clientsStyles.text}>
                                                 <h3>

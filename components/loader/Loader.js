@@ -8,17 +8,17 @@ import { motion,AnimatePresence  } from 'framer-motion'
 
 import loaderStyle from "./LoaderStyle.module.scss";
 import logo from '../../public/imgs/logowhite.png';
-import m from '../../public/imgs/letters/M.svg';
-import a from '../../public/imgs/letters/A.svg';
-import i from '../../public/imgs/letters/I.svg';
-import s from '../../public/imgs/letters/S.svg';
-import o from '../../public/imgs/letters/O.svg';
-import n from '../../public/imgs/letters/N.svg';
-import p from '../../public/imgs/letters/P.svg';
-import y from '../../public/imgs/letters/Y.svg';
-import r from '../../public/imgs/letters/R.svg';
-import d from '../../public/imgs/letters/D.svg';
-import e from '../../public/imgs/letters/E.svg';
+import m from '../../public/imgs/letters/M.png';
+import a from '../../public/imgs/letters/A.png';
+import i from '../../public/imgs/letters/I.png';
+import s from '../../public/imgs/letters/S.png';
+import o from '../../public/imgs/letters/O.png';
+import n from '../../public/imgs/letters/N.png';
+import p from '../../public/imgs/letters/P.png';
+import y from '../../public/imgs/letters/Y.png';
+import r from '../../public/imgs/letters/R.png';
+import d from '../../public/imgs/letters/D.png';
+import e from '../../public/imgs/letters/E.png';
 
 
 const variantsTop = {
@@ -45,11 +45,21 @@ const LoaderComponent = ({ isLoading }) => {
     }, 1000);
     setTimeout(() => {
       setHideLetters(true)
-    }, 500);
+    }, 5000);
+  }
+
+  const PreloadImages = () => {
+
+    return(
+      [...letters,...pyramide].map(letter => (
+        <link rel="preload" as="image" href={letter}></link>
+      ))
+    )
   }
 
   return (
     <div>
+      <PreloadImages/>
       <TransitionGroup>
        
         {!hideWhole && (
@@ -75,7 +85,7 @@ const LoaderComponent = ({ isLoading }) => {
                       }}
                       transition={{ duration: 1, ease: "easeInOut",type: 'linear' }}
                     >
-                      <Image src={letter}/>
+                      <Image unoptimized={true} loading="eager" src={letter}/>
                     </motion.div>
                     )}
                     </AnimatePresence>
@@ -100,7 +110,7 @@ const LoaderComponent = ({ isLoading }) => {
                       }}
                       transition={{ duration: 1, ease: "easeInOut",type: 'linear' }}
                     >
-                      <Image  src={letter}/>
+                      <Image unoptimized={true} loading="eager" src={letter}/>
                     </motion.div>
                     )}
                     </AnimatePresence>

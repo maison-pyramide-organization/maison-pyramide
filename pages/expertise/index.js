@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ParallaxProvider , Parallax } from "react-scroll-parallax";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 
 import Layout from "../../components/layout/Layout";
 import expImg from "../../public/imgs/Group 156184.png";
@@ -131,10 +131,10 @@ export default function Expertise() {
             <Col md={6}>
               <div className={expertiseStyles.title}>
 
-
+              <AnimatePresence>
                 <motion.h1
                   initial="hidden"
-                  animate="enter"
+                  whileInView="enter"
                   exit="exit"
                   variants={headerVariants}
                   transition={{ duration: 1.2, ease: "easeInOut",type: 'linear' }}
@@ -142,8 +142,11 @@ export default function Expertise() {
                   INNOVATIVE <br />
                   SOLUTIONS FOR YOUR BUSINESS <br /> TO STRIVE ON A GLOBAL LEVEL
               </motion.h1>
+              </AnimatePresence>
                 <p>
+                <AnimatePresence>
                   {animatedText("We elevate fashion, lifestyle, luxury, and media brands by blending intelligent strategy with highly creative execution. Our deep connections with millennial culture help businesses find relevance in today's world. Our five main areas of expertise: Media, Public Affairs, Lifestyle, Retail, and Fashion.")}
+                </AnimatePresence>
                 </p>
               </div>
             </Col>
