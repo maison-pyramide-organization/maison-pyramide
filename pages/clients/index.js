@@ -239,7 +239,7 @@ export default function Clients() {
                                                 <motion.div
                                                     initial={{borderRightWidth:80,borderLeftWidth:80}}
                                                     whileInView={{borderRightWidth:0 ,borderLeftWidth:0}}
-                                                    viewport={{ once: true }}
+                                                    // viewport={{ once: true }}
                                                     transition={{ duration: 1,delay:.2, ease: "easeInOut",type: 'linear' }}
                                                     className={clientsStyles.imgLayer}
                                                 >
