@@ -51,8 +51,8 @@ const LoaderComponent = ({ isLoading }) => {
   const PreloadImages = () => {
 
     return(
-      [...letters,...pyramide].map(letter => (
-        <link rel="preload" as="image" href={letter}></link>
+      [...letters,...pyramide].map((letter,i) => (
+        <link key={i} rel="preload" as="image" href={letter}></link>
       ))
     )
   }

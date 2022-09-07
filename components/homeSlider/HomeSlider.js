@@ -164,10 +164,10 @@ export default function HomeCarousel() {
 
                         </Col>
                         <Col md={5}>
-                        {_items.map(item => {
+                        {_items.map((item,i) => {
                             return(
                                 <>
-                                    <link rel="preload" as="image" href={item?.attributes.image?.custom_data?.url}></link>
+                                    <link key={i} rel="preload" as="image" href={item?.attributes.image?.custom_data?.url}></link>
                                 </>
                             )
                         })}    

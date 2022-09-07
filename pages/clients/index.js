@@ -98,8 +98,8 @@ export default function Clients() {
     const PreloadImages = () => {
 
         return(
-          _selectedClients.map(item => (
-            <link rel="preload" as="image" href={item?.attributes?.image?.custom_data?.url}></link>
+          _selectedClients.map((item,i) => (
+            <link rel="preload" key={i} as="image" href={item?.attributes?.image?.custom_data?.url}></link>
           ))
         )
       }
