@@ -8,17 +8,18 @@ import { motion,AnimatePresence  } from 'framer-motion'
 
 import loaderStyle from "./LoaderStyle.module.scss";
 import logo from '../../public/imgs/logowhite.png';
-import m from '../../public/imgs/letters/M.png';
-import a from '../../public/imgs/letters/A.png';
-import i from '../../public/imgs/letters/I.png';
-import s from '../../public/imgs/letters/S.png';
-import o from '../../public/imgs/letters/O.png';
-import n from '../../public/imgs/letters/N.png';
-import p from '../../public/imgs/letters/P.png';
-import y from '../../public/imgs/letters/Y.png';
-import r from '../../public/imgs/letters/R.png';
-import d from '../../public/imgs/letters/D.png';
-import e from '../../public/imgs/letters/E.png';
+
+const  m = '/imgs/letters/M.png';
+const  a = '/imgs/letters/A.png';
+const  i = '/imgs/letters/I.jpeg';
+const  s = '/imgs/letters/S.png';
+const  o = '/imgs/letters/O.png';
+const  n = '/imgs/letters/N.png';
+const  p = '/imgs/letters/P.png';
+const  y = '/imgs/letters/Y.png';
+const  r = '/imgs/letters/R.png';
+const  d = '/imgs/letters/D.png';
+const  e = '/imgs/letters/E.png';
 
 
 const variantsTop = {
@@ -45,7 +46,7 @@ const LoaderComponent = ({ isLoading }) => {
     }, 1000);
     setTimeout(() => {
       setHideLetters(true)
-    }, 5000);
+    }, 500);
   }
 
   const PreloadImages = () => {
@@ -66,7 +67,7 @@ const LoaderComponent = ({ isLoading }) => {
           <CSSTransition key={2} timeout={500} classNames={"item"}>
 
           <div className={loaderStyle.main}>
-            <h1 className={loaderStyle.h1} style={{marginLeft:"20px"}}>
+            <h1 className={loaderStyle.h1}>
               {letters.map((letter,ind)=>(
                 <AnimatePresence key={ind}>
                     { !hideLetters && (
@@ -76,16 +77,17 @@ const LoaderComponent = ({ isLoading }) => {
                       exit="exit"
                       variants={ind%2 == 0?variantsTop:variantsBot}
                       style={{
-                        marginRight:letter == n?'40px':
-                        letter == m?'15px':
-                        letter == i?'0px':'10px',
+                        // marginRight:letter == n?'40px':
+                        // letter == m?'15px':
+                        // letter == i?'0px':'10px',
 
-                        marginLeft:letter == m?'15px':
-                        letter == i? '0':'10px'
+                        // marginLeft:letter == m?'15px':
+                        // letter == i? '0':'10px'
                       }}
                       transition={{ duration: 1, ease: "easeInOut",type: 'linear' }}
                     >
-                      <Image unoptimized={true} loading="eager" src={letter}/>
+                      {/* <Image unoptimized={true} loading="eager" layout="fixed" src={letter}/> */}
+                      <img src={letter}/>
                     </motion.div>
                     )}
                     </AnimatePresence>
@@ -101,16 +103,17 @@ const LoaderComponent = ({ isLoading }) => {
                       exit="exit"
                       variants={ind%2 == 0?variantsTop:variantsBot}
                       style={{
-                        marginRight:letter == n?'40px':
-                        letter == m?'15px':
-                        letter == i?'0px':'10px',
+                        // marginRight:letter == n?'40px':
+                        // letter == m?'15px':
+                        // letter == i?'0px':'10px',
 
-                        marginLeft:letter == m?'15px':
-                        letter == i? '0':'10px'
+                        // marginLeft:letter == m?'15px':
+                        // letter == i? '0':'10px'
                       }}
                       transition={{ duration: 1, ease: "easeInOut",type: 'linear' }}
                     >
-                      <Image unoptimized={true} loading="eager" src={letter}/>
+                      {/* <Image unoptimized={true} loading="eager" src={letter}/> */}
+                      <img src={letter}/>
                     </motion.div>
                     )}
                     </AnimatePresence>
