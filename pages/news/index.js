@@ -34,6 +34,7 @@ const textVariants = {
   enter: { opacity: 1, x: 0 }
 }
 
+
 function Items({ currentItems ,selectedTab }) {
 
   const handlePost = (link) =>{
@@ -42,7 +43,7 @@ function Items({ currentItems ,selectedTab }) {
   }
 
   const formatDate = (value) => {
-    let date = new Date(value)
+    let date = new Date(value);
     let month = monthNames[date.getMonth()];
     let year = date.getFullYear();
     return `${month} ${year}`;
@@ -84,6 +85,7 @@ function PaginatedItems({ itemsPerPage ,selectedTab}) {
   const [pageCount, setPageCount] = useState(0);
   const [forceBegin, setForceBegin] = useState(false);
   const pageinationRef = useRef(null);
+  const newsRef = useRef(null);
   // Here we use item offsets; we could also use page offsets
   // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
@@ -124,16 +126,20 @@ function PaginatedItems({ itemsPerPage ,selectedTab}) {
     const newOffset = (event.selected * itemsPerPage) % items.length;
     setItemOffset(newOffset);
     setForceBegin(true);
-    // console.log(pageinationRef.current.state);
     pageinationRef.current.state.selected = 0;
     if(forceBegin){
-      window.scrollTo(800,550);
+        window.scrollTo({
+          top: Math.round(newsRef.current.getBoundingClientRect().top + document.documentElement.scrollTop - 100),
+          behavior: 'smooth',
+      })
+        
     }
   };
 
 
   return (
-    <>
+    <section ref={newsRef}>
+      <Row className={newsStyle.posts}>
       <Items currentItems={currentItems}  selectedTab={selectedTab}/>
       <ReactPaginate
         ref={pageinationRef}
@@ -147,7 +153,8 @@ function PaginatedItems({ itemsPerPage ,selectedTab}) {
         previousLabel="PREV"
         renderOnZeroPageCount={null}
       />
-    </>
+      </Row>
+    </section>
   );
 }
 
@@ -354,9 +361,8 @@ export default function News() {
                   {!loader && (
                     <CSSTransition key={2} classNames={'item'} timeout={2000}>
                       <Container fluid className={newsStyle.posts_contain}>
-                        <Row className={newsStyle.posts}>
+                        
                           <PaginatedItems itemsPerPage={6} selectedTab={selectedTab}/>
-                        </Row>
                       </Container>
                     </CSSTransition>
                   )}

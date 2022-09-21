@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Head from "next/head";
 
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { Row , Col, Container} from 'react-bootstrap';
 import { ParallaxProvider } from 'react-scroll-parallax';
@@ -50,7 +50,7 @@ function Home() {
   const [loadingFlag, setLoadingFlag] = useState(false);
 
  
-
+  
   
 
   const useHandleMobile = (value) =>{

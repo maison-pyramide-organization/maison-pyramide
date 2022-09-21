@@ -98,7 +98,7 @@ export default function Clients() {
     const PreloadImages = () => {
 
         return(
-          _selectedClients.map((item,i) => (
+          [..._selectedClients,..._featuredProjects].map((item,i) => (
             <link rel="preload" key={i} as="image" href={item?.attributes?.image?.custom_data?.url}></link>
           ))
         )
@@ -118,6 +118,7 @@ export default function Clients() {
         // <Layout>
         <>
             <IsMobileComponent handleMobile={useHandleMobile}/>
+            <PreloadImages/>
             <ParallaxProvider>
                 <ParallaxCache />
             </ParallaxProvider>
@@ -229,7 +230,6 @@ export default function Clients() {
                         Selected clients
                     </h2>
                     <div>
-                        <PreloadImages/>
                         <Row id="slider" className={clientsStyles.selected_clients_container}>
                             {_selectedClients.map((client,ind) => {
                                 return (
