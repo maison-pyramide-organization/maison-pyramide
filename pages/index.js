@@ -1,20 +1,17 @@
 import Link from 'next/link';
 import dynamic from "next/dynamic";
-import Image from 'next/image';
-import Head from "next/head";
 
-
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Row , Col, Container} from 'react-bootstrap';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { Parallax  } from 'react-scroll-parallax';
+import { motion } from 'framer-motion';
 
 import Layout from "../components/layout/Layout";
 import ClientComponent from '../components/clientComonent/clientComponent';
 import ExpertiseComponent from '../components/expertiseComponent/expertiseComponent';
 
-import videoText from '../public/imgs/landingtext.png';
 // import bgVideo from '../public/imgs/video.mp4';
 
 
@@ -40,7 +37,10 @@ const ParallaxCache = dynamic(
 );
 
 
-
+const textVariants = {
+  hidden: { opacity: 0, x: 15 },
+  enter: { opacity: 1, x: 0 }
+}
 
 function Home() {
 
@@ -67,7 +67,21 @@ function Home() {
   }
 
   
-
+  const animatedText = (text) => {
+    let textArr = text?.split(" ");
+    textArr?.map((word,i)=>{
+      textArr[i] =  <motion.span
+      initial="hidden"
+      whileInView="enter"
+      exit="exit"
+      variants={textVariants}
+      transition={{ duration: 1,delay: i*.1, ease: "easeInOut",type: 'linear' }}
+       >
+        {word+' '}
+        </motion.span>
+    })
+    return textArr;
+  }
 
 
 
@@ -104,12 +118,8 @@ function Home() {
           <Col md={7}>
           <div className={homeStyles.text}>
           <p>
-          Maison Pyramide Group is fuelling the next
-generation of consumer brands, by
-connecting them with millennial audiences.
-Our innovative platform drives international
-growth through strategic - and profoundly
-inspirational - solutions.</p>
+            {animatedText('Maison Pyramide Group is fuelling the next generation of consumer brands, by connecting them with millennial audiences. Our innovative platform drives international growth through strategic - and profoundly inspirational - solutions.')}
+         </p>
           <Link href="/group">
           <button>
             <a>
