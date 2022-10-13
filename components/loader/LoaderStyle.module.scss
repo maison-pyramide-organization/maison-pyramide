@@ -1,3 +1,4 @@
+
 @import "../../styles/variables.module";
 
 .main{
@@ -11,7 +12,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    align-content: center;
     background-color: #0e0e0e;
     color:$primary-color-light;
     text-align: center;
@@ -21,8 +21,7 @@
     position: relative;
     font-size: 72px;
     line-height: 60px;
-    width:80%;
-    overflow: hidden;
+    width:50%;
     // height: 180px;
     .logo{
         // width:100%;
@@ -39,30 +38,12 @@
     bottom: 0;
     top:0;
 }
-.letter{
-    display: inline-block;
-    img{
-        margin-inline: 7px;
-        width: auto;
-        height: 40px; 
-    }
-}
-
 @media (min-width:200px) and (max-width:600px) {
     .main{
         h1{
             font-size: 48px;
             line-height: 48px;
-            height: 50px;
-            width: 100%;
         }
-    }
-    .titleLayer{
-        height: 100px;
-    }
-    .letter{
-        // width: 20px;
-        // height: 20px;
     }
 
 }
