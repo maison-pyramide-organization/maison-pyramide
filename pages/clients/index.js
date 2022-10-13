@@ -59,7 +59,7 @@ export default function Clients() {
           whileInView={"enter"}
         //   viewport={{ once: true }}
           variants={textVariants}
-          transition={{ duration: 1,delay:i*.1, ease: "easeInOut",type: 'linear' }}
+          transition={{ duration: 1,delay:i*.02, ease: "easeInOut",type: 'linear' }}
            >
             {word+' '}
             </motion.span>
@@ -68,7 +68,6 @@ export default function Clients() {
     },[])
 
     const handleClick = (id) => {
-        console.log({id});
         if(id){
             router.push(`/clients/${id}`)
         }
@@ -132,7 +131,7 @@ export default function Clients() {
                             // viewport={{ once: true }}
                             variants={headerVariants}
                             className="text-center"
-                            transition={{ duration: 1, ease: "easeInOut",type: 'linear' }}
+                            transition={{ duration: 1.2, ease: "easeInOut",type: 'linear' }}
                         >
                             We have built a renowned and respected
                             
@@ -163,7 +162,7 @@ export default function Clients() {
                                                 
                                                 <div key={ind} className={`${clientsStyles.project_img}`} onClick={() => { handleClick(project.attributes?.features) }}>
                                                     <motion.div
-                                                     initial={{opacity:0,rotateZ:5,x:50}}
+                                                     initial={{opacity:0,rotateZ:-5,x:"-50px"}}
                                                      whileInView={{ opacity: 1 ,rotateZ:0,x:0}}
                                                     //  viewport={{ once: true }}
                                                      transition={{ duration: 1, ease: "easeInOut",type: 'linear' }}

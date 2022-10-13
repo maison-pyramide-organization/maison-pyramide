@@ -188,6 +188,9 @@ function Home() {
           <>
             <ParallaxProvider>
             <ParallaxCache/>
+            {/* easeInOutSine */}
+            {/* ease */}
+            {/* easeInOut */}
             <Parallax translateY={[isMobile?10:20,isMobile?-10: -30,isMobile?'easeOutQuint':'easeOutQuint']}>
             <HomeSliderCarousel/>
 

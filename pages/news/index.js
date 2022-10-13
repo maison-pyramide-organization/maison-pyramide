@@ -205,7 +205,7 @@ export default function News() {
       whileInView="enter"
       exit="exit"
       variants={textVariants}
-      transition={{ duration: 1,delay: i*.1, ease: "easeInOut",type: 'linear' }}
+      transition={{ duration: 1,delay: i*.02, ease: "easeInOut",type: 'linear' }}
        >
         {word+' '}
         </motion.span>
