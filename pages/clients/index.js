@@ -167,7 +167,7 @@ export default function Clients() {
                                                     //  viewport={{ once: true }}
                                                      transition={{ duration: 1, ease: "easeInOut",type: 'linear' }}
                                                     >
-                                                        <Image src={project.attributes.image.custom_data.url} className={clientsStyles.img} layout={"responsive"} width={500} height={660} objectFit={"cover"}></Image>
+                                                        <Image src={project.attributes.image.custom_data.url} unoptimized={true} loading="eager" className={clientsStyles.img} layout={"responsive"} width={500} height={660} objectFit={"cover"}></Image>
                                                     </motion.div>
                                                     <br />
                                                     <span>
@@ -200,7 +200,7 @@ export default function Clients() {
                                                     //  viewport={{ once: true }}
                                                      transition={{ duration: 1, ease: "easeInOut",type: 'linear' }}
                                                     >
-                                                        <Image src={project.attributes.image.custom_data.url} className={clientsStyles.img} layout={"responsive"} width={500} height={660} objectFit={"cover"}></Image>
+                                                        <Image src={project.attributes.image.custom_data.url} unoptimized={true} loading="eager" className={clientsStyles.img} layout={"responsive"} width={500} height={660} objectFit={"cover"}></Image>
                                                     </motion.div>
                                                     <br />
                                                     <span>
