@@ -123,9 +123,9 @@ function Services() {
               variants={headerVariants}
               transition={{ duration: 1.2, ease: "easeInOut",type: 'linear' }}
                 >
-              
+
                   We’re a one-stop solution <br />
-                  platform for rising talent.
+                  platform for rising brands.
               </motion.h1>
 
             </div>
@@ -237,7 +237,7 @@ services:
                     </Accordion.Item>
                     )
                   })}
-                
+
                 </Accordion>
               </div>
             </Col>
