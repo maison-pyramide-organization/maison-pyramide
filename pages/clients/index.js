@@ -113,8 +113,8 @@ export default function Clients() {
 
                     <h1 className="text-center">
                     We have built a renowned and respected
-                    
-                    name amongst leading brands.
+
+                    name amongst leading brands
                     </h1>
                     <p className="text-center">
                     Our clients range from leading multinationals

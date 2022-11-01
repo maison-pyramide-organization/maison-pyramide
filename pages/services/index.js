@@ -112,7 +112,7 @@ function Services() {
         <Container fluid>
           <h1 className="text-center">
             We’re a one-stop solution <br />
-            platform for rising talent.
+            platform for rising brands.
           </h1>
           <Row>
             <Col md={5} className="disktop_only">
@@ -230,7 +230,7 @@ services:
                     </Accordion.Item>
                     )
                   })}
-                
+
                 </Accordion>
               </div>
             </Col>
