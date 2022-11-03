@@ -134,11 +134,11 @@ export default function Clients() {
                             transition={{ duration: 1.2, ease: "easeInOut",type: 'linear' }}
                         >
                             We have built a renowned and respected
-                            
-                            name amongst leading brands.
+
+                            name amongst leading brands
                         </motion.h1>
                     </AnimatePresence>
-                  
+
                     <p className="text-center">
                         <AnimatePresence>
                             {mainText}
@@ -159,7 +159,7 @@ export default function Clients() {
                                         return (
 
                                             (ind % 2 == 0) && (
-                                                
+
                                                 <div key={ind} className={`${clientsStyles.project_img}`} onClick={() => { handleClick(project.attributes?.features) }}>
                                                     <motion.div
                                                      initial={{opacity:0,rotateZ:-5,x:"-50px"}}
