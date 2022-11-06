@@ -112,7 +112,7 @@ function Services() {
         <Container fluid>
           <h1 className="text-center">
             We’re a one-stop solution <br />
-            platform for rising brands.
+            platform for rising brands
           </h1>
           <Row>
             <Col md={5} className="disktop_only">
