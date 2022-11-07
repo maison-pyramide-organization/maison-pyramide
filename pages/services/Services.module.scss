@@ -94,7 +94,7 @@ section.services {
       border: none;
       background-color: $bg-color-dark;
       div {
-        padding: 0;
+        // padding: 0;
         position: relative;
       }
       .close {
@@ -188,6 +188,9 @@ section.services {
       //   font-family: "GT Super Display";
       // }
       border-bottom: 1px solid $bg-color-light;
+      .logo{
+        align-self: center;
+      }
       p {
         color: $secondary-color-light;
         margin: 24px 0;

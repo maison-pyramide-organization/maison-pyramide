@@ -38,6 +38,14 @@
             padding: 0px 60px;
             h3{
                 padding-bottom: 20px;
+
+                a{
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+                a:hover{
+                    color: $active-color;
+                }
             }
         }
     }

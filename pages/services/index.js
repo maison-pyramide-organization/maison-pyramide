@@ -181,9 +181,23 @@ services:
                       <Accordion.Header>{item?.attributes?.title}</Accordion.Header>
                       <Accordion.Body>
                         <div className={servicesStyles.acc_body}>
-                          {/* <h3 className="disktop_only">
-                            Talent Booking & Management
-                          </h3> */}
+                          {item?.attributes?.powered_by?.custom_data?.url && (
+                          <Row>
+                            <Col xs={5} md={2}>
+                          <p>
+                            POWERED BY
+                          </p>
+                          </Col>
+                          <Col className="align-self-center" xs={7} md={10}>   
+                          <Image
+                              src={item.attributes.powered_by.custom_data.url}
+                              height={15}
+                              width={100}
+                            />
+                            </Col>
+                          </Row>
+                          )}
+
                           <p>
                            {item?.attributes?.description}
                           </p>

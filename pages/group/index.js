@@ -152,13 +152,13 @@ export default function Group() {
             </Col>
             <Col md={4}>
             <div className={groupStyles.card}>
-            <h3><u>The Showroom</u></h3>
+            <h3><a href="https://eshowroom.maisonpyramide.com/" target={"_blank"} rel="noreferrer">The Showroom</a></h3>
                 <span>The Showroom is Maison Pyramide Group’s wholesale and retail strategy, sales, and distribution platform. We support multinational brands launching new retail opportunities or expanding their distribution.</span>
                 </div>
             </Col>
             <Col md={4}>
             <div className={groupStyles.card}>
-            <h3><u>Ego & East</u></h3>
+            <h3><a href="https://www.instagram.com/egoandeast/" target={"_blank"} rel="noreferrer">Ego & East</a></h3>
                 <span>A talent management agency representing celebrities, social media influencers, actors, and musicians. Ego & East partners global brands with the right digital talents.</span>
                 <p>info@egoandeast.com</p>
                 </div>
@@ -269,7 +269,6 @@ export default function Group() {
                 </Col>
                 <Col md={4}>
                   <div className={groupStyles.card}>
-                    {console.log(data)}
                   {data.leader5_image?.custom_data?.url && (
                       <Image className={groupStyles.img} src={data?.leader5_image?.custom_data?.url} height={150} objectFit={"cover"} width={100} layout="responsive"></Image>
                     )}
