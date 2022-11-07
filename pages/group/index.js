@@ -147,7 +147,7 @@ export default function Group() {
             <Col md={4}>
             <div className={groupStyles.card}>
             <h3>Maison Pyramide</h3>
-                <span>Maison pyramide is the strategic branch of the company supporting the pace of innovation and growth of young and established entities looking to expand and grow.</span>
+                <span>Maison Pyramide is the strategic branch of the company supporting the pace of innovation and growth of young and established entities looking to expand and grow.</span>
                 </div>
             </Col>
             <Col md={4}>
