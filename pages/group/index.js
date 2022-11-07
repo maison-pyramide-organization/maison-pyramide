@@ -270,7 +270,7 @@ export default function Group() {
                 <Col md={4}>
                   <div className={groupStyles.card}>
                   {data.leader5_image?.custom_data?.url && (
-                      <Image className={groupStyles.img} src={data?.leader5_image?.custom_data?.url} height={150} objectFit={"cover"} width={100} layout="responsive"></Image>
+                      <img className={groupStyles.imgPro} src={data?.leader5_image?.custom_data?.url} objectFit={"cover"} />
                     )}
                     <h3>Reem Kanj</h3>
                     {/* <p>Executive Chairman & Partner </p> */}
@@ -283,7 +283,7 @@ export default function Group() {
                 <Col md={4}>
                   <div className={groupStyles.card}>
                   {data.leader6_image?.custom_data?.url && (
-                      <Image className={groupStyles.img} src={data?.leader6_image?.custom_data?.url} height={150} objectFit={"cover"} width={100} layout="responsive"></Image>
+                      <img className={groupStyles.imgPro} src={data?.leader6_image?.custom_data?.url} objectFit={"cover"} />
                     )}
                     <h3>Natalya Kanj</h3>
                     {/* <p>Executive Chairman & Partner </p> */}
