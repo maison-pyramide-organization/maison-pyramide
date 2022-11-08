@@ -192,7 +192,7 @@ services:
                           <Image
                               src={item.attributes.powered_by.custom_data.url}
                               height={15}
-                              width={100}
+                              width={118}
                             />
                             </Col>
                           </Row>

@@ -47,6 +47,13 @@
                     color: $active-color;
                 }
             }
+            .mail{
+                cursor: pointer;
+                font-style: italic;
+            }
+            .mail:hover{
+                color: $active-color;
+            }
         }
     }
     ul{

@@ -159,8 +159,12 @@ export default function Group() {
             <Col md={4}>
             <div className={groupStyles.card}>
             <h3><a href="https://www.instagram.com/egoandeast/" target={"_blank"} rel="noreferrer">Ego & East</a></h3>
-                <span>A talent management agency representing celebrities, social media influencers, actors, and musicians. Ego & East partners global brands with the right digital talents.</span>
-                <p>info@egoandeast.com</p>
+            <span>A talent management agency representing celebrities, social media influencers, actors, and musicians. Ego & East partners global brands with the right digital talents.</span>
+            <p className="pt-3">
+                <a href="mailto:info@egoandeast.com"
+                    target="_blank" rel="noreferrer" className={groupStyles.mail}>
+                      info@egoandeast.com</a>
+            </p>
                 </div>
             </Col>
           </Row>
