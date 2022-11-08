@@ -184,16 +184,19 @@ services:
                           {item?.attributes?.powered_by?.custom_data?.url && (
                           <Row>
                             <Col xs={5} md={2}>
-                          <p>
+                          <p className="m-0">
                             POWERED BY
                           </p>
                           </Col>
-                          <Col className="align-self-center" xs={7} md={10}>   
+                          <Col className={servicesStyles.imgPro}xs={7} md={10}>   
+                          <div className={servicesStyles.imgPro}>
                           <Image
-                              src={item.attributes.powered_by.custom_data.url}
+                              src={item.attributes.powered_by.custom_data.url} 
+                              className={servicesStyles.imgPro}
                               height={15}
                               width={118}
                             />
+                            </div>
                             </Col>
                           </Row>
                           )}
