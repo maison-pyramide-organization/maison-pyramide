@@ -188,10 +188,7 @@ services:
                           {item?.attributes?.powered_by && (
                             <div className={servicesStyles.powered_by}>
                           <span className={servicesStyles.title}>
-                            POWERED BY
-                          </span>
-                          <span  className={servicesStyles.logo}>
-                            <a href={POWERED_BY[item?.attributes?.powered_by]} target={"_blank"} rel="noreferrer">
+                            POWERED BY <a href={POWERED_BY[item?.attributes?.powered_by]} target={"_blank"} rel="noreferrer">
                               {item?.attributes?.powered_by}
                               </a></span>
                           </div>
