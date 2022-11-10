@@ -193,15 +193,16 @@ section.services {
        flex-direction: row;
        justify-content: flex-start;
        align-items: center;
+        flex-wrap: wrap;
        .title{
         font-size: 16px;
         margin-right: 20px;
        }
        .logo{
         a{
-          font-size: 19px;
+          font-size: 16px;
           margin-right: 20px;
-          font-weight: bold !important;
+          font-weight: bolder !important;
         }
         a:hover{
           color:#CEE0A6;
