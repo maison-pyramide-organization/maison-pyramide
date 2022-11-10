@@ -161,9 +161,9 @@ export default function Group() {
             <h3><a href="https://www.instagram.com/egoandeast/" target={"_blank"} rel="noreferrer">Ego & East</a></h3>
             <span>A talent management agency representing celebrities, social media influencers, actors, and musicians. Ego & East partners global brands with the right digital talents.</span>
             <p className="pt-3">
-                <a href="mailto:info@egoandeast.com"
+                <a href="mailto:hello@egoandeast.co"
                     target="_blank" rel="noreferrer" className={groupStyles.mail}>
-                      info@egoandeast.com</a>
+                      hello@egoandeast.co</a>
             </p>
                 </div>
             </Col>
