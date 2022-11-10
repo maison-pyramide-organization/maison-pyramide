@@ -188,9 +188,26 @@ section.services {
       //   font-family: "GT Super Display";
       // }
       border-bottom: 1px solid $bg-color-light;
-      .imgPro{
-        margin-left: inherit;
-        align-self: flex-end;
+      .powered_by{
+       display: flex;
+       flex-direction: row;
+       justify-content: flex-start;
+       align-items: center;
+       .title{
+        font-size: 16px;
+        margin-right: 20px;
+       }
+       .logo{
+        a{
+          font-size: 19px;
+          margin-right: 20px;
+          font-weight: bold !important;
+        }
+        a:hover{
+          color:#CEE0A6;
+          cursor: pointer;
+      }
+       }
       }
       .logo{
         align-self: center;

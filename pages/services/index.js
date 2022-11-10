@@ -41,6 +41,10 @@ function Services() {
       // id: 1,
     },
   ];
+  const POWERED_BY = {
+    "THE SHOWROOM": 'https://eshowroom.maisonpyramide.com/',
+    "EGO&EAST":"https://www.instagram.com/egoandeast/"
+};
 
   const [services , setServices] = useState([]);
   const [selectedImg, setSelectedImg] = useState(imgs[0]);
@@ -181,24 +185,16 @@ services:
                       <Accordion.Header>{item?.attributes?.title}</Accordion.Header>
                       <Accordion.Body>
                         <div className={servicesStyles.acc_body}>
-                          {item?.attributes?.powered_by?.custom_data?.url && (
-                          <Row>
-                            <Col xs={5} md={2}>
-                          <p className="m-0">
+                          {item?.attributes?.powered_by && (
+                            <div className={servicesStyles.powered_by}>
+                          <span className={servicesStyles.title}>
                             POWERED BY
-                          </p>
-                          </Col>
-                          <Col className={servicesStyles.imgPro}xs={7} md={10}>   
-                          <div className={servicesStyles.imgPro}>
-                          <Image
-                              src={item.attributes.powered_by.custom_data.url} 
-                              className={servicesStyles.imgPro}
-                              height={15}
-                              width={118}
-                            />
-                            </div>
-                            </Col>
-                          </Row>
+                          </span>
+                          <span  className={servicesStyles.logo}>
+                            <a href={POWERED_BY[item?.attributes?.powered_by]} target={"_blank"} rel="noreferrer">
+                              {item?.attributes?.powered_by}
+                              </a></span>
+                          </div>
                           )}
 
                           <p>
