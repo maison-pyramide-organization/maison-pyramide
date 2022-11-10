@@ -189,7 +189,7 @@ services:
                             <div className={servicesStyles.powered_by}>
                           <span className={servicesStyles.title}>
                             POWERED BY <a href={POWERED_BY[item?.attributes?.powered_by]} target={"_blank"} rel="noreferrer">
-                              {item?.attributes?.powered_by}
+                              {item?.attributes?.powered_by === 'EGO&EAST' ? 'EGO & EAST' : item?.attributes?.powered_by}
                               </a></span>
                           </div>
                           )}
