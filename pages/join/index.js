@@ -9,6 +9,7 @@ import Layout from "../../components/layout/Layout";
 import joinImg from "../../public/imgs/joinimg.png";
 import JobService from "../api/services/JobService";
 import joinStyles from "./Join.module.scss";
+import { StructuredText } from "react-datocms";
 
 export default function Join() {
   const [unfilledPositions , setUnfilledPositions] = useState([]);
@@ -81,9 +82,9 @@ export default function Join() {
                                {item?.attributes?.title}
                               </h3>
                             </CustomToggle>
-                          <p>
-                           {item?.attributes?.description}
-                          </p>
+                       
+                           <StructuredText data={item?.attributes?.description} />
+
                           <label>REQUIREMENTS</label>
                           <ul>
                             {JSON.parse(item?.attributes?.requirements).map((req,key)=>{

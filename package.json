@@ -17,6 +17,7 @@
     "react": "^17.0.2",
     "react-animated-cursor": "^2.2.0",
     "react-bootstrap": "^2.0.3",
+    "react-datocms": "^4.0.4",
     "react-dom": "^17.0.2",
     "react-gsap": "^3.2.1",
     "react-loader-spinner": "^5.1.3",
