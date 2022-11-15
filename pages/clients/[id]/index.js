@@ -61,7 +61,6 @@ export default function Project() {
         enter: { opacity: 1, x: 0 }
     }
 
-
     useEffect(() => {
         FeatureService.getFeature(id).then(res => {
             setData(res.data.attributes);
@@ -188,7 +187,7 @@ export default function Project() {
                                             <Col md={6} className="mobile mb-3">
                                                 <p>INTRO</p>
                                                 <p>
-                                                    {data.intro}
+                                                {animatedText(data.intro)}
                                                     {/* {Lorem ipsum dolor sit amet, consect adipiscing elit. Hendrerit sed cursus mattis id sed viverra. Nibh nulla consequat lorem turpis. Sit morbi sed tempus, amet, mattis. Sagittis velit lectus in eget nec sagittis adipiscing porta. Aliquet commodo, velit feugiat egestas.
     Eu, dignissim tortor, eu quis. Fer}mentum risus lobortis sed leo adipiscing interdum etiam ornare vel. Eu et ullamcorper. */}
                                                 </p>

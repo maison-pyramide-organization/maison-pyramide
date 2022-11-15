@@ -12,6 +12,8 @@ import {
 } from "react-transition-group";
 
 import clientStyles from './ClientStyles.module.scss';
+import { motion } from 'framer-motion';
+
 
 import clientImg from '../../public/imgs/clientimg.png'
 import clientImg2 from '../../public/imgs/client6.1.jpeg';
@@ -36,6 +38,10 @@ const ParallaxCache = dynamic(
   },
   { ssr: false }
 );
+const textVariants = {
+  hidden: { opacity: 0, x: 15 },
+  enter: { opacity: 1, x: 0 }
+}
 
 function ClientComponent() {
     const [loadingFlag, setLoadingFlag] = useState(false);
@@ -101,7 +107,21 @@ function ClientComponent() {
       handleClient(0)
     }
   }
-
+  const animatedText = (text) => {
+    let textArr = text?.split(" ");
+    textArr?.map((word,i)=>{
+      textArr[i] =  <motion.span
+      initial="hidden"
+      whileInView="enter"
+      exit="exit"
+      variants={textVariants}
+      transition={{ duration: 1,delay: i*.02, ease: "easeInOut",type: 'linear' }}
+       >
+        {word+' '}
+        </motion.span>
+    })
+    return textArr;
+  }
 
     const handleClient = (ind) => {
       setLoadingFlag(true);
@@ -129,7 +149,9 @@ function ClientComponent() {
                     {!loadingFlag && (
                       <CSSTransition key={3} timeout={3000} classNames={'item'}>
                         <div>
-                          <p>{clientList[client].description}</p>
+                          <p>
+                            {animatedText(clientList[client].description)}
+                          </p>
                           <div className={clientStyles.names}>
                             <span>{clientList[client]?.client_name}</span>
                             <br/>

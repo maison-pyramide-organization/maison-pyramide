@@ -217,22 +217,30 @@ section.services {
   section.services {
     margin-top: 0;
     overflow: hidden;
+    header{
+      padding: 0;
+    }
     h1 {
-      font-size: 36px;
-      padding-bottom: 32px;
-      line-height: 39.6px;
-      padding-top: 24px;
-      padding-inline: 8px;
+      font-size: 36px!important;
+      padding-bottom: 32px!important;
+      line-height: 39.6px!important;
+      padding-top: 24px!important;
+      padding-inline: 8px!important;
     }
     .text {
       text-align: center;
-      margin-bottom: 64px;
+      margin-bottom: 28px;
     }
     p {
       width: 100%;
       font-size: 18px;
       line-height: 25.2px;
       padding-inline: 12px;
+      text-align: center;
+      span{
+        display: inline-block;
+        margin-inline-end: 5px;
+      }
     }
   }
   .close {

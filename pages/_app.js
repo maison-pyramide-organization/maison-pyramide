@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
-import React from "react";
+import React, { useRef } from "react";
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 
 import 'bootstrap/dist/css/bootstrap.min.css';

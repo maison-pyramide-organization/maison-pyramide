@@ -75,7 +75,7 @@ function Home() {
       whileInView="enter"
       exit="exit"
       variants={textVariants}
-      transition={{ duration: 1,delay: i*.1, ease: "easeInOut",type: 'linear' }}
+      transition={{ duration: 1,delay: i*.02, ease: "easeInOut",type: 'linear' }}
        >
         {word+' '}
         </motion.span>
@@ -86,7 +86,7 @@ function Home() {
 
 
   return (
-    <Layout>
+    <>
     <IsMobileComponent handleMobile={useHandleMobile}/>
     <section className={homeStyles.main}>
       {isMobile != null && (
@@ -219,7 +219,7 @@ function Home() {
         </Parallax>
         </ParallaxProvider>
       
-    </Layout>
+    </>
   )
 }
 
