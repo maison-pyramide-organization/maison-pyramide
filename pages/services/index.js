@@ -177,8 +177,7 @@ function Services() {
                   {mainText}
                 </p>
                 <p>
-                Explore our full range of brand-building
-services:
+                Explore our full range of brand-building services:
                 </p>
                 <Accordion className={servicesStyles.accordion}>
                   { services?.length && services.map((item , i) => {

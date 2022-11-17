@@ -177,7 +177,7 @@ export default function Group() {
               <Row>
               <Col md={12} className={`${groupStyles.office_network_img} mobile`}>
                 {data?.office_mobile_image?.custom_data && (
-                  <Image src={data?.office_mobile_image?.custom_data?.url} width={70} height={100}></Image>
+                  <Image src={data?.office_mobile_image?.custom_data?.url} width={70} height={100} objectFit="cover" layout="responsive"></Image>
                 )}
                 </Col>
                 <Col md={4}>
