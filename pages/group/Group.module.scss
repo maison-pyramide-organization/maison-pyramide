@@ -26,6 +26,32 @@
         line-height: 44.8px;
         white-space: break-spaces;
     }
+    .maisonGroup{
+        justify-content: center;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        .card{
+            padding: 0px 60px;
+            h3{
+                padding-bottom: 20px;
+
+                a{
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+                a:hover{
+                    color: $active-color;
+                }
+            }
+            .mail{
+                cursor: pointer;
+                font-style: italic;
+            }
+            .mail:hover{
+                color: $active-color;
+            }
+        }
+    }
     ul{
         display: flex;
         justify-content: space-evenly;
@@ -79,7 +105,8 @@
     }
     .leader{
         // padding:$y-padding 32px;
-        padding:0 32px;
+        // padding:0 32px;
+        padding:0 20%;
         // padding-bottom: 0;
         h2{
             font-size: 48px;
@@ -114,6 +141,11 @@
             .read_more{
                 text-decoration: underline;
             }
+            .imgPro{
+                width: 100%;
+            }
+
+
         }
     }
     .culture{
@@ -320,6 +352,20 @@
             }
             span{
                 line-height: 24px;
+            }
+        }
+        .maisonGroup{
+            .card{
+                padding: 60px 20px;
+                h3{
+                    font-size: 28px!important;
+                }
+                p{
+                    font-size: 18px;
+                    line-height: 25px;
+                    padding:0!important ;
+                    margin-top: 0!important;
+                }
             }
         }
     }

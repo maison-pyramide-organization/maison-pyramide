@@ -39,7 +39,7 @@ const ParallaxCache = dynamic(
 
 const textVariants = {
   hidden: { opacity: 0, x: 15 },
-  enter: { opacity: 1, x: 0 }
+  enter: { opacity: 1, x: 0 },
 }
 
 function Home() {
@@ -71,6 +71,8 @@ function Home() {
     let textArr = text?.split(" ");
     textArr?.map((word,i)=>{
       textArr[i] =  <motion.span
+      key={word+i}
+      style={{opacity: 0, x: 15}}
       initial="hidden"
       whileInView="enter"
       exit="exit"
@@ -82,8 +84,6 @@ function Home() {
     })
     return textArr;
   }
-
-
 
   return (
     <>

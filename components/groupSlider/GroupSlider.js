@@ -44,6 +44,7 @@ export default function HomeCarousel (props) {
       let textArr = text?.split(" ");
       textArr?.map((word,i)=>{
         textArr[i] =  <motion.span
+      key={word+i}
         initial="hidden"
         whileInView="enter"
         exit="exit"

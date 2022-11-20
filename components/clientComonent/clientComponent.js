@@ -111,6 +111,8 @@ function ClientComponent() {
     let textArr = text?.split(" ");
     textArr?.map((word,i)=>{
       textArr[i] =  <motion.span
+      key={word+i}
+      style={{opacity: 0, x: 15}}
       initial="hidden"
       whileInView="enter"
       exit="exit"
