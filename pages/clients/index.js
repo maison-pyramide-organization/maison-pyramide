@@ -154,7 +154,7 @@ export default function Clients() {
                     <ParallaxProvider>
                         <Row style={{justifyContent:'space-around'}}>
                             <Col md={5} className="text-center">
-                                <Parallax translateY={[isMobile?0:-1, isMobile?0:5]} className="pr-5">
+                                <Parallax translateY={[isMobile?0:-1, isMobile?0:2]} className="pr-5">
                                     {_featuredProjects.map((project, ind) => {
                                         return (
 
