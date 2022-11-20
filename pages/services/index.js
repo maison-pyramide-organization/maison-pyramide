@@ -28,6 +28,10 @@ function Services() {
       img: service1,
     },
   ];
+  const POWERED_BY = {
+    "THE SHOWROOM": 'https://eshowroom.maisonpyramide.com/',
+    "EGO&EAST":"https://www.instagram.com/egoandeast/"
+};
 
   const [services , setServices] = useState([]);
   const [selectedImg, setSelectedImg] = useState(imgs[0]);
@@ -191,6 +195,15 @@ function Services() {
                       <Accordion.Header>{item?.attributes?.title}</Accordion.Header>
                       <Accordion.Body>
                         <div className={servicesStyles.acc_body}>
+                          {item?.attributes?.powered_by && (
+                            <div className={servicesStyles.powered_by}>
+                          <span className={servicesStyles.title}>
+                            POWERED BY <a href={POWERED_BY[item?.attributes?.powered_by]} target={"_blank"} rel="noreferrer">
+                              {item?.attributes?.powered_by === 'EGO&EAST' ? 'EGO & EAST' : item?.attributes?.powered_by}
+                              </a></span>
+                          </div>
+                          )}
+
                           <p>
                            {item?.attributes?.description}
                           </p>

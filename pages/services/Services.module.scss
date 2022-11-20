@@ -103,7 +103,7 @@ section.services {
       border: none;
       background-color: $bg-color-dark;
       div {
-        padding: 0;
+        // padding: 0;
         position: relative;
       }
       .close {
@@ -197,6 +197,27 @@ section.services {
       //   font-family: "GT Super Display";
       // }
       border-bottom: 1px solid $bg-color-light;
+      .powered_by{
+       display: flex;
+       flex-direction: row;
+       justify-content: flex-start;
+       align-items: center;
+        flex-wrap: wrap;
+       .title{
+        font-size: 16px;
+        a{
+          font-size: 16px;
+          font-weight: bolder !important;
+        }
+        a:hover{
+          color:#CEE0A6;
+          cursor: pointer;
+      }
+       }
+      }
+      .logo{
+        align-self: center;
+      }
       p {
         color: $secondary-color-light;
         margin: 24px 0;
@@ -274,7 +295,6 @@ section.services {
     .acc_body {
       p {
         padding: 0;
-        margin-top: 12px !important;
 
       }
     }
