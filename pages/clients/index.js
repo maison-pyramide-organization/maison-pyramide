@@ -36,7 +36,8 @@ export default function Clients() {
 
 
     const headerVariants = {
-        hidden: { opacity: 0, y: "30%" ,scale:1.05},
+        hidden: { opacity: 0, y: "80%" ,scale:1.05},
+        // hidden: { opacity: 0, y: "30%" ,scale:1.05},
         enter: { opacity: 1, y: 0 ,scale:1}
       }
       const textVariants = {
@@ -123,6 +124,7 @@ export default function Clients() {
             </ParallaxProvider>
             <header className={clientsStyles.main}>
                 <Container>
+                    <div style={{overflow:'hidden'}}>
                     <AnimatePresence>
                         <motion.h1
                             initial="hidden"
@@ -138,6 +140,7 @@ export default function Clients() {
                             name amongst leading brands
                         </motion.h1>
                     </AnimatePresence>
+                    </div>
 
                     <p className="text-center">
                         <AnimatePresence>

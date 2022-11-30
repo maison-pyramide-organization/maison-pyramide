@@ -29,7 +29,8 @@ export default function Contact() {
     // const [isLoading ,setIsLoading] = useState(false);
     const [msgSent , setMsgSent] = useState(false);
     const headerVariants = {
-        hidden: { opacity: 0, y: "10%" ,scale:1.05},
+        // hidden: { opacity: 0, y: "10%" ,scale:1.05},
+        hidden: { opacity: 0, y: "80%" ,scale:1.05},
         enter: { opacity: 1, y: 0 ,scale:1}
       }
       const textVariants = {
@@ -133,6 +134,7 @@ export default function Contact() {
     <>
         <header className={contactStyles.header}>
             <Container fluid>
+                <div style={{overflow:'hidden'}}>
                 <motion.h1 
                     className="text-center"
                     initial="hidden"
@@ -143,6 +145,7 @@ export default function Contact() {
                 >
                     LET&apos;S GET CHATTING
                 </motion.h1>
+                </div>
                     <div className={contactStyles.contact_info}>
 
                 <Row>

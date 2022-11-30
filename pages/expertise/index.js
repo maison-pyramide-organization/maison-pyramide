@@ -53,7 +53,7 @@ export default function Expertise() {
   const [_expertise , setExpertise] = useState([]);
 
   const headerVariants = {
-    hidden: { opacity: 0, y: "10%" ,scale:1.05},
+    hidden: { opacity: 0, y: "80%" ,scale:1.05},
     enter: { opacity: 1, y: 0 ,scale:1}
   }
   const textVariants = {
@@ -130,7 +130,7 @@ export default function Expertise() {
             </Col>
             <Col md={6}>
               <div className={expertiseStyles.title}>
-
+                  <div style={{overflow:'hidden'}}>
               <AnimatePresence>
                 <motion.h1
                   initial="hidden"
@@ -143,6 +143,7 @@ export default function Expertise() {
                   SOLUTIONS FOR YOUR BUSINESS <br /> TO STRIVE ON A GLOBAL LEVEL
               </motion.h1>
               </AnimatePresence>
+                  </div>
                 <p>
                 <AnimatePresence>
                   {animatedText("We elevate fashion, lifestyle, luxury, and media brands by blending intelligent strategy with highly creative execution. Our deep connections with millennial culture help businesses find relevance in today's world. Our five main areas of expertise: Media, Public Affairs, Lifestyle, Retail, and Fashion.")}
