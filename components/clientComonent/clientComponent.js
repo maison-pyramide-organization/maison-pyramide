@@ -94,16 +94,17 @@ function ClientComponent() {
           handleClient(prev => prev - 1);
         }
         else{
-          handleClient(4)
+          handleClient(clientList.length - 1)
         }
     
     }
     const handleRightClick = () => {
+      console.log("client",client)
     // let tabs = document.getElementById('tabs');
     // tabs.scroll({left:100,behavior:'smooth'})
     // setCurrentScroll(prev => prev +100);
     sectionRef.current.scrollIntoView()
-    if(client < 4){
+    if(client < clientList.length - 1){
       handleClient(prev => prev + 1);
     }
     else{

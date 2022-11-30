@@ -282,7 +282,7 @@ section.services {
     }
     button[aria-expanded="true"]::after{
       margin-top:27px;
-     }
+    }
     p {
       font-size: 14px !important;
       line-height: 19.6px !important;
@@ -293,6 +293,7 @@ section.services {
       margin-bottom: 24px;
     }
     .acc_body {
+      margin: -1rem -1.25rem;
       p {
         padding: 0;
 
