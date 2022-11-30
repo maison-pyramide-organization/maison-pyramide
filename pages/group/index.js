@@ -340,32 +340,6 @@ export default function Group() {
                     </p>
                   </div>
                 </Col>
-                <Col md={4}>
-                  <div className={groupStyles.card}>
-                  {data.leader5_image?.custom_data?.url && (
-                      <img className={groupStyles.imgPro} src={data?.leader5_image?.custom_data?.url} objectFit={"cover"} />
-                    )}
-                    <h3>Reem Kanj</h3>
-                    {/* <p>Executive Chairman & Partner </p> */}
-                    <p className={groupStyles.desc}>
-                    {data?.leader5_text}                      
-                    
-                    </p>
-                  </div>
-                </Col>
-                <Col md={4}>
-                  <div className={groupStyles.card}>
-                  {data.leader6_image?.custom_data?.url && (
-                      <img className={groupStyles.imgPro} src={data?.leader6_image?.custom_data?.url} objectFit={"cover"} />
-                    )}
-                    <h3>Natalya Kanj</h3>
-                    {/* <p>Executive Chairman & Partner </p> */}
-                    <p className={groupStyles.desc}>
-                    {data?.leader6_text}                      
-                    
-                    </p>
-                  </div>
-                </Col>
               </Row>
 
             </div>
