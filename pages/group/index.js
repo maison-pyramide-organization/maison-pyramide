@@ -171,29 +171,29 @@ export default function Group() {
           <Row className={groupStyles.maisonGroup}>
             <Col md={4}>
             <div className={groupStyles.card}>
-            <h3>Maison Pyramide</h3>
-                <span>Maison Pyramide is the strategic branch of the company supporting the pace of innovation and growth of young and established entities looking to expand and grow.</span>
+            <h3> {animatedText("Maison Pyramide")}</h3>
+                <span>{animatedText("Maison Pyramide is the strategic branch of the company supporting the pace of innovation and growth of young and established entities looking to expand and grow.")}</span>
                 </div>
             </Col>
             <Col md={4}>
             <div className={groupStyles.card}>
-            <h3><a href="https://eshowroom.maisonpyramide.com/" target={"_blank"} rel="noreferrer">The Showroom</a></h3>
-                <span>The Showroom is Maison Pyramide Group’s wholesale and retail strategy, sales, and distribution platform. We support multinational brands launching new retail opportunities or expanding their distribution.</span>
+            <h3><a href="https://eshowroom.maisonpyramide.com/" target={"_blank"} rel="noreferrer">{animatedText("The Showroom")}</a></h3>
+                <span>{animatedText("The Showroom is Maison Pyramide Group’s wholesale and retail strategy, sales, and distribution platform. We support multinational brands launching new retail opportunities or expanding their distribution.")}</span>
                 <p className="pt-3">
                 <a href="mailto:showroom@maisonpyramide.com"
                     target="_blank" rel="noreferrer" className={groupStyles.mail}>
-                      showroom@maisonpyramide.com</a>
+                      {animatedText("showroom@maisonpyramide.com")}</a>
             </p>
                 </div>
             </Col>
             <Col md={4}>
             <div className={groupStyles.card}>
-            <h3><a href="https://www.instagram.com/egoandeast/" target={"_blank"} rel="noreferrer">Ego & East</a></h3>
-            <span>A talent management agency representing celebrities, social media influencers, actors, and musicians. Ego & East partners global brands with the right digital talents.</span>
+            <h3><a href="https://www.instagram.com/egoandeast/" target={"_blank"} rel="noreferrer">{animatedText("Ego & East")}</a></h3>
+            <span>{animatedText("A talent management agency representing celebrities, social media influencers, actors, and musicians. Ego & East partners global brands with the right digital talents.")}</span>
             <p className="pt-3">
                 <a href="mailto:hello@egoandeast.co"
                     target="_blank" rel="noreferrer" className={groupStyles.mail}>
-                      hello@egoandeast.co</a>
+                      {animatedText("hello@egoandeast.co")}</a>
             </p>
                 </div>
             </Col>
