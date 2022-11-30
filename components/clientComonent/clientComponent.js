@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link';
 import dynamic from "next/dynamic";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Row , Col, Container} from 'react-bootstrap';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { Parallax  } from 'react-scroll-parallax';
@@ -45,6 +45,7 @@ const textVariants = {
 
 function ClientComponent() {
     const [loadingFlag, setLoadingFlag] = useState(false);
+    const sectionRef = useRef() 
     // const [hideImgFlag , setHideImageFlag] = useState(false);
 
     const [client ,setClient] = useState(0);
@@ -88,6 +89,7 @@ function ClientComponent() {
         // setCurrentScroll(prev => prev -100);
         // handleClient(prev => prev -1 || 4);
         // console.log({client});
+    sectionRef.current.scrollIntoView()
         if(client > 0){
           handleClient(prev => prev - 1);
         }
@@ -100,6 +102,7 @@ function ClientComponent() {
     // let tabs = document.getElementById('tabs');
     // tabs.scroll({left:100,behavior:'smooth'})
     // setCurrentScroll(prev => prev +100);
+    sectionRef.current.scrollIntoView()
     if(client < 4){
       handleClient(prev => prev + 1);
     }
@@ -145,7 +148,7 @@ function ClientComponent() {
         <>
          <section className={clientStyles.client}>
             <Container className={clientStyles.client_container}>
-                <div className={clientStyles.text}>
+                <div className={clientStyles.text} ref={sectionRef}>
                   <h2>Hear from our clients <br/> and trusted partners </h2>
                   <TransitionGroup>
                     {!loadingFlag && (
