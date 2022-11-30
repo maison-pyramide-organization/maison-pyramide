@@ -149,7 +149,7 @@ function ClientComponent() {
         <ParallaxProvider>
             {/* <LoaderComponent isLoading={isLoading}/> */}
 
-            <Parallax translateY={[isMobile ? 10 : 7, isMobile ? -10 : -30, isMobile?'easeOutQuint':'easeOutQuint']} style={{ background: 'linear-gradient(#F4F3EF 50%,transparent 50%)' }}>
+            <Parallax translateY={[isMobile ? 10 : 7, isMobile ? -10 : -10, isMobile?'easeOutQuint':'easeOutQuint']} style={{ background: 'linear-gradient(#F4F3EF 50%,transparent 50%)' }}>
                 <ParallaxCache />
             {isMobile? (
                 <>
