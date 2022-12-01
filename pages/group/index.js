@@ -51,6 +51,7 @@ export default function Group() {
 
   
   const headerVariants = {
+    // hidden: { opacity: 0, y: "10%" ,scale:1.05},
     hidden: { opacity: 0, y: "10%" ,scale:1.05},
     enter: { opacity: 1, y: 0 ,scale:1}
   }

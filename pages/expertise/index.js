@@ -53,7 +53,8 @@ export default function Expertise() {
   const [_expertise , setExpertise] = useState([]);
 
   const headerVariants = {
-    hidden: { opacity: 0, y: "80%" ,scale:1.05},
+    // hidden: { opacity: 0, y: "80%" ,scale:1.05},
+    hidden: { opacity: 0, y: "10%" ,scale:1.05},
     enter: { opacity: 1, y: 0 ,scale:1}
   }
   const textVariants = {
