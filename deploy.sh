@@ -10,3 +10,4 @@ yarn build
 pm2 restart maison
 pm2 ls
 ' | ssh maisonPyramide
+
