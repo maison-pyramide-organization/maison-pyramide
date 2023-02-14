@@ -138,6 +138,21 @@
         }
     }
 }
+.posts {
+    padding-right: 10px;
+    // background-color: red;
+    min-height: 180vh;
+    ul{
+      justify-content: center;
+      align-self: flex-end;
+      li{
+        margin:0 12px;
+      }
+    }
+  }
+  .posts_contain {
+    padding: 0;
+  }
 @media(min-width:600px) and (max-width:1200px){
     .main{
         p{
