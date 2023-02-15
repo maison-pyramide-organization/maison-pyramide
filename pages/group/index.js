@@ -151,7 +151,7 @@ export default function Group() {
               </li>
               <li className="text-center">
                 <p>CAIRO</p>
-                <span>9 el Gabalaya street, Zamalek.</span>
+                <span>14 Kamal Al Tawil, Zamalek</span>
                 <span>cairo@maisonpyramide.com</span>
               </li>
               <li className="text-center">

@@ -63,7 +63,7 @@ Dubai design district.</p>
                   </div>
                   <div className={footerStyle.location}>
                     <span className={`${footerStyle.title}`}>CAIRO</span>
-                    <p className={footerStyle.tel}>9 el Gabalaya street, Zamalek.</p>
+                    <p className={footerStyle.tel}>14 Kamal Al Tawil, Zamalek</p>
                     <p className={footerStyle.email}>cairo@maisonpyramide.com</p>
                   </div>
                   <div className={footerStyle.location}>
@@ -141,7 +141,7 @@ Dubai design district.</p>
                         </Accordion.Header>
                         <Accordion.Body>
                             <div className={footerStyle.acc_body}>
-                                <p className={footerStyle.tel}>9 el Gabalaya street, Zamalek.</p>
+                                <p className={footerStyle.tel}>14 Kamal Al Tawil, Zamalek</p>
                                 <p className={footerStyle.email}>cairo@maisonpyramide.com</p>
                             </div>
                         </Accordion.Body>
