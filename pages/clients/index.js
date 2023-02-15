@@ -1,17 +1,18 @@
 import dynamic from "next/dynamic";
 import Image from 'next/image';
 import { useRouter } from 'next/router'
-
+import ReactPaginate from 'react-paginate';
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { Parallax } from 'react-scroll-parallax';
-
 import { AnimatePresence, motion } from 'framer-motion';
 
 import ClientService from "../../pages/api/services/ClientService";
 import clientsStyles from './Clients.module.scss';
 import ProjectService from "../api/services/ProjectService";
+import { useRef } from "react";
 
 const ParallaxCache = dynamic(
     () => {
@@ -24,52 +25,160 @@ const IsMobileComponent = dynamic(
         return import("../../components/isMobile/IsMobileComponent");
     },
     { ssr: false }
-  );
+);
+
+function Items({ currentItems }) {
+
+    return (
+        <>
+            {currentItems &&
+                currentItems.map((project, ind) => (
+                    <Col md={6} key={ind}>
+                        <div key={ind} className={`${clientsStyles.project_img}`} onClick={() => { handleClick(project.attributes?.features) }}>
+                            <motion.div
+                                initial={{ opacity: 0, rotateZ: 0, x: 0 }}
+                                whileInView={{ opacity: 1, rotateZ: 0, x: 0 }}
+                                //  viewport={{ once: true }}
+                                transition={{ duration: 1, ease: "easeInOut", type: 'linear' }}
+                            >
+                                <Image src={project.attributes.image.custom_data.url} unoptimized={true} loading="eager" className={clientsStyles.img} layout={"responsive"} width={500} height={660} objectFit={"cover"}></Image>
+                            </motion.div>
+                            <br />
+                            <span>
+                                {project.attributes.client_name}
+                            </span>
+                            <h3>
+                                {project.attributes.title}
+                            </h3>
+                            <p>
+                                {project.attributes.description}
+                            </p>
+                        </div>
+                    </Col>
+
+
+                ))}
+        </>
+    );
+}
+
+function PaginatedItems({ itemsPerPage }) {
+    // We start with an empty list of items.
+    const [currentItems, setCurrentItems] = useState(null);
+    const [pageCount, setPageCount] = useState(0);
+    const [forceBegin, setForceBegin] = useState(false);
+    const pageinationRef = useRef(null);
+    const projectRef = useRef(null);
+    const [itemOffset, setItemOffset] = useState(0);
+    const [items, setItems] = useState([]);
+    const [projects, setProjects] = useState(items);
+
+    useEffect(() => {
+        ProjectService.getFeaturedProjects().then(res => {
+            setItems(res.data);
+            setCurrentItems(res.data)
+        }).catch(err => {
+            console.log('err', err);
+        })
+    }, [])
+
+    useEffect(() => {
+        setProjects(items);
+        if (items.length > 0) {
+            handlePageClick({ selected: 0 });
+        }
+    }, [items]);
+
+    useEffect(() => {
+        // Fetch items from another resources.
+        const endOffset = itemOffset + itemsPerPage;
+        setCurrentItems(projects?.slice(itemOffset, endOffset));
+        setPageCount(Math.ceil(projects?.length / itemsPerPage));
+    }, [itemOffset, itemsPerPage, projects]);
+
+    // Invoke when user click to request another page.
+    const handlePageClick = (event) => {
+        const newOffset = (event.selected * itemsPerPage) % items.length;
+        setItemOffset(newOffset);
+        setForceBegin(true);
+        pageinationRef.current.state.selected = 0;
+        if (forceBegin) {
+            window.scrollTo({
+                top: Math.round(projectRef.current.getBoundingClientRect().top + document.documentElement.scrollTop - 100),
+                behavior: 'smooth',
+            })
+
+        }
+    };
+
+
+    return (
+        <section ref={projectRef}>
+            <Row className={clientsStyles.posts}>
+                <Items currentItems={currentItems} />
+                <ReactPaginate
+                    ref={pageinationRef}
+                    breakLabel="..."
+                    nextLabel="NEXT"
+                    activeClassName="activePaginate"
+                    onPageChange={handlePageClick}
+                    pageRangeDisplayed={3}
+                    className={'d-flex'}
+                    pageCount={pageCount}
+                    previousLabel="PREV"
+                    renderOnZeroPageCount={null}
+                />
+            </Row>
+        </section>
+    );
+}
+
 export default function Clients() {
     const router = useRouter();
     const [current, setCurrent] = useState(0);
     const [currentScroll, setCurrentScroll] = useState(0);
-    const [isMobile , setIsMobile] = useState(null);
+    const [isMobile, setIsMobile] = useState(null);
     const [_selectedClients, setSelectedClients] = useState([])
-    const [ _featuredProjects,setFeaturedProjects] = useState([]);
-    const [mainText,setMainText] = useState();
-
+    const [_featuredProjects, setFeaturedProjects] = useState([]);
+    const [mainText, setMainText] = useState();
+    const [selectedTab, setSelectedTab] = useState("ALL");
+    const [loader, setLoader] = useState(false);
 
     const headerVariants = {
-        hidden: { opacity: 0, y: "10%" ,scale:1.05},
+        hidden: { opacity: 0, y: "10%", scale: 1.05 },
         // hidden: { opacity: 0, y: "30%" ,scale:1.05},
-        enter: { opacity: 1, y: 0 ,scale:1}
-      }
-      const textVariants = {
+        enter: { opacity: 1, y: 0, scale: 1 }
+    }
+    const textVariants = {
         hidden: { opacity: 0, x: 15 },
         enter: { opacity: 1, x: 0 }
-      }
+    }
 
-    const useHandleMobile = (value) =>{
+    const useHandleMobile = (value) => {
         useEffect(() => {
             setIsMobile(value)
-        },[])
+        }, [])
     }
 
     useEffect(() => {
         let text = "Our clients range from leading multinationals and heritage brands to the hottest emerging brands, across media, Iifestyle, fashion, and retail."
         let textArr = text?.split(" ");
-        textArr?.map((word,i)=>{
-          textArr[i] =  <motion.span
-          initial="hidden"
-          whileInView={"enter"}
-        //   viewport={{ once: true }}
-          variants={textVariants}
-          transition={{ duration: 1,delay:i*.02, ease: "easeInOut",type: 'linear' }}
-           >
-            {word+' '}
+        textArr?.map((word, i) => {
+            textArr[i] = <motion.span
+                initial="hidden"
+                whileInView={"enter"}
+                //   viewport={{ once: true }}
+                variants={textVariants}
+                transition={{ duration: 1, delay: i * .02, ease: "easeInOut", type: 'linear' }}
+            >
+                {word + ' '}
             </motion.span>
         })
         setMainText(textArr)
-    },[])
+    }, [])
 
     const handleClick = (id) => {
-        if(id){
+        if (id) {
             router.push(`/clients/${id}`)
         }
     }
@@ -97,49 +206,49 @@ export default function Clients() {
 
     const PreloadImages = () => {
 
-        return(
-          [..._selectedClients,..._featuredProjects].map((item,i) => (
-            <link rel="preload" key={i} as="image" href={item?.attributes?.image?.custom_data?.url}></link>
-          ))
+        return (
+            [..._selectedClients, ..._featuredProjects].map((item, i) => (
+                <link rel="preload" key={i} as="image" href={item?.attributes?.image?.custom_data?.url}></link>
+            ))
         )
-      }
+    }
 
     useEffect(() => {
         ProjectService.getFeaturedProjects().then((res) => {
             setFeaturedProjects(res.data);
         }).catch(err => {
-            console.log('err?',err);
+            console.log('err?', err);
         })
         ClientService.getClients().then(res => {
             setSelectedClients(res.data);
         })
-    },[])
+    }, [])
     return (
         // <Layout>
         <>
-            <IsMobileComponent handleMobile={useHandleMobile}/>
-            <PreloadImages/>
+            <IsMobileComponent handleMobile={useHandleMobile} />
+            <PreloadImages />
             <ParallaxProvider>
                 <ParallaxCache />
             </ParallaxProvider>
             <header className={clientsStyles.main}>
                 <Container>
-                    <div style={{overflow:'hidden'}}>
-                    <AnimatePresence>
-                        <motion.h1
-                            initial="hidden"
-                            // animate="enter"
-                            whileInView={"enter"}
-                            // viewport={{ once: true }}
-                            variants={headerVariants}
-                            className="text-center"
-                            transition={{ duration: 1.2, ease: "easeInOut",type: 'linear' }}
-                        >
-                            We have built a renowned and respected
+                    <div style={{ overflow: 'hidden' }}>
+                        <AnimatePresence>
+                            <motion.h1
+                                initial="hidden"
+                                // animate="enter"
+                                whileInView={"enter"}
+                                // viewport={{ once: true }}
+                                variants={headerVariants}
+                                className="text-center"
+                                transition={{ duration: 1.2, ease: "easeInOut", type: 'linear' }}
+                            >
+                                We have built a renowned and respected
 
-                            name amongst leading brands
-                        </motion.h1>
-                    </AnimatePresence>
+                                name amongst leading brands
+                            </motion.h1>
+                        </AnimatePresence>
                     </div>
 
                     <p className="text-center">
@@ -154,10 +263,17 @@ export default function Clients() {
                     <h2 className="text-center">
                         Featured projects
                     </h2>
-                    <ParallaxProvider>
-                        <Row style={{justifyContent:'space-around'}}>
+                    <TransitionGroup>
+                        <CSSTransition key={2} classNames={'item'} timeout={2000}>
+                            <Container fluid className={clientsStyles.posts_contain}>
+                                <PaginatedItems itemsPerPage={4} selectedTab={selectedTab} />
+                            </Container>
+                        </CSSTransition>
+                    </TransitionGroup>
+                    {/* <ParallaxProvider>
+                        <Row style={{ justifyContent: 'space-around' }}>
                             <Col md={5} className="text-center">
-                                <Parallax translateY={[isMobile?0:-1, isMobile?0:2]} className="pr-5">
+                                <Parallax translateY={[isMobile ? 0 : -1, isMobile ? 0 : 2]} className="pr-5">
                                     {_featuredProjects.map((project, ind) => {
                                         return (
 
@@ -165,10 +281,10 @@ export default function Clients() {
 
                                                 <div key={ind} className={`${clientsStyles.project_img}`} onClick={() => { handleClick(project.attributes?.features) }}>
                                                     <motion.div
-                                                     initial={{opacity:0,rotateZ:-5,x:"-50px"}}
-                                                     whileInView={{ opacity: 1 ,rotateZ:0,x:0}}
-                                                    //  viewport={{ once: true }}
-                                                     transition={{ duration: 1, ease: "easeInOut",type: 'linear' }}
+                                                        initial={{ opacity: 0, rotateZ: -5, x: "-50px" }}
+                                                        whileInView={{ opacity: 1, rotateZ: 0, x: 0 }}
+                                                        //  viewport={{ once: true }}
+                                                        transition={{ duration: 1, ease: "easeInOut", type: 'linear' }}
                                                     >
                                                         <Image src={project.attributes.image.custom_data.url} unoptimized={true} loading="eager" className={clientsStyles.img} layout={"responsive"} width={500} height={660} objectFit={"cover"}></Image>
                                                     </motion.div>
@@ -190,7 +306,7 @@ export default function Clients() {
                             </Col>
 
                             <Col md={5} className="text-center">
-                                <Parallax className={`${clientsStyles.second} pl-5`} translateY={[isMobile?0:2, isMobile?0:-7]}>
+                                <Parallax className={`${clientsStyles.second} pl-5`} translateY={[isMobile ? 0 : 2, isMobile ? 0 : -7]}>
 
                                     {_featuredProjects.map((project, ind) => {
                                         return (
@@ -198,10 +314,10 @@ export default function Clients() {
                                             (ind % 2 != 0) && (
                                                 <div key={ind} className={`${clientsStyles.project_img}`} onClick={() => { handleClick(project.attributes.features) }}>
                                                     <motion.div
-                                                     initial={{opacity:0,rotateZ:3,x:30}}
-                                                     whileInView={{ opacity: 1 ,rotateZ:0,x:0}}
-                                                    //  viewport={{ once: true }}
-                                                     transition={{ duration: 1, ease: "easeInOut",type: 'linear' }}
+                                                        initial={{ opacity: 0, rotateZ: 3, x: 30 }}
+                                                        whileInView={{ opacity: 1, rotateZ: 0, x: 0 }}
+                                                        //  viewport={{ once: true }}
+                                                        transition={{ duration: 1, ease: "easeInOut", type: 'linear' }}
                                                     >
                                                         <Image src={project.attributes.image.custom_data.url} unoptimized={true} loading="eager" className={clientsStyles.img} layout={"responsive"} width={500} height={660} objectFit={"cover"}></Image>
                                                     </motion.div>
@@ -222,7 +338,7 @@ export default function Clients() {
                                 </Parallax>
                             </Col>
                         </Row>
-                    </ParallaxProvider>
+                    </ParallaxProvider> */}
 
                 </Container>
             </section>
@@ -233,21 +349,21 @@ export default function Clients() {
                     </h2>
                     <div>
                         <Row id="slider" className={clientsStyles.selected_clients_container}>
-                            {_selectedClients.map((client,ind) => {
+                            {_selectedClients.map((client, ind) => {
                                 return (
                                     <Col md={3} xs={10} key={ind}>
                                         <div className={clientsStyles.card}>
-                                                <div className={clientsStyles.img}>
+                                            <div className={clientsStyles.img}>
                                                 <motion.div
-                                                    initial={{borderRightWidth:80,borderLeftWidth:80}}
-                                                    whileInView={{borderRightWidth:0 ,borderLeftWidth:0}}
+                                                    initial={{ borderRightWidth: 80, borderLeftWidth: 80 }}
+                                                    whileInView={{ borderRightWidth: 0, borderLeftWidth: 0 }}
                                                     // viewport={{ once: true }}
-                                                    transition={{ duration: 1,delay:.2, ease: "easeInOut",type: 'linear' }}
+                                                    transition={{ duration: 1, delay: .2, ease: "easeInOut", type: 'linear' }}
                                                     className={clientsStyles.imgLayer}
                                                 >
                                                 </motion.div>
-                                                    <Image layout='responsive' unoptimized={true} loading="eager" src={client?.attributes?.image?.custom_data?.url} width={100} objectFit={"cover"} height={70}></Image>
-                                                </div>
+                                                <Image layout='responsive' unoptimized={true} loading="eager" src={client?.attributes?.image?.custom_data?.url} width={100} objectFit={"cover"} height={70}></Image>
+                                            </div>
                                             <div className={clientsStyles.text}>
                                                 <h3>
                                                     {client?.attributes?.title}
@@ -256,13 +372,13 @@ export default function Clients() {
                                                     {client?.attributes?.description}
                                                 </p>
                                                 {client?.attributes?.services && (
-                                                <ul>
-                                                    {JSON.parse(client?.attributes?.services).map((tag,i) => {
-                                                        return(
-                                                            <li key={i}>{tag}</li>
-                                                        )
-                                                    })}
-                                                </ul>
+                                                    <ul>
+                                                        {JSON.parse(client?.attributes?.services).map((tag, i) => {
+                                                            return (
+                                                                <li key={i}>{tag}</li>
+                                                            )
+                                                        })}
+                                                    </ul>
                                                 )}
                                             </div>
                                         </div>
@@ -286,7 +402,7 @@ export default function Clients() {
 
                 </Container>
             </section>
-        {/* </Layout> */}
+            {/* </Layout> */}
         </>
     )
 }

@@ -197,7 +197,7 @@ Dubai design district.</span>
                         </li>
                         <li>
                         <p>CAIRO</p>
-                        <span className="my-2">9 el Gabalaya street, Zamalek.</span>
+                        <span className="my-2">14 Kamal Al Tawil, Zamalek</span>
                         <span>cairo@maisonpyramide.com</span>
                         </li>
                         <li>
