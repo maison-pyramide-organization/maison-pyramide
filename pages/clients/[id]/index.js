@@ -50,7 +50,7 @@ export default function Project() {
     const [isMobile, setIsMobile] = useState(null);
     const [data, setData] = useState({});
     const query = useRouter();
-    const id = query.query.id;
+    const id = query?.query?.id;
 
     const headerVariants = {
         hidden: { opacity: 0, y: "30%", scale: 1.05 },
@@ -62,12 +62,14 @@ export default function Project() {
     }
 
     useEffect(() => {
+        if(id){
         FeatureService.getFeature(id).then(res => {
             setData(res.data.attributes);
         }).catch(err => {
             console.log(err);
         })
-    }, [query.query.id]);
+    }
+    }, [id, query?.query?.id]);
 
 
     const handleScroll = (amount, direction) => {
@@ -82,6 +84,7 @@ export default function Project() {
         let textArr = text?.split(" ");
         textArr?.map((word, i) => {
             textArr[i] = <motion.span
+                key={i}
                 initial="hidden"
                 whileInView="enter"
                 exit="exit"
