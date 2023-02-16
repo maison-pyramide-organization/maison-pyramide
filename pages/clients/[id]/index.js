@@ -239,14 +239,14 @@ export default function Project() {
 
                                             {
                                                 data.challenge_images && (
-                                                    <Image src={data?.challenge_images[0]?.custom_data?.url} width={100} height={130} objectFit={'cover'} layout="responsive"></Image>
+                                                    <Image src={data?.challenge_images[0]?.custom_data?.url} unoptimized={true} width={100} height={130} objectFit={'cover'} layout="responsive"></Image>
                                                 )
                                             }
                                         </Col>
                                         <Col md={5}>
                                             {
                                                 data.challenge_images && (
-                                                    <Image src={data?.challenge_images[1]?.custom_data?.url} width={100} height={130} objectFit={'cover'} layout="responsive"></Image>
+                                                    <Image src={data?.challenge_images[1]?.custom_data?.url} unoptimized={true} width={100} height={130} objectFit={'cover'} layout="responsive"></Image>
                                                 )
                                             }
                                         </Col>
@@ -276,13 +276,13 @@ export default function Project() {
                                     <div className={projectStyles.solution}>
                                         <div className="disktop_only">
                                             {data.solution_images && (
-                                                <Image src={data.solution_images[0]?.custom_data?.url} width={100} height={50} objectFit={"cover"} layout="responsive"></Image>
+                                                <Image src={data.solution_images[0]?.custom_data?.url} unoptimized={true} width={100} height={50} objectFit={"cover"} layout="responsive"></Image>
                                             )}
 
                                         </div>
                                         <div className="mobile w-75">
                                             {data.solution_images && (
-                                                <Image src={data.solution_images[0]?.custom_data?.url} width={80} height={115} objectFit={"cover"} layout="responsive"></Image>
+                                                <Image src={data.solution_images[0]?.custom_data?.url} unoptimized={true} width={80} height={115} objectFit={"cover"} layout="responsive"></Image>
                                             )}
                                         </div>
                                         <Container>
@@ -290,7 +290,7 @@ export default function Project() {
                                                 <Col md={5} className={`${projectStyles.sol_row_img} text-center`}>
 
                                                     {data.solution_images && (
-                                                        <Image className={projectStyles.sol_row_img_cont} src={data.solution_images[1]?.custom_data?.url} objectFit={"cover"} width={300} height={500}></Image>
+                                                        <Image className={projectStyles.sol_row_img_cont} unoptimized={true} src={data.solution_images[1]?.custom_data?.url} objectFit={"cover"} width={300} height={500}></Image>
                                                     )}
                                                 </Col>
                                                 <Col md={7}>
@@ -354,7 +354,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, sed ornare sed to
                                         </Col>
                                         <Col md={6}>
                                             {data?.results_image?.custom_data && (
-                                                <Image src={data?.results_image?.custom_data?.url} objectFit={"cover"} width={100} height={130} layout={"responsive"}></Image>
+                                                <Image src={data?.results_image?.custom_data?.url} objectFit={"cover"} unoptimized={true} width={100} height={130} layout={"responsive"}></Image>
                                             )
                                             }
                                         </Col>
