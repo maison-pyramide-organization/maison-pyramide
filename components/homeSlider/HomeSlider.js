@@ -231,7 +231,7 @@ export default function HomeCarousel() {
 
                                         <div className={`${sliderStyle.current_img}`}>
                                             {/* <Image src={_items[activeIdx]?.img} alt="girl"></Image> */}
-                                            <Image src={_items[activeIdx]?.attributes?.image?.custom_data?.url} width={100} height={125} alt="girl" objectFit="cover" layout="responsive"></Image>
+                                            <Image src={_items[activeIdx]?.attributes?.image?.custom_data?.url} unoptimized={true}  width={100} height={125} alt="girl" objectFit="cover" layout="responsive"></Image>
                                         </div>
                                     </CSSTransition>
                                 )}

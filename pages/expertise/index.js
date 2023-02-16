@@ -124,9 +124,9 @@ export default function Expertise() {
           <Row className={expertiseStyles.exp_row}>
             <Col md={6} className={expertiseStyles.exp_img}>
                 {isMobile ? (
-                  <Image src={mobileexpImg} layout="responsive"></Image>
+                  <Image src={mobileexpImg} unoptimized={true} layout="responsive"></Image>
                 ) : (
-                  <Image src={expImg} layout="fill"></Image>
+                  <Image src={expImg} unoptimized={true} layout="fill"></Image>
                 )}
             </Col>
             <Col md={6}>
@@ -180,7 +180,7 @@ export default function Expertise() {
                 <div className={expertiseStyles.exp_img}>
                   <h3 className="mobile">{exp.attributes.title}</h3>
 
-                  <Image src={exp?.attributes?.image?.custom_data?.url} layout="responsive" width={100} objectFit={"cover"} height={130}></Image>
+                  <Image src={exp?.attributes?.image?.custom_data?.url} unoptimized={true} layout="responsive" width={100} objectFit={"cover"} height={130}></Image>
                   <footer className={expertiseStyles.footer}>
                     <div className={expertiseStyles.feat_project}>
                       {exp.attributes?.featured? (
@@ -321,7 +321,7 @@ export default function Expertise() {
               <ParallaxCache />
                 <div className={expertiseStyles.exp_img}>
                   <h3 className="mobile">{exp.attributes?.title}</h3>
-                  <Image src={exp?.attributes?.image?.custom_data?.url} width={100} objectFit={"cover"} height={130} layout="responsive"></Image>
+                  <Image src={exp?.attributes?.image?.custom_data?.url} unoptimized={true} width={100} objectFit={"cover"} height={130} layout="responsive"></Image>
                   <footer className={expertiseStyles.footer}>
                     <div className={expertiseStyles.feat_project}>
                       {exp.attributes?.featured && (

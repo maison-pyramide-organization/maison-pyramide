@@ -27,7 +27,7 @@ const LoaderComponent = ({ isLoading }) => {
                 {/* MAISON
                 <br />
                 PYRAMIDE */}
-                <Image src={logo} className={loaderStyle.logo} layout="responsive"></Image>
+                <Image src={logo} unoptimized={true} className={loaderStyle.logo} layout="responsive"></Image>
                 <TransitionGroup>
                   {!isLoading && (
                     <CSSTransition key={1} timeout={500} classNames={"title"}>

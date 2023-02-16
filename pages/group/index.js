@@ -213,7 +213,7 @@ export default function Group() {
               <Row>
               <Col md={12} className={`${groupStyles.office_network_img} mobile`}>
                 {data?.office_mobile_image?.custom_data && (
-                  <Image src={data?.office_mobile_image?.custom_data?.url} width={70} height={100} objectFit="cover" layout="responsive"></Image>
+                  <Image src={data?.office_mobile_image?.custom_data?.url} width={70} height={100} objectFit="cover" unoptimized={true} layout="responsive"></Image>
                 )}
                 </Col>
                 <Col md={4}>
@@ -234,7 +234,7 @@ export default function Group() {
                 </Col>
                 <Col md={4} className={`disktop_only`}>
                   {data?.office_image &&(
-                    <Image src={data?.office_image?.custom_data?.url} width={70} height={100} layout="responsive"></Image>
+                    <Image src={data?.office_image?.custom_data?.url} unoptimized={true} width={70} height={100} layout="responsive"></Image>
                   )}
                 </Col>
                 <Col md={4}>
@@ -269,7 +269,7 @@ export default function Group() {
                 <Col md={4}>
                   <div className={groupStyles.card}>
                     {data.leader1_image?.custom_data?.url && (
-                      <Image className={groupStyles.img} src={data?.leader1_image?.custom_data?.url} height={150} objectFit={"cover"} width={100} layout="responsive"></Image>
+                      <Image className={groupStyles.img} src={data?.leader1_image?.custom_data?.url} height={150} unoptimized={true} objectFit={"cover"} width={100} layout="responsive"></Image>
                     )}
                     <h3>Giovanina Attieh</h3>
                     {/* <p>Co-Founder & Partner</p> */}
@@ -281,7 +281,7 @@ export default function Group() {
                 <Col md={4}>
                   <div className={groupStyles.card}>
                   {data.leader2_image?.custom_data?.url && (
-                      <Image className={groupStyles.img} src={data?.leader2_image?.custom_data?.url} height={150} objectFit={"cover"} width={100} layout="responsive"></Image>
+                      <Image className={groupStyles.img} src={data?.leader2_image?.custom_data?.url} height={150} objectFit={"cover"} unoptimized={true} width={100} layout="responsive"></Image>
                     )}
                     <h3>Maria Munoz</h3>
                     {/* <p>Co-Founder & Partner</p> */}
@@ -293,7 +293,7 @@ export default function Group() {
                 <Col md={4}>
                   <div className={groupStyles.card}>
                   {data.leader3_image?.custom_data?.url && (
-                      <Image className={groupStyles.img} src={data?.leader3_image?.custom_data?.url} height={150} objectFit={"cover"} width={100} layout="responsive"></Image>
+                      <Image className={groupStyles.img} src={data?.leader3_image?.custom_data?.url} height={150} objectFit={"cover"} unoptimized={true} width={100} layout="responsive"></Image>
                     )}
                     <h3>Nathalie Mroue</h3>
                     {/* <p>Co-Founder & Partner</p> */}
@@ -305,7 +305,7 @@ export default function Group() {
                 <Col md={4}>
                   <div className={groupStyles.card}>
                   {data.leader4_image?.custom_data?.url && (
-                      <Image className={groupStyles.img} src={data?.leader4_image?.custom_data?.url} height={150} objectFit={"cover"} width={100} layout="responsive"></Image>
+                      <Image className={groupStyles.img} src={data?.leader4_image?.custom_data?.url} height={150} objectFit={"cover"} unoptimized={true} width={100} layout="responsive"></Image>
                     )}
                     <h3>Yann Pavie</h3>
                     {/* <p>Executive Chairman & Partner </p> */}
@@ -318,7 +318,7 @@ export default function Group() {
                 <Col md={4}>
                   <div className={groupStyles.card}>
                   {data.leader5_image?.custom_data?.url && (
-                      <Image className={groupStyles.imgPro} src={data?.leader5_image?.custom_data?.url} height={150} objectFit={"cover"} width={100} layout="responsive"/>
+                      <Image className={groupStyles.imgPro} src={data?.leader5_image?.custom_data?.url} height={150} objectFit={"cover"} unoptimized={true} width={100} layout="responsive"/>
                     )}
                     <h3>Reem Kanj</h3>
                     {/* <p>Executive Chairman & Partner </p> */}
@@ -331,7 +331,7 @@ export default function Group() {
                 <Col md={4}>
                   <div className={groupStyles.card}>
                   {data.leader6_image?.custom_data?.url && (
-                      <Image className={groupStyles.imgPro} src={data?.leader6_image?.custom_data?.url} height={150} objectFit={"cover"} width={100} layout="responsive" />
+                      <Image className={groupStyles.imgPro} src={data?.leader6_image?.custom_data?.url} height={150} objectFit={"cover"} unoptimized={true} width={100} layout="responsive" />
                     )}
                     <h3>Natalya Kanj</h3>
                     {/* <p>Executive Chairman & Partner </p> */}

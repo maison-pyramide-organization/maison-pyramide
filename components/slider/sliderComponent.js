@@ -47,7 +47,7 @@ const CarouselSlideItem = ({pos, idx, activeIdx,items,isTranitioning}) => {
     return (
         <li className={sliderStyle.carousel__slide_item} style={item.styles}>
             <div className={sliderStyle.carousel__slide_item_img_link}>
-                <Image src={item.image} className={sliderStyle.image} width={100} height={150} objectFit={"cover"} layout="responsive"></Image>
+                <Image src={item.image} unoptimized={true} className={sliderStyle.image} width={100} height={150} objectFit={"cover"} layout="responsive"></Image>
             </div>
         </li>
     );

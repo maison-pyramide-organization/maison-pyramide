@@ -56,7 +56,7 @@ function Items({ currentItems ,selectedTab }) {
           <Col md={6} key={key}>
             <div className={newsStyle.post} onClick={() => handlePost(item?.attributes?.link)}>
               <div className={newsStyle.news_img}>
-                <Image layout="responsive" width={100} objectPosition={"center"} objectFit={"cover"} height={70} src={item.attributes?.image?.custom_data?.url}></Image>
+                <Image layout="responsive" width={100} objectPosition={"center"} unoptimized={true} objectFit={"cover"} height={70} src={item.attributes?.image?.custom_data?.url}></Image>
                 <span className={newsStyle.news_flag}>
                   {item.attributes.tag}
                 </span>

@@ -95,7 +95,7 @@ export default function NavComponent() {
       <Container fluid>
       {/* <Navbar.Brand className={navStyle.mobile_brand} href="/" onClick={()=>handleLinkClick(null)}>MAISON<br/>PYRAMIDE</Navbar.Brand> */}
       <Navbar.Brand className={navStyle.mobile_brand} href="/" onClick={()=>handleLinkClick(null)}>
-        <Image src={logo} width={100} height={30}></Image>
+        <Image unoptimized={true} src={logo} width={100} height={30}></Image>
       </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -117,7 +117,7 @@ export default function NavComponent() {
           <Nav className={["me-auto text-center",navStyle.brand]}>
             {/* <Navbar.Brand href="/" onClick={()=>handleLinkClick(null)}>MAISON<br/>PYRAMIDE</Navbar.Brand> */}
             <Navbar.Brand href="/" onClick={()=>handleLinkClick(null)}>
-              <Image src={logo} width={120} height={40}></Image>
+              <Image unoptimized={true} src={logo} width={120} height={40}></Image>
             </Navbar.Brand>
           </Nav>
 

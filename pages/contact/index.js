@@ -222,7 +222,7 @@ Dubai design district.</span>
                 <Row className={contactStyles.form_row}>
                     <Col md={4} >
                         <div className={contactStyles.msg_img}>
-                        <Image layout="responsive" src={contactImg}></Image>
+                        <Image unoptimized={true} layout="responsive" src={contactImg}></Image>
                         </div>
                     </Col>
                     <Col md={8}>
