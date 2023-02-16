@@ -100,6 +100,7 @@ export default function Project() {
             setIsMobile(value)
         }, [])
     }
+    console.log("data",data)
     return (
         <>
             <IsMobileComponent handleMobile={useHandleMobile} />
@@ -114,6 +115,7 @@ export default function Project() {
                 </>
 
             )} */}
+            
             {data && (
 
                 <ParallaxProvider>
