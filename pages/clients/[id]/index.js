@@ -103,7 +103,6 @@ export default function Project() {
             setIsMobile(value)
         }, [])
     }
-    console.log("data",data)
     return (
         <>
             <IsMobileComponent handleMobile={useHandleMobile} />
@@ -219,7 +218,7 @@ export default function Project() {
                                             </Col>
                                             <Col md={6} className="disktop_only">
                                                 <p>INTRO</p>
-                                                <p>
+                                                <p style={{fontSize:"18px"}}>
                                                 {animatedText(data.intro)}
                                                 </p>
                                             </Col>
