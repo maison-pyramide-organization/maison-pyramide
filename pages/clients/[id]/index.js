@@ -199,7 +199,7 @@ export default function Project() {
                                             </Col>
                                             <Col md={1} xs={4}>
                                                 <p className="mb-4">YEAR</p>
-                                                <p>2020</p>
+                                                <p>{data?.year?.substring(0,4)}</p>
                                             </Col>
                                             <Col md={4} xs={8}>
                                                 <p className="mb-4">
@@ -219,7 +219,7 @@ export default function Project() {
                                             </Col>
                                             <Col md={6} className="disktop_only">
                                                 <p>INTRO</p>
-                                                <p className={projectStyles.intro_text}>
+                                                <p>
                                                 {animatedText(data.intro)}
                                                 </p>
                                             </Col>
