@@ -93,7 +93,7 @@ function Home() {
 
       <video autoPlay playsInline muted loop id="myVideo" style={{width:'100%' , height:'100vh',objectFit:'cover'}}>
         {/* <source src={isMobile?"/imgs/videobgmobile.mp4":"/imgs/videobg.mp4"} /> */}
-          <source src={isMobile ? "https://res.cloudinary.com/dhqpdvngy/video/upload/v1675295804/NEW%20HOMEPAGE/Vertical_video_2023_w_text-high_res_p7qofu.mp4": "https://res.cloudinary.com/dhqpdvngy/video/upload/v1675295539/NEW%20HOMEPAGE/website_video_2023_high_res_kkluw1.mp4"} />
+          <source src={isMobile ? "https://res.cloudinary.com/dhqpdvngy/video/upload/f_auto,q_auto/v1675295804/NEW%20HOMEPAGE/Vertical_video_2023_w_text-high_res_p7qofu.mp4": "https://res.cloudinary.com/dhqpdvngy/video/upload/f_auto,q_auto/v1675295539/NEW%20HOMEPAGE/website_video_2023_high_res_kkluw1.mp4"} />
       </video>
       )}
       {/* {!isMobile && (
