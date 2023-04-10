@@ -190,7 +190,7 @@ export default function Project() {
                                         <Row className={projectStyles.info_row}>
                                             <Col md={6} className="mobile mb-3">
                                                 <p>INTRO</p>
-                                                <p>
+                                                <p style={{whiteSpace: "break-spaces"}}>
                                                 {animatedText(data.intro)}
                                                     {/* {Lorem ipsum dolor sit amet, consect adipiscing elit. Hendrerit sed cursus mattis id sed viverra. Nibh nulla consequat lorem turpis. Sit morbi sed tempus, amet, mattis. Sagittis velit lectus in eget nec sagittis adipiscing porta. Aliquet commodo, velit feugiat egestas.
     Eu, dignissim tortor, eu quis. Fer}mentum risus lobortis sed leo adipiscing interdum etiam ornare vel. Eu et ullamcorper. */}
@@ -218,7 +218,7 @@ export default function Project() {
                                             </Col>
                                             <Col md={6} className="disktop_only">
                                                 <p>INTRO</p>
-                                                <p style={{fontSize:"18px"}}>
+                                                <p style={{fontSize:"18px", whiteSpace: "break-spaces"}}>
                                                 {animatedText(data.intro)}
                                                 </p>
                                             </Col>
@@ -262,7 +262,7 @@ export default function Project() {
                                     {/* <h2>
                 The Challenge
             </h2> */}
-                                    <p>
+                                    <p style={{whiteSpace: "break-spaces"}}>
                                         {animatedText(data.challenge_description)}
                                     </p>
 
@@ -295,7 +295,7 @@ export default function Project() {
                                                 <Col md={7}>
                                                     <div className={projectStyles.sol_text}>
                                                         {/* <h3>Our Solution</h3> */}
-                                                        <pre>
+                                                        <pre style={{whiteSpace: "break-spaces"}}>
                                                             {/* Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam.
                                 <br className="mobile"/>
                                 <br className="mobile"/>
@@ -344,7 +344,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, sed ornare sed to
 
                                                 <div className={projectStyles.text}>
                                                     {/* <h3>The Results</h3> */}
-                                                    <pre>
+                                                    <pre style={{whiteSpace: "break-spaces"}}>
                                                         {animatedText(data.results_description)}
                                                     </pre>
                                                 </div>
