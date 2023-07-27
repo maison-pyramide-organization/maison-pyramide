@@ -263,7 +263,6 @@ export default function News() {
                   <li  onClick={() => handleSelectTab("COMPANY FEATURE")} className={selectedTab == 'COMPANY FEATURE'?newsStyle.selected:''}>COMPANY FEATURE</li>
                   {/* <li  onClick={() => handleSelectTab("BLOG POST")}>BLOG POST</li> */}
                   <li  onClick={() => handleSelectTab("PRESS RELEASE")} className={selectedTab == 'PRESS RELEASE'?newsStyle.selected:''}>PRESS RELEASE</li>
-                  <li  onClick={() => handleSelectTab("COMPANY UPDATE")} className={selectedTab == 'COMPANY UPDATE'?newsStyle.selected:''}>COMPANY UPDATE</li>
                   <li className={`${newsStyle.all_btn} mobile`} onClick={handleMenu}>
                     {selectedTab}
                     <TransitionGroup>
@@ -302,16 +301,6 @@ export default function News() {
                             >
                               PRESS RELEASE
                             </p>
-                            <p
-                              className={
-                                selectedTab == "COMPANY UPDATES"
-                                  ? newsStyle.active
-                                  : ""
-                              }
-                              onClick={() => handleSelectTab("COMPANY UPDATES")}
-                            >
-                              COMPANY UPDATES
-                            </p>
                             {/* <p
                               className={
                                 selectedTab == "PRESS RELEASE2"
@@ -321,16 +310,6 @@ export default function News() {
                               onClick={() => handleSelectTab("PRESS RELEASE2")}
                             >
                               PRESS RELEASE
-                            </p> */}
-                            {/* <p
-                              className={
-                                selectedTab == "COMPANY UPDATE"
-                                  ? newsStyle.active
-                                  : ""
-                              }
-                              onClick={() => handleSelectTab("COMPANY UPDATE")}
-                            >
-                              COMPANY UPDATE
                             </p> */}
                           </div>
                         </CSSTransition>
