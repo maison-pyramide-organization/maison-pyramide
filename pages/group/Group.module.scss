@@ -6,15 +6,20 @@
     justify-content: center;
     align-items: center;
     background-repeat: no-repeat;
+    position: relative;
     // background-image: url(../../public/imgs/groupnewbg.png);
     background-size: cover;
     background-position: center;
     color:$primary-color-light;
+    video{
+        position: absolute;
+    }
     h1{
         font-family: "Suisse Int'l bold";
         font-size: 64px;
         font-weight: 400;
         line-height: 70.4px;
+        z-index: 2;
     }
 }
 .info{
