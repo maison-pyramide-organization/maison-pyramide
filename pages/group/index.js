@@ -125,20 +125,20 @@ export default function Group() {
       {data && (
 
         <ParallaxProvider>
-        <header className={groupStyles.header}>
-        {/* <motion.h1
+        <header className={groupStyles.header} style={{backgroundImage:`url(${isMobile?data?.mobile_main_image?.custom_data?.url:data?.main_image?.custom_data?.url})`}}>
+        <motion.h1
             initial="hidden"
             animate="enter"
             exit="exit"
             variants={headerVariants}
             transition={{ duration: 1.2, ease: "easeInOut",type: 'linear' }}
-          >{data?.title}</motion.h1> */}
-        {isMobile != null && (
+          >{data?.title}</motion.h1>
+        {/* {isMobile != null && (
 
           <video className={groupStyles.header.video} autoPlay playsInline muted loop id="myVideo" style={{width:'100%' , height:'100vh',objectFit:'contain'}}>
-              <source src={isMobile ? "https://res.cloudinary.com/dhqpdvngy/video/upload/f_auto,q_auto/v1691063536/MP%20Group%20video/Mobile_et4e70.mp4": "https://res.cloudinary.com/dhqpdvngy/video/upload/f_auto,q_auto/v1691063526/MP%20Group%20video/Desktop_icvna5.mp4"} />
+              <source src={isMobile ? "https://res.cloudinary.com/dhqpdvngy/video/upload/v1691063536/MP%20Group%20video/Mobile_et4e70.mp4": "https://res.cloudinary.com/dhqpdvngy/video/upload/v1691063526/MP%20Group%20video/Desktop_icvna5.mp4"} />
           </video>
-          )}
+          )} */}
           
         </header>
         <section className={groupStyles.info}>
