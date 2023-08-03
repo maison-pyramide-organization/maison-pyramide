@@ -355,6 +355,8 @@
     }
   }
   .side_posts_container{
+    height: 1900px;
+    overflow-x: hidden;
     // border-left: 1px solid rgba(255, 255, 255, 0.507);
   }
   .side_post {
@@ -381,15 +383,22 @@
     p {
       opacity: 0.8;
       font-size: 15px;
-      margin-bottom: 40px;
+     margin-bottom: 0px;
       padding-right: 40px;
       line-height: 24px;
       cursor: pointer;
+    }
+    .structured_text{
+      margin-bottom: 40px;
     }
   }
 }
 
 @media (min-width:801px) and (max-width:1279px) {
+  .side_posts_container{
+    overflow-x: unset;
+    height: fit-content;
+  }
   .main{
 
     ul li{
@@ -399,6 +408,10 @@
 }
 
 @media (min-width: 200px) and (max-width: 600px) {
+  .side_posts_container{
+    overflow-x: unset !important;
+    height: fit-content !important;
+  }
   .header {
     padding: calc($y-padding + 88px) 0;
 

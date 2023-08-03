@@ -136,8 +136,7 @@ export default function Group() {
         {isMobile != null && (
 
           <video className={groupStyles.header.video} autoPlay playsInline muted loop id="myVideo" style={{width:'100%' , height:'100vh',objectFit:'contain'}}>
-            {/* <source src={isMobile?"/imgs/videobgmobile.mp4":"/imgs/videobg.mp4"} /> */}
-              <source src={isMobile ? "https://res.cloudinary.com/dhqpdvngy/video/upload/f_auto,q_auto/v1690976584/MP%20Group%20video/MP_GROUP_MOBILE_affi4y.mp4": "https://res.cloudinary.com/dhqpdvngy/video/upload/f_auto,q_auto/v1690976076/MP%20Group%20video/MP_GROUP_DESKTOP_dqupw9.mp4"} />
+              <source src={isMobile ? "https://res.cloudinary.com/dhqpdvngy/video/upload/f_auto,q_auto/v1691063536/MP%20Group%20video/Mobile_et4e70.mp4": "https://res.cloudinary.com/dhqpdvngy/video/upload/f_auto,q_auto/v1691063526/MP%20Group%20video/Desktop_icvna5.mp4"} />
           </video>
           )}
           

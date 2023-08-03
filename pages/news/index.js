@@ -13,6 +13,7 @@ import Layout from "../../components/layout/Layout";
 
 import ArticleService from "../api/services/ArticlesService";
 import newsStyle from "./News.module.scss";
+import { StructuredText } from "react-datocms";
 
 const ParallaxCache = dynamic(
   () => {
@@ -351,14 +352,13 @@ export default function News() {
             <Col md={3} className={newsStyle.side_posts_container}>
               {items.map((item,ind)=>{
                 return(
-
                 <div key={ind} className={newsStyle.side_post}>
                   <span className={newsStyle.news_flag}>{item.attributes.tag}</span>
                   <h2>{item.attributes.title}</h2>
                   <span>{formatDate(item.attributes.date)}</span>
-                  <p>
-                  {item.attributes.description}
-                  </p>
+                  <div className={newsStyle.structured_text}>
+                  <StructuredText data={item.attributes.structured_text} />
+                  </div>
                 </div>
                 )
               })}
