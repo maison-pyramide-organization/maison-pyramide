@@ -381,6 +381,19 @@
     .title:hover{
       color:$active-color;
   }
+    p{
+      margin-bottom: 0;
+      font-weight: 100 !important;
+    }
+    strong{
+      font-weight: 600 !important;
+    }
+    h5{
+      margin-bottom: 0.1rem !important;
+    }
+    h6{
+      font-family: "GT Super Display";
+    }
    
     .structured_text{
       margin-top: 10px;
