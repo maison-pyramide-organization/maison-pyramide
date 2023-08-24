@@ -20,6 +20,7 @@
         font-weight: 400;
         line-height: 70.4px;
         z-index: 2;
+        text-align: center;
     }
 }
 .info{
@@ -365,9 +366,10 @@
         background-image: url(../../public/imgs/mobile/groupmobile.png);
         text-align: center;
         h1{
-            font-size: 38px;
+            font-size: 34px;
             line-height: 40px;
             width: 336px;
+            text-align: center;
         }
     }
     .info{
