@@ -138,7 +138,7 @@ export default function Group() {
           <video className={groupStyles.header.video} unoptimized={true} autoPlay playsInline muted loop id="myVideo" style={{width:'100%' , height:'100vh',objectFit:'contain'}}>
               <source src={isMobile ? "https://res.cloudinary.com/dhqpdvngy/video/upload/v1692870421/MP%20Group%20video/MOBILE_LOOPED_chimmh.mp4": "https://res.cloudinary.com/dhqpdvngy/video/upload/v1692869545/MP%20Group%20video/DESKTOP_LOOPED_ketdh0.mp4"} />
           </video>
-          )} */}
+          )}
           
         </header>
         <section className={groupStyles.info}>
