@@ -354,8 +354,8 @@ export default function News() {
                 return(
                 <div key={ind} className={newsStyle.side_post}>
                   <span className={newsStyle.news_flag}>{item.attributes.tag}</span>
-                  <h2>{item.attributes.title}</h2>
-                  <span>{formatDate(item.attributes.date)}</span>
+                  <h2 className={newsStyle.title}>{item.attributes.title}</h2>
+                  <span className={newsStyle.date}>{formatDate(item.attributes.date)}</span>
                   <div className={newsStyle.structured_text}>
                   <StructuredText data={item.attributes.structured_text} />
                   </div>
