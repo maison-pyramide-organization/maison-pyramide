@@ -67,9 +67,9 @@ Dubai design district.</p>
                     <p className={footerStyle.email}>cairo@maisonpyramide.com</p>
                   </div>
                   <div className={footerStyle.location}>
-                    <span className={footerStyle.title}>BEIRUT</span>
-                    <p className={footerStyle.tel}>Ras Beirut, Kantari district, Michel Chiha street.</p>
-                    <p className={footerStyle.email}>beirut@maisonpyramide.com</p>
+                    <span className={footerStyle.title}>RIYADH</span>
+                    {/* <p className={footerStyle.tel}>Ras Beirut, Kantari district, Michel Chiha street.</p> */}
+                    <p className={footerStyle.email}>riyadh@maisonpyramide.com</p>
                   </div>
                   {/* <div className={footerStyle.location}>
                     <span className={footerStyle.title}>LONDON</span>
@@ -149,12 +149,12 @@ Dubai design district.</p>
 
                       <Accordion.Item eventKey="2">
                         <Accordion.Header>
-                        BEIRUT
+                        RIYADH
                         </Accordion.Header>
                         <Accordion.Body>
                             <div className={footerStyle.acc_body}>
-                                <p className={footerStyle.tel}>Ras Beirut, Kantari district, Michel Chiha street.</p>
-                                <p className={footerStyle.email}>beirut@maisonpyramide.com</p>
+                                {/* <p className={footerStyle.tel}>Ras Beirut, Kantari district, Michel Chiha street.</p> */}
+                                <p className={footerStyle.email}>riyadh@maisonpyramide.com</p>
                             </div>
                         </Accordion.Body>
                       </Accordion.Item>

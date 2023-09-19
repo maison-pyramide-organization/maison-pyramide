@@ -191,21 +191,21 @@ export default function Contact() {
                         </li>
                         <li>
                          <p>DUBAI</p>
-                        <span className="my-2">Unit B201, Building 7, 
-Dubai design district.</span>
+                        {/* <span className="my-2">Unit B201, Building 7, 
+Dubai design district.</span> */}
                         <span>dubai@maisonpyramide.com</span>
                         </li>
                         <li>
-                        <p>CAIRO</p>
-                        <span className="my-2">14 Kamal Al Tawil, Zamalek</span>
-                        <span>cairo@maisonpyramide.com</span>
+                        <p>RIYADH</p>
+                        {/* <span className="my-2">Ras Beirut, Kantari district, Michel Chiha street.</span> */}
+                        <span>riyadh@maisonpyramide.com</span>
                         </li>
                         <li>
-                       
-                        <p>BEIRUT</p>
-                        <span className="my-2">Ras Beirut, Kantari district, Michel Chiha street.</span>
-                        <span>beirut@maisonpyramide.com</span>
+                        <p>CAIRO</p>
+                        {/* <span className="my-2">14 Kamal Al Tawil, Zamalek</span> */}
+                        <span>cairo@maisonpyramide.com</span>
                         </li>
+                       
                         {/* <li>
                         <p>LONDON</p>
                         <span>+20 106 0091742</span>

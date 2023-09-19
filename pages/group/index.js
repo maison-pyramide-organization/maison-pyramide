@@ -1,6 +1,10 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useRouter } from 'next/router';
+import MPLOGO from '../../public/imgs/MPLOGO.png';
+import SHOWROOMLOGO from '../../public/imgs/SHOWROOMLOGO.png';
+import EASTLOGO from '../../public/imgs/EGO&EASTLOGO.png';
+import Link from 'next/link';
 
 import { useEffect, useState } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
@@ -152,25 +156,20 @@ export default function Group() {
             <ul>
               <li className="text-center">
                 <p>DUBAI</p>
-                <span>Unit B201, Building 7, 
-  Dubai design district.</span>
+                {/* <span>Unit B201, Building 7, 
+  Dubai design district.</span> */}
                 <span>dubai@maisonpyramide.com</span>
               </li>
               <li className="text-center">
-                <p>CAIRO</p>
-                <span>14 Kamal Al Tawil, Zamalek</span>
-                <span>cairo@maisonpyramide.com</span>
+                <p>RIYADH</p>
+                {/* <span>Ras Beirut, Kantari district, Michel Chiha street.</span> */}
+                <span>riyadh@maisonpyramide.com</span>
               </li>
               <li className="text-center">
-                <p>BEIRUT</p>
-                <span>Ras Beirut, Kantari district, Michel Chiha street.</span>
-                <span>beirut@maisonpyramide.com</span>
+                <p>CAIRO</p>
+                {/* <span>14 Kamal Al Tawil, Zamalek</span> */}
+                <span>cairo@maisonpyramide.com</span>
               </li>
-              {/* <li className="text-center">
-                <p>LONDON</p>
-                <span>+20 106 0091742</span>
-                <span>contact@maisonpyramide.com</span>
-              </li> */}
             </ul>          
           </Container>
 
@@ -179,30 +178,59 @@ export default function Group() {
           <Row className={groupStyles.maisonGroup}>
             <Col md={4}>
             <div className={groupStyles.card}>
-            <h3> {animatedText("Maison Pyramide")}</h3>
+            <div className={groupStyles.groupImage}>
+             <Image src={MPLOGO} objectFit="cover" unoptimized={true} ></Image>
+            </div>
+            <div className={groupStyles.groupDescription}>
                 <span>{animatedText("Maison Pyramide is the strategic branch of the company supporting the pace of innovation and growth of young and established entities looking to expand and grow.")}</span>
                 </div>
-            </Col>
-            <Col md={4}>
-            <div className={groupStyles.card}>
-            <h3><a href="https://eshowroom.maisonpyramide.com/" target={"_blank"} rel="noreferrer">{animatedText("The Showroom")}</a></h3>
-                <span>{animatedText("The Showroom is Maison Pyramide Group’s wholesale and retail strategy, sales, and distribution platform. We support multinational brands launching new retail opportunities or expanding their distribution.")}</span>
-                <p className="pt-3">
-                <a href="mailto:showroom@maisonpyramide.com"
-                    target="_blank" rel="noreferrer" className={groupStyles.mail}>
-                      {animatedText("showroom@maisonpyramide.com")}</a>
-            </p>
+                <Link href="/services">
+                <button className={groupStyles.groupButton}>
+                      <a>
+                      DISCOVER MORE
+                      </a>
+                      </button>
+                      </Link>
                 </div>
             </Col>
             <Col md={4}>
             <div className={groupStyles.card}>
-            <h3><a href="https://www.instagram.com/egoandeast/" target={"_blank"} rel="noreferrer">{animatedText("Ego & East")}</a></h3>
-            <span>{animatedText("A talent management agency representing celebrities, social media influencers, actors, and musicians. Ego & East partners global brands with the right digital talents.")}</span>
-            <p className="pt-3">
-                <a href="mailto:hello@egoandeast.co"
-                    target="_blank" rel="noreferrer" className={groupStyles.mail}>
-                      {animatedText("hello@egoandeast.co")}</a>
-            </p>
+              <div className={groupStyles.groupImageSHOWROOM}>
+              <div className={groupStyles.groupImageMAISON}>
+               <Image src={SHOWROOMLOGO} objectFit="cover" unoptimized={true} ></Image>
+               </div>
+            </div>
+            {/* <h3><a href="https://eshowroom.maisonpyramide.com/" target={"_blank"} rel="noreferrer">{animatedText("The Showroom")}</a></h3> */}
+            <div className={groupStyles.groupDescription}>
+                <span>{animatedText("The Showroom is Maison Pyramide Group’s wholesale and retail strategy, sales, and distribution platform. We support multinational brands launching new retail opportunities or expanding their distribution.")}</span>
+                </div>
+                <Link href="https://eshowroom.maisonpyramide.com/">
+                <button className={groupStyles.groupButton}>
+                      <a>
+                      DISCOVER MORE
+                      </a>
+                      </button>
+                      </Link>
+                </div>
+            </Col>
+            <Col md={4}>
+            <div className={groupStyles.card}>
+            <div className={groupStyles.groupImage}>
+              <div className={groupStyles.groupImageEGO}>
+                <Image  src={EASTLOGO} objectFit="cover" unoptimized={true} ></Image>
+              </div>
+            </div>
+            {/* <h3><a href="https://www.instagram.com/egoandeast/" target={"_blank"} rel="noreferrer">{animatedText("Ego & East")}</a></h3> */}
+            <div className={groupStyles.groupDescription}>
+             <span>{animatedText("A talent management agency representing celebrities, social media influencers, actors, and musicians. Ego & East partners global brands with the right digital talents.")}</span>
+            </div>
+            <Link href="https://www.instagram.com/egoandeast/">
+            <button className={groupStyles.groupButton}>
+                      <a>
+                      DISCOVER MORE
+                      </a>
+                      </button>
+                      </Link>
                 </div>
             </Col>
           </Row>

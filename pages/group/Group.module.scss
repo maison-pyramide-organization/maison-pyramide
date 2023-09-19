@@ -70,8 +70,32 @@
         justify-content: center;
         padding-top: 5%;
         padding-bottom: 5%;
+        .groupImage{
+            height: 100px;
+        }
+        .groupImageSHOWROOM{
+            height: 108px;
+        }
+        .groupImageEGO{
+            width: 197px;
+            margin: 0 auto;
+            height: 26px;
+            display: flex;
+        }
+        .groupImageMAISON{
+            margin-top: -8px;
+        }
+        .groupButton{
+            background-color: #0E0E0E!important;
+            color: white !important;
+            border: white 1px solid !important;
+        }
+        .groupDescription{
+            height: 180px;
+        }
         .card{
             padding: 0px 60px;
+            text-align: center;
             h3{
                 padding-bottom: 20px;
 
@@ -83,6 +107,7 @@
                     color: $active-color;
                 }
             }
+            
             .mail{
                 cursor: pointer;
                 font-style: italic;
@@ -398,7 +423,12 @@
             margin-top: 30%;
         }
         .maisonGroup{
-            
+            .groupImageEGO{
+                margin: 0 auto 30px;
+            }
+            .groupImageMAISON{
+                margin-bottom: 30px;
+            }
             .card{
                 padding: 60px 20px;
                 h3{
