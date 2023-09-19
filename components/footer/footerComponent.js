@@ -57,19 +57,19 @@ export default function FooterComponent() {
                 <div className={footerStyle.locations}>
                   <div className={footerStyle.location}>
                     <span className={footerStyle.title}>DUBAI</span>
-                    <p className={footerStyle.tel}>Unit B201, Building 7, 
-Dubai design district.</p>
+                    {/* <p className={footerStyle.tel}>Unit B201, Building 7, 
+Dubai design district.</p> */}
                     <p className={footerStyle.email}>dubai@maisonpyramide.com</p>
-                  </div>
-                  <div className={footerStyle.location}>
-                    <span className={`${footerStyle.title}`}>CAIRO</span>
-                    <p className={footerStyle.tel}>14 Kamal Al Tawil, Zamalek</p>
-                    <p className={footerStyle.email}>cairo@maisonpyramide.com</p>
                   </div>
                   <div className={footerStyle.location}>
                     <span className={footerStyle.title}>RIYADH</span>
                     {/* <p className={footerStyle.tel}>Ras Beirut, Kantari district, Michel Chiha street.</p> */}
                     <p className={footerStyle.email}>riyadh@maisonpyramide.com</p>
+                  </div>
+                  <div className={footerStyle.location}>
+                    <span className={`${footerStyle.title}`}>CAIRO</span>
+                    {/* <p className={footerStyle.tel}>14 Kamal Al Tawil, Zamalek</p> */}
+                    <p className={footerStyle.email}>cairo@maisonpyramide.com</p>
                   </div>
                   {/* <div className={footerStyle.location}>
                     <span className={footerStyle.title}>LONDON</span>
@@ -209,14 +209,14 @@ Dubai design district.</p>
             
 
             <div className={footerStyle.bottom}>
-            <p className='mobile'><a href="https://www.instagram.com/maisonpyramide/" target={"_blank"} rel="noreferrer">INSTAGRAM</a> | <a rel="noreferrer" href="https://www.linkedin.com/company/maison-pyramide" target={"_blank"}>LINKEDIN</a> | <a rel="noreferrer" target={"_blank"} href="https://eshowroom.maisonpyramide.com/">E-SHOWROOM</a></p>
+            <p className='mobile'><a href="https://www.instagram.com/maisonpyramide/" target={"_blank"} rel="noreferrer">INSTAGRAM</a> | <a rel="noreferrer" href="https://www.linkedin.com/company/maison-pyramide" target={"_blank"}>LINKEDIN</a> | <a rel="noreferrer" target={"_blank"} href="https://eshowroom.maisonpyramide.com/">E-SHOWROOM</a> | <a rel="noreferrer" target={"_blank"} href="https://www.instagram.com/egoandeast/">EGO&EAST</a></p>
 
             {/* <Link href="/privacy"> */}
               {/* <p className={footerStyle.link}>TERMS AND CONDITIONS - PRIVACY POLICY</p> */}
             {/* </Link> */}
 
               <p>2022 ALL RIGHTS RESERVED</p>
-              <p className={`${footerStyle.social} disktop_only`}><a href="https://www.instagram.com/maisonpyramide/" rel="noreferrer" target={"_blank"}>INSTAGRAM</a> | <a href="https://www.linkedin.com/company/maison-pyramide" rel="noreferrer" target={"_blank"}>LINKEDIN</a> | <a target={"_blank"} rel="noreferrer" href="https://eshowroom.maisonpyramide.com/">E-SHOWROOM</a></p>
+              <p className={`${footerStyle.social} disktop_only`}><a href="https://www.instagram.com/maisonpyramide/" rel="noreferrer" target={"_blank"}>INSTAGRAM</a> | <a href="https://www.linkedin.com/company/maison-pyramide" rel="noreferrer" target={"_blank"}>LINKEDIN</a> | <a target={"_blank"} rel="noreferrer" href="https://eshowroom.maisonpyramide.com/">E-SHOWROOM</a> | <a rel="noreferrer" target={"_blank"} href="https://www.instagram.com/egoandeast/">EGO&EAST</a></p>
 
             </div>
             </div>

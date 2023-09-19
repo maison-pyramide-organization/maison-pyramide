@@ -204,13 +204,13 @@ export default function Group() {
             <div className={groupStyles.groupDescription}>
                 <span>{animatedText("The Showroom is Maison Pyramide Group’s wholesale and retail strategy, sales, and distribution platform. We support multinational brands launching new retail opportunities or expanding their distribution.")}</span>
                 </div>
-                <Link href="https://eshowroom.maisonpyramide.com/">
+                <a target="_blank" href="https://eshowroom.maisonpyramide.com/" rel="noreferrer">
                 <button className={groupStyles.groupButton}>
                       <a>
                       DISCOVER MORE
                       </a>
                       </button>
-                      </Link>
+                      </a>
                 </div>
             </Col>
             <Col md={4}>
@@ -224,13 +224,13 @@ export default function Group() {
             <div className={groupStyles.groupDescription}>
              <span>{animatedText("A talent management agency representing celebrities, social media influencers, actors, and musicians. Ego & East partners global brands with the right digital talents.")}</span>
             </div>
-            <Link href="https://www.instagram.com/egoandeast/">
+            <a target="_blank" href="https://www.instagram.com/egoandeast/" rel="noreferrer">
             <button className={groupStyles.groupButton}>
                       <a>
                       DISCOVER MORE
                       </a>
                       </button>
-                      </Link>
+                      </a>
                 </div>
             </Col>
           </Row>
