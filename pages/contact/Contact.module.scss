@@ -49,6 +49,11 @@
         }
     }
 }
+.list{
+    p{
+        margin: 0px !important;
+    }
+}
 .msg{
     padding:0 24px;
     color:$primary-color-light;

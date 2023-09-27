@@ -242,7 +242,7 @@ export default function Group() {
           <Container fluid>
           {/* <ParallaxProvider> */}
           {/* <ParallaxCache/> */}
-          <Parallax translateY={[isMobile?10:20, isMobile?-10:-10,'easeOutQuint']}>
+          <Parallax translateY={[isMobile?10:5, isMobile?-10:-10,'easeOutQuint']}>
             <ParallaxCache/>
             <div className={groupStyles.office}>
               <Row>

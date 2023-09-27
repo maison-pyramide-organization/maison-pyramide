@@ -169,7 +169,7 @@ export default function Contact() {
                         </p>
                     </Col> */}
                     <Col md={12}>
-                    <ul>
+                    <ul className={contactStyles.list}>
                         <li>
                         <p>
                         <p>CONTACT@MAISONPYRAMIDE.COM</p>
