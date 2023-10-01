@@ -158,17 +158,17 @@ export default function Group() {
                 <p>DUBAI</p>
                 {/* <span>Unit B201, Building 7, 
   Dubai design district.</span> */}
-                <span>dubai@maisonpyramide.com</span>
+                <span><a href="mailto:dubai@maisonpyramide.com">dubai@maisonpyramide.com</a></span>
               </li>
               <li className="text-center">
                 <p>RIYADH</p>
                 {/* <span>Ras Beirut, Kantari district, Michel Chiha street.</span> */}
-                <span>riyadh@maisonpyramide.com</span>
+                <span><a href="mailto:riyadh@maisonpyramide.com">riyadh@maisonpyramide.com</a></span>
               </li>
               <li className="text-center">
                 <p>CAIRO</p>
                 {/* <span>14 Kamal Al Tawil, Zamalek</span> */}
-                <span>cairo@maisonpyramide.com</span>
+                <span><a href="mailto:cairo@maisonpyramide.com">cairo@maisonpyramide.com</a></span>
               </li>
             </ul>          
           </Container>

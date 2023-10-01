@@ -25,6 +25,9 @@
 }
 .info{
     color:$primary-color-light;
+    a{
+        cursor: pointer;
+    }
     p.text{
         font-size: 32px;
         padding:104px;

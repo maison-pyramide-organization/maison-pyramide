@@ -59,17 +59,17 @@ export default function FooterComponent() {
                     <span className={footerStyle.title}>DUBAI</span>
                     {/* <p className={footerStyle.tel}>Unit B201, Building 7, 
 Dubai design district.</p> */}
-                    <p className={footerStyle.email}>dubai@maisonpyramide.com</p>
+                    <p className={footerStyle.email}><a href="mailto:dubai@maisonpyramide.com"> dubai@maisonpyramide.com </a></p>
                   </div>
                   <div className={footerStyle.location}>
                     <span className={footerStyle.title}>RIYADH</span>
                     {/* <p className={footerStyle.tel}>Ras Beirut, Kantari district, Michel Chiha street.</p> */}
-                    <p className={footerStyle.email}>riyadh@maisonpyramide.com</p>
+                    <p className={footerStyle.email}><a href="mailto:riyadh@maisonpyramide.com"> riyadh@maisonpyramide.com </a></p>
                   </div>
                   <div className={footerStyle.location}>
                     <span className={`${footerStyle.title}`}>CAIRO</span>
                     {/* <p className={footerStyle.tel}>14 Kamal Al Tawil, Zamalek</p> */}
-                    <p className={footerStyle.email}>cairo@maisonpyramide.com</p>
+                    <p className={footerStyle.email}><a href="mailto:cairo@maisonpyramide.com"> cairo@maisonpyramide.com </a></p>
                   </div>
                   {/* <div className={footerStyle.location}>
                     <span className={footerStyle.title}>LONDON</span>
@@ -129,7 +129,7 @@ Dubai design district.</p> */}
                             <div className={footerStyle.acc_body}>
                                 <p className={footerStyle.tel}>Unit B201, Building 7, 
 Dubai design district.</p>
-                                <p className={footerStyle.email}>dubai@maisonpyramide.com</p>
+                                <p className={footerStyle.email}><a href="mailto:dubai@maisonpyramide.com"> dubai@maisonpyramide.com </a></p>
                             </div>
                         </Accordion.Body>
 
@@ -142,7 +142,7 @@ Dubai design district.</p>
                         <Accordion.Body>
                             <div className={footerStyle.acc_body}>
                                 <p className={footerStyle.tel}>14 Kamal Al Tawil, Zamalek</p>
-                                <p className={footerStyle.email}>cairo@maisonpyramide.com</p>
+                                <p className={footerStyle.email}><a href="mailto:cairo@maisonpyramide.com"> cairo@maisonpyramide.com </a></p>
                             </div>
                         </Accordion.Body>
                       </Accordion.Item>
@@ -154,7 +154,7 @@ Dubai design district.</p>
                         <Accordion.Body>
                             <div className={footerStyle.acc_body}>
                                 {/* <p className={footerStyle.tel}>Ras Beirut, Kantari district, Michel Chiha street.</p> */}
-                                <p className={footerStyle.email}>riyadh@maisonpyramide.com</p>
+                                <p className={footerStyle.email}><a href="mailto:riyadh@maisonpyramide.com"> riyadh@maisonpyramide.com </a></p>
                             </div>
                         </Accordion.Body>
                       </Accordion.Item>
