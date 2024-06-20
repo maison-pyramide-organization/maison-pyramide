@@ -5,28 +5,28 @@ import Head from "next/head";
 import React, { useRef } from "react";
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { AnimatePresence } from 'framer-motion'
+import "bootstrap/dist/css/bootstrap.min.css";
+import { AnimatePresence } from "framer-motion";
 
-import '../styles/globals.css';
+import "../styles/globals.css";
 import ProjectService from "../pages/api/services/ProjectService";
-import NavComponent from '../components/nav/navComponent';
-import LoaderComponent from '../components/loader/Loader';
-import FooterComponent from '../components/footer/footerComponent';
+import NavComponent from "../components/nav/navComponent";
+import LoaderComponent from "../components/loader/Loader";
+import FooterComponent from "../components/footer/footerComponent";
 
-const AnimatedCursor = dynamic(() => import('react-animated-cursor'), {
-  ssr: false
+const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
+  ssr: false,
 });
 const IsMobileComponent = dynamic(
   () => {
-      return import("../components/isMobile/IsMobileComponent");
+    return import("../components/isMobile/IsMobileComponent");
   },
   { ssr: false }
 );
 
 const ParallaxCache = dynamic(
   () => {
-      return import("../components/parallaxCache/parallaxCache");
+    return import("../components/parallaxCache/parallaxCache");
   },
   { ssr: false }
 );
@@ -36,91 +36,87 @@ const ParallaxCache = dynamic(
 // });
 
 function MyApp({ Component, pageProps }) {
-  const [isLoading,setIsLoading] = React.useState(true);
+  const [isLoading, setIsLoading] = React.useState(true);
   const [isMobile, setIsMobile] = React.useState(null);
   const router = useRouter();
 
   const useHandleMobile = (value) => {
     React.useEffect(() => {
-        setIsMobile(value)
-    }, [])
-}
-  React.useEffect(()=>{
-
-    ProjectService.getFeaturedProjects().then(res => {
-      }).catch(err => {
-          console.log(err);
-      }).finally(() => {
+      setIsMobile(value);
+    }, []);
+  };
+  React.useEffect(() => {
+    ProjectService.getFeaturedProjects()
+      .then((res) => {})
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
         setTimeout(() => {
           setIsLoading(false);
         }, 1000);
-      })
-    
-  },[])
-  
+      });
+  }, []);
 
   return (
     <>
-    <Head>
-      <link rel="manifest" href="/manifest.json" />
-      <link rel="icon" href="https://gazef.s3.us-west-2.amazonaws.com/maison/favicon.ico" />
-      <title>Maison Pyramide</title>
-      <meta name="description" content="Maison Pyramide"/>
-      {/* <link rel="apple-touch-icon" href="/imgs/icon.svg" /> */}
-    </Head>
-      { router.pathname != '/404'?
-        (
-          <>
-          <NavComponent/>
-          <IsMobileComponent handleMobile={useHandleMobile}/>
-           <div className="total-mb">
-              <AnimatePresence
-                exitBeforeEnter
-                initial={false}
-                onExitComplete={() => window.scrollTo(0, 0)}
+      <Head>
+        <link rel="manifest" href="/manifest.json" />
+        <link
+          rel="icon"
+          href="https://gazef.s3.us-west-2.amazonaws.com/maison/favicon.ico"
+        />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <title>Maison Pyramide</title>
+        <meta name="description" content="Maison Pyramide" />
+        {/* <link rel="apple-touch-icon" href="/imgs/icon.svg" /> */}
+      </Head>
+      {router.pathname != "/404" ? (
+        <>
+          <NavComponent />
+          <IsMobileComponent handleMobile={useHandleMobile} />
+          <div className="total-mb">
+            <AnimatePresence
+              exitBeforeEnter
+              initial={false}
+              onExitComplete={() => window.scrollTo(0, 0)}
+            >
+              <Component {...pageProps} />
+            </AnimatePresence>
+          </div>
+          <div className="parallax" style={{ overflow: "hidden" }}>
+            <ParallaxProvider>
+              <ParallaxCache />
+              <Parallax
+                className={`parallax`}
+                translateY={[isMobile ? -10 : -30, isMobile ? 10 : 50]}
               >
-                <Component {...pageProps}/>
-              </AnimatePresence>
-            </div>
-          <div className="parallax" style={{overflow:'hidden'}}>
-          <ParallaxProvider>
-              <ParallaxCache/>
-                <Parallax className={`parallax`} translateY={[isMobile?-10:-30, isMobile?10:50]}>
-              <FooterComponent/>
+                <FooterComponent />
               </Parallax>
             </ParallaxProvider>
           </div>
-          
-          </>
-        ):
-        (
-          <AnimatePresence
+        </>
+      ) : (
+        <AnimatePresence
           exitBeforeEnter
           initial={false}
           onExitComplete={() => window.scrollTo(0, 0)}
-          >
-           <AnimatedCursor
-              innerSize={8}
-              outerSize={8}
-              color='198, 111, 44'
-              outerAlpha={0.2}
-              innerScale={0.7}
-              outerScale={5}
-              />
-          <Component {...pageProps}/>
+        >
+          <AnimatedCursor
+            innerSize={8}
+            outerSize={8}
+            color="198, 111, 44"
+            outerAlpha={0.2}
+            innerScale={0.7}
+            outerScale={5}
+          />
+          <Component {...pageProps} />
         </AnimatePresence>
-        )
-      }
-     
-        
-      
-      
-      <LoaderComponent isLoading={isLoading}/>
+      )}
 
-
-  </>
-
-  )
+      <LoaderComponent isLoading={isLoading} />
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;

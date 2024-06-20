@@ -1,294 +1,351 @@
-import Image from 'next/image'
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 import dynamic from "next/dynamic";
 
-import { useEffect, useState } from 'react';
-import { Row, Col, Container } from 'react-bootstrap';
-import { ParallaxProvider } from 'react-scroll-parallax';
-import { Parallax } from 'react-scroll-parallax';
-import {
-    TransitionGroup,
-    CSSTransition,
-} from "react-transition-group";
+import { useEffect, useState } from "react";
+import { Row, Col, Container } from "react-bootstrap";
+import { ParallaxProvider } from "react-scroll-parallax";
+import { Parallax } from "react-scroll-parallax";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-import expertStyles from './Expertise.module.scss';
+import expertStyles from "./Expertise.module.scss";
 
 // import expimg from '../../public/imgs/expbg.png';
 // import expimg2 from '../../public/imgs/homebg.png';
 // import LoaderComponent from '../loader/Loader';
 
-import expImgMobile from '../../public/imgs/mobile/expertbgM.png';
-import expimgt from '../../public/imgs/expbg.png';
-import expimg from '../../public/imgs/Untitled-4-04.png';
-import expimg2 from '../../public/imgs/Untitled-4-03.png';
-import expimg3 from '../../public/imgs/Untitled-4-02.png';
-import expimg4 from '../../public/imgs/Untitled-4-05.png';
-import expimg5 from '../../public/imgs/Untitled-4-01.png';
+// import expImgMobile from '../../public/imgs/mobile/expertbgM.png';
+// import expimgt from '../../public/imgs/expbg.png';
+// import expimg from '../../public/imgs/Untitled-4-04.png';
+// import expimg2 from '../../public/imgs/Untitled-4-03.png';
+// import expimg3 from '../../public/imgs/Untitled-4-02.png';
+// import expimg4 from '../../public/imgs/Untitled-4-05.png';
+// import expimg5 from '../../public/imgs/Untitled-4-01.png';
 
-import expmobileimg1 from '../../public/imgs/mob-exp-10.png';
-import expmobileimg2 from '../../public/imgs/mob-exp-09.png';
-import expmobileimg3 from '../../public/imgs/mob-exp-08.png';
-import expmobileimg4 from '../../public/imgs/mob-exp-07.png';
-import expmobileimg5 from '../../public/imgs/mob-exp-06.png';
+// import expmobileimg1 from '../../public/imgs/mob-exp-10.png';
+// import expmobileimg2 from '../../public/imgs/mob-exp-09.png';
+// import expmobileimg3 from '../../public/imgs/mob-exp-08.png';
+// import expmobileimg4 from '../../public/imgs/mob-exp-07.png';
+// import expmobileimg5 from '../../public/imgs/mob-exp-06.png';
+
+import fashionExpImg from "../../public/imgs/fashion-desktop.webp";
+import mediaExpImg from "../../public/imgs/media-desktop.webp";
+import publicExpImg from "../../public/imgs/public-affairs-desktop.webp";
+import lifeExpImg from "../../public/imgs/lifestyle-desktop.webp";
+import retailExpImg from "../../public/imgs/retail-desktop.png";
+import fashionExpImgMob from "../../public/imgs/fashion-mobile.webp";
+import mediaExpImgMob from "../../public/imgs/media-mobile.webp";
+import publicExpImgMob from "../../public/imgs/public-affairs-mobile.webp";
+import lifeExpImgMob from "../../public/imgs/lifestyle-mobile.webp";
+import retailExpImgMob from "../../public/imgs/retail-mobile.png";
 
 const IsMobileComponent = dynamic(
-    () => {
-        return import("../isMobile/IsMobileComponent");
-    },
-    { ssr: false }
+  () => {
+    return import("../isMobile/IsMobileComponent");
+  },
+  { ssr: false }
 );
 
-
 const ParallaxCache = dynamic(
-    () => {
-        return import("../parallaxCache/parallaxCache");
-    },
-    { ssr: false }
+  () => {
+    return import("../parallaxCache/parallaxCache");
+  },
+  { ssr: false }
 );
 
 function ClientComponent() {
+  const [isMobile, setIsMobile] = useState(null);
+  // const [isLoading , setIsLoading] = useState(true);
+  const [isHideText, setIsHideText] = useState(false);
+  const [loadingFlag, setLoadingFlag] = useState(false);
+  const [revealing, setRevealing] = useState(false);
 
-    const [isMobile, setIsMobile] = useState(null);
-    // const [isLoading , setIsLoading] = useState(true);
-    const [isHideText, setIsHideText] = useState(false);
-    const [loadingFlag, setLoadingFlag] = useState(false);
-    const [revealing, setRevealing] = useState(false);
+  const [expertise, setExpertise] = useState(0);
+  const [expertiseText, setExpertiseText] = useState();
+  const [expContent, setExpContent] = useState([
+    {
+      description:
+        "We help gobal and MENA-based companies identify opportunities to thrive - and to grow. Our expertise extends across a range of industry verticals, in the worlds of fashion, media, retail, lifestyle, and public affairs.",
+      img: fashionExpImg,
+      mobileImg: fashionExpImgMob,
+    },
+    {
+      description:
+        "We help gobal and MENA-based companies identify opportunities to thrive - and to grow. Our expertise extends across a range of industry verticals, in the worlds of fashion, media, retail, lifestyle, and public affairs.",
+      img: mediaExpImg,
+      mobileImg: mediaExpImgMob,
+    },
+    {
+      description:
+        "We help gobal and MENA-based companies identify opportunities to thrive - and to grow. Our expertise extends across a range of industry verticals, in the worlds of fashion, media, retail, lifestyle, and public affairs.",
+      img: lifeExpImg,
+      mobileImg: lifeExpImgMob,
+    },
+    {
+      description:
+        "We help gobal and MENA-based companies identify opportunities to thrive - and to grow. Our expertise extends across a range of industry verticals, in the worlds of fashion, media, retail, lifestyle, and public affairs.",
+      img: publicExpImg,
+      mobileImg: publicExpImgMob,
+    },
+    {
+      description:
+        "We heip gobal and MENA-based companies identify opportunities to thrive - and to grow. Our expertise extends across a range of industry verticals, in the worlds of fashion, media, retail, lifestyle, and public affairs.",
+      img: retailExpImg,
+      mobileImg: retailExpImgMob,
+    },
+  ]);
+  const [nextImg, setNextImg] = useState(fashionExpImg);
 
-    const [expertise, setExpertise] = useState(0);
-    const [expertiseText, setExpertiseText] = useState();
-    const [expContent, setExpContent] = useState([
-        {
-            description: "We help gobal and MENA-based companies identify opportunities to thrive - and to grow. Our expertise extends across a range of industry verticals, in the worlds of fashion, media, retail, lifestyle, and public affairs.",
-            img: expimg,
-            mobileImg: expmobileimg1
-        },
-        {
-            description: "We help gobal and MENA-based companies identify opportunities to thrive - and to grow. Our expertise extends across a range of industry verticals, in the worlds of fashion, media, retail, lifestyle, and public affairs.",
-            img: expimg2,
-            mobileImg: expmobileimg2
-
-        },
-        {
-            description: "We help gobal and MENA-based companies identify opportunities to thrive - and to grow. Our expertise extends across a range of industry verticals, in the worlds of fashion, media, retail, lifestyle, and public affairs.",
-            img: expimg3,
-            mobileImg: expmobileimg3
-        },
-        {
-            description: "We help gobal and MENA-based companies identify opportunities to thrive - and to grow. Our expertise extends across a range of industry verticals, in the worlds of fashion, media, retail, lifestyle, and public affairs.",
-            img: expimg4,
-            mobileImg: expmobileimg4
-        },
-        {
-            description: "We heip gobal and MENA-based companies identify opportunities to thrive - and to grow. Our expertise extends across a range of industry verticals, in the worlds of fashion, media, retail, lifestyle, and public affairs.",
-            img: expimg5,
-            mobileImg: expmobileimg5
-        }
-    ]);
-    const [nextImg, setNextImg] = useState(expimg);
-
-    const useHandleMobile = (value) => {
-        useEffect(() => {
-            setIsMobile(value)
-        }, [])
-    }
-
-    const handleExpertise = (n) => {
-        if(n == expertise){
-            return false;
-        }
-        setIsHideText(true);
-        setLoadingFlag(true);
-        if (isMobile) {
-            setNextImg(expContent[n].mobileImg)
-        }
-        else {
-            setNextImg(expContent[n].img);
-        }
-        setTimeout(() => {
-            setRevealing(true);
-        }, 200);
-        setTimeout(() => {
-            setExpertise(n);            
-        }, 1000);
-    }
+  const useHandleMobile = (value) => {
     useEffect(() => {
-        setTimeout(() => {
-            setRevealing(false);
-            setLoadingFlag(false);
-            setIsHideText(false);
+      setIsMobile(value);
+    }, []);
+  };
 
-        }, 100);
-    },[expertise])
+  const handleExpertise = (n) => {
+    if (n == expertise) {
+      return false;
+    }
+    setIsHideText(true);
+    setLoadingFlag(true);
+    if (isMobile) {
+      setNextImg(expContent[n].mobileImg);
+    } else {
+      setNextImg(expContent[n].img);
+    }
+    setTimeout(() => {
+      setRevealing(true);
+    }, 200);
+    setTimeout(() => {
+      setExpertise(n);
+    }, 1000);
+  };
 
-    useEffect(() => {
-        switch (expertise) {
-            case 0:
-                return setExpertiseText('fashion');
-            case 1:
-                return setExpertiseText('media');
-            case 2:
-                return setExpertiseText('lifestyle');
-            case 3:
-                return setExpertiseText('public-affairs');
-            case 4:
-                return setExpertiseText('retail');
-        }
-    }, [expertise]);
+  useEffect(() => {
+    setTimeout(() => {
+      setRevealing(false);
+      setLoadingFlag(false);
+      setIsHideText(false);
+    }, 100);
+  }, [expertise]);
 
-    // useEffect(() => {
-    //     if(nextImg){
-    //         setTimeout(() => {
-                
-    //             setIsLoading(false);
-    //         }, 1000);
-    //     }
-    // },[])
+  useEffect(() => {
+    switch (expertise) {
+      case 0:
+        return setExpertiseText("fashion");
+      case 1:
+        return setExpertiseText("media");
+      case 2:
+        return setExpertiseText("lifestyle");
+      case 3:
+        return setExpertiseText("public-affairs");
+      case 4:
+        return setExpertiseText("retail");
+    }
+  }, [expertise]);
 
+  // useEffect(() => {
+  //     if(nextImg){
+  //         setTimeout(() => {
 
-    return (
-        <ParallaxProvider>
-            {/* <LoaderComponent isLoading={isLoading}/> */}
+  //             setIsLoading(false);
+  //         }, 1000);
+  //     }
+  // },[])
 
-            <Parallax translateY={[isMobile ? 10 : 7, isMobile ? -10 : -10, isMobile?'easeOutQuint':'easeOutQuint']} style={{ background: 'linear-gradient(#F4F3EF 50%,transparent 50%)' }}>
-                <ParallaxCache />
-            {isMobile? (
-                <>
-                    <link rel="preload" as="image" href={expmobileimg1.src}></link>
-                    <link rel="preload" as="image" href={expmobileimg2.src}></link>
-                    <link rel="preload" as="image" href={expmobileimg3.src}></link>
-                    <link rel="preload" as="image" href={expmobileimg4.src}></link>
-                    <link rel="preload" as="image" href={expmobileimg5.src}></link>
-                </>
-                ):
-                (
-                <>
-                    <link rel="preload" as="image" href={expimg.src}></link>
-                    <link rel="preload" as="image" href={expimg2.src}></link>
-                    <link rel="preload" as="image" href={expimg3.src}></link>
-                    <link rel="preload" as="image" href={expimg4.src}></link>
-                    <link rel="preload" as="image" href={expimg5.src}></link>
-                </>
+  return (
+    <ParallaxProvider>
+      {/* <LoaderComponent isLoading={isLoading}/> */}
 
-            )}
-                <section className={expertStyles.expertise}>
-                    <IsMobileComponent handleMobile={useHandleMobile} />
-                    <div className={expertStyles.expBgWrap}>
+      <Parallax
+        translateY={[
+          isMobile ? 10 : 7,
+          isMobile ? -10 : -10,
+          isMobile ? "easeOutQuint" : "easeOutQuint",
+        ]}
+        style={{ background: "linear-gradient(#F4F3EF 50%,transparent 50%)" }}
+      >
+        <ParallaxCache />
+        {isMobile ? (
+          <>
+            <link rel="preload" as="image" href={fashionExpImgMob.src}></link>
+            <link rel="preload" as="image" href={mediaExpImgMob.src}></link>
+            <link rel="preload" as="image" href={lifeExpImgMob.src}></link>
+            <link rel="preload" as="image" href={publicExpImgMob.src}></link>
+            <link rel="preload" as="image" href={retailExpImgMob.src}></link>
+          </>
+        ) : (
+          <>
+            <link rel="preload" as="image" href={fashionExpImg.src}></link>
+            <link rel="preload" as="image" href={mediaExpImg.src}></link>
+            <link rel="preload" as="image" href={lifeExpImg.src}></link>
+            <link rel="preload" as="image" href={publicExpImg.src}></link>
+            <link rel="preload" as="image" href={retailExpImg.src}></link>
+          </>
+        )}
+        <section className={expertStyles.expertise}>
+          <IsMobileComponent handleMobile={useHandleMobile} />
+          <div className={expertStyles.expBgWrap}>
+            <TransitionGroup>
+              {loadingFlag && (
+                <CSSTransition
+                  key={1}
+                  timeout={1000}
+                  classNames={"revealingContainer"}
+                >
+                  <div className={expertStyles.wrapper}>
+                    <TransitionGroup className={expertStyles.loaderContainer}>
+                      {revealing && (
+                        <CSSTransition
+                          key={3}
+                          timeout={2000}
+                          classNames={"revealing2"}
+                        >
+                          <div
+                            className={expertStyles.loader}
+                            style={{ backgroundImage: `url(${nextImg.src})` }}
+                          ></div>
+                        </CSSTransition>
+                      )}
+                    </TransitionGroup>
+                    <TransitionGroup className={expertStyles.loaderContainer}>
+                      {revealing && (
+                        <CSSTransition
+                          key={3}
+                          timeout={2000}
+                          classNames={"revealing2"}
+                        >
+                          <div
+                            className={expertStyles.loader}
+                            style={{ backgroundImage: `url(${nextImg.src})` }}
+                          ></div>
+                        </CSSTransition>
+                      )}
+                    </TransitionGroup>
+                    <TransitionGroup className={expertStyles.loaderContainer}>
+                      {revealing && (
+                        <CSSTransition
+                          key={3}
+                          timeout={2000}
+                          classNames={"revealing2"}
+                        >
+                          <div
+                            className={expertStyles.loader}
+                            style={{ backgroundImage: `url(${nextImg.src})` }}
+                          ></div>
+                        </CSSTransition>
+                      )}
+                    </TransitionGroup>
+                    <TransitionGroup className={expertStyles.loaderContainer}>
+                      {revealing && (
+                        <CSSTransition
+                          key={3}
+                          timeout={2000}
+                          classNames={"revealing2"}
+                        >
+                          <div
+                            className={expertStyles.loader}
+                            style={{ backgroundImage: `url(${nextImg.src})` }}
+                          ></div>
+                        </CSSTransition>
+                      )}
+                    </TransitionGroup>
+                    <TransitionGroup className={expertStyles.loaderContainer}>
+                      {revealing && (
+                        <CSSTransition
+                          key={3}
+                          timeout={2000}
+                          classNames={"revealing2"}
+                        >
+                          <div
+                            className={expertStyles.loader}
+                            style={{ backgroundImage: `url(${nextImg.src})` }}
+                          ></div>
+                        </CSSTransition>
+                      )}
+                    </TransitionGroup>
+                  </div>
+                </CSSTransition>
+              )}
+            </TransitionGroup>
+            <div>
+              <Image
+                alt="expertise"
+                unoptimized={true}
+                loading="eager"
+                // src={isMobile ? expContent[expertise].mobileImg : expContent[expertise].img}
+                src={
+                  isMobile
+                    ? expContent[expertise].mobileImg
+                    : expContent[expertise].img
+                }
+                layout="responsive"
+                objectFit="cover"
+                // objectPosition="20% 20%"
+                // quality={100}
+              />
+            </div>
+            {/* <TransitionGroup> */}
+            {/* {!isHideText && ( */}
+            {/* <CSSTransition key={3} timeout={500} classNames={'item'}> */}
 
-                        <TransitionGroup>
-                            {loadingFlag && (
-                                <CSSTransition key={1} timeout={1000} classNames={'revealingContainer'}>
-                                    <div className={expertStyles.wrapper}>
-
-                                        <TransitionGroup className={expertStyles.loaderContainer}>
-                                            {revealing && (
-                                                <CSSTransition key={3} timeout={2000} classNames={'revealing2'}>
-                                                    <div className={expertStyles.loader} style={{ backgroundImage: `url(${nextImg.src})` }}>
-                                                    </div>
-                                                </CSSTransition>
-                                            )}
-                                        </TransitionGroup>
-                                        <TransitionGroup className={expertStyles.loaderContainer}>
-                                            {revealing && (
-                                                <CSSTransition key={3} timeout={2000} classNames={'revealing2'}>
-                                                    <div className={expertStyles.loader} style={{ backgroundImage: `url(${nextImg.src})` }}>
-                                                    </div>
-                                                </CSSTransition>
-                                            )}
-                                        </TransitionGroup>
-                                        <TransitionGroup className={expertStyles.loaderContainer}>
-                                            {revealing && (
-                                                <CSSTransition key={3} timeout={2000} classNames={'revealing2'}>
-                                                    <div className={expertStyles.loader} style={{ backgroundImage: `url(${nextImg.src})` }}>
-                                                    </div>
-                                                </CSSTransition>
-                                            )}
-                                        </TransitionGroup>
-                                        <TransitionGroup className={expertStyles.loaderContainer}>
-                                            {revealing && (
-                                                <CSSTransition key={3} timeout={2000} classNames={'revealing2'}>
-                                                    <div className={expertStyles.loader} style={{ backgroundImage: `url(${nextImg.src})` }}>
-                                                    </div>
-                                                </CSSTransition>
-                                            )}
-                                        </TransitionGroup>
-                                        <TransitionGroup className={expertStyles.loaderContainer}>
-                                            {revealing && (
-                                                <CSSTransition key={3} timeout={2000} classNames={'revealing2'}>
-                                                    <div className={expertStyles.loader} style={{ backgroundImage: `url(${nextImg.src})` }}>
-                                                    </div>
-                                                </CSSTransition>
-                                            )}
-                                        </TransitionGroup>
-                                    </div>
-                                </CSSTransition>
-                            )}
-                        </TransitionGroup>
-                        <div>
-                            <Image
-                                alt="expertise"
-                                unoptimized={true}
-                                loading="eager"                              
-                                // src={isMobile ? expContent[expertise].mobileImg : expContent[expertise].img}
-                                src={isMobile ? expContent[expertise].mobileImg : expContent[expertise].img}
-                                layout="responsive"
-                                objectFit="cover"
-                                // objectPosition="20% 20%"
-                                // quality={100}
-                            />
-                        </div>
-                        {/* <TransitionGroup> */}
-                            {/* {!isHideText && ( */}
-                                {/* <CSSTransition key={3} timeout={500} classNames={'item'}> */}
-
-                                    <div className={expertStyles.expBgText}>
-                                        <h1>Our Expertise</h1>
-                                        <Container>
-                                            <div className={expertStyles.elements}>
-                                                <ul>
-                                                    <li className={expertise == 0 ? expertStyles.active : ''} onClick={() => handleExpertise(0)}>
-                                                        Fashion
-                                                    </li>
-                                                    <li className={expertise == 1 ? expertStyles.active : ''} onClick={() => handleExpertise(1)}>
-                                                        Media
-                                                    </li>
-                                                    <li className={expertise == 2 ? expertStyles.active : ''} onClick={() => handleExpertise(2)}>
-                                                        Lifestyle
-                                                    </li>
-                                                    <li className={expertise == 3 ? expertStyles.active : ''} onClick={() => handleExpertise(3)}>
-                                                        Public Affairs
-                                                    </li>
-                                                    <li className={expertise == 4 ? expertStyles.active : ''} onClick={() => handleExpertise(4)}>
-                                                        Retail
-                                                    </li>
-                                                </ul>
-                                                <div className="text-center">
-                                                    <p>{expContent[expertise].description}</p>
-                                                    <div className={expertStyles.myBtn}>
-
-                                                        <Link href={`/expertise`}>
-                                                            <button>
-                                                                <a>
-                                                                    LEARN MORE
-                                                                </a>
-                                                            </button>
-                                                        </Link>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </Container>
-                                    </div>
-                                {/* </CSSTransition> */}
-                            {/* )} */}
-                        {/* </TransitionGroup> */}
+            <div className={expertStyles.expBgText}>
+              <h1>Our Expertise</h1>
+              <Container>
+                <div className={expertStyles.elements}>
+                  <ul>
+                    <li
+                      className={expertise == 0 ? expertStyles.active : ""}
+                      onClick={() => handleExpertise(0)}
+                    >
+                      Fashion
+                    </li>
+                    <li
+                      className={expertise == 1 ? expertStyles.active : ""}
+                      onClick={() => handleExpertise(1)}
+                    >
+                      Media
+                    </li>
+                    <li
+                      className={expertise == 2 ? expertStyles.active : ""}
+                      onClick={() => handleExpertise(2)}
+                    >
+                      Lifestyle
+                    </li>
+                    <li
+                      className={expertise == 3 ? expertStyles.active : ""}
+                      onClick={() => handleExpertise(3)}
+                    >
+                      Public Affairs
+                    </li>
+                    <li
+                      className={expertise == 4 ? expertStyles.active : ""}
+                      onClick={() => handleExpertise(4)}
+                    >
+                      Retail
+                    </li>
+                  </ul>
+                  <div className="text-center">
+                    <p>{expContent[expertise].description}</p>
+                    <div className={expertStyles.myBtn}>
+                      <Link href={`/expertise`}>
+                        <button>
+                          <a>LEARN MORE</a>
+                        </button>
+                      </Link>
                     </div>
-
-                </section>
-            </Parallax>
-        </ParallaxProvider>
-    )
-
+                  </div>
+                </div>
+              </Container>
+            </div>
+            {/* </CSSTransition> */}
+            {/* )} */}
+            {/* </TransitionGroup> */}
+          </div>
+        </section>
+      </Parallax>
+    </ParallaxProvider>
+  );
 }
 
-
 export default ClientComponent;
-
