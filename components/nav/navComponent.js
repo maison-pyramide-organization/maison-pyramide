@@ -227,12 +227,12 @@ export default function NavComponent() {
                   </a>
                 </Link>
                 <Link
-                  onClick={() => handleLinkClick(null)}
                   href="https://eshowroom.maisonpyramide.com"
                   rel="noreferrer"
                   target={"_blank"}
                 >
                   <a
+                    onClick={() => handleLinkClick(null)}
                     className={`nav-link ${navStyle.link} ${navStyle.arrow} ${
                       activeLink == 7 && navStyle.active
                     }`}

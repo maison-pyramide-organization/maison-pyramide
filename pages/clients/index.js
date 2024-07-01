@@ -34,8 +34,8 @@ export default function Clients() {
   const [_selectedClients, setSelectedClients] = useState([]);
   const [_featuredProjects, setFeaturedProjects] = useState([]);
   const [mainText, setMainText] = useState();
-  const [selectedTab, setSelectedTab] = useState("ALL");
   const [loader, setLoader] = useState(false);
+
   function Items({ currentItems }) {
     const router = useRouter();
     const handleClick = (id) => {
@@ -146,58 +146,57 @@ export default function Clients() {
       </>
     );
   }
-  function PaginatedItems({ itemsPerPage }) {
+
+  function PaginatedItems() {
+    const itemsPerPage = 6;
     // We start with an empty list of items.
+    const [projects, setProjects] = useState([]);
     const [currentItems, setCurrentItems] = useState(null);
     const [pageCount, setPageCount] = useState(0);
-    const [forceBegin, setForceBegin] = useState(false);
     const pageinationRef = useRef(null);
     const projectRef = useRef(null);
-    const [itemOffset, setItemOffset] = useState(0);
-    const [items, setItems] = useState([]);
-    const [projects, setProjects] = useState(items);
+    const router = useRouter();
+    let { pn: pageNumber = 0 } = router.query;
+    pageNumber = parseInt(pageNumber);
 
+    // GETS ALL FEATURED PROJECTS
     useEffect(() => {
       ProjectService.getFeaturedProjects()
         .then((res) => {
-          setItems(res.data);
-          setCurrentItems(res.data);
+          setProjects(res.data);
+          // setCurrentItems(res.data);
         })
         .catch((err) => {
           console.log("err", err);
         });
     }, []);
 
+    // SET CURRENT PROJECTS TO BE DISPLAYED
     useEffect(() => {
-      setProjects(items);
-      if (items.length > 0) {
-        handlePageClick({ selected: 0 });
-      }
-    }, [items]);
-
-    useEffect(() => {
-      // Fetch items from another resources.
-      const endOffset = itemOffset + itemsPerPage;
-      setCurrentItems(projects?.slice(itemOffset, endOffset));
+      const offset = (pageNumber * itemsPerPage) % projects?.length;
+      const endOffset = offset + itemsPerPage;
+      const currentProjects = projects?.slice(offset, endOffset);
+      setCurrentItems(currentProjects);
       setPageCount(Math.ceil(projects?.length / itemsPerPage));
-    }, [itemOffset, itemsPerPage, projects]);
+    }, [itemsPerPage, projects]);
 
     // Invoke when user click to request another page.
     const handlePageClick = (event) => {
-      const newOffset = (event.selected * itemsPerPage) % items.length;
-      setItemOffset(newOffset);
-      setForceBegin(true);
-      pageinationRef.current.state.selected = 0;
-      if (forceBegin) {
-        window.scrollTo({
-          top: Math.round(
-            projectRef.current.getBoundingClientRect().top +
-              document.documentElement.scrollTop -
-              100
-          ),
-          behavior: "smooth",
-        });
-      }
+      const pageNumber = event.selected;
+      router.push({
+        pathname: "/clients",
+        query: { pn: pageNumber },
+      });
+
+      // Scroll to the top of section
+      window.scrollTo({
+        top: Math.round(
+          projectRef.current?.getBoundingClientRect().top +
+            document.documentElement.scrollTop -
+            200
+        ),
+        behavior: "smooth",
+      });
     };
 
     return (
@@ -205,26 +204,30 @@ export default function Clients() {
         <Row className={clientsStyles.posts}>
           <Items currentItems={currentItems} />
           <ReactPaginate
+            initialPage={pageNumber}
+            disableInitialCallback={true}
             ref={pageinationRef}
+            pageCount={3}
+            pageRangeDisplayed={3}
+            onPageChange={handlePageClick}
+            className={"d-flex"}
+            renderOnZeroPageCount={null}
+            activeClassName="activePaginate"
             breakLabel="..."
             nextLabel="NEXT"
-            activeClassName="activePaginate"
-            onPageChange={handlePageClick}
-            pageRangeDisplayed={3}
-            className={"d-flex"}
-            pageCount={pageCount}
             previousLabel="PREV"
-            renderOnZeroPageCount={null}
           />
         </Row>
       </section>
     );
   }
+
   const headerVariants = {
     hidden: { opacity: 0, y: "10%", scale: 1.05 },
     // hidden: { opacity: 0, y: "30%" ,scale:1.05},
     enter: { opacity: 1, y: 0, scale: 1 },
   };
+
   const textVariants = {
     hidden: { opacity: 0, x: 15 },
     enter: { opacity: 1, x: 0 },
@@ -236,6 +239,7 @@ export default function Clients() {
     }, []);
   };
 
+  // SETTING HEADER TEXT
   useEffect(() => {
     let text =
       "Our clients range from leading multinationals and heritage brands to the hottest emerging brands, across media, Iifestyle, fashion, and retail.";
@@ -243,6 +247,7 @@ export default function Clients() {
     textArr?.map((word, i) => {
       textArr[i] = (
         <motion.span
+          key={i}
           initial="hidden"
           whileInView={"enter"}
           //   viewport={{ once: true }}
@@ -301,6 +306,7 @@ export default function Clients() {
       setSelectedClients(res.data);
     });
   }, []);
+
   return (
     // <Layout>
     <>
@@ -309,6 +315,8 @@ export default function Clients() {
       <ParallaxProvider>
         <ParallaxCache />
       </ParallaxProvider>
+
+      {/* HEADER */}
       <header className={clientsStyles.main}>
         <Container>
           <div style={{ overflow: "hidden" }}>
@@ -337,18 +345,22 @@ export default function Clients() {
           </p>
         </Container>
       </header>
+
+      {/* FEATURED PROJECTS */}
       <section className={clientsStyles.feat_projects}>
         <Container>
           <h2 className="text-center">Featured Projects</h2>
           <TransitionGroup>
             <CSSTransition key={2} classNames={"item"} timeout={2000}>
               <Container fluid className={clientsStyles.posts_contain}>
-                <PaginatedItems itemsPerPage={6} selectedTab={selectedTab} />
+                <PaginatedItems />
               </Container>
             </CSSTransition>
           </TransitionGroup>
         </Container>
       </section>
+
+      {/* SELECTED CLIENTS */}
       <section className={clientsStyles.selected_clients} id="selected-clients">
         <Container fluid>
           <h2>Selected clients</h2>
@@ -430,6 +442,7 @@ export default function Clients() {
           </div>
         </Container>
       </section>
+
       {/* </Layout> */}
     </>
   );
