@@ -5,6 +5,12 @@
 @font-face {
   font-family: "Suisse Int'l bold";
   src: url(../public/font/SuisseIntl/SuisseIntlRegular.otf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Suisse Int'l semi";
+  src: url(../public/font/SuisseIntl/SuisseIntl-SemiBold.otf);
+  font-weight: 600;
 }
 
 @font-face {

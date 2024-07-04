@@ -10,34 +10,19 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import expertStyles from "./Expertise.module.scss";
 
-// import expimg from '../../public/imgs/expbg.png';
 // import expimg2 from '../../public/imgs/homebg.png';
 // import LoaderComponent from '../loader/Loader';
-
-// import expImgMobile from '../../public/imgs/mobile/expertbgM.png';
-// import expimgt from '../../public/imgs/expbg.png';
-// import expimg from '../../public/imgs/Untitled-4-04.png';
-// import expimg2 from '../../public/imgs/Untitled-4-03.png';
-// import expimg3 from '../../public/imgs/Untitled-4-02.png';
-// import expimg4 from '../../public/imgs/Untitled-4-05.png';
-// import expimg5 from '../../public/imgs/Untitled-4-01.png';
-
-// import expmobileimg1 from '../../public/imgs/mob-exp-10.png';
-// import expmobileimg2 from '../../public/imgs/mob-exp-09.png';
-// import expmobileimg3 from '../../public/imgs/mob-exp-08.png';
-// import expmobileimg4 from '../../public/imgs/mob-exp-07.png';
-// import expmobileimg5 from '../../public/imgs/mob-exp-06.png';
 
 import fashionExpImg from "../../public/imgs/fashion-desktop.webp";
 import mediaExpImg from "../../public/imgs/media-desktop.webp";
 import publicExpImg from "../../public/imgs/public-affairs-desktop.webp";
 import lifeExpImg from "../../public/imgs/lifestyle-desktop.webp";
-import retailExpImg from "../../public/imgs/retail-desktop.png";
+import retailExpImg from "../../public/imgs/retail-desktop.webp";
 import fashionExpImgMob from "../../public/imgs/fashion-mobile.webp";
 import mediaExpImgMob from "../../public/imgs/media-mobile.webp";
 import publicExpImgMob from "../../public/imgs/public-affairs-mobile.webp";
 import lifeExpImgMob from "../../public/imgs/lifestyle-mobile.webp";
-import retailExpImgMob from "../../public/imgs/retail-mobile.png";
+import retailExpImgMob from "../../public/imgs/retail-mobile.webp";
 
 const IsMobileComponent = dynamic(
   () => {
