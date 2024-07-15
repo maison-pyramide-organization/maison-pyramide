@@ -136,7 +136,7 @@ export default function HomeCarousel() {
                         {titleWithoutLastWords(
                           _items[activeIdx]?.attributes?.title
                         )}{" "}
-                        <span class="no-wrap">
+                        <span className="no-wrap">
                           {titleLastWords(_items[activeIdx]?.attributes?.title)}
                         </span>
                       </h2>
