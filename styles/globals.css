@@ -555,3 +555,7 @@ ul li:hover {
     transition: all 0.15s ease-in-out;
   }
 }
+
+.no-wrap {
+  white-space: nowrap;
+}

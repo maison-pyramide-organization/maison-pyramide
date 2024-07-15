@@ -92,6 +92,18 @@ export default function HomeCarousel() {
     }, 1000);
   };
 
+  const titleLastWords = (title) => {
+    const words = title.trim().split(" ");
+    const lastWords = words.slice(-2).join(" ");
+    return lastWords;
+  };
+  const titleWithoutLastWords = (title) => {
+    const words = title.trim().split(" ");
+    words.splice(-2);
+    const newTitle = words.join(" ");
+    return newTitle;
+  };
+
   return (
     _items &&
     _items.length && (
@@ -120,7 +132,13 @@ export default function HomeCarousel() {
                         {_items[activeIdx]?.attributes?.client_name}
                       </p>
                       <h2 className={`${sliderStyle.title}`}>
-                        {_items[activeIdx]?.attributes?.title}
+                        {/* {_items[activeIdx]?.attributes?.title} */}
+                        {titleWithoutLastWords(
+                          _items[activeIdx]?.attributes?.title
+                        )}{" "}
+                        <span class="no-wrap">
+                          {titleLastWords(_items[activeIdx]?.attributes?.title)}
+                        </span>
                       </h2>
                       {_items[activeIdx]?.attributes?.tags && (
                         <ul>
