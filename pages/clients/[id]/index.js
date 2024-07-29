@@ -1,22 +1,10 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
-
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 import { AnimatePresence, motion } from "framer-motion";
-
-import Layout from "../../../components/layout/Layout";
-// import projectBanner from "../../../public/imgs/projectviewimg.png";
-// import mobileBanner from "../../../public/imgs/mobile/orangegirlmobile.png";
-// import projectimg1 from '../../../public/imgs/projectview1.png';
-// import projectimg1mobile from '../../../public/imgs/mobile/twogirlsmobile.png';
-// import projectimg2 from '../../../public/imgs/projectview2.png';
-// import projectimg3 from '../../../public/imgs/projectview3.png';
-// import projectimg4 from '../../../public/imgs/projectview4.png';
-// import projectResults from '../../../public/imgs/projectresults.png';
-
 import projectStyles from "./Project.module.scss";
 import FeatureService from "../../api/services/FeatureService";
 
