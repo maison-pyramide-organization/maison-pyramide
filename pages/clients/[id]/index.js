@@ -404,14 +404,6 @@ export default function Project() {
                           <div className={projectStyles.sol_text}>
                             {/* <h3>Our Solution</h3> */}
                             <pre style={{ whiteSpace: "break-spaces" }}>
-                              {/* Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam.
-                                <br className="mobile"/>
-                                <br className="mobile"/>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec. Pellentesque quam adipiscing faucibus laoreet faucibus scelerisque.
-<p className="disktop_only">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc, sed ornare sed tortor consectetur suspendisse commodo, posuere tortor. Morbi aliquam, et mattis integer. Rhoncus eget gravida vel amet blandit enim velit donec. Pellentesque quam adipiscing faucibus laoreet faucibus scelerisque. 
-
-</p> */}
                               {animatedText(data.solution_description)}
                             </pre>
                           </div>
