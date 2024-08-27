@@ -8,13 +8,9 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import { Parallax } from "react-scroll-parallax";
 import { motion } from "framer-motion";
 
-import Layout from "../components/layout/Layout";
 import ClientComponent from "../components/clientComonent/clientComponent";
 import ExpertiseComponent from "../components/expertiseComponent/expertiseComponent";
 
-// import bgVideo from '../public/imgs/video.mp4';
-
-import variables from "../styles/variables.module.scss";
 import homeStyles from "./Home.module.scss";
 const HomeSliderCarousel = dynamic(
   () => {
@@ -95,7 +91,6 @@ function Home() {
             id="myVideo"
             style={{ width: "100%", height: "100vh", objectFit: "cover" }}
           >
-            {/* <source src={isMobile?"/imgs/videobgmobile.mp4":"/imgs/videobg.mp4"} /> */}
             <source
               src={
                 isMobile
