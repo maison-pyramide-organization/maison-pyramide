@@ -78,6 +78,7 @@ function Home() {
     return textArr;
   };
 
+  console.log("isM", isMobile);
   return (
     <>
       <IsMobileComponent handleMobile={useHandleMobile} />

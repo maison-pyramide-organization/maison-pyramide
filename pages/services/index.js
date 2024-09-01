@@ -56,6 +56,7 @@ function Services() {
     textArr?.map((word, i) => {
       textArr[i] = (
         <motion.span
+          key={i}
           initial="hidden"
           // animate="enter"
           exit="exit"
@@ -183,7 +184,7 @@ function Services() {
                     <h2>{selectedImg?.client_name}</h2>
                     <p>{selectedImg?.img_title}</p>
                   </div>
-                  {selectedImg.feature > 10 && (
+                  {selectedImg.feature?.length > 5 && (
                     <div className={servicesStyles.arrow_conatiner}>
                       <Link href={`/clients/${selectedImg.feature}`}>
                         <span className={servicesStyles.arrow}>
