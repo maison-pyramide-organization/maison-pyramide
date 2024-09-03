@@ -8,15 +8,8 @@ import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { AnimatePresence, motion } from "framer-motion";
 
-import Layout from "../../components/layout/Layout";
 import expImg from "../../public/imgs/Group 156184.png";
 import mobileexpImg from "../../public/imgs/mobile/mobileexpgirl.png";
-import expImg2 from "../../public/imgs/coatgirl.png";
-import expImg3 from "../../public/imgs/azzie.png";
-import expImg4 from "../../public/imgs/shelves.png";
-import expImg5 from "../../public/imgs/mics.png";
-import expImg6 from "../../public/imgs/pa.png";
-
 import expertiseStyles from "./Expertise.module.scss";
 import ExpertiseService from "../api/services/ExpertiseService";
 

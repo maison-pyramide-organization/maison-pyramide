@@ -13,6 +13,7 @@ import ClientService from "../../pages/api/services/ClientService";
 import clientsStyles from "./Clients.module.scss";
 import ProjectService from "../api/services/ProjectService";
 import { useRef } from "react";
+import { Network } from "../api/Network";
 
 const ParallaxCache = dynamic(
   () => {
@@ -34,7 +35,6 @@ export default function Clients() {
   const [_selectedClients, setSelectedClients] = useState([]);
   const [_featuredProjects, setFeaturedProjects] = useState([]);
   const [mainText, setMainText] = useState();
-  const [loader, setLoader] = useState(false);
 
   function Items({ currentItems }) {
     const router = useRouter();
@@ -295,7 +295,7 @@ export default function Clients() {
   };
 
   useEffect(() => {
-    ProjectService.getFeaturedProjects()
+    ProjectService.getProjects()
       .then((res) => {
         setFeaturedProjects(res.data);
       })

@@ -11,7 +11,6 @@ import ProjectService from "../../pages/api/services/ProjectService";
 
 export default function HomeCarousel() {
   const router = useRouter();
-
   const [activeIdx, setActiveIdx] = React.useState(0);
   const [slideAnimationState, setSlideAnimationState] = React.useState(false);
   const [backSlideAnimationState, setBackSlideAnimationState] =
@@ -21,28 +20,26 @@ export default function HomeCarousel() {
   const [textAnimation, setTextAnimation] = React.useState(false);
   const [_items, setItems] = React.useState([]);
 
-  useEffect(() => {
-    getProjects();
-  }, []);
-
   const getProjects = () => {
     ProjectService.getFeaturedProjects()
       .then((res) => {
         setItems(res.data);
-        // res.data.map(item => {
-        // console.log('sss',item.attributes.image.custom_data.url);
-        // })
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
+  useEffect(() => {
+    getProjects();
+  }, []);
+
   const handleClick = (id) => {
     if (id) {
       router.push(`clients/${id}`);
     }
   };
+
   const prevClick = (e) => {
     e.stopPropagation();
     setShowMiddleAnimation(true);
@@ -51,10 +48,6 @@ export default function HomeCarousel() {
     setTypeSlide("prev");
     setTextAnimation(true);
 
-    // setTimeout(() => {
-    //     setTextAnimation(false);
-
-    // },400)
     setTimeout(() => {
       setShowMiddleAnimation(false);
       setBackSlideAnimationState(false);
@@ -97,6 +90,7 @@ export default function HomeCarousel() {
     const lastWords = words.slice(-2).join(" ");
     return lastWords;
   };
+
   const titleWithoutLastWords = (title) => {
     const words = title.trim().split(" ");
     words.splice(-2);
@@ -132,7 +126,6 @@ export default function HomeCarousel() {
                         {_items[activeIdx]?.attributes?.client_name}
                       </p>
                       <h2 className={`${sliderStyle.title}`}>
-                        {/* {_items[activeIdx]?.attributes?.title} */}
                         {titleWithoutLastWords(
                           _items[activeIdx]?.attributes?.title
                         )}{" "}
@@ -169,18 +162,15 @@ export default function HomeCarousel() {
               </TransitionGroup>
             </Col>
             <Col md={5}>
-              {_items.map((item, i) => {
-                return (
-                  <>
-                    <link
-                      key={i}
-                      rel="preload"
-                      as="image"
-                      href={item?.attributes.image?.custom_data?.url}
-                    ></link>
-                  </>
-                );
-              })}
+              {_items.map((item, i) => (
+                <link
+                  key={i}
+                  rel="preload"
+                  as="image"
+                  href={item?.attributes.image?.custom_data?.url}
+                ></link>
+              ))}
+
               <div
                 className={`${sliderStyle.current_img} ${
                   showMiddleAnimation && typeSlide == "next"
@@ -206,9 +196,6 @@ export default function HomeCarousel() {
             <Col md={5}>
               <div className={sliderStyle.rightPart}>
                 <div className={sliderStyle.next_slider_img}>
-                  {/* <TransitionGroup>
-                                {!slideAnimationState && (
-                                    <CSSTransition key={1} timeout={1000} classNames={"diagonal-item"}> */}
                   <div
                     className={`${sliderStyle.next_img} ${
                       showMiddleAnimation && typeSlide == "next"
@@ -221,7 +208,6 @@ export default function HomeCarousel() {
                     {_items[activeIdx + 1] &&
                     _items[activeIdx + 1].attributes?.image?.custom_data
                       ?.url ? (
-                      // <Image src={_items[activeIdx + 1].img} alt="girl"></Image>
                       <Image
                         layout="responsive"
                         unoptimized={true}
@@ -248,9 +234,6 @@ export default function HomeCarousel() {
                       ></Image>
                     )}
                   </div>
-                  {/* </CSSTransition>
-                                )}
-                            </TransitionGroup> */}
                 </div>
                 <div className={sliderStyle.slider_ctrls}>
                   <div
@@ -269,7 +252,6 @@ export default function HomeCarousel() {
 
                 <div className={sliderStyle.mobile_counter}>
                   {_items.map((item, key) => {
-                    // console.log('el testt',key,activeIdx);
                     return (
                       <span
                         key={key}
@@ -296,7 +278,6 @@ export default function HomeCarousel() {
                 {!showMiddleAnimation && (
                   <CSSTransition key={2} timeout={1000} classNames={"item"}>
                     <div className={`${sliderStyle.current_img}`}>
-                      {/* <Image src={_items[activeIdx]?.img} alt="girl"></Image> */}
                       <Image
                         src={
                           _items[activeIdx]?.attributes?.image?.custom_data?.url
@@ -366,7 +347,6 @@ export default function HomeCarousel() {
 
                 <div className={sliderStyle.mobile_counter}>
                   {_items.map((item, key) => {
-                    // console.log('tesssssst',key,activeIdx);
                     return (
                       <span
                         key={key}

@@ -110,6 +110,16 @@
     }
   }
 }
+.year_link {
+  padding-bottom: 4px;
+  border-bottom: 1px solid white;
+  color: white;
+  &:hover {
+    color: #cee0a6;
+    border-color: #cee0a6;
+    cursor: pointer;
+  }
+}
 
 .info_row p:nth-child(1) {
   font-family: "Suisse Int'l semi";

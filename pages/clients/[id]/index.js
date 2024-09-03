@@ -39,6 +39,7 @@ export default function Project() {
   const [data, setData] = useState({});
   const query = useRouter();
   const id = query?.query?.id;
+  const years = data?.years && JSON.parse(data?.years);
 
   const headerVariants = {
     hidden: { opacity: 0, y: "30%", scale: 1.05 },
@@ -54,7 +55,6 @@ export default function Project() {
       FeatureService.getFeature(id)
         .then((res) => {
           setData(res.data.attributes);
-          console.log(res.data.attributes);
         })
         .catch((err) => {
           console.log(err);
@@ -98,21 +98,10 @@ export default function Project() {
       setIsMobile(value);
     }, []);
   };
+
   return (
     <>
       <IsMobileComponent handleMobile={useHandleMobile} />
-      {/* {isMobile? (
-                <>
-                    <link rel="preload" as="video" type="video/mp4" href={data?.mobile_video?.custom_data?.url}></link>
-                </>
-                ):
-                (
-                <>
-                    <link rel="preload" as="video" type="video/mp4" href={data?.video?.custom_data?.url}></link>
-                </>
-
-            )} */}
-
       {data && (
         <ParallaxProvider>
           <ParallaxCache />
@@ -153,7 +142,6 @@ export default function Project() {
                   : "",
               }}
             >
-              {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non enim velit massa <br className="disktop_only"/> venenatis. Eget quis quisque nunc tellus consequat egestas non. */}
               {animatedText(data.header_description)}
             </p>
           </header>
@@ -252,7 +240,6 @@ export default function Project() {
                   "easeOutQuint",
                 ]}
               >
-                {/* <Parallax translateY={[10, -90,'easeOutQuint']}> */}
                 <ParallaxCache />
                 <div className={projectStyles.project_text}>
                   <Container fluid>
@@ -261,14 +248,28 @@ export default function Project() {
                         <p>INTRO</p>
                         <p style={{ whiteSpace: "break-spaces" }}>
                           {animatedText(data.intro)}
-                          {/* {Lorem ipsum dolor sit amet, consect adipiscing elit. Hendrerit sed cursus mattis id sed viverra. Nibh nulla consequat lorem turpis. Sit morbi sed tempus, amet, mattis. Sagittis velit lectus in eget nec sagittis adipiscing porta. Aliquet commodo, velit feugiat egestas.
-    Eu, dignissim tortor, eu quis. Fer}mentum risus lobortis sed leo adipiscing interdum etiam ornare vel. Eu et ullamcorper. */}
                         </p>
                       </Col>
+
+                      {/* YEAR */}
                       <Col md={1} xs={4}>
                         <p className="mb-4">YEAR</p>
-                        <p>{data?.year?.substring(0, 4)}</p>
+                        <p>{data?.year}</p>
+                        {years?.map((year) => {
+                          year = year.split(":");
+                          return (
+                            <a
+                              className={projectStyles.year_link}
+                              href={`/clients/${year[1]}`}
+                              key={year}
+                            >
+                              {year[0]}
+                            </a>
+                          );
+                        })}
                       </Col>
+
+                      {/* SERVICES */}
                       <Col md={4} xs={8}>
                         <p className="mb-4">SERVICES</p>
                         <div>
@@ -280,6 +281,8 @@ export default function Project() {
                           </ul>
                         </div>
                       </Col>
+
+                      {/* INTRO */}
                       <Col md={6} className="disktop_only">
                         <p>INTRO</p>
                         <p
@@ -336,27 +339,23 @@ export default function Project() {
               </ParallaxProvider>
             </Container>
           </section>
+
           <ParallaxProvider>
             <ParallaxCache />
             <Parallax
               translateY={[
                 isMobile ? 20 : 20,
-                isMobile ? -20 : -20,
+                isMobile ? -10 : -10,
                 "easeOutQuint",
               ]}
             >
               <section className={projectStyles.challenge}>
                 <Container>
-                  {/* <h2>
-                The Challenge
-            </h2> */}
                   <p style={{ whiteSpace: "break-spaces" }}>
                     {animatedText(data.challenge_description)}
                   </p>
                 </Container>
                 <Container fluid>
-                  {/* <ParallaxProvider>
-                        <Parallax translateY={[0, isMobile?0:-20,'easeOutQuint']}> */}
                   <ParallaxCache />
                   <div className={projectStyles.solution}>
                     <div className="disktop_only">
@@ -411,8 +410,6 @@ export default function Project() {
                       </Row>
                     </Container>
                   </div>
-                  {/* </Parallax>
-                        </ParallaxProvider>       */}
                 </Container>
               </section>
             </Parallax>

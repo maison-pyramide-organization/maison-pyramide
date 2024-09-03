@@ -1,9 +1,6 @@
 import Image from "next/image";
 import React from "react";
-
 import sliderStyle from "./SliderStyle.module.scss";
-
-// const [slideWidth,setSlideWidth] = React.useState(33);
 
 const sleep = (ms = 0) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -14,13 +11,13 @@ const createItem = (position, idx, _items, isTranitioning) => {
   if (typeof window !== "undefined") {
     window.innerWidth > 700 ? (slideWidth = 33) : (slideWidth = 83);
   }
+
   const item = {
     styles: {
-      // opacity:(position == 0 || position == _items.length -1)&& isTranitioning?0:.5,//first
       opacity: 0.5, //first
       transform: `translateX(${position * slideWidth}vw) scale(.9)`,
     },
-    image: _items[idx].custom_data?.url,
+    image: _items[idx]?.custom_data?.url,
   };
 
   switch (position) {
