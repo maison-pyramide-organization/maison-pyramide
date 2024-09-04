@@ -254,7 +254,7 @@ export default function Project() {
                       {/* YEAR */}
                       <Col md={1} xs={4}>
                         <p className="mb-4">YEAR</p>
-                        <p>{data?.year}</p>
+                        <p className={projectStyles.current_year}>{data?.year}</p>
                         {years?.map((year) => {
                           year = year.split(":");
                           return (

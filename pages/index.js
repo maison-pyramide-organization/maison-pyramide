@@ -37,20 +37,12 @@ const textVariants = {
 };
 
 function Home() {
-  const [currentScroll, setCurrentScroll] = useState(0);
-
   const [isMobile, setIsMobile] = useState(null);
-  const [loadingFlag, setLoadingFlag] = useState(false);
 
   const useHandleMobile = (value) => {
     useEffect(() => {
       setIsMobile(value);
     }, []);
-  };
-
-  const handleExpertise = (n) => {
-    setLoadingFlag(true);
-    setExpertise(n);
   };
 
   const animatedText = (text) => {
@@ -78,7 +70,6 @@ function Home() {
     return textArr;
   };
 
-  console.log("isM", isMobile);
   return (
     <>
       <IsMobileComponent handleMobile={useHandleMobile} />
@@ -101,13 +92,6 @@ function Home() {
             />
           </video>
         )}
-        {/* {!isMobile && (
-        <div className={`${homeStyles.video_text} mobile`}>
-          <Image
-            src={videoText}
-          />
-        </div>
-      )} */}
       </section>
 
       <ParallaxProvider>
@@ -118,9 +102,6 @@ function Home() {
           <ParallaxCache />
           <section className={homeStyles.info_txt}>
             <Container fluid>
-              {/* <h1 className="text-center" style={{color:variables.primaryColorLight}}>GLOBAL GROWTH FOR <br className="disktop_only"/>
-          TREND-SETTING BRANDS</h1> */}
-
               <Row style={{ justifyContent: "space-around" }}>
                 <Col md={7}>
                   <div className={homeStyles.text}>
@@ -192,9 +173,6 @@ function Home() {
         <>
           <ParallaxProvider>
             <ParallaxCache />
-            {/* easeInOutSine */}
-            {/* ease */}
-            {/* easeInOut */}
             <Parallax
               translateY={[
                 isMobile ? 10 : 20,
@@ -206,11 +184,6 @@ function Home() {
             </Parallax>
           </ParallaxProvider>
         </>
-        {/* ) :
-        (
-          <HomeSliderCarousel/> 
-        )
-        } */}
       </section>
 
       <div
@@ -227,7 +200,6 @@ function Home() {
             isMobile ? "easeInQuint" : "easeInQuint",
           ]}
         >
-          {/* <Parallax translateY={[10, -90,'easeOutQuint']}> */}
           <ParallaxCache />
           <ClientComponent />
         </Parallax>

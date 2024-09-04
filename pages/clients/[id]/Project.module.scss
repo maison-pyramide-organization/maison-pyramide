@@ -110,14 +110,20 @@
     }
   }
 }
+.current_year {
+  width: fit-content;
+  padding-bottom: 4px;
+  border-bottom: 1px solid;
+  color: #cee0a6;
+  border-color: #cee0a6;
+}
 .year_link {
   padding-bottom: 4px;
   border-bottom: 1px solid white;
   color: white;
+  cursor: pointer;
   &:hover {
-    color: #cee0a6;
-    border-color: #cee0a6;
-    cursor: pointer;
+    color: white;
   }
 }
 
