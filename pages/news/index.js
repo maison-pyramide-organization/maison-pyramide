@@ -1,18 +1,13 @@
+import newsStyle from "./News.module.scss";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { useRouter } from 'next/router';
-
 import { useState, useEffect, useRef } from "react";
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 import { Container, Row, Col } from "react-bootstrap";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import ReactPaginate from 'react-paginate';
-import { motion } from 'framer-motion';
-
-import Layout from "../../components/layout/Layout";
-
+import ReactPaginate from "react-paginate";
+import { motion } from "framer-motion";
 import ArticleService from "../api/services/ArticlesService";
-import newsStyle from "./News.module.scss";
 import { StructuredText } from "react-datocms";
 
 const ParallaxCache = dynamic(
@@ -21,43 +16,61 @@ const ParallaxCache = dynamic(
   },
   { ssr: false }
 );
-
-const monthNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
+const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
 ];
-
 const headerVariants = {
-  hidden: { opacity: 0, y: "10%" ,scale:1.05},
-  enter: { opacity: 1, y: 0 ,scale:1}
-}
+  hidden: { opacity: 0, y: "10%", scale: 1.05 },
+  enter: { opacity: 1, y: 0, scale: 1 },
+};
 const textVariants = {
   hidden: { opacity: 0, x: 15 },
-  enter: { opacity: 1, x: 0 }
-}
+  enter: { opacity: 1, x: 0 },
+};
 
-
-function Items({ currentItems ,selectedTab }) {
-
-  const handlePost = (link) =>{
+function Items({ currentItems, selectedTab }) {
+  const handlePost = (link) => {
     // router.push(link);
-    window.open(link, '_blank');
-  }
+    window.open(link, "_blank");
+  };
 
   const formatDate = (value) => {
     let date = new Date(value);
     let month = monthNames[date.getMonth()];
     let year = date.getFullYear();
     return `${month} ${year}`;
-  }
+  };
 
   return (
     <>
       {currentItems &&
         currentItems.map((item, key) => (
           <Col md={6} key={key}>
-            <div className={newsStyle.post} onClick={() => handlePost(item?.attributes?.link)}>
+            <div
+              className={newsStyle.post}
+              onClick={() => handlePost(item?.attributes?.link)}
+            >
               <div className={newsStyle.news_img}>
-                <Image layout="responsive" width={100} objectPosition={"center"} unoptimized={true} objectFit={"cover"} height={70} src={item.attributes?.image?.custom_data?.url}></Image>
+                <Image
+                  layout="responsive"
+                  width={100}
+                  objectPosition={"center"}
+                  unoptimized={true}
+                  objectFit={"cover"}
+                  height={70}
+                  src={item.attributes?.image?.custom_data?.url}
+                ></Image>
                 <span className={newsStyle.news_flag}>
                   {item.attributes.tag}
                 </span>
@@ -66,21 +79,16 @@ function Items({ currentItems ,selectedTab }) {
               <div className={newsStyle.news_text}>
                 <h2>{item.attributes.sub_title}</h2>
                 <span>{formatDate(item.attributes.date)}</span>
-                <p>
-                  {item.attributes.description}
-                </p>
+                <p>{item.attributes.description}</p>
               </div>
             </div>
           </Col>
-
-
         ))}
     </>
   );
 }
 
-
-function PaginatedItems({ itemsPerPage ,selectedTab}) {
+function PaginatedItems({ itemsPerPage, selectedTab }) {
   // We start with an empty list of items.
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
@@ -90,37 +98,40 @@ function PaginatedItems({ itemsPerPage ,selectedTab}) {
   // Here we use item offsets; we could also use page offsets
   // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
-  const [items , setItems] = useState([]);
-  const [articles , setArticles] = useState(items);
+  const [items, setItems] = useState([]);
+  const [articles, setArticles] = useState(items);
 
-  useEffect(()=> {
-    ArticleService.getArticles().then(res => {
-      setItems(res.data);
-      setCurrentItems(res.data)
-    }).catch(err => {
-      console.log('err',err);
-    })
-  },[])
-  
   useEffect(() => {
-    if(selectedTab != 'ALL'){
-      setArticles(items.filter(item => item.attributes.tag.trim() == selectedTab));
-    }
-    else{
+    ArticleService.getArticles()
+      .then((res) => {
+        setItems(res.data);
+        setCurrentItems(res.data);
+      })
+      .catch((err) => {
+        console.log("err", err);
+      });
+  }, []);
+
+  useEffect(() => {
+    if (selectedTab != "ALL") {
+      setArticles(
+        items.filter((item) => item.attributes.tag.trim() == selectedTab)
+      );
+    } else {
       setArticles(items);
     }
-    
-    if(items.length > 0){
-      handlePageClick({selected:0});
+
+    if (items.length > 0) {
+      handlePageClick({ selected: 0 });
     }
-  },[selectedTab,items]);
-  
+  }, [selectedTab, items]);
+
   useEffect(() => {
     // Fetch items from another resources.
     const endOffset = itemOffset + itemsPerPage;
     setCurrentItems(articles?.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(articles?.length / itemsPerPage));
-  }, [itemOffset, itemsPerPage,articles]);
+  }, [itemOffset, itemsPerPage, articles]);
 
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
@@ -128,32 +139,34 @@ function PaginatedItems({ itemsPerPage ,selectedTab}) {
     setItemOffset(newOffset);
     setForceBegin(true);
     pageinationRef.current.state.selected = 0;
-    if(forceBegin){
-        window.scrollTo({
-          top: Math.round(newsRef.current.getBoundingClientRect().top + document.documentElement.scrollTop - 100),
-          behavior: 'smooth',
-      })
-        
+    if (forceBegin) {
+      window.scrollTo({
+        top: Math.round(
+          newsRef.current.getBoundingClientRect().top +
+            document.documentElement.scrollTop -
+            100
+        ),
+        behavior: "smooth",
+      });
     }
   };
-
 
   return (
     <section ref={newsRef}>
       <Row className={newsStyle.posts}>
-      <Items currentItems={currentItems}  selectedTab={selectedTab}/>
-      <ReactPaginate
-        ref={pageinationRef}
-        breakLabel="..."
-        nextLabel="NEXT"
-        activeClassName="activePaginate"
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={3}
-        ClassName={`${"paginateStyle"}`}
-        pageCount={pageCount}
-        previousLabel="PREV"
-        renderOnZeroPageCount={null}
-      />
+        <Items currentItems={currentItems} selectedTab={selectedTab} />
+        <ReactPaginate
+          ref={pageinationRef}
+          breakLabel="..."
+          nextLabel="NEXT"
+          activeClassName="activePaginate"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={3}
+          ClassName={`${"paginateStyle"}`}
+          pageCount={pageCount}
+          previousLabel="PREV"
+          renderOnZeroPageCount={null}
+        />
       </Row>
     </section>
   );
@@ -167,22 +180,31 @@ export default function News() {
   // following the API or data you're working with.
 
   const [loader, setLoader] = useState(false);
-  const [items , setItems] = useState([]);
+  const [items, setItems] = useState([]);
 
-  useEffect(()=> {
-      ArticleService.getSideArticles().then(res => {//change to side artice filter
-        setItems(res.data)
-      }).catch(err => {
-        console.log('err',err);
+  useEffect(() => {
+    ArticleService.getSideArticles()
+      .then((res) => {
+        //change to side artice filter
+        const sortedItems = res.data.sort((a, b) => {
+          const dateA = new Date(a.attributes.date);
+          const dateB = new Date(b.attributes.date);
+          // Compare the dates
+          return dateB - dateA;
+        });
+        setItems(sortedItems)
       })
-    },[]);
+      .catch((err) => {
+        console.log("err", err);
+      });
+  }, []);
 
   const formatDate = (value) => {
-    let date = new Date(value)
+    let date = new Date(value);
     let month = monthNames[date.getMonth()];
     let year = date.getFullYear();
     return `${month} ${year}`;
-  }
+  };
   const handleMenu = () => {
     setMenuState(!menuState);
   };
@@ -192,7 +214,7 @@ export default function News() {
     setTimeout(() => {
       setLoader(false);
     }, 2000);
-  }
+  };
   const handleSelectTab = (name) => {
     setSelectedTab(name);
     handleFilter();
@@ -200,19 +222,27 @@ export default function News() {
 
   const animatedText = (text) => {
     let textArr = text?.split(" ");
-    textArr?.map((word,i)=>{
-      textArr[i] =  <motion.span
-      initial="hidden"
-      whileInView="enter"
-      exit="exit"
-      variants={textVariants}
-      transition={{ duration: 1,delay: i*.02, ease: "easeInOut",type: 'linear' }}
-       >
-        {word+' '}
+    textArr?.map((word, i) => {
+      textArr[i] = (
+        <motion.span
+          key={i}
+          initial="hidden"
+          whileInView="enter"
+          exit="exit"
+          variants={textVariants}
+          transition={{
+            duration: 1,
+            delay: i * 0.02,
+            ease: "easeInOut",
+            type: "linear",
+          }}
+        >
+          {word + " "}
         </motion.span>
-    })
+      );
+    });
     return textArr;
-  }
+  };
 
   return (
     <>
@@ -224,47 +254,63 @@ export default function News() {
               animate="enter"
               exit="exit"
               variants={headerVariants}
-              transition={{ duration: 1.2, ease: "easeInOut",type: 'linear' }}
+              transition={{ duration: 1.2, ease: "easeInOut", type: "linear" }}
             >
-              KEEP UP WITH <br className="mobile" />
-              OUR LATEST <br className="mobile" /> NEWS
+              KEEP UP WITH OUR LATEST NEWS
             </motion.h1>
             <div>
               <p>
-
-              {animatedText("Learn about our latest events, product and brand launches, pop-ups, and artistic collaborations. And learn more about our mission to discover and elevate worthy brands in lifestyle, fashion, and luxury.")}
+                {animatedText(
+                  "Learn about our latest events, product and brand launches, pop-ups, and artistic collaborations. And learn more about our mission to discover and elevate worthy brands in lifestyle, fashion, and luxury."
+                )}
               </p>
             </div>
           </div>
         </Container>
       </header>
+
       <section className={`${newsStyle.main} disktop_only`}>
         <Container fluid>
-          <div className={newsStyle.img}>
-            {/* <div className={newsStyle.layer}>
-              <span className={newsStyle.featured_flag}>FEATURED</span>
-              <h2>Title goes here</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consect adipiscing elit. Nunc, sed
-                ornare sed tortor consectetur suspendisse commodo, posuere
-                tortor.
-              </p>
-            </div> */}
-          </div>
+          <div className={newsStyle.img}></div>
         </Container>
       </section>
+
+      {/* MAIN SECTION */}
       <section className={newsStyle.news}>
         <Container fluid>
           <Row>
+            {/* MAIN POSTS */}
             <Col md={9}>
               <div className={newsStyle.tabs}>
                 <ul>
                   <li>VIEWING :</li>
-                  <li  onClick={() => handleSelectTab("ALL")} className={selectedTab == 'ALL'?newsStyle.selected:''}>ALL</li>
-                  <li  onClick={() => handleSelectTab("COMPANY FEATURE")} className={selectedTab == 'COMPANY FEATURE'?newsStyle.selected:''}>COMPANY FEATURE</li>
+                  <li
+                    onClick={() => handleSelectTab("ALL")}
+                    className={selectedTab == "ALL" ? newsStyle.selected : ""}
+                  >
+                    ALL
+                  </li>
+                  <li
+                    onClick={() => handleSelectTab("COMPANY FEATURE")}
+                    className={
+                      selectedTab == "COMPANY FEATURE" ? newsStyle.selected : ""
+                    }
+                  >
+                    COMPANY FEATURE
+                  </li>
                   {/* <li  onClick={() => handleSelectTab("BLOG POST")}>BLOG POST</li> */}
-                  <li  onClick={() => handleSelectTab("PRESS RELEASE")} className={selectedTab == 'PRESS RELEASE'?newsStyle.selected:''}>PRESS RELEASE</li>
-                  <li className={`${newsStyle.all_btn} mobile`} onClick={handleMenu}>
+                  <li
+                    onClick={() => handleSelectTab("PRESS RELEASE")}
+                    className={
+                      selectedTab == "PRESS RELEASE" ? newsStyle.selected : ""
+                    }
+                  >
+                    PRESS RELEASE
+                  </li>
+                  <li
+                    className={`${newsStyle.all_btn} mobile`}
+                    onClick={handleMenu}
+                  >
                     {selectedTab}
                     <TransitionGroup>
                       {menuState && (
@@ -302,16 +348,6 @@ export default function News() {
                             >
                               PRESS RELEASE
                             </p>
-                            {/* <p
-                              className={
-                                selectedTab == "PRESS RELEASE2"
-                                  ? newsStyle.active
-                                  : ""
-                              }
-                              onClick={() => handleSelectTab("PRESS RELEASE2")}
-                            >
-                              PRESS RELEASE
-                            </p> */}
                           </div>
                         </CSSTransition>
                       )}
@@ -322,7 +358,7 @@ export default function News() {
                 <div>
                   <TransitionGroup>
                     {loader && (
-                      <CSSTransition key={2} classNames={'item'} timeout={2000}>
+                      <CSSTransition key={2} classNames={"item"} timeout={2000}>
                         <div className={newsStyle.loading_line_wrapper}>
                           <div className={newsStyle.loading_line}>
                             <div
@@ -339,34 +375,42 @@ export default function News() {
                 </div>
                 <TransitionGroup>
                   {!loader && (
-                    <CSSTransition key={2} classNames={'item'} timeout={2000}>
+                    <CSSTransition key={2} classNames={"item"} timeout={2000}>
                       <Container fluid className={newsStyle.posts_contain}>
-                        
-                          <PaginatedItems itemsPerPage={6} selectedTab={selectedTab}/>
+                        <PaginatedItems
+                          itemsPerPage={6}
+                          selectedTab={selectedTab}
+                        />
                       </Container>
                     </CSSTransition>
                   )}
                 </TransitionGroup>
               </div>
             </Col>
-            <Col md={3} className={newsStyle.side_posts_container}>
-              {items.map((item,ind)=>{
-                return(
-                <div key={ind} className={newsStyle.side_post}>
-                  <span className={newsStyle.news_flag}>{item.attributes.tag}</span>
-                  <h2 className={newsStyle.title}>{item.attributes.title}</h2>
-                  <span className={newsStyle.date}>{formatDate(item.attributes.date)}</span>
-                  <div className={newsStyle.structured_text}>
-                  <StructuredText data={item.attributes.structured_text} />
-                  </div>
-                </div>
-                )
-              })}
 
+            {/* SIDE POSTS */}
+            <Col md={3} className={newsStyle.side_posts_container}>
+              {items.map((item, ind) => {
+                return (
+                  <div key={ind} className={newsStyle.side_post}>
+                    <span className={newsStyle.news_flag}>
+                      {item.attributes.tag}
+                    </span>
+                    <h2 className={newsStyle.title}>{item.attributes.title}</h2>
+                    <span className={newsStyle.date}>
+                      {formatDate(item.attributes.date)}
+                    </span>
+                    <div className={newsStyle.structured_text}>
+                      <StructuredText data={item.attributes.structured_text} />
+                    </div>
+                  </div>
+                );
+              })}
             </Col>
           </Row>
         </Container>
       </section>
+
       <ParallaxProvider>
         <ParallaxCache />
       </ParallaxProvider>

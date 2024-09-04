@@ -224,7 +224,6 @@ export default function Clients() {
 
   const headerVariants = {
     hidden: { opacity: 0, y: "10%", scale: 1.05 },
-    // hidden: { opacity: 0, y: "30%" ,scale:1.05},
     enter: { opacity: 1, y: 0, scale: 1 },
   };
 
@@ -308,7 +307,6 @@ export default function Clients() {
   }, []);
 
   return (
-    // <Layout>
     <>
       <IsMobileComponent handleMobile={useHandleMobile} />
       <PreloadImages />
@@ -323,9 +321,7 @@ export default function Clients() {
             <AnimatePresence>
               <motion.h1
                 initial="hidden"
-                // animate="enter"
                 whileInView={"enter"}
-                // viewport={{ once: true }}
                 variants={headerVariants}
                 className="text-center"
                 transition={{

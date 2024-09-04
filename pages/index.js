@@ -1,17 +1,14 @@
+import homeStyles from "./Home.module.scss";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-
 import { useEffect, useState } from "react";
-
 import { Row, Col, Container } from "react-bootstrap";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { Parallax } from "react-scroll-parallax";
 import { motion } from "framer-motion";
-
 import ClientComponent from "../components/clientComonent/clientComponent";
 import ExpertiseComponent from "../components/expertiseComponent/expertiseComponent";
 
-import homeStyles from "./Home.module.scss";
 const HomeSliderCarousel = dynamic(
   () => {
     return import("../components/homeSlider/HomeSlider");
