@@ -41,7 +41,7 @@ const textVariants = {
 
 function Items({ currentItems, selectedTab }) {
   const handlePost = (link) => {
-    // router.push(link);
+    if (!link) return;
     window.open(link, "_blank");
   };
 
@@ -192,7 +192,7 @@ export default function News() {
           // Compare the dates
           return dateB - dateA;
         });
-        setItems(sortedItems)
+        setItems(sortedItems);
       })
       .catch((err) => {
         console.log("err", err);
@@ -208,7 +208,6 @@ export default function News() {
   const handleMenu = () => {
     setMenuState(!menuState);
   };
-
   const handleFilter = () => {
     setLoader(true);
     setTimeout(() => {
@@ -219,7 +218,6 @@ export default function News() {
     setSelectedTab(name);
     handleFilter();
   };
-
   const animatedText = (text) => {
     let textArr = text?.split(" ");
     textArr?.map((word, i) => {
@@ -298,7 +296,6 @@ export default function News() {
                   >
                     COMPANY FEATURE
                   </li>
-                  {/* <li  onClick={() => handleSelectTab("BLOG POST")}>BLOG POST</li> */}
                   <li
                     onClick={() => handleSelectTab("PRESS RELEASE")}
                     className={
@@ -398,7 +395,7 @@ export default function News() {
                     </span>
                     <h2 className={newsStyle.title}>{item.attributes.title}</h2>
                     <span className={newsStyle.date}>
-                      {formatDate(item.attributes.date)}
+                      {item.attributes.year || formatDate(item.attributes.date)}
                     </span>
                     <div className={newsStyle.structured_text}>
                       <StructuredText data={item.attributes.structured_text} />
