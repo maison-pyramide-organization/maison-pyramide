@@ -227,7 +227,7 @@ export default function NavComponent() {
                   </a>
                 </Link>
                 <Link
-                  href="https://eshowroom.maisonpyramide.com"
+                  href="https://showroom.maisonpyramide.com"
                   rel="noreferrer"
                   target={"_blank"}
                 >

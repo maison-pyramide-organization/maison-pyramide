@@ -255,7 +255,6 @@ export default function Group() {
                           ></Image>
                         </div>
                       </div>
-                      {/* <h3><a href="https://eshowroom.maisonpyramide.com/" target={"_blank"} rel="noreferrer">{animatedText("The Showroom")}</a></h3> */}
                       <div className={groupStyles.groupDescription}>
                         <span>
                           {animatedText(
@@ -265,7 +264,7 @@ export default function Group() {
                       </div>
                       <a
                         target="_blank"
-                        href="https://eshowroom.maisonpyramide.com/"
+                        href="https://showroom.maisonpyramide.com/"
                         rel="noreferrer"
                       >
                         <button className={groupStyles.groupButton}>

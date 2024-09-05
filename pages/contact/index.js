@@ -149,25 +149,7 @@ export default function Contact() {
                     <div className={contactStyles.contact_info}>
 
                 <Row>
-                    {/* <Col md={3}>
-                        <p>
-                        <span>CONTACT@MAISONPYRAMIDE.COM</span>
-                        <br/>
-                        <span className={contactStyles.link}>
-                            <a href="https://eshowroom.maisonpyramide.com">
-
-                            E SHOWROOM
-                            </a>
-                        </span>
-                        <br/>
-                        <span className={contactStyles.link}>
-                            <a href="https://www.instagram.com/maisonpyramide/">
-
-                            INSTAGRAM
-                            </a>
-                        </span>
-                        </p>
-                    </Col> */}
+         
                     <Col md={12}>
                     <ul className={contactStyles.list}>
                         <li>
@@ -175,7 +157,7 @@ export default function Contact() {
                         <p>CONTACT@MAISONPYRAMIDE.COM</p>
                         {/* <br/> */}
                         <span className={contactStyles.link}>
-                            <a target={"_blank"} rel="noreferrer" href="https://eshowroom.maisonpyramide.com">
+                            <a target={"_blank"} rel="noreferrer" href="https://showroom.maisonpyramide.com">
 
                             E SHOWROOM
                             </a>
@@ -191,26 +173,17 @@ export default function Contact() {
                         </li>
                         <li>
                          <p>DUBAI</p>
-                        {/* <span className="my-2">Unit B201, Building 7, 
-Dubai design district.</span> */}
                         <span><a href="mailto:dubai@maisonpyramide.com"> dubai@maisonpyramide.com </a></span>
                         </li>
                         <li>
                         <p>RIYADH</p>
-                        {/* <span className="my-2">Ras Beirut, Kantari district, Michel Chiha street.</span> */}
                         <span><a href="mailto:riyadh@maisonpyramide.com"> riyadh@maisonpyramide.com </a></span>
                         </li>
                         <li>
                         <p>CAIRO</p>
-                        {/* <span className="my-2">14 Kamal Al Tawil, Zamalek</span> */}
                         <span><a href="mailto:cairo@maisonpyramide.com"> cairo@maisonpyramide.com </a></span>
                         </li>
                        
-                        {/* <li>
-                        <p>LONDON</p>
-                        <span>+20 106 0091742</span>
-                        <span>contact@maisonpyramide.com</span>
-                        </li> */}
                     </ul>
                     </Col>
                 </Row>

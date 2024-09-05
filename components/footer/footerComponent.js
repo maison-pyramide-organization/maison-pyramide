@@ -210,7 +210,7 @@ export default function FooterComponent() {
                 <a
                   rel="noreferrer"
                   target={"_blank"}
-                  href="https://eshowroom.maisonpyramide.com/"
+                  href="https://showroom.maisonpyramide.com/"
                 >
                   E-SHOWROOM
                 </a>
@@ -246,7 +246,7 @@ export default function FooterComponent() {
                 <a
                   target={"_blank"}
                   rel="noreferrer"
-                  href="https://eshowroom.maisonpyramide.com/"
+                  href="https://showroom.maisonpyramide.com/"
                 >
                   E-SHOWROOM
                 </a>

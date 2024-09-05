@@ -29,7 +29,7 @@ function Services() {
     },
   ];
   const POWERED_BY = {
-    "THE SHOWROOM": "https://eshowroom.maisonpyramide.com/",
+    "THE SHOWROOM": "https://showroom.maisonpyramide.com/",
     "EGO&EAST": "https://www.instagram.com/egoandeast/",
   };
 
