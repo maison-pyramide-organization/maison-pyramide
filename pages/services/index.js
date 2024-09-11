@@ -2,11 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect,  useState } from "react";
 
 import { Container, Row, Col, Accordion } from "react-bootstrap";
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
-import { ParallaxProvider, Parallax } from "react-scroll-parallax";
+import { ParallaxProvider } from "react-scroll-parallax";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { motion } from "framer-motion";
 
