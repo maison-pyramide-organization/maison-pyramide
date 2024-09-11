@@ -1,6 +1,5 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { useRouter } from "next/router";
 import MPLOGO from "../../public/imgs/MPLOGO.png";
 import SHOWROOMLOGO from "../../public/imgs/SHOWROOMLOGO.png";
 import EASTLOGO from "../../public/imgs/EGO&EASTLOGO.png";
@@ -11,11 +10,10 @@ import { Container, Row, Col } from "react-bootstrap";
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 import { motion } from "framer-motion";
 
-import Layout from "../../components/layout/Layout";
-
 import groupStyles from "./Group.module.scss";
 import GroupServices from "../api/services/GroupService";
 import ArticleService from "../api/services/ArticlesService";
+
 const GroupSlider = dynamic(
   () => {
     return import("../../components/groupSlider/GroupSlider");
@@ -39,22 +37,14 @@ export default function Group() {
   const [isMobile, setIsMobile] = useState(null);
   const [data, setData] = useState({});
   const [articles, setArticles] = useState([]);
-  const router = useRouter();
 
   const useHandleMobile = (value) => {
     useEffect(() => {
       setIsMobile(value);
     }, []);
   };
-  const [isTextExpand, setIsTextExpand] = useState([
-    false,
-    false,
-    false,
-    false,
-  ]);
 
   const headerVariants = {
-    // hidden: { opacity: 0, y: "10%" ,scale:1.05},
     hidden: { opacity: 0, y: "10%", scale: 1.05 },
     enter: { opacity: 1, y: 0, scale: 1 },
   };
@@ -63,25 +53,18 @@ export default function Group() {
     enter: { opacity: 1, x: 0 },
   };
 
-  const toggleExpandText = (i) => {
-    let isTextExpandArr = [...isTextExpand];
-    isTextExpandArr[i] = !isTextExpandArr[i];
-
-    setIsTextExpand(isTextExpandArr);
-  };
   const handlePost = (link) => {
-    // router.push(link);
     window.open(link, "_blank");
   };
+
   useEffect(() => {
     GroupServices.getGroup().then((res) => {
-      console.log(res.data[0].attributes);
       setData(res.data[0].attributes);
     });
   }, []);
+
   useEffect(() => {
     if (data?.press) {
-      // console.log(data.press);
       data.press.forEach((item) => {
         ArticleService.getArticle(item).then((res) => {
           setArticles((prev) => [...prev, res.data]);
@@ -95,6 +78,7 @@ export default function Group() {
     textArr?.map((word, i) => {
       textArr[i] = (
         <motion.span
+          key={i}
           initial="hidden"
           whileInView="enter"
           exit="exit"
@@ -170,10 +154,11 @@ export default function Group() {
               </video>
             )}
           </header>
+
           <section className={groupStyles.info}>
-            {/* <ParallaxProvider> */}
             <Parallax translateY={[isMobile ? 10 : 20, isMobile ? -10 : -30]}>
               <ParallaxCache />
+
               <Container>
                 <p className={groupStyles.text}>
                   {animatedText(data?.description)}
@@ -181,8 +166,6 @@ export default function Group() {
                 <ul>
                   <li className="text-center">
                     <p>DUBAI</p>
-                    {/* <span>Unit B201, Building 7, 
-  Dubai design district.</span> */}
                     <span>
                       <a href="mailto:dubai@maisonpyramide.com">
                         dubai@maisonpyramide.com
@@ -191,7 +174,6 @@ export default function Group() {
                   </li>
                   <li className="text-center">
                     <p>RIYADH</p>
-                    {/* <span>Ras Beirut, Kantari district, Michel Chiha street.</span> */}
                     <span>
                       <a href="mailto:riyadh@maisonpyramide.com">
                         riyadh@maisonpyramide.com
@@ -200,7 +182,6 @@ export default function Group() {
                   </li>
                   <li className="text-center">
                     <p>CAIRO</p>
-                    {/* <span>14 Kamal Al Tawil, Zamalek</span> */}
                     <span>
                       <a href="mailto:cairo@maisonpyramide.com">
                         cairo@maisonpyramide.com
@@ -273,6 +254,7 @@ export default function Group() {
                       </a>
                     </div>
                   </Col>
+
                   <Col md={4}>
                     <div className={groupStyles.card}>
                       <div className={groupStyles.groupImage}>
@@ -281,10 +263,9 @@ export default function Group() {
                             src={EASTLOGO}
                             objectFit="cover"
                             unoptimized={true}
-                          ></Image>
+                          />
                         </div>
                       </div>
-                      {/* <h3><a href="https://www.instagram.com/egoandeast/" target={"_blank"} rel="noreferrer">{animatedText("Ego & East")}</a></h3> */}
                       <div className={groupStyles.groupDescription}>
                         <span>
                           {animatedText(
@@ -306,11 +287,8 @@ export default function Group() {
                 </Row>
               </Container>
             </Parallax>
-            {/* </ParallaxProvider> */}
 
             <Container fluid>
-              {/* <ParallaxProvider> */}
-              {/* <ParallaxCache/> */}
               <Parallax
                 translateY={[
                   isMobile ? 10 : 5,
@@ -375,10 +353,7 @@ export default function Group() {
                   </Row>
                 </div>
               </Parallax>
-              {/* </ParallaxProvider> */}
 
-              {/* <ParallaxProvider>
-          <ParallaxCache/> */}
               <Parallax translateY={[isMobile ? -1 : 10, isMobile ? -7 : -20]}>
                 <ParallaxCache />
                 <div className={groupStyles.leader}>
@@ -415,7 +390,6 @@ export default function Group() {
                           ></Image>
                         )}
                         <h3>Giovanina Attieh</h3>
-                        {/* <p>Co-Founder & Partner</p> */}
                         <p className={groupStyles.desc}>{data?.leader1text}</p>
                       </div>
                     </Col>
@@ -451,7 +425,6 @@ export default function Group() {
                           ></Image>
                         )}
                         <h3>Nathalie Mroue</h3>
-                        {/* <p>Co-Founder & Partner</p> */}
                         <p className={groupStyles.desc}>{data?.leader3_text}</p>
                       </div>
                     </Col>
@@ -469,7 +442,6 @@ export default function Group() {
                           ></Image>
                         )}
                         <h3>Yann Pavie</h3>
-                        {/* <p>Executive Chairman & Partner </p> */}
                         <p className={groupStyles.desc}>{data?.leader4_text}</p>
                       </div>
                     </Col>
@@ -487,7 +459,6 @@ export default function Group() {
                           />
                         )}
                         <h3>Reem Kanj</h3>
-                        {/* <p>Executive Chairman & Partner </p> */}
                         <p className={groupStyles.desc}>{data?.leader5_text}</p>
                       </div>
                     </Col>
@@ -505,14 +476,12 @@ export default function Group() {
                           />
                         )}
                         <h3>Natalya Kanj</h3>
-                        {/* <p>Executive Chairman & Partner </p> */}
                         <p className={groupStyles.desc}>{data?.leader6_text}</p>
                       </div>
                     </Col>
                   </Row>
                 </div>
               </Parallax>
-              {/* </ParallaxProvider> */}
 
               <ParallaxProvider>
                 <ParallaxCache />

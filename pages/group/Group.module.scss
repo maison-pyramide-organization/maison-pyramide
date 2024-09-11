@@ -376,6 +376,7 @@
     }
   }
 }
+
 @media (min-width: 600px) and (max-width: 1200px) {
   .info {
     .office {
@@ -385,6 +386,7 @@
     }
   }
 }
+
 @media (min-width: 200px) and (max-width: 600px) {
   .header {
     background-image: url(../../public/imgs/mobile/groupmobile.png);
@@ -407,7 +409,7 @@
     }
     li {
       width: 100%;
-      margin-bottom: 48px;
+      // margin-bottom: 48px;
 
       p {
         font-size: 16px;
@@ -418,7 +420,7 @@
       }
     }
     h2 {
-      font-size: 28px !important;
+      font-size: 30px !important;
       margin-top: 30%;
     }
     .maisonGroup {
@@ -429,7 +431,7 @@
         margin-bottom: 30px;
       }
       .card {
-        padding: 60px 20px;
+        padding: 48px 20px;
         h3 {
           font-size: 28px !important;
         }
@@ -442,7 +444,6 @@
       }
     }
   }
-
   .office {
     padding: 12px !important;
     .office_network {
@@ -534,5 +535,29 @@
         line-height: 22px !important;
       }
     }
+  }
+  .groupImage,
+  .groupImageSHOWROOM {
+    height: unset !important;
+    margin-bottom: 24px;
+    width: 240px;
+    margin-inline: auto;
+  }
+  .groupImageEGO {
+    width: 160px !important;
+    height: unset !important;
+  }
+  .groupDescription {
+    height: unset !important;
+    margin-bottom: 40px;
+  }
+  .press h2 {
+    margin-top: 0px;
+  }
+  .leader h2 {
+    margin-top: 40px;
+  }
+  .office {
+    margin-top: -40px;
   }
 }
