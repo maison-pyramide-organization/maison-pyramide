@@ -36,10 +36,13 @@ const textVariants = {
 function Home() {
   const [isMobile, setIsMobile] = useState(null);
 
-  const url ="https://res.cloudinary.com/dhqpdvngy/video/upload/v1730276337/with_brands_scaled_g6j8qw.mp4";
-
-  const old =
+  const url =
     "https://res.cloudinary.com/dhqpdvngy/video/upload/v1730276337/with_brands_scaled_g6j8qw.mp4";
+  const h_url =
+    "https://res.cloudinary.com/dhqpdvngy/video/upload/f_auto,q_auto/v1730713790/mp-website-horizontal.mp4";
+
+  const v_url =
+    "https://res.cloudinary.com/dhqpdvngy/video/upload/f_auto,q_auto/v1730714308/mp-website-vertical.mp4";
 
   const useHandleMobile = (value) => {
     useEffect(() => {
@@ -88,8 +91,8 @@ function Home() {
             <source
               src={
                 isMobile
-                  ? "https://res.cloudinary.com/dhqpdvngy/video/upload/f_auto,q_auto/v1675295804/NEW%20HOMEPAGE/Vertical_video_2023_w_text-high_res_p7qofu.mp4"
-                  : url
+                  ? v_url
+                  : h_url
               }
             />
           </video>

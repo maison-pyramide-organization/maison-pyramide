@@ -48,6 +48,7 @@ export default function Group() {
     hidden: { opacity: 0, y: "10%", scale: 1.05 },
     enter: { opacity: 1, y: 0, scale: 1 },
   };
+
   const textVariants = {
     hidden: { opacity: 0, x: 15 },
     enter: { opacity: 1, x: 0 },
@@ -118,6 +119,7 @@ export default function Group() {
     let year = date.getFullYear();
     return `${month} ${year}`;
   };
+
   return (
     <>
       <IsMobileComponent handleMobile={useHandleMobile} />
