@@ -104,7 +104,7 @@ function Home() {
                   <div className={homeStyles.text}>
                     <p>
                       {animatedText(
-                        "Maison Pyramide Group is fuelling the next generation of consumer brands, by connecting them with millennial audiences. Our innovative platform drives international growth through strategic - and profoundly inspirational - solutions."
+                        "Maison Pyramide Group is fueling the next generation of consumer brands, by connecting them with millennial audiences. Our innovative platform drives international growth through strategic - and profoundly inspirational - solutions."
                       )}
                     </p>
                     <Link href="/group">
