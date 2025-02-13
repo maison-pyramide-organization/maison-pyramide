@@ -36,8 +36,6 @@ const textVariants = {
 function Home() {
   const [isMobile, setIsMobile] = useState(null);
 
-  const url =
-    "https://res.cloudinary.com/dhqpdvngy/video/upload/v1730276337/with_brands_scaled_g6j8qw.mp4";
   const h_url =
     "https://res.cloudinary.com/dhqpdvngy/video/upload/f_auto,q_auto/v1730713790/mp-website-horizontal.mp4";
 
@@ -88,13 +86,7 @@ function Home() {
             id="myVideo"
             style={{ width: "100%", height: "100vh", objectFit: "cover" }}
           >
-            <source
-              src={
-                isMobile
-                  ? v_url
-                  : h_url
-              }
-            />
+            <source src={isMobile ? v_url : h_url} />
           </video>
         )}
       </section>
