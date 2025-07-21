@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import Script from "next/script";
 
 import React, { useEffect } from "react";
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
@@ -35,6 +36,8 @@ const ParallaxCache = dynamic(
 //   ssr: false
 // });
 
+const GA_TRACKING_ID = "G-1KM9RQRYWF";
+
 function MyApp({ Component, pageProps }) {
   const [isLoading, setIsLoading] = React.useState(true);
   const [isMobile, setIsMobile] = React.useState(null);
@@ -61,9 +64,10 @@ function MyApp({ Component, pageProps }) {
   // GOOGLE ANALYTICS
   useEffect(() => {
     const handleRouteChange = (url) => {
-      window.gtag("config", "G-1KM9RQRYWF", {
+      window.gtag("config", GA_TRACKING_ID, {
         page_path: url,
       });
+      console.log("route changed", url);
     };
 
     router.events.on("routeChangeComplete", handleRouteChange);
@@ -72,6 +76,29 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      {/* Load the GA script after hydration */}
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+      />
+
+      {/* Initialize window.gtag */}
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
+
       <Head>
         <link rel="manifest" href="/manifest.json" />
         <link
