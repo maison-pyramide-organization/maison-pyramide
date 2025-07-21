@@ -13,6 +13,7 @@ import { motion } from "framer-motion";
 import groupStyles from "./Group.module.scss";
 import GroupServices from "../api/services/GroupService";
 import ArticleService from "../api/services/ArticlesService";
+import GroupMembers from "../../components/groupMembers/GroupMembers";
 
 const GroupSlider = dynamic(
   () => {
@@ -80,7 +81,7 @@ export default function Group() {
       textArr[i] = (
         <motion.span
           key={i}
-          initial="hidden"
+          // initial="hidden"
           whileInView="enter"
           exit="exit"
           variants={textVariants}
@@ -125,7 +126,7 @@ export default function Group() {
       <IsMobileComponent handleMobile={useHandleMobile} />
       {data && (
         <ParallaxProvider>
-          <header className={groupStyles.header}>
+          {/* <header className={groupStyles.header}>
             <motion.h1
               initial="hidden"
               animate="enter"
@@ -155,13 +156,14 @@ export default function Group() {
                 />
               </video>
             )}
-          </header>
+          </header> */}
+          <GroupMembers isMobile={isMobile} />
 
           <section className={groupStyles.info}>
-            <Parallax translateY={[isMobile ? 10 : 20, isMobile ? -10 : -30]}>
+            <Parallax translateY={[isMobile ? 5 : 10, isMobile ? -10 : -30]}>
               <ParallaxCache />
 
-              <Container>
+              <Container class={groupStyles.infoContainer}>
                 <p className={groupStyles.text}>
                   {animatedText(data?.description)}
                 </p>
