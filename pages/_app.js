@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
-import React, { useRef } from "react";
+import React, { useEffect } from "react";
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -57,6 +57,18 @@ function MyApp({ Component, pageProps }) {
         }, 1000);
       });
   }, []);
+
+  // GOOGLE ANALYTICS
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      window.gtag("config", "G-1KM9RQRYWF", {
+        page_path: url,
+      });
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => router.events.off("routeChangeComplete", handleRouteChange);
+  }, [router.events]);
 
   return (
     <>
