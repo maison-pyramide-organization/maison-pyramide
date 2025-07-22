@@ -157,6 +157,7 @@ export default function Group() {
               </video>
             )}
           </header> */}
+
           <GroupMembers isMobile={isMobile} />
 
           <section className={groupStyles.info}>

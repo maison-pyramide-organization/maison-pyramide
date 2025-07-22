@@ -3,22 +3,22 @@ import gsap from "gsap";
 import { useEffect } from "react";
 
 const MembersSlider = (props) => {
-  let { members, id, isMobile } = props;
+  let { members, sliderIndex } = props;
   if (!members) members = [];
   const quantity = members?.length;
-  const imageWidth = isMobile ? 100 : 120;
-  const gap = isMobile ? 20 : 122;
+  const imageWidth = 94;
+  const gap = 40;
 
   useEffect(() => {
-    const memberWidth = imageWidth + gap; // width of each member box
+    const memberWidth = imageWidth + gap + 16; // width of each member box
     let totalWidth = memberWidth * quantity;
 
-    gsap.set(`#${id} li`, {
+    gsap.set(`#slider-${sliderIndex} li`, {
       x: (i) => i * memberWidth,
     });
 
-    gsap.to(`#${id} li`, {
-      duration: members?.length,
+    gsap.to(`#slider-${sliderIndex} li`, {
+      duration: members?.length * 1.5,
       ease: "none",
       x: `+=${totalWidth}`, //move each box to end of the slider
       modifiers: {
@@ -31,7 +31,7 @@ const MembersSlider = (props) => {
   return (
     <>
       <div
-        id={id}
+        id={`slider-${sliderIndex}`}
         className={`${s.slider}`}
         style={{
           "--quantity": quantity,
@@ -41,10 +41,12 @@ const MembersSlider = (props) => {
       >
         <ul className={s.list}>
           {members?.map((member) => (
-            <li className={s.member} key={member.id}>
-              <figure>
-                <img src={member.image.url + "?w=300&fm=webp"} />
-              </figure>
+            <li className={s.member_} key={member.id}>
+              <div className={s.member}>
+                <figure>
+                  <img src={member.image.url + "?w=200&fm=webp"} />
+                </figure>
+              </div>
             </li>
           ))}
         </ul>

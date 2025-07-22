@@ -11,28 +11,24 @@ export default function GroupMembers(props) {
 
   useEffect(() => {
     getMembers().then((members) => {
-      const middle = Math.ceil(members.length / 2);
+      // setMembers(x);
+      const total = members.length;
+      const targetLength = Math.ceil(total / 3); // max length per part
+      const requiredLength = targetLength * 3;
 
-      let firstHalf = members.slice(0, middle);
-      let secondHalf = members.slice(middle);
-
-      const isFirstHalfEven = firstHalf.length % 2 == 0;
-      const isSecondHalfEven = secondHalf.length % 2 == 0;
-
-      // if fh or sh not even
-      if (!isFirstHalfEven && !isSecondHalfEven) {
-        const middleIndex = Math.floor(firstHalf.length / 2);
-        // first Half
-        const firstDuplicate = firstHalf[0]; // duplicate the first element
-        firstHalf.splice(middleIndex, 0, firstDuplicate); // insert in the middle
-        // second Half
-        const secondDuplicate = secondHalf[0]; // duplicate the first element
-        secondHalf.splice(middleIndex, 0, secondDuplicate); // insert in the middle
-      } else if (!isFirstHalfEven) {
-        firstHalf.pop();
+      // Step 1: Pad the array with duplicates if needed
+      const padded = [...members];
+      let i = 0;
+      while (padded.length < requiredLength) {
+        padded.push(members[i % members.length]); // duplicate from start
+        i++;
       }
 
-      const x = [firstHalf, secondHalf];
+      // Step 2: Slice into 3 equal parts
+      const first = padded.slice(0, targetLength);
+      const second = padded.slice(targetLength, targetLength * 2);
+      const third = padded.slice(targetLength * 2, requiredLength);
+      const x = [first, second, third];
 
       setMembers(x);
     });
@@ -42,17 +38,18 @@ export default function GroupMembers(props) {
     <>
       <div className={s.groupMembers}>
         <div className={s.hph} />
-        <MembersSlider
-          members={members[0]}
-          id="top-slider"
-          isMobile={isMobile}
-        />
-        <h2>MAISON PYRAMIDE GROUP</h2>
-        <MembersSlider
-          members={members[1]}
-          id="bottom-slider"
-          isMobile={isMobile}
-        />
+        <div className={s.members}>
+          {members.map((list, i) => (
+            <>
+              <MembersSlider
+                members={list}
+                sliderIndex={i}
+                isMobile={isMobile}
+              />
+            </>
+          ))}
+        </div>
+        <h1>MAISON PYRAMIDE GROUP</h1>
       </div>
     </>
   );
